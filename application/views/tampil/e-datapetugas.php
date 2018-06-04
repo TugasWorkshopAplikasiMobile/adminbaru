@@ -23,8 +23,13 @@
                 <label>Jenis Kelamin</label>
                 <select class="form-control select2" id="idjk" name="jk" style="width: 100%;" value="<?php echo $key->JENIS_KELAMIN;?>">
                   <option selected="selected">-Pilih Jenis Kelamin-</option>
-                  <option>Laki-Laki</option>
-                  <option>Perempuan</option>
+                  <option 
+                  <?php if ($key->JENIS_KELAMIN=="Laki-Laki"): ?>
+                    SELECTED
+                  <?php endif ?>>Laki-Laki</option>
+                  <option <?php if ($key->JENIS_KELAMIN=="Perempuan"): ?>
+                    SELECTED
+                  <?php endif ?>>Perempuan</option>
                 </select>
               </div>
                 <div class="form-group">
@@ -35,11 +40,25 @@
                 <label>Status</label>
                 <select class="form-control select2" name="sts" id="idstatus" style="width: 100%;" value="<?php echo $key->STATUS;?>">
                   <option selected="selected">-Pilih Status-</option>
-                  <option>Sekretaris 1</option>
-                  <option>Admin TK</option>
-                  <option>Admin SD</option>
-                  <option>Admin SMP</option>
-                  <option>Direktur</option>
+                  <option <?php if ($key->STATUS=="Sekretaris1"): ?>
+                    SELECTED
+                  <?php endif ?>>Sekretaris 1</option>
+                  <option selected="selected">-Pilih Status-</option>
+                  <option <?php if ($key->STATUS=="AdminTK"): ?>
+                    SELECTED
+                  <?php endif ?>>Admin TK</option>
+                  <option selected="selected">-Pilih Status-</option>
+                  <option <?php if ($key->STATUS=="AdminSD"): ?>
+                    SELECTED
+                  <?php endif ?>>Admin SD</option>
+                  <option selected="selected">-Pilih Status-</option>
+                  <option <?php if ($key->STATUS=="AdminSMP"): ?>
+                    SELECTED
+                  <?php endif ?>>Admin SMP</option>
+                  <option selected="selected">-Pilih Status-</option>
+                  <option <?php if ($key->STATUS=="Direktur"): ?>
+                    SELECTED
+                  <?php endif ?>>Direktur</option>
                 </select>
               </div>
                 <div class="form-group">
