@@ -1,13 +1,13 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class siswa extends CI_Controller {
+class Siswa extends CI_Controller {
 	public function __construct(){
 		parent::__construct();
 		$this->load->model('mymodel');
 	}
 	public function index()
-	{	
+	{
 
 		// $data['side']='tampil/side';
 		// $data['content']='tampil/siswa_v';
