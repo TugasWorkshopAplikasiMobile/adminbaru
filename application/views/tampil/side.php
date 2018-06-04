@@ -88,7 +88,7 @@
        <!--  <li class="header">MAIN NAVIGATION</li> -->
         <li class="treeview">
           <a href="<?php echo base_url('index.php/siswa')?>">
-            <i class="fa fa-tags"></i> <span>Verivikasi Daftar Ulang</span>
+            <i class="fa fa-tags"></i> <span>Verifikasi Daftar Ulang</span>
             
             <span class="pull-right-container">
             </span>
