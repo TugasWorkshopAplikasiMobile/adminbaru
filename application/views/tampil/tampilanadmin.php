@@ -2,8 +2,8 @@
   <div class="col-xs-12">
     <div class="box">
       <div class="box-header">
-        <h3 class="box-title">Hover Data Table</h3><br><br>
-        <a href="<?php echo base_url('index.php/petugasdata/tambahData')?>" class="btn btn-primary btn-xs pull-left">Tambah Data Petugas</a>
+        <h3 class="box-title">Data Petugas</h3><br><br>
+        <a href="<?php echo base_url('index.php/petugasdata/tambahData')?>" class="btn btn-primary pull-left" style="width: 30%;">Tambah Data Petugas</a>
         
       </div>
       <!-- /.box-header -->
@@ -36,8 +36,8 @@
     						<td><?php echo $i->PASSWORD_ADMIN ?></td>
     						<td>
     							<!-- <?php echo $i->no?> -->
-    							<a href="#" class="btn btn-info btn-xs" onclick="updatejs('<?php echo $i->ID_ADMIN; ?>')">Update</a>
-    							<a class="btn btn-danger btn-xs" onclick="deleted('<?php echo $i->ID_ADMIN; ?>')">Delete</a>
+    							<a href="#" class="btn btn-info " onclick="updatejs('<?php echo $i->ID_ADMIN; ?>')">Update</a>
+    							<a class="btn btn-danger " onclick="deleted('<?php echo $i->ID_ADMIN; ?>')">Delete</a>
     						</td>
     					</tr>
     					<?php $n++; } ?>
