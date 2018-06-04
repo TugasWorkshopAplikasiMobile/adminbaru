@@ -58,8 +58,6 @@
           </a>
         </li>
       </ul>
-
-<<<<<<< HEAD
       <ul class="sidebar-menu">
        <!--  <li class="header">MAIN NAVIGATION</li> -->
         <li class="treeview">
@@ -71,8 +69,6 @@
           </a>
         </li>
       </ul>
-=======
->>>>>>> 4c665ad9f64c62849b476fc34d60b271ab3f49dd
 
        <ul class="sidebar-menu">
        <!--  <li class="header">MAIN NAVIGATION</li> -->
@@ -90,10 +86,7 @@
        <!--  <li class="header">MAIN NAVIGATION</li> -->
         <li class="treeview">
           <a href="<?php echo base_url('index.php/siswa')?>">
-<<<<<<< HEAD
             <i class="fa fa-dashboard"></i> <span>Verivikasi Daftar Ulang</span>
-=======
-            <i class="fa fa-pencil"></i> <span>Nilai</span>
             
             <span class="pull-right-container">
             </span>
@@ -106,7 +99,6 @@
         <li class="treeview">
           <a href="<?php echo base_url('index.php/siswa')?>">
             <i class="fa fa-tags"></i> <span>Verifikasi Daftar Ulang</span>
->>>>>>> 4c665ad9f64c62849b476fc34d60b271ab3f49dd
             
             <span class="pull-right-container">
             </span>
