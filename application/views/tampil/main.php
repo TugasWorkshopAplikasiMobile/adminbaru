@@ -132,9 +132,8 @@
     <!-- Main content -->
     <section class="content">
 
-
-
       <?php $this->load->view($content);?> 
+      
     </section>
     <!-- /.content -->
   </div>

@@ -3,15 +3,11 @@
     <div class="box">
       <div class="box-header">
         <h3 class="box-title">Hover Data Table</h3><br><br>
-        <form action="#" method="get" class="sidebar-form">
-        <div class="input-group">
-          <input type="text" name="q" class="form-control" style="color: #ffffff" placeholder="Search...">
-              <span class="input-group-btn">
-                <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
-                </button>
-              </span>
-        </div>
-      </form> 
+        <form class="form-inline" action="<?php echo site_url('petugasdata/search_keyword');?>" method="post" >
+            <input class="form-control" type="search" placeholder="Cari data petugas..." name="keyword" aria-label="Search" style="width: 35%">    
+            <button style="margin-left: 8px" class="btn btn-primary my-2 my-sm-0" name="cariobat" type="submit"><i class="fa fa-search"></i> </button>
+        </form>
+        <br>
         <a href="<?php echo base_url('index.php/petugasdata/tambahData')?>" class="btn btn-primary btn-xs pull-left">Tambah Data Petugas</a>
       </div>
       <!-- /.box-header -->
@@ -30,6 +26,7 @@
           </tr>
           </thead>
           <tbody>
+
               <?php
     					$n=1;
     						foreach ($show->result() as $i) {
@@ -50,6 +47,7 @@
     					</tr>
     					<?php $n++; } ?>
             </tbody>
+
             </table>
       </div>
       <!-- /.box-body -->
@@ -73,3 +71,9 @@
       document.location='<?php echo base_url(); ?>index.php/petugasdata/editData/'+param;
   }
 </script>
+
+<form action="<?php echo site_url('search/search_keyword');?>" method = "post">
+<input type="text" name = "keyword" />
+<input type="submit" value = "Search" />
+</form>
+<table>

@@ -1,10 +1,11 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-	/**
-	 * @author : krisnadev
-	**/
 class Mymodel extends CI_Model {
-
+ 
+ 	function __construct()
+    {
+        parent::__construct();
+    }
 
 	public function select($table)
 	{
@@ -30,5 +31,10 @@ class Mymodel extends CI_Model {
 	{
 		$this->db->insert($table,$data);
 	}
-
+	 function search($keyword)
+    {
+        $this->db->like('NAMA_ADMIN',$keyword);
+        $query  =   $this->db->get('admin');
+        return $query->result();
+    }
 }

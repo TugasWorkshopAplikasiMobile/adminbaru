@@ -57,5 +57,11 @@ class petugasdata extends CI_Controller {
 		$this->mymodel->update('admin',$data,$where);
 		header('location:'.base_url().'index.php/petugasdata');
 	}
+	  function search_keyword()
+    {
+        $keyword    	 =  $this->input->post('keyword');
+        $data['results'] =  $this->mymodel->search($keyword);
+        $this->load->view('result_view',$data);
+    }
 
 }
