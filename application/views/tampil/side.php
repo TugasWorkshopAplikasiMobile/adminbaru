@@ -61,7 +61,7 @@
       <ul class="sidebar-menu">
        <!--  <li class="header">MAIN NAVIGATION</li> -->
         <li class="treeview">
-          <a href="<?php echo base_url('index.php/siswa')?>">
+          <a href="<?php echo base_url('index.php/nilai')?>">
             <i class="fa fa-dashboard"></i> <span>Nilai</span>
             
             <span class="pull-right-container">
@@ -73,7 +73,7 @@
        <ul class="sidebar-menu">
        <!--  <li class="header">MAIN NAVIGATION</li> -->
         <li class="treeview">
-          <a href="<?php echo base_url('index.php/')?>">
+          <a href="<?php echo base_url('index.php/pengumuman')?>">
             <i class="fa fa-newspaper-o"></i> <span>Pengumuman</span>
             
             <span class="pull-right-container">
@@ -85,20 +85,8 @@
        <ul class="sidebar-menu">
        <!--  <li class="header">MAIN NAVIGATION</li> -->
         <li class="treeview">
-          <a href="<?php echo base_url('index.php/siswa')?>">
+          <a href="<?php echo base_url('index.php/verifikasi')?>">
             <i class="fa fa-dashboard"></i> <span>Verivikasi Daftar Ulang</span>
-            
-            <span class="pull-right-container">
-            </span>
-          </a>
-        </li>
-      </ul>
-
-       <ul class="sidebar-menu">
-       <!--  <li class="header">MAIN NAVIGATION</li> -->
-        <li class="treeview">
-          <a href="<?php echo base_url('index.php/siswa')?>">
-            <i class="fa fa-tags"></i> <span>Verifikasi Daftar Ulang</span>
             
             <span class="pull-right-container">
             </span>

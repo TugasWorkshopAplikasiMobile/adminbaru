@@ -31,10 +31,10 @@ class Mymodel extends CI_Model {
 	{
 		$this->db->insert($table,$data);
 	}
-	 function search($keyword)
-    {
-        $this->db->like('NAMA_ADMIN',$keyword);
-        $query  =   $this->db->get('admin');
-        return $query->result();
+    function selectjoin(){
+        $this->db->join('riwayat_sekolah', 'siswa.ID_SISWA = riwayat_sekolah.ID_SISWA', 'left'); 
+         $this->db->join('hasil', 'siswa.ID_SISWA = hasil.ID_SISWA', 'left');  
+        // $this->db->where($this->id, $id);
+        return $this->db->get("siswa");
     }
 }
