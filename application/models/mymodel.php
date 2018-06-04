@@ -31,10 +31,4 @@ class Mymodel extends CI_Model {
 	{
 		$this->db->insert($table,$data);
 	}
-	 function search($keyword)
-    {
-        $this->db->like('NAMA_ADMIN',$keyword);
-        $query  =   $this->db->get('admin');
-        return $query->result();
-    }
 }
