@@ -40,8 +40,6 @@ class petugasdata extends CI_Controller {
 		header('location:'.base_url().'index.php/petugasdata');
 	}
 
-
-
 	public function editData(){
 		$id=$this->uri->segment(3);
 		$data['dataupdate']= $this->db->query("SELECT * FROM admin WHERE ID_ADMIN='$id'");
