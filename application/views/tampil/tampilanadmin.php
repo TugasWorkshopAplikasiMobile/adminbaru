@@ -4,6 +4,7 @@
       <div class="box-header">
         <h3 class="box-title">Hover Data Table</h3><br><br>
         <a href="<?php echo base_url('index.php/petugasdata/tambahData')?>" class="btn btn-primary btn-xs pull-left">Tambah Data Petugas</a>
+        
       </div>
       <!-- /.box-header -->
       <div class="box-body">

@@ -62,5 +62,4 @@ class petugasdata extends CI_Controller {
 		$this->mymodel->update('admin',$data,$where);
 		header('location:'.base_url().'index.php/petugasdata');
 	}
-
 }
