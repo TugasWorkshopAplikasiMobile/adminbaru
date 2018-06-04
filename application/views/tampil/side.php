@@ -13,7 +13,7 @@
         </div>
       </div>
       <!-- search form -->
-      <form action="#" method="get" class="sidebar-form">
+<!--       <form action="#" method="get" class="sidebar-form">
         <div class="input-group">
           <input type="text" name="q" class="form-control" placeholder="Search...">
               <span class="input-group-btn">
@@ -21,7 +21,7 @@
                 </button>
               </span>
         </div>
-      </form>
+      </form> -->
       <!-- /.search form -->
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu">
@@ -76,6 +76,42 @@
         <li class="treeview">
           <a href="<?php echo base_url('index.php/siswa')?>">
             <i class="fa fa-dashboard"></i> <span>Nilai</span>
+            
+            <span class="pull-right-container">
+            </span>
+          </a>
+        </li>
+      </ul>
+
+       <ul class="sidebar-menu">
+       <!--  <li class="header">MAIN NAVIGATION</li> -->
+        <li class="treeview">
+          <a href="<?php echo base_url('index.php/')?>">
+            <i class="fa fa-dashboard"></i> <span>Pengumuman</span>
+            
+            <span class="pull-right-container">
+            </span>
+          </a>
+        </li>
+      </ul>
+
+       <ul class="sidebar-menu">
+       <!--  <li class="header">MAIN NAVIGATION</li> -->
+        <li class="treeview">
+          <a href="<?php echo base_url('index.php/siswa')?>">
+            <i class="fa fa-dashboard"></i> <span>Nilai</span>
+            
+            <span class="pull-right-container">
+            </span>
+          </a>
+        </li>
+      </ul>
+
+       <ul class="sidebar-menu">
+       <!--  <li class="header">MAIN NAVIGATION</li> -->
+        <li class="treeview">
+          <a href="<?php echo base_url('index.php/siswa')?>">
+            <i class="fa fa-dashboard"></i> <span>Verivikasi Daftar Ulang</span>
             
             <span class="pull-right-container">
             </span>
