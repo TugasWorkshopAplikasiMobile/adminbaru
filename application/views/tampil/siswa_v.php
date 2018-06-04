@@ -19,6 +19,24 @@
           </tr>
           </thead>
           <tbody>
+            <?php
+              $n=1;
+                foreach ($siswa->result() as $i) {
+               ?>
+              <tr>
+                <td><?php echo $n; ?></td>
+                <td><?php echo $i->NAMA_SISWA; ?></td>
+                <td><?php echo $i->TTL_SISWA ?></td>
+                <td><?php echo $i->JK_SISWA ?></td>
+                <td><?php echo $i->NAMA_SEKOLAH ?></td>
+                <td><?php echo $i->STATUS_TERIMA ?></td>
+                <td>
+                  <!-- <?php echo $i->no?> -->
+                  <a href="#" class="btn btn-info btn-xs" >Update</a>
+                  <a class="btn btn-danger btn-xs" onclick="">Delete</a>
+                </td>
+              </tr>
+              <?php $n++; } ?>  
             </tbody>
             </table>
       </div>

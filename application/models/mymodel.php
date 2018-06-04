@@ -31,4 +31,11 @@ class Mymodel extends CI_Model {
 	{
 		$this->db->insert($table,$data);
 	}
+
+    function selectjoin(){
+        $this->db->join('riwayat_sekolah', 'siswa.ID_SISWA = riwayat_sekolah.ID_SISWA', 'left'); 
+         $this->db->join('hasil', 'siswa.ID_SISWA = hasil.ID_SISWA', 'left');  
+        // $this->db->where($this->id, $id);
+        return $this->db->get("siswa");
+    }
 }
