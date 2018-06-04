@@ -39,7 +39,7 @@
        <!--  <li class="header">MAIN NAVIGATION</li> -->
         <li class="treeview">
           <a href="<?php echo base_url('index.php/petugasdata')?>">
-            <i class="fa fa-dashboard"></i> <span>Petugas</span>
+            <i class="fa fa-user"></i> <span>Petugas</span>
             
             <span class="pull-right-container">
             </span>
@@ -51,7 +51,31 @@
        <!--  <li class="header">MAIN NAVIGATION</li> -->
         <li class="treeview">
           <a href="<?php echo base_url('index.php/siswa')?>">
-            <i class="fa fa-dashboard"></i> <span>Siswa</span>
+            <i class="fa fa-user-plus"></i> <span>Siswa</span>
+            
+            <span class="pull-right-container">
+            </span>
+          </a>
+        </li>
+      </ul>
+
+      <ul class="sidebar-menu">
+       <!--  <li class="header">MAIN NAVIGATION</li> -->
+        <li class="treeview">
+          <a href="<?php echo base_url('index.php/siswa')?>">
+            <i class="fa fa-dashboard"></i> <span>Verifikasi</span>
+            
+            <span class="pull-right-container">
+            </span>
+          </a>
+        </li>
+      </ul>
+
+      <ul class="sidebar-menu">
+       <!--  <li class="header">MAIN NAVIGATION</li> -->
+        <li class="treeview">
+          <a href="<?php echo base_url('index.php/siswa')?>">
+            <i class="fa fa-dashboard"></i> <span>Nilai</span>
             
             <span class="pull-right-container">
             </span>
