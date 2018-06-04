@@ -74,6 +74,7 @@
 
               <div class="box-footer">
                 <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="" class="btn btn-primary" onclick="javascript:history.go(-1);">Batal</button>
               </div>
             </form>
           </div>
