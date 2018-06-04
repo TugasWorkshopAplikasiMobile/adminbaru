@@ -3,16 +3,12 @@
     <div class="box">
       <div class="box-header">
         <h3 class="box-title">Hover Data Table</h3><br><br>
-        <form class="form-inline" action="<?php echo site_url('petugasdata/search_keyword');?>" method="post" >
-            <input class="form-control" type="search" placeholder="Cari data petugas..." name="keyword" aria-label="Search" style="width: 35%">    
-            <button style="margin-left: 8px" class="btn btn-primary my-2 my-sm-0" name="cariobat" type="submit"><i class="fa fa-search"></i> </button>
-        </form>
-        <br>
         <a href="<?php echo base_url('index.php/petugasdata/tambahData')?>" class="btn btn-primary btn-xs pull-left">Tambah Data Petugas</a>
+        
       </div>
       <!-- /.box-header -->
       <div class="box-body">
-        <table id="example2" class="table table-bordered table-hover">
+        <table id="example1" class="table table-bordered table-hover">
           <thead>
           <tr>
             <th>No</th>
@@ -26,7 +22,6 @@
           </tr>
           </thead>
           <tbody>
-
               <?php
     					$n=1;
     						foreach ($show->result() as $i) {
@@ -47,7 +42,6 @@
     					</tr>
     					<?php $n++; } ?>
             </tbody>
-
             </table>
       </div>
       <!-- /.box-body -->
@@ -71,9 +65,3 @@
       document.location='<?php echo base_url(); ?>index.php/petugasdata/editData/'+param;
   }
 </script>
-
-<form action="<?php echo site_url('search/search_keyword');?>" method = "post">
-<input type="text" name = "keyword" />
-<input type="submit" value = "Search" />
-</form>
-<table>

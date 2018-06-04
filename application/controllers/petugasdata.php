@@ -2,6 +2,11 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class petugasdata extends CI_Controller {
+	function __construct()
+    {
+        parent::__construct();
+        $this->load->model('mymodel');
+    }
 	public function index()
 	{
 		$data['show']=$this->mymodel->select('admin');
@@ -57,11 +62,4 @@ class petugasdata extends CI_Controller {
 		$this->mymodel->update('admin',$data,$where);
 		header('location:'.base_url().'index.php/petugasdata');
 	}
-	  function search_keyword()
-    {
-        $keyword    	 =  $this->input->post('keyword');
-        $data['results'] =  $this->mymodel->search($keyword);
-        $this->load->view('result_view',$data);
-    }
-
 }
