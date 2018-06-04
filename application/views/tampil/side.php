@@ -86,18 +86,6 @@
        <!--  <li class="header">MAIN NAVIGATION</li> -->
         <li class="treeview">
           <a href="<?php echo base_url('index.php/siswa')?>">
-            <i class="fa fa-dashboard"></i> <span>Verivikasi Daftar Ulang</span>
-            
-            <span class="pull-right-container">
-            </span>
-          </a>
-        </li>
-      </ul>
-
-       <ul class="sidebar-menu">
-       <!--  <li class="header">MAIN NAVIGATION</li> -->
-        <li class="treeview">
-          <a href="<?php echo base_url('index.php/siswa')?>">
             <i class="fa fa-tags"></i> <span>Verifikasi Daftar Ulang</span>
             
             <span class="pull-right-container">
