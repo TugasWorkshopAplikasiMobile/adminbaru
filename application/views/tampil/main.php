@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>AL Baitul Amien</title>
+  <title>AdminLTE 2 | Data Tables</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.6 -->
@@ -37,7 +37,7 @@
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>A</b>LT</span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>AL</b>BAITUL AMIEN</span>
+      <span class="logo-lg"><b>Admin</b>LTE</span>
     </a>
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top">
@@ -104,9 +104,9 @@
             </ul>
           </li>
           <!-- Control Sidebar Toggle Button -->
-          <li>
+          <!-- <li>
             <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
-          </li>
+          </li> -->
         </ul>
       </div>
     </nav>
@@ -117,15 +117,23 @@
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
-    <!-- <section class="content-header">
+    <section class="content-header">
       <h1>
-        PPDB AL AMIEN
-        <small>Yayasan Al Baitul Amien Jember</small>
+        Data Tables
+        <small>advanced tables</small>
       </h1>
-    </section> -->
+      <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="#">Tables</a></li>
+        <li class="active">Data tables</li>
+      </ol>
+    </section>
 
     <!-- Main content -->
     <section class="content">
+
+
+
       <?php $this->load->view($content);?> 
     </section>
     <!-- /.content -->
@@ -135,7 +143,7 @@
     <div class="pull-right hidden-xs">
       <b>Version</b> 2.3.7
     </div>
-    <strong>Copyright &copy; 2018<a href="http://almsaeedstudio.com">RED BOX TEAM 2018</a>.</strong> All rights
+    <strong>Copyright &copy; 2014-2016 <a href="http://almsaeedstudio.com">Almsaeed Studio</a>.</strong> All rights
     reserved.
   </footer>
 

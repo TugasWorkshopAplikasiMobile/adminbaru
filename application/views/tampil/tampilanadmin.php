@@ -3,6 +3,15 @@
     <div class="box">
       <div class="box-header">
         <h3 class="box-title">Hover Data Table</h3><br><br>
+        <form action="#" method="get" class="sidebar-form">
+        <div class="input-group">
+          <input type="text" name="q" class="form-control" style="color: #ffffff" placeholder="Search...">
+              <span class="input-group-btn">
+                <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
+                </button>
+              </span>
+        </div>
+      </form> 
         <a href="<?php echo base_url('index.php/petugasdata/tambahData')?>" class="btn btn-primary btn-xs pull-left">Tambah Data Petugas</a>
       </div>
       <!-- /.box-header -->
