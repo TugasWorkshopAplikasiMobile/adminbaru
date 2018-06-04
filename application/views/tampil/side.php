@@ -45,7 +45,19 @@
             </span>
           </a>
         </li>
-      </ul>   
+      </ul>
+
+      <ul class="sidebar-menu">
+       <!--  <li class="header">MAIN NAVIGATION</li> -->
+        <li class="treeview">
+          <a href="<?php echo base_url('index.php/siswa')?>">
+            <i class="fa fa-dashboard"></i> <span>Siswa</span>
+            
+            <span class="pull-right-container">
+            </span>
+          </a>
+        </li>
+      </ul>
     </section>
     <!-- /.sidebar -->
   </aside>
