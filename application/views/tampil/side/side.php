@@ -5,7 +5,7 @@
       <!-- Sidebar user panel -->
       <div class="user-panel">
         <div class="pull-left image">
-        <p style="color: #ffffff; size: 25px;">Sekretaris Pusat</p>
+        <p style="color: #ffffff;">Sekretaris Pusat</p>
         </div>
         <div class="pull-left info">
           
@@ -13,7 +13,7 @@
       </div>
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu">
-        <li class="header">MAIN NAVIGATION</li>
+        <li class="header">Menu</li>
         <li class="treeview">
           <a href="<?php echo base_url('dashboard/dashboard')?>">
             <i class="fa fa-home"></i> <span>Dashboard</span>
@@ -34,16 +34,26 @@
           </a>
         </li>
       </ul>
+      <ul class="sidebar-menu">
+      <ul class="sidebar-menu">
+        <li class="header">Siswa</li>
+        
 
       <ul class="sidebar-menu">
        <!--  <li class="header">MAIN NAVIGATION</li> -->
         <li class="treeview">
-          <a href="<?php echo base_url('siswa/siswa')?>">
+          <a href="#">
             <i class="fa fa-graduation-cap"></i> <span>Siswa</span>
 
             <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i> 
             </span>
           </a>
+          <ul class="treeview-menu">
+            <li><a href="<?php echo base_url('siswa/siswa')?>"><i class="fa fa-circle-o"></i>TK</a></li>
+            <li><a href="<?php echo base_url('siswa/siswa')?>"><i class="fa fa-circle-o"></i> SD</a></li>
+            <li><a href="<?php echo base_url('siswa/siswa')?>"><i class="fa fa-circle-o"></i> SMP</a></li>
+          </ul>
         </li>
       </ul>
       <ul class="sidebar-menu">
@@ -53,8 +63,14 @@
             <i class="fa fa-pencil"></i> <span>Nilai</span>
 
             <span class="pull-right-container">
+               <i class="fa fa-angle-left pull-right"></i> 
             </span>
           </a>
+          <ul class="treeview-menu">
+            <li><a href="<?php echo base_url('nilai/nilai')?>"><i class="fa fa-circle-o"></i>TK</a></li>
+            <li><a href="<?php echo base_url('nilai/nilai')?>"><i class="fa fa-circle-o"></i> SD</a></li>
+            <li><a href="<?php echo base_url('nilai/nilai')?>"><i class="fa fa-circle-o"></i> SMP</a></li>
+          </ul>
         </li>
       </ul>
 
@@ -76,8 +92,14 @@
           <a href="<?php echo base_url('verifikasi/verifikasi')?>">
             <i class="fa fa-tags"></i> <span>Verifikasi Daftar Ulang</span>
             <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i> 
             </span>
           </a>
+          <ul class="treeview-menu">
+            <li><a href="<?php echo base_url('verifikasi/verifikasi')?>"><i class="fa fa-circle-o"></i>TK</a></li>
+            <li><a href="<?php echo base_url('verifikasi/verifikasi')?>"><i class="fa fa-circle-o"></i> SD</a></li>
+            <li><a href="<?php echo base_url('verifikasi/verifikasi')?>"><i class="fa fa-circle-o"></i> SMP</a></li>
+          </ul>
         </li>
       </ul>
     </section>

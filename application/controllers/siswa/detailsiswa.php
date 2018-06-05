@@ -11,7 +11,7 @@ class Detailsiswa extends CI_Controller {
       $data= array(
   			'side'=>'tampil/side/side',
   			'content'=>'tampil/detailsiswa',
-  			'siswa'=>$this->mymodel->selectjoin('jenjang.NAMA_JENJANG'));
+  			'siswa'=>$this->mymodel->detailsiswa());
   		$this->load->view('tampil/utama/main',$data);
   	}
   }
