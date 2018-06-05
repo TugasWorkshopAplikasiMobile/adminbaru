@@ -34,8 +34,7 @@
     						<td><?php echo $i->STATUS ?></td>
     						<td><?php echo $i->USERNAME_ADMIN ?></td>
     						<td><?php echo $i->PASSWORD_ADMIN ?></td>
-    						<td>
-    							<!-- <?php echo $i->no?> -->
+    						<td style="text-align: center;">
     							<a href="#" class="btn btn-info " onclick="updatejs('<?php echo $i->ID_ADMIN; ?>')">Update</a>
     							<a class="btn btn-danger " onclick="deleted('<?php echo $i->ID_ADMIN; ?>')">Delete</a>
     						</td>
