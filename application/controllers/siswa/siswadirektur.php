@@ -17,4 +17,11 @@ class Siswadirektur extends CI_Controller {
 			'siswa'=>$this->mymodel->selectjoin());
 		$this->load->view('tampil/utama/main',$data);
 	}
+	public function inadmin(){
+		$data= array(
+			'side'=>'tampil/side/side',
+			'content'=>'tampil/siswa/siswa_v',
+			'siswa'=>$this->mymodel->selectjoin());
+		$this->load->view('tampil/utama/main',$data);
+	}
 }
