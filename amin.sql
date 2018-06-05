@@ -1,13 +1,15 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.1
--- http://www.phpmyadmin.net
+-- version 4.7.4
+-- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 04 Jun 2018 pada 08.57
--- Versi Server: 10.1.13-MariaDB
--- PHP Version: 5.5.35
+-- Generation Time: Jun 05, 2018 at 02:02 AM
+-- Server version: 10.1.30-MariaDB
+-- PHP Version: 5.6.33
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -23,7 +25,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `admin`
+-- Table structure for table `admin`
 --
 
 CREATE TABLE `admin` (
@@ -33,22 +35,22 @@ CREATE TABLE `admin` (
   `NO_TELP` decimal(13,0) DEFAULT NULL,
   `STATUS` varchar(100) DEFAULT NULL,
   `USERNAME_ADMIN` varchar(100) DEFAULT NULL,
-  `PASSWORD_ADMIN` varchar(100) DEFAULT NULL
+  `PASSWORD_ADMIN` varchar(100) DEFAULT NULL,
+  `level` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `admin`
+-- Dumping data for table `admin`
 --
 
-INSERT INTO `admin` (`ID_ADMIN`, `NAMA_ADMIN`, `JENIS_KELAMIN`, `NO_TELP`, `STATUS`, `USERNAME_ADMIN`, `PASSWORD_ADMIN`) VALUES
-(990508, 'ghbjknk', '-Pilih Jenis Kelamin-', '98765', '-Pilih Status-', 'sfgyhj', '34567'),
-(990509, 'Toper', 'Laki-Laki', '7899', 'Direktur', 'qwerty', 'qwerty'),
-(990510, 'Beras', 'Perempuan', '676767676', 'Admin SMP', 'ghjghj', 'bjknk');
+INSERT INTO `admin` (`ID_ADMIN`, `NAMA_ADMIN`, `JENIS_KELAMIN`, `NO_TELP`, `STATUS`, `USERNAME_ADMIN`, `PASSWORD_ADMIN`, `level`) VALUES
+(990516, 'Christopher', 'Laki-Laki', '81', 'Admin TK', 'sekretaris1', 'sekretaris1', 'sekretaris1'),
+(990517, 'Bahrul', 'Laki-Laki', '81', 'Admin SD', 'adminsd', 'adminsd', 'adminsd');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `ciri_khas_anak`
+-- Table structure for table `ciri_khas_anak`
 --
 
 CREATE TABLE `ciri_khas_anak` (
@@ -63,7 +65,7 @@ CREATE TABLE `ciri_khas_anak` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `data_tempat_tinggal`
+-- Table structure for table `data_tempat_tinggal`
 --
 
 CREATE TABLE `data_tempat_tinggal` (
@@ -78,7 +80,7 @@ CREATE TABLE `data_tempat_tinggal` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `gambar`
+-- Table structure for table `gambar`
 --
 
 CREATE TABLE `gambar` (
@@ -90,7 +92,7 @@ CREATE TABLE `gambar` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `hasil`
+-- Table structure for table `hasil`
 --
 
 CREATE TABLE `hasil` (
@@ -103,7 +105,7 @@ CREATE TABLE `hasil` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `input`
+-- Table structure for table `input`
 --
 
 CREATE TABLE `input` (
@@ -114,7 +116,7 @@ CREATE TABLE `input` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `input2`
+-- Table structure for table `input2`
 --
 
 CREATE TABLE `input2` (
@@ -125,7 +127,7 @@ CREATE TABLE `input2` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `jenjang`
+-- Table structure for table `jenjang`
 --
 
 CREATE TABLE `jenjang` (
@@ -134,7 +136,7 @@ CREATE TABLE `jenjang` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `jenjang`
+-- Dumping data for table `jenjang`
 --
 
 INSERT INTO `jenjang` (`ID_JENJANG`, `NAMA_JENJANG`) VALUES
@@ -145,7 +147,7 @@ INSERT INTO `jenjang` (`ID_JENJANG`, `NAMA_JENJANG`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `kelahiran_anak`
+-- Table structure for table `kelahiran_anak`
 --
 
 CREATE TABLE `kelahiran_anak` (
@@ -164,7 +166,7 @@ CREATE TABLE `kelahiran_anak` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `keluarga`
+-- Table structure for table `keluarga`
 --
 
 CREATE TABLE `keluarga` (
@@ -207,7 +209,7 @@ CREATE TABLE `keluarga` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `kemampuan_anak`
+-- Table structure for table `kemampuan_anak`
 --
 
 CREATE TABLE `kemampuan_anak` (
@@ -220,7 +222,7 @@ CREATE TABLE `kemampuan_anak` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `kesehatan_anak`
+-- Table structure for table `kesehatan_anak`
 --
 
 CREATE TABLE `kesehatan_anak` (
@@ -242,7 +244,7 @@ CREATE TABLE `kesehatan_anak` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `kondisi_keluarga`
+-- Table structure for table `kondisi_keluarga`
 --
 
 CREATE TABLE `kondisi_keluarga` (
@@ -255,7 +257,7 @@ CREATE TABLE `kondisi_keluarga` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `kuisinoner`
+-- Table structure for table `kuisinoner`
 --
 
 CREATE TABLE `kuisinoner` (
@@ -268,7 +270,7 @@ CREATE TABLE `kuisinoner` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `menentukan`
+-- Table structure for table `menentukan`
 --
 
 CREATE TABLE `menentukan` (
@@ -279,7 +281,7 @@ CREATE TABLE `menentukan` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `nilai_psikotest`
+-- Table structure for table `nilai_psikotest`
 --
 
 CREATE TABLE `nilai_psikotest` (
@@ -290,7 +292,7 @@ CREATE TABLE `nilai_psikotest` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `nilai_psikotest`
+-- Dumping data for table `nilai_psikotest`
 --
 
 INSERT INTO `nilai_psikotest` (`ID_NILAI_PSIKOTEST`, `ID_MAPEL`, `ID_SISWA`, `NILAI_PSIKOTEST`) VALUES
@@ -299,7 +301,7 @@ INSERT INTO `nilai_psikotest` (`ID_NILAI_PSIKOTEST`, `ID_MAPEL`, `ID_SISWA`, `NI
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `nilai_test`
+-- Table structure for table `nilai_test`
 --
 
 CREATE TABLE `nilai_test` (
@@ -317,7 +319,7 @@ CREATE TABLE `nilai_test` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `notification`
+-- Table structure for table `notification`
 --
 
 CREATE TABLE `notification` (
@@ -331,7 +333,7 @@ CREATE TABLE `notification` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `notification`
+-- Dumping data for table `notification`
 --
 
 INSERT INTO `notification` (`id_notif`, `jenis_notif`, `judul_notif`, `isi_notif`, `status_notif`, `id`, `user_ID_USER`) VALUES
@@ -340,7 +342,7 @@ INSERT INTO `notification` (`id_notif`, `jenis_notif`, `judul_notif`, `isi_notif
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `pembayaran`
+-- Table structure for table `pembayaran`
 --
 
 CREATE TABLE `pembayaran` (
@@ -351,7 +353,7 @@ CREATE TABLE `pembayaran` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `pembayaran`
+-- Dumping data for table `pembayaran`
 --
 
 INSERT INTO `pembayaran` (`ID_PEMBAYARAN`, `ID_SISWA`, `STATUS_PEMBAYARAN`, `admin_ID_ADMIN`) VALUES
@@ -360,7 +362,7 @@ INSERT INTO `pembayaran` (`ID_PEMBAYARAN`, `ID_SISWA`, `STATUS_PEMBAYARAN`, `adm
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `riwayat_sekolah`
+-- Table structure for table `riwayat_sekolah`
 --
 
 CREATE TABLE `riwayat_sekolah` (
@@ -377,7 +379,7 @@ CREATE TABLE `riwayat_sekolah` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `saudara_kandung_anak`
+-- Table structure for table `saudara_kandung_anak`
 --
 
 CREATE TABLE `saudara_kandung_anak` (
@@ -393,7 +395,7 @@ CREATE TABLE `saudara_kandung_anak` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `siswa`
+-- Table structure for table `siswa`
 --
 
 CREATE TABLE `siswa` (
@@ -411,7 +413,7 @@ CREATE TABLE `siswa` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `siswa`
+-- Dumping data for table `siswa`
 --
 
 INSERT INTO `siswa` (`ID_SISWA`, `NAMA_SISWA`, `NAMA_PANGGILAN`, `TTL_SISWA`, `USIA_1JULI`, `JK_SISWA`, `AGAMA_SISWA`, `KEWARGANEGARAAN`, `TINGGAL_BERSAMA`, `ANAK_KE`, `user_ID_USER`) VALUES
@@ -420,7 +422,7 @@ INSERT INTO `siswa` (`ID_SISWA`, `NAMA_SISWA`, `NAMA_PANGGILAN`, `TTL_SISWA`, `U
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `user`
+-- Table structure for table `user`
 --
 
 CREATE TABLE `user` (
@@ -432,7 +434,7 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `user`
+-- Dumping data for table `user`
 --
 
 INSERT INTO `user` (`ID_USER`, `NAMA_USER`, `EMAIL_USER`, `PASSWORD_USER`, `jenjang_ID_JENJANG`) VALUES
@@ -614,155 +616,123 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `ID_ADMIN` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=990516;
+  MODIFY `ID_ADMIN` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=990518;
+
 --
 -- AUTO_INCREMENT for table `jenjang`
 --
 ALTER TABLE `jenjang`
   MODIFY `ID_JENJANG` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46130;
+
 --
 -- AUTO_INCREMENT for table `nilai_test`
 --
 ALTER TABLE `nilai_test`
   MODIFY `ID_NILAI_TEST` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
   MODIFY `ID_USER` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1239;
+
 --
--- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
+-- Constraints for dumped tables
 --
 
 --
--- Ketidakleluasaan untuk tabel `ciri_khas_anak`
+-- Constraints for table `ciri_khas_anak`
 --
 ALTER TABLE `ciri_khas_anak`
   ADD CONSTRAINT `FK_MEMILIKI7` FOREIGN KEY (`ID_SISWA`) REFERENCES `siswa` (`ID_SISWA`);
 
 --
--- Ketidakleluasaan untuk tabel `data_tempat_tinggal`
+-- Constraints for table `data_tempat_tinggal`
 --
 ALTER TABLE `data_tempat_tinggal`
   ADD CONSTRAINT `FK_MEMILIKI4` FOREIGN KEY (`ID_SISWA`) REFERENCES `siswa` (`ID_SISWA`);
 
 --
--- Ketidakleluasaan untuk tabel `gambar`
+-- Constraints for table `gambar`
 --
 ALTER TABLE `gambar`
   ADD CONSTRAINT `FK_SCAN` FOREIGN KEY (`ID_PEMBAYARAN`) REFERENCES `pembayaran` (`ID_PEMBAYARAN`);
 
 --
--- Ketidakleluasaan untuk tabel `hasil`
+-- Constraints for table `hasil`
 --
 ALTER TABLE `hasil`
   ADD CONSTRAINT `FK_MEMILIKI24` FOREIGN KEY (`ID_SISWA`) REFERENCES `siswa` (`ID_SISWA`);
 
 --
--- Ketidakleluasaan untuk tabel `input`
+-- Constraints for table `input`
 --
 ALTER TABLE `input`
   ADD CONSTRAINT `FK_INPUT2` FOREIGN KEY (`ID_NILAI_PSIKOTEST`) REFERENCES `nilai_psikotest` (`ID_NILAI_PSIKOTEST`),
   ADD CONSTRAINT `fk_input_admin1` FOREIGN KEY (`admin_ID_ADMIN`) REFERENCES `admin` (`ID_ADMIN`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Ketidakleluasaan untuk tabel `input2`
+-- Constraints for table `input2`
 --
 ALTER TABLE `input2`
   ADD CONSTRAINT `fk_input2_admin1` FOREIGN KEY (`admin_ID_ADMIN`) REFERENCES `admin` (`ID_ADMIN`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_input2_nilai_test1` FOREIGN KEY (`nilai_test_ID_NILAI_TEST`) REFERENCES `nilai_test` (`ID_NILAI_TEST`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Ketidakleluasaan untuk tabel `kelahiran_anak`
+-- Constraints for table `kelahiran_anak`
 --
 ALTER TABLE `kelahiran_anak`
   ADD CONSTRAINT `FK_MEMILIKI_DATA2` FOREIGN KEY (`ID_SISWA`) REFERENCES `siswa` (`ID_SISWA`);
 
 --
--- Ketidakleluasaan untuk tabel `keluarga`
+-- Constraints for table `keluarga`
 --
 ALTER TABLE `keluarga`
   ADD CONSTRAINT `FK_MEMPUNYAI2` FOREIGN KEY (`ID_SISWA`) REFERENCES `siswa` (`ID_SISWA`);
 
 --
--- Ketidakleluasaan untuk tabel `kemampuan_anak`
+-- Constraints for table `kemampuan_anak`
 --
 ALTER TABLE `kemampuan_anak`
   ADD CONSTRAINT `FK_MEMILIKI6` FOREIGN KEY (`ID_SISWA`) REFERENCES `siswa` (`ID_SISWA`);
 
 --
--- Ketidakleluasaan untuk tabel `kesehatan_anak`
+-- Constraints for table `kesehatan_anak`
 --
 ALTER TABLE `kesehatan_anak`
   ADD CONSTRAINT `FK_MEMILIKI15` FOREIGN KEY (`ID_SISWA`) REFERENCES `siswa` (`ID_SISWA`);
 
 --
--- Ketidakleluasaan untuk tabel `kondisi_keluarga`
+-- Constraints for table `kondisi_keluarga`
 --
 ALTER TABLE `kondisi_keluarga`
   ADD CONSTRAINT `FK_MEMILIKI18` FOREIGN KEY (`ID_SISWA`) REFERENCES `siswa` (`ID_SISWA`);
 
 --
--- Ketidakleluasaan untuk tabel `kuisinoner`
+-- Constraints for table `kuisinoner`
 --
 ALTER TABLE `kuisinoner`
   ADD CONSTRAINT `FK_MEMILIKI16` FOREIGN KEY (`ID_SISWA`) REFERENCES `siswa` (`ID_SISWA`);
 
 --
--- Ketidakleluasaan untuk tabel `menentukan`
+-- Constraints for table `menentukan`
 --
 ALTER TABLE `menentukan`
   ADD CONSTRAINT `FK_MENENTUKAN2` FOREIGN KEY (`ID_HASIL`) REFERENCES `hasil` (`ID_HASIL`),
   ADD CONSTRAINT `fk_menentukan_admin1` FOREIGN KEY (`admin_ID_ADMIN`) REFERENCES `admin` (`ID_ADMIN`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Ketidakleluasaan untuk tabel `nilai_psikotest`
+-- Constraints for table `nilai_psikotest`
 --
 ALTER TABLE `nilai_psikotest`
   ADD CONSTRAINT `FK_MEMILIKI22` FOREIGN KEY (`ID_SISWA`) REFERENCES `siswa` (`ID_SISWA`);
 
 --
--- Ketidakleluasaan untuk tabel `nilai_test`
+-- Constraints for table `nilai_test`
 --
 ALTER TABLE `nilai_test`
   ADD CONSTRAINT `fk_nilai_test_siswa1` FOREIGN KEY (`siswa_ID_SISWA`) REFERENCES `siswa` (`ID_SISWA`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
---
--- Ketidakleluasaan untuk tabel `notification`
---
-ALTER TABLE `notification`
-  ADD CONSTRAINT `fk_notification_user1` FOREIGN KEY (`user_ID_USER`) REFERENCES `user` (`ID_USER`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
---
--- Ketidakleluasaan untuk tabel `pembayaran`
---
-ALTER TABLE `pembayaran`
-  ADD CONSTRAINT `FK_MELAKUKAN2` FOREIGN KEY (`ID_SISWA`) REFERENCES `siswa` (`ID_SISWA`),
-  ADD CONSTRAINT `fk_pembayaran_admin1` FOREIGN KEY (`admin_ID_ADMIN`) REFERENCES `admin` (`ID_ADMIN`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
---
--- Ketidakleluasaan untuk tabel `riwayat_sekolah`
---
-ALTER TABLE `riwayat_sekolah`
-  ADD CONSTRAINT `FK_MEMILIKI3` FOREIGN KEY (`ID_SISWA`) REFERENCES `siswa` (`ID_SISWA`);
-
---
--- Ketidakleluasaan untuk tabel `saudara_kandung_anak`
---
-ALTER TABLE `saudara_kandung_anak`
-  ADD CONSTRAINT `FK_MEMILIKI5` FOREIGN KEY (`ID_SISWA`) REFERENCES `siswa` (`ID_SISWA`);
-
---
--- Ketidakleluasaan untuk tabel `siswa`
---
-ALTER TABLE `siswa`
-  ADD CONSTRAINT `fk_siswa_user1` FOREIGN KEY (`user_ID_USER`) REFERENCES `user` (`ID_USER`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
---
--- Ketidakleluasaan untuk tabel `user`
---
-ALTER TABLE `user`
-  ADD CONSTRAINT `fk_user_jenjang1` FOREIGN KEY (`jenjang_ID_JENJANG`) REFERENCES `jenjang` (`ID_JENJANG`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
