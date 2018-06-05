@@ -51,7 +51,7 @@
        <!--  <li class="header">MAIN NAVIGATION</li> -->
         <li class="treeview">
           <a href="<?php echo base_url('index.php/nilai')?>">
-            <i class="fa fa-dashboard"></i> <span>Nilai</span>
+            <i class="fa fa-pencil"></i> <span>Nilai</span>
             
             <span class="pull-right-container">
             </span>

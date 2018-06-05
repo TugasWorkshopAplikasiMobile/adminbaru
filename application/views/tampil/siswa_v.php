@@ -30,7 +30,7 @@
                 <td><?php echo $i->JK_SISWA ?></td>
                 <td><?php echo $i->NAMA_SEKOLAH ?></td>
                 <td><?php echo $i->STATUS_TERIMA ?></td>
-                <td>
+                <td style="text-align: center;">
                   <!-- <?php echo $i->no?> -->
                   <a href="#" class="btn btn-info btn-xs" >Update</a>
                   <a class="btn btn-danger btn-xs" onclick="">Delete</a>
