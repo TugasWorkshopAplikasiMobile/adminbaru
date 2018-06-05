@@ -32,7 +32,7 @@
                 <td><?php echo $i->STATUS_TERIMA ?></td>
                 <td style="text-align: center;">
                   <!-- <?php echo $i->no?> -->
-                  <a href="#" class="btn btn-warning btn-xs"onclick="updatejs('<?php echo $siswa->; ?>')">Detail</a>
+                  <a href="<?php echo base_url('index.php/detailsiswa')?>"" class="btn btn-warning btn-xs" >Detail</a>
                   <a href="#" class="btn btn-info btn-xs" >Update</a>
                   <a class="btn btn-danger btn-xs" onclick="">Delete</a>
                 </td>
@@ -52,12 +52,12 @@
 </div>
 <!-- /.row -->
 <script type="text/javascript">
-  // function deleted(param){
-  //   var proc = window.confirm('Are you sure delete this data?');
-  //   if(proc){
-  //     document.location='<?php echo base_url(); ?>index.php/petugasdata/deletedata/'+param;
-  //   }
-  // }
+  function deleted(param){
+    var proc = window.confirm('Are you sure delete this data?');
+    if(proc){
+      document.location='<?php echo base_url(); ?>index.php/petugasdata/deletedata/'+param;
+    }
+  }
   // function updatejs(param){
   //     document.location='<?php echo base_url(); ?>index.php/petugasdata/editData/'+param;
   // }

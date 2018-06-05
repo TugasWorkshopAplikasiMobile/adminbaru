@@ -27,125 +27,113 @@
           <div class="nav-tabs-custom">
             <ul class="nav nav-tabs">
               <li class="active"><a href="#activity" data-toggle="tab">Detail Siswa</a></li>
-  
+              <li><a href="#timeline" data-toggle="tab">Kondisi Keluarga</a></li>
+              <li><a href="#settings" data-toggle="tab">Kesehatan Anak</a></li>
             </ul>
             <div class="tab-content">
               <div class="active tab-pane" id="activity">
                 <!-- Post -->
-                <div class="post">
-                        </div>
-                        <!-- /.col -->
-                      </div>
-                      <!-- /.row -->
-                    </div>
-                    <!-- /.col -->
-             
-              
-             
+
+              <?php foreach ($siswa->result() as $i) { ?>
+              <div class="post">
               <div class="tab-pane" id="settings">
                 <form class="form-horizontal">
                    <div class="form-group">
                     <label for="inputid" class="col-sm-2 control-label">ID Pendaftaran</label>
 
-                   <!--  <div class="col-sm-10">
-                      <input type="email" class="form-control" id="inputEmail" placeholder="ID Pendaftaran">
-                    </div> -->
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" id="id" value="<?php echo $i->ID_SISWA;?>" name="id" readonly>
+                      <!-- <label for="inputid" class="col-sm-2 control-label"><?php echo $i->ID_SISWA; ?></label> -->
+                    </div>
                   </div>
                   <div class="form-group">
                     <label for="inputName" class="col-sm-2 control-label">Nama Lengkap</label>
 
                     <div class="col-sm-10">
-                      <!-- <input type="name" class="form-control" id="inputName" placeholder="Nama Lengkap"> -->
+                      <input type="text" class="form-control" id="id" value="<?php echo $i->NAMA_SISWA;?>" name="id" readonly>
+                      <!-- <label class="col-sm-2 control-label"><?php echo $i->NAMA_SISWA; ?></label> -->
                     </div>
                   </div>
                    <div class="form-group">
                     <label for="inputNamePanggilan" class="col-sm-2 control-label">Nama Panggilan</label>
 
-                   <!--  <div class="col-sm-10">
-                      <input type="text" class="form-control" id="inputName" placeholder="Nama Panggilan">
-                    </div> -->
+                   <div class="col-sm-10">
+                      <input type="text" class="form-control" id="id" value="<?php echo $i->NAMA_PANGGILAN;?>" name="id" readonly>
+                      <!-- <label class="col-sm-2 control-label"><?php echo $i->NAMA_PANGGILAN; ?></label> -->
+                    </div>
                   </div>
                    <div class="form-group">
-                    <label for="inputUsername" class="col-sm-2 control-label">Username</label>
+                    <label for="inputUsername" class="col-sm-2 control-label">Tanggal lahir</label>
 
-                   <!--  <div class="col-sm-10">
-                      <input type="text" class="form-control" id="inputUsername" placeholder="Username">
-                    </div> -->
+                   <div class="col-sm-10">
+                      <input type="text" class="form-control" id="id" value="<?php echo $i->TTL_SISWA;?>" name="id" readonly>
+                      <!-- <label class="col-sm-2 control-label"><?php echo $i->TTL_SISWA; ?></label> -->
+                    </div>
                   </div>
                    <div class="form-group">
-                    <label for="inputPassword" class="col-sm-2 control-label">Password</label>
+                    <label for="inputPassword" class="col-sm-2 control-label">Usia</label>
 
-                   <!--  <div class="col-sm-10">
-                      <input type="text" class="form-control" id="inputPassword" placeholder="Password">
-                    </div> -->
+                   <div class="col-sm-10">
+                      <input type="text" class="form-control" id="id" value="<?php echo $i->USIA_1JULI;?>" name="id" readonly>
+                      <!-- <label class="col-sm-2 control-label"><?php echo $i->USIA_1JULI; ?></label> -->
+                    </div>
                   </div>
 
                   <div class="form-group">
-                    <label for="inputEmail" class="col-sm-2 control-label">Email</label>
-
-                   <!--  <div class="col-sm-10">
-                      <input type="email" class="form-control" id="inputEmail" placeholder="Email">
-                    </div> -->
+                    <label for="inputEmail" class="col-sm-2 control-label">Jenis Kelamin</label>
+                      <div class="col-sm-10">
+                      <input type="text" class="form-control" id="id" value="<?php echo $i->JK_SISWA;?>" name="id" readonly>
+                      <!-- <label class="col-sm-2 control-label"><?php echo $i->JK_SISWA; ?></label> -->
+                    </div>
                   </div>
                  
                   <div class="form-group">
-                    <label for="Asaslsekolah" class="col-sm-2 control-label">Asal Sekolah</label>
+                    <label for="Asaslsekolah" class="col-sm-2 control-label">Agama</label>
 
-                   <!--  <div class="col-sm-10">
-                      <textarea class="form-control" id="inputExperience" placeholder="Experience"></textarea>
-                    </div> -->
+                   <div class="col-sm-10">
+                      <input type="text" class="form-control" id="id" value="<?php echo $i->AGAMA_SISWA;?>" name="id" readonly>
+                      <!-- <label class="col-sm-2 control-label"><?php echo $i->AGAMA_SISWA; ?></label> -->
+                    </div>
                   </div>
 
                     <div class="form-group">
-                    <label for="AnakKe" class="col-sm-2 control-label">Anak Ke</label>
+                    <label for="AnakKe" class="col-sm-2 control-label">Kewarganegaraan</label>
 
-                   <!--  <div class="col-sm-10">
-                      <textarea class="form-control" id="inputExperience" placeholder="Experience"></textarea>
-                    </div> -->
+                   <div class="col-sm-10">
+                      <input type="text" class="form-control" id="id" value="<?php echo $i->KEWARGANEGARAAN;?>" name="id" readonly>
+                      <!-- <label class="col-sm-2 control-label"><?php echo $i->KEWARGANEGARAAN; ?></label> -->
+                    </div>
                   </div>
 
                   <div class="form-group">
                   <label for="TinggalBersama" class="col-sm-2 control-label">Tinggal Bersama</label>
 
-                   <!--  <div class="col-sm-10">
-                      <textarea class="form-control" id="inputExperience" placeholder="Experience"></textarea>
-                    </div> -->
+                   <div class="col-sm-10">
+                      <input type="text" class="form-control" id="id" value="<?php echo $i->TINGGAL_BERSAMA;?>" name="id" readonly>
+                      <!-- <label class="col-sm-2 control-label"><?php echo $i->TINGGAL_BERSAMA; ?></label> -->
+                    </div>
                   </div>
 
-
-
                   <div class="form-group">
-                    <label for="Bakatanak" class="col-sm-2 control-label">Bakat Anak</label>
+                  <label for="TinggalBersama" class="col-sm-2 control-label">Anak Ke</label>
 
-                    <!-- <div class="col-sm-10">
-                      <input type="text" class="form-control" id="inputSkills" placeholder="Skills">
-                    </div>
-                  </div> -->
-                  <div class="form-group">
-                    <div class="col-sm-offset-2 col-sm-10">
-                      <div class="checkbox">
-                        <label>
-                          <input type="checkbox">Admin Menyatakan Data Telah Dikonfirmasi <a href="#"></a>
-                        </label>
+                  <div class="col-sm-10">
+                      <input type="text" class="form-control" id="id" value="<?php echo $i->ANAK_KE;?>" name="id" readonly>
+                      <!-- <label class="col-sm-2 control-label"><?php echo $i->ANAK_KE; ?></label> -->
+                 
+                        <br>
+                        <button type="" class="btn btn-danger pull-right" onclick="javascript:history.go(-1);">Kembali</button>
+                         </div>
+                        <!-- /.col -->
                       </div>
+                      <!-- /.row -->
                     </div>
+                    <!-- /.col -->
                   </div>
-                  <div class="form-group">
-                    <div class="col-sm-offset-2 col-sm-10">
-                      <button type="submit" class="btn btn-danger">Verivikasi</button>
-                    </div>
-                  </div>
-                </form>
-              </div>
-              <!-- /.tab-pane -->
-            </div>
-            <!-- /.tab-content -->
-          </div>
-          <!-- /.nav-tabs-custom -->
-        </div>
-
-        <!-- Main content -->
-    <!-- Main content -->
+                  <!-- /.row -->
+   
+</form>
+<?php } ?>
 
 </body>
-</html>
+</html>        
