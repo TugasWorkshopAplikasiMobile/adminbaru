@@ -57,9 +57,7 @@ class Mymodel extends CI_Model {
         // $this->db->where($this->id, $id);
         return $this->db->get("nilai_psikotest");
     }
-<<<<<<< HEAD
- 
-=======
+
     function detailsiswa(){
     	$this->db->join('kesehatan_anak', 'siswa.kesehatan_anak_ID_KESEHATAN_ANAK = kesehatan_anak.ID_KESEHATAN_ANAK', 'left');
          $this->db->join('saudara_kandung_anak', 'siswa.saudara_kandung_anak_ID_SAUDARA_KANDUNG = saudara_kandung_anak.ID_SAUDARA_KANDUNG', 'left');
@@ -73,5 +71,4 @@ class Mymodel extends CI_Model {
         $this->db->join('ciri_khas_anak', 'siswa.ciri_khas_anak_ID_CIRIKHAS_ANAK = ciri_khas_anak.ID_CIRIKHAS_ANAK', 'left');
         return $this->db->get("siswa");
     }
->>>>>>> b48a040d15e7244e8e28b99885c0a12d0e747de9
 }
