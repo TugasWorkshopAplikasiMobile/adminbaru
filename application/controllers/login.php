@@ -19,15 +19,15 @@ public function ceklogin(){
     $this->session->set_userdata($data);
 
     if($level == 'sekretaris1') {
-      redirect('dashboard');
+      redirect('dashboard/dashboard');
   }elseif ($level == 'admintk') {
-    	redirect('admintk');
+    	redirect('admin/admintk');
   }elseif ($level == 'adminsd') {
-    redirect('adminsd');
+    redirect('admin/adminsd');
   }elseif ($level == 'adminsmp') {
-    redirect('adminsmp');
+    redirect('admin/adminsmp');
   }elseif ($level == 'admindirektur') {
-    redirect('admindirektur');
+    redirect('admin/admindirektur');
   }else{
 		echo "Gagal Login";
 	}

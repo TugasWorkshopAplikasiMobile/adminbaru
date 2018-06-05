@@ -32,10 +32,12 @@ class Mymodel extends CI_Model {
 		$this->db->insert($table,$data);
 	}
 
-    function selectjoin(){
-        $this->db->join('riwayat_sekolah', 'siswa.ID_SISWA = riwayat_sekolah.ID_SISWA', 'left');
-         $this->db->join('hasil', 'siswa.ID_SISWA = hasil.ID_SISWA', 'left');
-        // $this->db->where($this->id, $id);
+    function selectjoin($clause){
+        $this->db->join('riwayat_sekolah', 'siswa.riwayat_sekolah_ID_RIWAYATSEKOLAH = riwayat_sekolah.ID_RIWAYATSEKOLAH', 'left');
+         $this->db->join('hasil', 'siswa.hasil_ID_HASIL = hasil.ID_HASIL', 'left');
+         $this->db->join('user', 'user.siswa_ID_SISWA = siswa.ID_SISWA', 'left');
+         $this->db->join('jenjang', 'jenjang.ID_JENJANG = user.jenjang_ID_JENJANG', 'left');
+        $this->db->where($clause);
         return $this->db->get("siswa");
     }
 
@@ -49,5 +51,10 @@ class Mymodel extends CI_Model {
         $this->db->join('siswa', 'nilai_test.siswa_ID_SISWA = siswa.ID_SISWA', 'left');
         // $this->db->where($this->id, $id);
         return $this->db->get("nilai_test");
+    }
+    function selectsiswafornilaitk(){
+        $this->db->join('siswa', 'nilai_psikotest.ID_NILAI_PSIKOTEST = siswa.nilai_psikotest_ID_NILAI_PSIKOTEST', 'left');
+        // $this->db->where($this->id, $id);
+        return $this->db->get("nilai_psikotest");
     }
 }
