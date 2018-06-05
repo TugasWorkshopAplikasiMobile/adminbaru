@@ -9,10 +9,10 @@ class Detailsiswa extends CI_Controller {
     	redirect('login');
     }else{
       $data= array(
-  			'side'=>'tampil/side',
+  			'side'=>'tampil/side/side',
   			'content'=>'tampil/detailsiswa',
-  			'siswa'=>$this->mymodel->selectjoin());
-  		$this->load->view('tampil/main',$data);
+  			'siswa'=>$this->mymodel->selectjoin('jenjang.NAMA_JENJANG'));
+  		$this->load->view('tampil/utama/main',$data);
   	}
   }
 }
