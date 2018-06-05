@@ -57,4 +57,5 @@ class Mymodel extends CI_Model {
         // $this->db->where($this->id, $id);
         return $this->db->get("nilai_psikotest");
     }
+ 
 }
