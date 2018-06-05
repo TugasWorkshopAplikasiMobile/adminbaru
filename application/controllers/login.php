@@ -19,6 +19,7 @@ public function ceklogin(){
     $this->session->set_userdata($data);
 
     if($level == 'sekretaris1') {
+<<<<<<< HEAD
       redirect('dashboard');
   	}elseif ($level == 'admintk') {
     	redirect('admintk');
@@ -30,6 +31,19 @@ public function ceklogin(){
     	redirect('admindirektur');
   	}else{
 			redirect('login');
+=======
+      redirect('dashboard/dashboard');
+  }elseif ($level == 'admintk') {
+    	redirect('admin/admintk');
+  }elseif ($level == 'adminsd') {
+    redirect('admin/adminsd');
+  }elseif ($level == 'adminsmp') {
+    redirect('admin/adminsmp');
+  }elseif ($level == 'admindirektur') {
+    redirect('admin/admindirektur');
+  }else{
+		echo "Gagal Login";
+>>>>>>> 8f7d39eb69b20345b64a7f2e19f4e1ae7c113256
 	}
     }
   }
