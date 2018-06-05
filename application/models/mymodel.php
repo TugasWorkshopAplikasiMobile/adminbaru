@@ -44,4 +44,10 @@ class Mymodel extends CI_Model {
       $this->db->where('password_admin', $password);
       return $this->db->get('admin')->row();
     }
+
+     function selectsiswafornilai(){
+        $this->db->join('siswa', 'nilai_test.siswa_ID_SISWA = siswa.ID_SISWA', 'left');
+        // $this->db->where($this->id, $id);
+        return $this->db->get("nilai_test");
+    }
 }

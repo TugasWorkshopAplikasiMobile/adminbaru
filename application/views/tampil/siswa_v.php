@@ -32,6 +32,7 @@
                 <td><?php echo $i->STATUS_TERIMA ?></td>
                 <td style="text-align: center;">
                   <!-- <?php echo $i->no?> -->
+                  <a href="#" class="btn btn-warning btn-xs" >Detail</a>
                   <a href="#" class="btn btn-info btn-xs" >Update</a>
                   <a class="btn btn-danger btn-xs" onclick="">Delete</a>
                 </td>
