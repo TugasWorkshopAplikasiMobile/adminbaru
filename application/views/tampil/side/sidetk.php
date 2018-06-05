@@ -8,7 +8,7 @@
         <p style="color: #ffffff;">Admin TK</p>
         </div>
         <div class="pull-left info">
-          
+
         </div>
       </div>
       <!-- sidebar menu: : style can be found in sidebar.less -->
@@ -39,7 +39,7 @@
        <ul class="sidebar-menu">
        <!--  <li class="header">MAIN NAVIGATION</li> -->
         <li class="treeview">
-          <a href="<?php echo base_url('pengumumanpengumumantk')?>">
+          <a href="<?php echo base_url('pengumuman/pengumumantk')?>">
             <i class="fa fa-newspaper-o"></i> <span>Pengumuman</span>
 
             <span class="pull-right-container">
