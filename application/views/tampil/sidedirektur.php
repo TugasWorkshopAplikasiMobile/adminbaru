@@ -8,7 +8,7 @@
           <img src="../../dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
-          <p>Sekretaris Pusat</p>
+          <p>Direktur</p>
           <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
         </div>
       </div>
@@ -16,7 +16,7 @@
       <ul class="sidebar-menu">
         <li class="header">MAIN NAVIGATION</li>
         <li class="treeview">
-          <a href="<?php echo base_url('index.php/dashboard')?>">
+          <a href="<?php echo base_url('admindirektur')?>">
             <i class="fa fa-home"></i> <span>Dashboard</span>
 
             <span class="pull-right-container">
@@ -27,7 +27,7 @@
       <ul class="sidebar-menu">
        <!--  <li class="header">MAIN NAVIGATION</li> -->
         <li class="treeview">
-          <a href="<?php echo base_url('index.php/petugasdata')?>">
+          <a href="<?php echo base_url('petugasdatadirektur')?>">
             <i class="fa fa-user"></i> <span>Petugas</span>
 
             <span class="pull-right-container">
@@ -39,7 +39,7 @@
       <ul class="sidebar-menu">
        <!--  <li class="header">MAIN NAVIGATION</li> -->
         <li class="treeview">
-          <a href="<?php echo base_url('index.php/siswa')?>">
+          <a href="<?php echo base_url('siswadirektur')?>">
             <i class="fa fa-graduation-cap"></i> <span>Siswa</span>
 
             <span class="pull-right-container">
@@ -50,8 +50,8 @@
       <ul class="sidebar-menu">
        <!--  <li class="header">MAIN NAVIGATION</li> -->
         <li class="treeview">
-          <a href="<?php echo base_url('index.php/nilai')?>">
-            <i class="fa fa-pencil"></i> <span>Nilai</span>
+          <a href="<?php echo base_url('nilaidirektur')?>">
+            <i class="fa fa-dashboard"></i> <span>Nilai</span>
 
             <span class="pull-right-container">
             </span>
@@ -62,7 +62,7 @@
        <ul class="sidebar-menu">
        <!--  <li class="header">MAIN NAVIGATION</li> -->
         <li class="treeview">
-          <a href="<?php echo base_url('index.php/pengumuman')?>">
+          <a href="<?php echo base_url('pengumumandirektur')?>">
             <i class="fa fa-newspaper-o"></i> <span>Pengumuman</span>
 
             <span class="pull-right-container">
@@ -74,7 +74,7 @@
        <ul class="sidebar-menu">
        <!--  <li class="header">MAIN NAVIGATION</li> -->
         <li class="treeview">
-          <a href="<?php echo base_url('index.php/siswa')?>">
+          <a href="<?php echo base_url('siswadirektur')?>">
             <i class="fa fa-tags"></i> <span>Verifikasi Daftar Ulang</span>
             <span class="pull-right-container">
             </span>
