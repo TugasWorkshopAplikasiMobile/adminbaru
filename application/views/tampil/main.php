@@ -88,7 +88,7 @@
                   <a href="#" class="btn btn-default btn-flat">Profile</a>
                 </div>
                 <div class="pull-right">
-                  <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                  <a href="<?php echo base_url('login/logout') ?>" class="btn btn-default btn-flat">Sign out</a>
                 </div>
               </li>
             </ul>
@@ -101,8 +101,8 @@
       </div>
     </nav>
   </header>
-  
-  <?php $this->load->view($side);?>  
+
+  <?php $this->load->view($side);?>
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
@@ -110,8 +110,8 @@
     <!-- Main content -->
     <section class="content">
 
-      <?php $this->load->view($content);?> 
-      
+      <?php $this->load->view($content);?>
+
     </section>
     <!-- /.content -->
   </div>

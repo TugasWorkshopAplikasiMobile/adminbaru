@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class petugasdata extends CI_Controller {
+class Petugasdata extends CI_Controller {
 	function __construct()
     {
         parent::__construct();
@@ -16,7 +16,7 @@ class petugasdata extends CI_Controller {
 	}
 
 	public function tambahData(){
-		$data['side']= 'tampil/side'; 
+		$data['side']= 'tampil/side';
 		$data['content']='tampil/t-datapetugas';
 		$this->load->view('tampil/main',$data);
 	}
@@ -43,7 +43,7 @@ class petugasdata extends CI_Controller {
 	public function editData(){
 		$id=$this->uri->segment(3);
 		$data['dataupdate']= $this->db->query("SELECT * FROM admin WHERE ID_ADMIN='$id'");
-		$data['side']= 'tampil/side'; 
+		$data['side']= 'tampil/side';
 		$data['content']='tampil/e-datapetugas';
 		$this->load->view('tampil/main',$data);
 	}
