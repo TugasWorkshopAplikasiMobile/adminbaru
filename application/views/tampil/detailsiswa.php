@@ -100,23 +100,20 @@
                   </div>
                 </form>
                 <!-- Post -->
-                <?php }?>
+              
               </div>
 
-<?php foreach ($siswa->result() as $i) { ?>
+
               <div class="tab-pane" id="settings">
                 <form class="form-horizontal">
             
-                 
-                   
-                   <div class="form-group">
-                    <label for="inputUsername" class="col-sm-2 control-label">Nama Ayah</label>
-
-                   <div class="col-sm-10">
-                      <input type="text" class="form-control" id="id" value="<?php echo $i->NAMA_AYAH;?>" name="id" readonly>
-                      <!-- <label class="col-sm-2 control-label"><?php echo $i->TTL_SISWA; ?></label> -->
-                    </div>
+                  <div class="form-group">
+                  <label for="inputAyahname" class="col-sm-2 control-label">Nama Ayah</label>
+                  <div class="col-sm-10">
+                  <input type="text" class="form-control" id="id" value="<?php echo $i->NAMA_AYAH;?>" name="id" readonly>
                   </div>
+                  </div>
+
                    <div class="form-group">
                     <label for="inputPassword" class="col-sm-2 control-label">Nama Ibu</label>
 
@@ -350,10 +347,7 @@
                 </form>
               </div>
               <!-- /.tab-pane -->
-<?php }?>
 
-
-<?php foreach ($siswa->result() as $i) { ?>
               <div class="tab-pane" id="timeline">
                 <form class="form-horizontal">
 
