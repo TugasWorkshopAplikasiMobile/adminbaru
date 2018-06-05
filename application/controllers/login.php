@@ -20,16 +20,16 @@ public function ceklogin(){
 
     if($level == 'sekretaris1') {
       redirect('dashboard');
-  }elseif ($level == 'admintk') {
+  	}elseif ($level == 'admintk') {
     	redirect('admintk');
-  }elseif ($level == 'adminsd') {
-    redirect('adminsd');
-  }elseif ($level == 'adminsmp') {
-    redirect('adminsmp');
-  }elseif ($level == 'admindirektur') {
-    redirect('admindirektur');
-  }else{
-		echo "Gagal Login";
+  	}elseif ($level == 'adminsd') {
+    	redirect('adminsd');
+  	}elseif ($level == 'adminsmp') {
+    	redirect('adminsmp');
+  	}elseif ($level == 'admindirektur') {
+    	redirect('admindirektur');
+  	}else{
+			redirect('login');
 	}
     }
   }
