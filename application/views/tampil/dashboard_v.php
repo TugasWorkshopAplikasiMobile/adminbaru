@@ -62,3 +62,4 @@
       </div>
       <!-- /.row -->
       <!-- Main row -->
+    </section>
