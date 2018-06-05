@@ -21,13 +21,13 @@ public function ceklogin(){
     if($level == 'sekretaris1') {
       redirect('dashboard');
   }elseif ($level == 'admintk') {
-    redirect('#');
+    	redirect('admintk');
   }elseif ($level == 'adminsd') {
-    redirect('#');
+    redirect('adminsd');
   }elseif ($level == 'adminsmp') {
-    redirect('#');
-  }elseif ($level == 'direktur') {
-    redirect('#');
+    redirect('adminsmp');
+  }elseif ($level == 'admindirektur') {
+    redirect('admindirektur');
   }else{
 		echo "Gagal Login";
 	}
