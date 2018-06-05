@@ -6,8 +6,7 @@
               <li><a href="#timeline" data-toggle="tab">Riwayat Kesehatan</a></li>
             </ul>
             <div class="tab-content">
-
-              <div class="active tab-pane" id="activity">
+            <div class="active tab-pane" id="activity">
                 <form class="form-horizontal">
                    <div class="form-group">
                     <label for="inputid" class="col-sm-2 control-label">ID Pendaftaran</label>
