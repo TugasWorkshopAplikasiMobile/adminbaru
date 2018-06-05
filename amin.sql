@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 05, 2018 at 02:02 AM
+-- Generation Time: Jun 05, 2018 at 06:46 AM
 -- Server version: 10.1.30-MariaDB
 -- PHP Version: 5.6.33
 
@@ -45,7 +45,10 @@ CREATE TABLE `admin` (
 
 INSERT INTO `admin` (`ID_ADMIN`, `NAMA_ADMIN`, `JENIS_KELAMIN`, `NO_TELP`, `STATUS`, `USERNAME_ADMIN`, `PASSWORD_ADMIN`, `level`) VALUES
 (990516, 'Christopher', 'Laki-Laki', '81', 'Admin TK', 'sekretaris1', 'sekretaris1', 'sekretaris1'),
-(990517, 'Bahrul', 'Laki-Laki', '81', 'Admin SD', 'adminsd', 'adminsd', 'adminsd');
+(990517, 'Bahrul', 'Laki-Laki', '81', 'Admin SD', 'adminsd', 'adminsd', 'adminsd'),
+(990518, 'Anas', 'Laki-Laki', '81', 'Admin TK', 'admintk', 'admintk', 'admintk'),
+(990519, 'Tita', 'Perempuan', '81', 'Admin SMP', 'adminsmp', 'adminsmp', 'adminsmp'),
+(990520, 'Eldwin', 'Laki-Laki', '81', 'Direktur', 'admindirektur', 'admindirektur', 'admindirektur');
 
 -- --------------------------------------------------------
 
@@ -616,7 +619,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `ID_ADMIN` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=990518;
+  MODIFY `ID_ADMIN` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=990521;
 
 --
 -- AUTO_INCREMENT for table `jenjang`

@@ -12,15 +12,15 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script> -->
-   <link rel="stylesheet" href="<?php echo base_url(); ?>assets/bootstrap/css/bs.css">
+   <link rel="stylesheet" href="<?php echo base_url(); ?>_template/bootstrap/css/bs.css">
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/eksternal/font-awesome.min.css">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>_template/eksternal/font-awesome.min.css">
     <!-- Ionicons -->
-    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/eksternal/ionicons.min.css">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>_template/eksternal/ionicons.min.css">
     <!-- Theme style -->
-    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/dist/css/AdminLTE.min.css">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>_template/dist/css/AdminLTE.min.css">
     <!-- iCheck -->
-    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/plugins/iCheck/square/blue.css">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>_template/plugins/iCheck/square/blue.css">
 
 </head>
 <section class="login-block">
@@ -58,7 +58,7 @@
 
         <!-- <div class="col-md-8 banner-sec"> -->
       
-   <!--  <div class="carousel-item active">
+    <!-- <div class="carousel-item active">
       <img style="height: 85%" class="d-block img-fluid" src="https://situsbudaya.id/wp-content/uploads/2017/10/masjid-jami-al-baitul-amien.jpg" alt="First slide">
       <div class="carousel-caption d-none d-md-block">
         <div class="banner-text">
@@ -73,8 +73,8 @@
 </div>
 </section>
 
-    <script src="<?php echo base_url(); ?>assets/plugins/jQuery/jquery-2.2.3.min.js"></script>
+    <script src="<?php echo base_url(); ?>_template/plugins/jQuery/jquery-2.2.3.min.js"></script>
     <!-- Bootstrap 3.3.6 -->
-    <script src="<?php echo base_url(); ?>assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="<?php echo base_url(); ?>_template/bootstrap/js/bootstrap.min.js"></script>
 <!-- </body> -->
 </html>
