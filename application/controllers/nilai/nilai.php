@@ -22,9 +22,14 @@ class Nilai extends CI_Controller {
 		$this->load->view('tampil/utama/main',$data);
 
 
+
 	public function detailnilai($id)
 	{
 	// header('Content-Type: application/json');
+
+}
+	public function detailnilai($id){
+
 		if(!$this->session->userdata('level') == 'sekretaris1'){
 	    	redirect('login');
 	    }else{
