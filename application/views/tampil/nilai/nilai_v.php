@@ -3,7 +3,7 @@
     <div class="box">
       <div class="box-header">
         <h3 class="box-title">Data Nilai Siswa</h3><br><br>
-        <a href="<?php echo base_url('nilai/niali/tambahnilai')?>" class="btn btn-primary pull-left" style="width: 30%;">Tambah Data Siswa</a>
+        <a href="<?php echo base_url('nilai/nilai/tambahdatanilai')?>" class="btn btn-primary pull-left" style="width: 30%;">Tambah Data Siswa</a>
       </div>
       <!-- /.box-header -->
       <div class="box-body">
