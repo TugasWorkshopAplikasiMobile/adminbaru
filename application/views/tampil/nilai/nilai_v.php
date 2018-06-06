@@ -38,7 +38,7 @@
                 <td><?php echo $i->RATA_RATA_NILAI_TEST ?></td>
                 <td style="text-align: center;">
                   <!-- <?php echo $i->no?> -->
-                  <a href="#" class="btn btn-warning btn-xs" >Detail</a>
+                  <a href="<?php echo base_url('nilai/nilai/detailnilai/'.$i->ID_SISWA)?>" class="btn btn-warning btn-xs" >Detail</a>
                   <a href="#" class="btn btn-info btn-xs" >Update</a>
                   <a class="btn btn-danger btn-xs" onclick="">Delete</a>
                 </td>
