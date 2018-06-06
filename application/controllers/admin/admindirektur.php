@@ -15,5 +15,4 @@ class Admindirektur extends CI_Controller {
   		$this->load->view('tampil/utama/main',$data);
   	}
   }
-
 }
