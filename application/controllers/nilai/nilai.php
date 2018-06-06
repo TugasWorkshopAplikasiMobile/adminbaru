@@ -15,9 +15,9 @@ class Nilai extends CI_Controller {
 		$this->load->view('tampil/utama/main',$data);
 	}
 
-	public function detailnilai($v)
+	// public function detailnilai($v)
 	{
-	//header('Content-Type: application/json');
+	header('Content-Type: application/json');
 		if(!$this->session->userdata('level') == 'sekretaris1'){
 	    	redirect('login');
 	    }else{
@@ -26,7 +26,7 @@ class Nilai extends CI_Controller {
 	  			'content'=>'tampil/nilai/detail',
 	  			'siswa'=>$this->mymodel->detailsiswa($id)->row());
  		$this->load->view('tampil/utama/main',$data);
-	      //echo json_encode($data);
+	      // echo json_encode($data);
 	  	}
 	}
 
