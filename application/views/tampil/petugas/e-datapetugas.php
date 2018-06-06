@@ -1,6 +1,6 @@
 <!-- <div class="col-md-6> -->
-  <div class="col-md-6">
-<div class="box box-primary">
+<div class="col-md-6">
+  <div class="box box-primary">
             <div class="box-header with-border">
               <h3 class="box-title">Edit Data Petugas </h3>
             </div>
@@ -9,7 +9,7 @@
           <form method="post" action="<?php echo base_url('petugas/petugasdata/fungsieditdata') ?>">
               <div class="box-body">
                 <?php foreach ($dataupdate->result() as $key) { ?>
-                
+
                 <div class="form-group">
                   <label for="exampleInputEmail1">ID Admin</label>
                   <input type="text" class="form-control" id="id" value="<?php echo $key->ID_ADMIN;?>" name="id" readonly>

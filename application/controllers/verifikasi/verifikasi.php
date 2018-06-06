@@ -7,7 +7,7 @@ class Verifikasi extends CI_Controller {
 	{
 		$data['show']=$this->mymodel->verifikasi_semua_jenjang();
 		$data['side']='tampil/side/side';
-		$data['content']='tampil/verifikasi/verifikasi_v';
+		$data['content']='tampil/verifikasi/v_verifikasi';
 		$this->load->view('tampil/utama/main',$data);
 	}
 
