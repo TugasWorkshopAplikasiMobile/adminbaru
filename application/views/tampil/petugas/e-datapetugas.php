@@ -13,10 +13,12 @@
                   <label for="exampleInputEmail1">ID Admin</label>
                   <input type="text" class="form-control" id="id" value="<?php echo $key->ID_ADMIN;?>" name="id" readonly>
                 </div>
+
                 <div class="form-group">
                   <label for="exampleInputEmail1">Nama Admin</label>
                   <input type="text" class="form-control" id="idnama" name="nama" value="<?php echo $key->NAMA_ADMIN;?>">
                 </div>
+                
                 <div class="form-group">
                 <label>Jenis Kelamin</label>
                 <select class="form-control select2" id="idjk" required name="jk" style="width: 100%;">
