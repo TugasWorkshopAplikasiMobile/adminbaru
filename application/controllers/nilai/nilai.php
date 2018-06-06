@@ -14,4 +14,20 @@ class Nilai extends CI_Controller {
 			'nilai'=>$this->mymodel->selectsiswafornilai());
 		$this->load->view('tampil/utama/main',$data);
 	}
+
+	public function detailnilai($v)
+	{
+	//header('Content-Type: application/json');
+		if(!$this->session->userdata('level') == 'sekretaris1'){
+	    	redirect('login');
+	    }else{
+	      $data= array(
+	  			'side'=>'tampil/side/side',
+	  			'content'=>'tampil/nilai/detail',
+	  			'siswa'=>$this->mymodel->detailsiswa($id)->row());
+ 		$this->load->view('tampil/utama/main',$data);
+	      //echo json_encode($data);
+	  	}
+	}
+
 }
