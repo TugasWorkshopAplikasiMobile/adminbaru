@@ -72,10 +72,11 @@ class Mymodel extends CI_Model {
         $this->db->where("siswa.ID_SISWA",$id);
         return $this->db->get("siswa");
     }
-    function detailnilai($v){
-        // $this->db->join('siswa', 'nilai_test.siswa_ID_SISWA = siswa.ID_SISWA', 'left');
-        // $this->db->join('hasil', 'siswa.hasil_ID_HASIL = hasil.ID_HASIL', 'left');
-        // $this->db->join('siswa', 'nilai_psikotest.ID_NILAI_PSIKOTEST = siswa.nilai_psikotest_ID_NILAI_PSIKOTEST', 'left');
+    function detailnilai($id){
+        $this->db->join('siswa', 'nilai_test.siswa_ID_SISWA = siswa.ID_SISWA', 'left');
+        $this->db->join('hasil', 'siswa.hasil_ID_HASIL = hasil.ID_HASIL', 'left');
+        $this->db->join('siswa', 'nilai_psikotest.ID_NILAI_PSIKOTEST = siswa.nilai_psikotest_ID_NILAI_PSIKOTEST', 'left');
+        $this->db->where("siswa.ID_SISWA",$id);
         return $this->db->get("siswa");
     }
 }

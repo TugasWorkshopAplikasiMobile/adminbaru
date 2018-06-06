@@ -12,7 +12,7 @@
                     <label for="inputid" class="col-sm-2 control-label">ID Pendaftaran</label>
 
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" id="id" value="<?php echo $siswa->ID_SISWA;?>" name="id" readonly>
+                      <!-- <input type="text" class="form-control" id="id" value="<?php echo $siswa->ID_SISWA;?>" name="id" readonly> -->
                       <!-- <label for="inputid" class="col-sm-2 control-label"><?php echo $siswa->ID_SISWA; ?></label> -->
                     </div>
                   </div>
@@ -28,10 +28,12 @@
                   <div class="form-group">
                   <label for="inputAyahname" class="col-sm-2 control-label">Nama Ayah</label>
                   <div class="col-sm-10">
-                  <input type="text" class="form-control" id="id" value="<?php echo $siswa->NAMA_AYAH;?>" name="id" readonly>
-                  </div>
+                 <!--  <input type="text" class="form-control" id="id" value="<?php echo $siswa->NAMA_AYAH;?>" name="id" readonly>
+                  </div> -->
+                </div>
                   </div>
                 </form>
+              </div>
 
               <!-- /.tab-pane -->
 
@@ -41,10 +43,11 @@
                 <div class="form-group">
                 <label for="inputUsername" class="col-sm-2 control-label">Berat Badan</label>
                 <div class="col-sm-10">
-                <input type="text" class="form-control" id="id" value="<?php echo $siswa->BB_TB;?>" name="id" readonly>
+               <!--  <input type="text" class="form-control" id="id" value="<?php echo $siswa->BB_TB;?>" name="id" readonly> -->
                 </div> 
                 </div>
               </form>
+            </div>
 
 
               <!-- /.tab-pane -->
