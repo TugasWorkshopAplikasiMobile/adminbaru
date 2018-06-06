@@ -79,4 +79,8 @@ class Mymodel extends CI_Model {
         $this->db->where("siswa.ID_SISWA",$id);
         return $this->db->get("siswa");
     }
+
+    function verifikasi($id){
+
+    }
 }
