@@ -1,18 +1,23 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class petugasdata extends CI_Controller {
+class Petugasdata extends CI_Controller {
+	function __construct()
+    {
+        parent::__construct();
+        $this->load->model('mymodel');
+    }
 	public function index()
 	{
 		$data['show']=$this->mymodel->select('admin');
-		$data['side']='tampil/side';
-		$data['content']='tampil/tampilanadmin';
-		$this->load->view('tampil/main',$data);
+		$data['side']='tampil/side/side';
+		$data['content']='tampil/petugas/tampilanadmin';
+		$this->load->view('tampil/utama/main',$data);
 	}
 
 
 	public function tambahData(){
-		$data['side']= 'tampil/side'; 
+		$data['side']= 'tampil/side';
 		$data['content']='tampil/t-datapetugas';
 		$this->load->view('tampil/main',$data);
 	}
@@ -36,12 +41,10 @@ class petugasdata extends CI_Controller {
 		header('location:'.base_url().'index.php/petugasdata');
 	}
 
-
-
 	public function editData(){
 		$id=$this->uri->segment(3);
 		$data['dataupdate']= $this->db->query("SELECT * FROM admin WHERE ID_ADMIN='$id'");
-		$data['side']= 'tampil/side'; 
+		$data['side']= 'tampil/side';
 		$data['content']='tampil/e-datapetugas';
 		$this->load->view('tampil/main',$data);
 	}
@@ -58,5 +61,4 @@ class petugasdata extends CI_Controller {
 		$this->mymodel->update('admin',$data,$where);
 		header('location:'.base_url().'index.php/petugasdata');
 	}
-
 }
