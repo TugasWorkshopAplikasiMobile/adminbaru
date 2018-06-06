@@ -2,15 +2,14 @@
   <div class="col-md-6">
 <div class="box box-primary">
             <div class="box-header with-border">
-              <h3 class="box-title">Input Data Petugas </h3>
+              <h3 class="box-title">Edit Data Petugas </h3>
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-          <form method="post" action="<?php echo base_url('index.php/petugasdata/fungsieditdata') ?>">
+          <form method="post" action="<?php echo base_url('petugas/petugasdata/fungsieditdata') ?>">
               <div class="box-body">
-                <?php foreach ($dataupdate->result() as $key) {
-                  # code...
-                } ?>
+                <?php foreach ($dataupdate->result() as $key) { ?>
+                
                 <div class="form-group">
                   <label for="exampleInputEmail1">ID Admin</label>
                   <input type="text" class="form-control" id="id" value="<?php echo $key->ID_ADMIN;?>" name="id" readonly>
@@ -23,7 +22,7 @@
                 <label>Jenis Kelamin</label>
                 <select class="form-control select2" id="idjk" name="jk" style="width: 100%;" value="<?php echo $key->JENIS_KELAMIN;?>">
                   <option selected="selected">-Pilih Jenis Kelamin-</option>
-                  <option 
+                  <option
                   <?php if ($key->JENIS_KELAMIN=="Laki-Laki"): ?>
                     SELECTED
                   <?php endif ?>>Laki-Laki</option>
@@ -69,7 +68,7 @@
                   <label for="exampleInputPassword1">Password</label>
                   <input type="text" class="form-control" id="idpass" name="pass" value="<?php echo $key->PASSWORD_ADMIN;?>">
                 </div>
-
+<?php } ?>
               <!-- /.box-body -->
 
               <div class="box-footer">

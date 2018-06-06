@@ -3,8 +3,8 @@
     <div class="box">
       <div class="box-header">
         <h3 class="box-title">Data Petugas</h3><br><br>
-        <a href="<?php echo base_url('index.php/petugasdata/tambahData')?>" class="btn btn-primary pull-left" style="width: 30%;">Tambah Data Petugas</a>
-        
+        <a href="<?php echo base_url('petugas/petugasdata/tambahData')?>" class="btn btn-primary pull-left" style="width: 30%;">Tambah Data Petugas</a>
+
       </div>
       <!-- /.box-header -->
       <div class="box-body">
@@ -57,10 +57,10 @@
   function deleted(param){
     var proc = window.confirm('Are you sure delete this data?');
     if(proc){
-      document.location='<?php echo base_url(); ?>index.php/petugasdata/deletedata/'+param;
+      document.location='<?php echo base_url(); ?>petugas/petugasdata/deletedata/'+param;
     }
   }
   function updatejs(param){
-      document.location='<?php echo base_url(); ?>index.php/petugasdata/editData/'+param;
+      document.location='<?php echo base_url(); ?>petugas/petugasdata/editData/'+param;
   }
 </script>
