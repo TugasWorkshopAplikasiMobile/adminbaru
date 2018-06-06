@@ -4,7 +4,7 @@
             <div class="box-header with-border">
               <h3 class="box-title">Edit Data Petugas </h3>
             </div>
-           
+
           <form method="post" action="<?php echo base_url('petugas/petugasdata/fungsieditdata') ?>">
               <div class="box-body">
                 <?php foreach ($dataupdate->result() as $key) { ?>
@@ -18,7 +18,7 @@
                   <label for="exampleInputEmail1">Nama Admin</label>
                   <input type="text" class="form-control" id="idnama" name="nama" value="<?php echo $key->NAMA_ADMIN;?>">
                 </div>
-                
+
                 <div class="form-group">
                 <label>Jenis Kelamin</label>
                 <select class="form-control select2" id="idjk" required name="jk" style="width: 100%;">
@@ -70,7 +70,7 @@
                   <input type="text" class="form-control" id="idpass" name="pass" value="<?php echo $key->PASSWORD_ADMIN;?>">
                 </div>
 
-               
+
               <?php } ?>
               <div class="box-footer">
                 <button type="submit" class="btn btn-primary">Submit</button>

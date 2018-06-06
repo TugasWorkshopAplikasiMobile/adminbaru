@@ -42,9 +42,15 @@ class Mymodel extends CI_Model {
     }
 
   function selectsiswafornilai(){
-        $this->db->join('siswa', 'nilai_test.siswa_ID_SISWA = siswa.ID_SISWA', 'left');
-        // $this->db->where($this->id, $id);
-        return $this->db->get("nilai_test");
+        $this->db->join('nilai_test', 'nilai_test.ID_NILAI_TEST = siswa.nilai_test_ID_NILAI_TEST', 'left');
+        // $this->db->where('ID_SISWA', $id);
+        return $this->db->get("siswa");
+      }
+
+  function selectsiswafornilaiupdate($id){
+        $this->db->join('nilai_test', 'nilai_test.ID_NILAI_TEST = siswa.nilai_test_ID_NILAI_TEST', 'left');
+        $this->db->where('ID_SISWA', $id);
+        return $this->db->get("siswa");
       }
 
   function selectsiswafornilaitk(){

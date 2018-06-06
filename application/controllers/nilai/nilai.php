@@ -22,6 +22,8 @@ class Nilai extends CI_Controller {
 		$this->load->view('tampil/utama/main',$data);
 	}
 	// header('Content-Type: application/json');
+
+
 	public function detailnilai($id){
 
 		if(!$this->session->userdata('level') == 'sekretaris1'){
@@ -36,15 +38,14 @@ class Nilai extends CI_Controller {
 	  	}
 	}
 	public function update(){
+		// header('Content-Type: application/json');
 	$id=$this->uri->segment(4);
-	$data['dataupdate']= $this->db->query("SELECT * FROM admin WHERE ID_ADMIN='$id'");
-	$data['side']= 'tampil/side/side';
-			// 'side'=>'tampil/side/side',
-	$data['content']='tampil/nilai/nilaiupdate';
-			// 'content'=>'tampil/nilai/nilaiupdate',
+	$data= array(
+		'side'=>'tampil/side/side',
+		'content'=>'tampil/nilai/nilaiupdate',
+		'nilai'=>$this->mymodel->selectsiswafornilaiupdate($id));
 	$this->load->view('tampil/utama/main',$data);
-	$data['nilai'] = $this->mymodel->selectsiswafornilai();
-	$this->load->view('tampil/utama/main',$data);
+	// echo json_encode($data);
 	}
 
 	// $id=$this->uri->segment(4);
@@ -53,22 +54,22 @@ class Nilai extends CI_Controller {
 		// $data['content']='tampil/petugas/e-datapetugas';
 		// $this->load->view('tampil/utama/main',$data);
 
-	public function fungsiedit(){
-		header('Content-Type: application/json');
+	public function fungsiedit($id){
+		// header('Content-Type: application/json');
 		$id=$this->input->post('id');
 		// $where= array('no'=>$id);
 		$where= array('ID_SISWA'=>$id);
 		$data['NOMOR']=$this->input->post('no');
 		$data['NAMA_SISWA']=$this->input->post('nama');
-		$data['matematika']=$this->input->post('jk');
-		$data['bahasa_inggris']=$this->input->post('tlp');
-		$data['IPA ']=$this->input->post('sts');
-		$data['Bahasa_Indonesia']=$this->input->post('username');
-		$data['JUMLAH_NILAI_TEST']=$this->input->post('pass');
-		$data['RATA_RATA_NILAI_TEST']=$this->input->post('pass');
-		$this->mymodel->update('admin',$data,$where);
-		header('location:'.base_url().'petugas/petugasdata');
-	echo json_encode($data);
+		$data['matematika']=$this->input->post('matematika');
+		$data['bahasa_inggris']=$this->input->post('bahasa_inggris');
+		$data['IPA ']=$this->input->post('IPA');
+		$data['Bahasa_Indonesia']=$this->input->post('Bahasa_Indonesia');
+		$data['JUMLAH_NILAI_TEST']=$this->input->post('JUMLAH_NILAI_TEST');
+		$data['RATA_RATA_NILAI_TEST']=$this->input->post('RATA_RATA_NILAI_TEST');
+		$this->mymodel->update('siswa',$data,$where);
+		header('location:'.base_url().'nilai/nilai_v');
+	// echo json_encode($data);
 	}
 
 	public function tambahdatanilai(){
