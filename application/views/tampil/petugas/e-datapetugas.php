@@ -4,8 +4,7 @@
             <div class="box-header with-border">
               <h3 class="box-title">Edit Data Petugas </h3>
             </div>
-            <!-- /.box-header -->
-            <!-- form start -->
+           
           <form method="post" action="<?php echo base_url('petugas/petugasdata/fungsieditdata') ?>">
               <div class="box-body">
                 <?php foreach ($dataupdate->result() as $key) { ?>
@@ -20,15 +19,15 @@
                 </div>
                 <div class="form-group">
                 <label>Jenis Kelamin</label>
-                <select class="form-control select2" id="idjk" name="jk" style="width: 100%;" value="<?php echo $key->JENIS_KELAMIN;?>">
-                  <option selected="selected">-Pilih Jenis Kelamin-</option>
+                <select class="form-control select2" id="idjk" required name="jk" style="width: 100%;">
+                  <option value="">-Pilih Jenis Kelamin-</option>
                   <option
-                  <?php if ($key->JENIS_KELAMIN=="Laki-Laki"): ?>
+                  <?php  if ($key->JENIS_KELAMIN=="Laki - Laki"): ?>
                     SELECTED
-                  <?php endif ?>>Laki-Laki</option>
+                  <?php endif ?> value="Laki - Laki">Laki-Laki</option>
                   <option <?php if ($key->JENIS_KELAMIN=="Perempuan"): ?>
                     SELECTED
-                  <?php endif ?>>Perempuan</option>
+                  <?php endif ?> value="Perempuan">Perempuan</option>
                 </select>
               </div>
                 <div class="form-group">
@@ -68,12 +67,15 @@
                   <label for="exampleInputPassword1">Password</label>
                   <input type="text" class="form-control" id="idpass" name="pass" value="<?php echo $key->PASSWORD_ADMIN;?>">
                 </div>
-<?php } ?>
-              <!-- /.box-body -->
 
+               
+              <?php } ?>
               <div class="box-footer">
                 <button type="submit" class="btn btn-primary">Submit</button>
                 <button type="" class="btn btn-primary" onclick="javascript:history.go(-1);">Batal</button>
               </div>
+            </div>
+
             </form>
           </div>
+        </div>

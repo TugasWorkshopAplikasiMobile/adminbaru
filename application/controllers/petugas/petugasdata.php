@@ -34,21 +34,25 @@ class Petugasdata extends CI_Controller {
 
 	public function deletedata()
 	{
-		$id=$this->uri->segment(3);
+		$id=$this->uri->segment(4);
 		$delete=array('ID_ADMIN'=>$id);
 		$this->mymodel->delete('admin',$delete);
 		header('location:'.base_url().'petugas/petugasdata');
 	}
 
 	public function editData(){
-		$id=$this->uri->segment(3);
+		// header('Content-Type: application/json');
+		$id=$this->uri->segment(4);
 		$data['dataupdate']= $this->db->query("SELECT * FROM admin WHERE ID_ADMIN='$id'");
 		$data['side']= 'tampil/side/side';
 		$data['content']='tampil/petugas/e-datapetugas';
 		$this->load->view('tampil/utama/main',$data);
+		// echo json_encode($data['dataupdate']->row());
 	}
 
+	
 	public function fungsieditdata(){
+		header('Content-Type: application/json');
 		$id=$this->input->post('id');
 		// $where= array('no'=>$id);
 		$where= array('ID_ADMIN'=>$id);
@@ -60,6 +64,7 @@ class Petugasdata extends CI_Controller {
 		$data['PASSWORD_ADMIN']=$this->input->post('pass');
 		$this->mymodel->update('admin',$data,$where);
 		header('location:'.base_url().'petugas/petugasdata');
-		
+	echo json_encode($data);	
 	}
+
 }
