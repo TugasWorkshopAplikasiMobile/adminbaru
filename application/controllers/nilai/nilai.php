@@ -36,7 +36,11 @@ class Nilai extends CI_Controller {
 	  	}
 	}
 	public function update(){
-		
+	$data= array(
+			'side'=>'tampil/side/side',
+			'content'=>'tampil/nilai/nilaiupdate',
+			'nilai'=>$this->mymodel->selectsiswafornilai());
+		$this->load->view('tampil/utama/main',$data);
 	}
 
 }
