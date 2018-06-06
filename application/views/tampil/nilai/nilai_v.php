@@ -3,6 +3,7 @@
     <div class="box">
       <div class="box-header">
         <h3 class="box-title">Data Nilai Siswa</h3><br><br>
+        <a href="<?php echo base_url('nilai/nilai/tambahdatanilai')?>" class="btn btn-primary pull-left" style="width: 30%;">Tambah Data Siswa</a>
       </div>
       <!-- /.box-header -->
       <div class="box-body">
@@ -39,7 +40,7 @@
                 <td style="text-align: center;">
                   <!-- <?php echo $i->no?> -->
                   <!-- <a href="<?php echo base_url('nilai/nilai/detailnilai/'.$i->ID_SISWA)?>" class="btn btn-warning btn-xs" >Detail</a> -->
-                  <a href="#" class="btn btn-info btn-xs" >Update</a>
+                  <a href="<?php echo base_url('nilai/nilai/update/'.$i->ID_SISWA)?>" class="btn btn-info btn-xs" >Update</a>
                   <a class="btn btn-danger btn-xs" onclick="">Delete</a>
                 </td>
               </tr>
