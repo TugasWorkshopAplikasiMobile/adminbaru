@@ -54,13 +54,13 @@ class Nilai extends CI_Controller {
 		// $data['content']='tampil/petugas/e-datapetugas';
 		// $this->load->view('tampil/utama/main',$data);
 
-	public function fungsiedit($id){
+	public function fungsiedit(){
 		// header('Content-Type: application/json');
 		$id=$this->input->post('id');
 		// $where= array('no'=>$id);
 		$where= array('ID_SISWA'=>$id);
-		$data['NOMOR']=$this->input->post('no');
-		$data['NAMA_SISWA']=$this->input->post('nama');
+		// $data['NOMOR']=$this->input->post('no');
+		// $data['NAMA_SISWA']=$this->input->post('nama');
 		$data['matematika']=$this->input->post('matematika');
 		$data['bahasa_inggris']=$this->input->post('bahasa_inggris');
 		$data['IPA ']=$this->input->post('IPA');
@@ -87,7 +87,6 @@ class Nilai extends CI_Controller {
 			// 'content'=>'tampil/nilai/nilaiupdate',
 	$this->load->view('tampil/utama/main',$data);
 	$data['nilai'] = $this->mymodel->selectsiswafornilai();
-	$this->load->view('tampil/utama/main',$data);
 	}
 
 }
