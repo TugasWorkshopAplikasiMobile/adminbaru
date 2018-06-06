@@ -6,7 +6,7 @@
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-          <form method="post" action="<?php echo base_url('index.php/petugasdata/fungsieditdata') ?>">
+          <form method="post" action="<?php echo base_url('petugas/petugasdata/fungsieditdata') ?>">
               <div class="box-body">
                 <?php foreach ($dataupdate->result() as $key) {
                   # code...
@@ -23,7 +23,7 @@
                 <label>Jenis Kelamin</label>
                 <select class="form-control select2" id="idjk" name="jk" style="width: 100%;" value="<?php echo $key->JENIS_KELAMIN;?>">
                   <option selected="selected">-Pilih Jenis Kelamin-</option>
-                  <option 
+                  <option
                   <?php if ($key->JENIS_KELAMIN=="Laki-Laki"): ?>
                     SELECTED
                   <?php endif ?>>Laki-Laki</option>

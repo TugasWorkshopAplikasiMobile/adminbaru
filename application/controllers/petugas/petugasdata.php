@@ -16,9 +16,9 @@ class Petugasdata extends CI_Controller {
 	}
 
 	public function tambahData(){
-		$data['side']= 'tampil/side';
-		$data['content']='tampil/t-datapetugas';
-		$this->load->view('tampil/main',$data);
+		$data['side']= 'tampil/side/side';
+		$data['content']='tampil/petugas/t-datapetugas';
+		$this->load->view('tampil/utama/main',$data);
 	}
 	public function fungsitambahdata(){
 		$data['NAMA_ADMIN']=$this->input->post('nama');
@@ -28,7 +28,7 @@ class Petugasdata extends CI_Controller {
 		$data['USERNAME_ADMIN']=$this->input->post('username');
 		$data['PASSWORD_ADMIN']=$this->input->post('pass');
 		$this->mymodel->insert('admin',$data);
-		header('location:'.base_url().'index.php/petugasdata');
+		header('location:'.base_url().'petugas/petugasdata');
 	}
 
 
@@ -37,15 +37,15 @@ class Petugasdata extends CI_Controller {
 		$id=$this->uri->segment(3);
 		$delete=array('ID_ADMIN'=>$id);
 		$this->mymodel->delete('admin',$delete);
-		header('location:'.base_url().'index.php/petugasdata');
+		header('location:'.base_url().'petugas/petugasdata');
 	}
 
 	public function editData(){
 		$id=$this->uri->segment(3);
 		$data['dataupdate']= $this->db->query("SELECT * FROM admin WHERE ID_ADMIN='$id'");
-		$data['side']= 'tampil/side';
-		$data['content']='tampil/e-datapetugas';
-		$this->load->view('tampil/main',$data);
+		$data['side']= 'tampil/side/side';
+		$data['content']='tampil/petugas/e-datapetugas';
+		$this->load->view('tampil/utama/main',$data);
 	}
 	public function fungsieditdata(){
 		$id=$this->input->post('id');
@@ -58,6 +58,6 @@ class Petugasdata extends CI_Controller {
 		$data['USERNAME_ADMIN']=$this->input->post('username');
 		$data['PASSWORD_ADMIN']=$this->input->post('pass');
 		$this->mymodel->update('admin',$data,$where);
-		header('location:'.base_url().'index.php/petugasdata');
+		header('location:'.base_url().'petugas/petugasdata');
 	}
 }
