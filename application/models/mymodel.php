@@ -76,12 +76,7 @@ class Mymodel extends CI_Model {
         return $this->db->get("siswa");
       }
 
-<<<<<<< HEAD
-
   function verifikasi_semua_jenjang(){
-=======
-    function verifikasi_semua_jenjang(){
->>>>>>> 2c3c5f801a2da6ab365615c02adfaa93588417b3
         $this->db->join('jenjang', 'jenjang.ID_JENJANG = user.jenjang_ID_JENJANG', 'left');
         $data = $this->db->get('user');
         return $data->result();
