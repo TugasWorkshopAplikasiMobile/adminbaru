@@ -15,7 +15,6 @@ class Petugasdata extends CI_Controller {
 		$this->load->view('tampil/utama/main',$data);
 	}
 
-
 	public function tambahData(){
 		$data['side']= 'tampil/side';
 		$data['content']='tampil/t-datapetugas';
