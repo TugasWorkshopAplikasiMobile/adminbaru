@@ -33,5 +33,8 @@ class user extends REST_Controller{
   		}
   	}
   }
+  elseif ($api=="register") {
+  	
+  }
 }
 ?>

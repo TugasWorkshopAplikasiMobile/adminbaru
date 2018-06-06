@@ -57,10 +57,10 @@
   function deleted(param){
     var proc = window.confirm('Are you sure delete this data?');
     if(proc){
-      document.location='<?php echo base_url(); ?>index.php/petugasdata/deletedata/'+param;
+      document.location='<?php echo base_url(); ?>petugas/petugasdata/deletedata/'+param;
     }
   }
   function updatejs(param){
-      document.location='<?php echo base_url(); ?>index.php/petugasdata/editData/'+param;
+      document.location='<?php echo base_url(); ?>petugas/petugasdata/editData/'+param;
   }
 </script>
