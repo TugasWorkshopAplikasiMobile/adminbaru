@@ -29,7 +29,7 @@
     						<td><?php echo $i->NAMA_JENJANG; ?></td>
     						<!-- <td><?php echo $i->NO_TELP ?></td> -->
     						<td style="text-align: center;">
-    							<a href="#" class="btn btn-info " onclick="updatejs('<?php echo $i->ID_USER; ?>')">Update</a>
+    							<a class="btn btn-info " onclick="validasijs('<?php echo $i->ID_USER; ?>')">Validasi</a>
     							<!-- <a class="btn btn-danger " onclick="deleted('<?php echo $i->ID_ADMIN; ?>')">Delete</a> -->
     						</td>
     					</tr>
@@ -51,10 +51,12 @@
   function deleted(param){
     var proc = window.confirm('Are you sure delete this data?');
     if(proc){
-      document.location='<?php echo base_url(); ?>index.php/petugasdata/deletedata/'+param;
+      document.location='<?php echo base_url(); ?>index.php/petugasdata/deletedata'+param;
     }
   }
-  function updatejs(param){
-      document.location='<?php echo base_url(); ?>index.php/petugasdata/editData/'+param;
+  // function validasijs(param){
+  //     document.location='<?php echo base_url(); ?>verifikasi/verifikasi_semua_jenjang_update'+param;
+  function validasijs(){
+      document.location='<?php echo base_url(); ?>verifikasi/verifikasi_semua_jenjang_update/editData';
   }
 </script>

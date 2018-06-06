@@ -2,37 +2,31 @@
 
 class Mymodel extends CI_Model {
 
- 	function __construct()
-    {
+ 	function __construct(){
         parent::__construct();
     }
 
-	public function select($table)
-	{
+	public function select($table){
 		return $this->db->get($table);
 	}
 
-	public function selectwhere($table,$data)
-	{
+	public function selectwhere($table,$data){
 		return $this->db->get_where($table, $data);
 	}
 
-	function delete($table,$data)
-	{
+	function delete($table,$data){
 		$this->db->delete($table, $data);
 	}
 
-	function update($table,$data,$key)
-	{
+	function update($table,$data,$key){
 		$this->db->update($table,$data,$key);
 	}
 
-	function insert($table,$data)
-	{
+	function insert($table,$data){
 		$this->db->insert($table,$data);
 	}
 
-    function selectjoin($clause){
+  function selectjoin($clause){
         $this->db->join('riwayat_sekolah', 'siswa.riwayat_sekolah_ID_RIWAYATSEKOLAH = riwayat_sekolah.ID_RIWAYATSEKOLAH', 'left');
          $this->db->join('hasil', 'siswa.hasil_ID_HASIL = hasil.ID_HASIL', 'left');
          $this->db->join('user', 'user.siswa_ID_SISWA = siswa.ID_SISWA', 'left');
@@ -41,24 +35,25 @@ class Mymodel extends CI_Model {
         return $this->db->get("siswa");
     }
 
-    function ceklogin($username, $password){
+  function ceklogin($username, $password){
       $this->db->where('username_admin', $username);
       $this->db->where('password_admin', $password);
       return $this->db->get('admin')->row();
     }
 
-     function selectsiswafornilai(){
+  function selectsiswafornilai(){
         $this->db->join('siswa', 'nilai_test.siswa_ID_SISWA = siswa.ID_SISWA', 'left');
         // $this->db->where($this->id, $id);
         return $this->db->get("nilai_test");
-    }
-    function selectsiswafornilaitk(){
+      }
+
+  function selectsiswafornilaitk(){
         $this->db->join('siswa', 'nilai_psikotest.ID_NILAI_PSIKOTEST = siswa.nilai_psikotest_ID_NILAI_PSIKOTEST', 'left');
         // $this->db->where($this->id, $id);
         return $this->db->get("nilai_psikotest");
     }
 
-    function detailsiswa($id){
+  function detailsiswa($id){
     	  $this->db->join('kesehatan_anak', 'siswa.kesehatan_anak_ID_KESEHATAN_ANAK = kesehatan_anak.ID_KESEHATAN_ANAK', 'left');
         $this->db->join('saudara_kandung_anak', 'siswa.saudara_kandung_anak_ID_SAUDARA_KANDUNG = saudara_kandung_anak.ID_SAUDARA_KANDUNG', 'left');
         $this->db->join('riwayat_sekolah', 'siswa.riwayat_sekolah_ID_RIWAYATSEKOLAH = riwayat_sekolah.ID_RIWAYATSEKOLAH', 'left');
@@ -72,18 +67,25 @@ class Mymodel extends CI_Model {
         $this->db->where("siswa.ID_SISWA",$id);
         return $this->db->get("siswa");
     }
-    function detailnilai($id){
+
+  function detailnilai($id){
         $this->db->join('siswa', 'nilai_test.siswa_ID_SISWA = siswa.ID_SISWA', 'left');
         $this->db->join('hasil', 'siswa.hasil_ID_HASIL = hasil.ID_HASIL', 'left');
         $this->db->join('siswa', 'nilai_psikotest.ID_NILAI_PSIKOTEST = siswa.nilai_psikotest_ID_NILAI_PSIKOTEST', 'left');
         $this->db->where("siswa.ID_SISWA",$id);
         return $this->db->get("siswa");
-    }
+      }
 
-    function verifikasi_semua_jenjang(){
+  function verifikasi_semua_jenjang(){
         $this->db->join('jenjang', 'jenjang.ID_JENJANG = user.jenjang_ID_JENJANG', 'left');
         $data = $this->db->get('user');
         return $data->result();
+      }
 
-    }
+      function edit_verifikasi_semua_jenjang($no_id, $table){
+          // $this->db->join('pembayaran', 'pembayaran.ID_PEMBAYARAN = user.') belum kelarrrrrr
+          $return = $this->db->get_where($table, $no_id);
+          return $return->result();
+      }
+
 }

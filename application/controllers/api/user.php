@@ -32,9 +32,29 @@ class user extends REST_Controller{
   			$this->response($message, 200);
   		}
   	}
+  	else if ($api=="register") {
+  	$email = $_POST["email"];
+  	$no_telp = $_POST["no_telp"];
+  	$username = $_POST["username"];
+  	$password=$_POST["password"];
+  	$jenjang=$_POST["jenjang"];
+  	$where = array("NAMA_USER"=>$username);
+  	$data = array('ID_USER'=>"",
+  		'EMAIL_USER' =>$email ,
+  	'NO_TELP'=>$no_telp,
+  	'NAMA_USER'=>$username,
+  	'PASSWORD_USER'=>$password,
+  	'jenjang_ID_JENJANG'=>$jenjang);
+  	$cek_fase_1 = $this->androidmodel->selectwhere('user',$where)->num_rows();
+  	if ($cek_fase_1 > 0) {
+  		$message=array('succes'=>2);
+		$this->response($message, 200);
+  	}else{
+  		$this->androidmodel->insert('user',$data);
+  		$message=array('succes'=>1);
+		$this->response($message, 200);
+  	}
   }
-  elseif ($api=="register") {
-  	
-  }
+}
 }
 ?>
