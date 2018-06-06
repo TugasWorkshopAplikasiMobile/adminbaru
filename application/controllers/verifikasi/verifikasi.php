@@ -5,7 +5,7 @@ class Verifikasi extends CI_Controller {
 
 	public function index()
 	{
-		$data['show']=$this->mymodel->select('user');
+		$data['show']=$this->mymodel->verifikasi();
 		$data['side']='tampil/side/side';
 		$data['content']='tampil/verifikasi/verifikasi_v';
 		$this->load->view('tampil/utama/main',$data);

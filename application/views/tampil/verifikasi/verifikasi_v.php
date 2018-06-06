@@ -14,20 +14,20 @@
             <th>No</th>
             <th>Nama</th>
             <th>Jenjang</th>
-            <th>No Telp</th>
+            <!-- <th>No Telp</th> -->
             <th>Aksi</th>
           </tr>
           </thead>
           <tbody>
               <?php
     					$n=1;
-    						foreach ($show->result() as $i) {
+    						foreach ($show as $i) {
     					 ?>
     					<tr>
     						<td><?php echo $n; ?></td>
     						<td><?php echo $i->NAMA_USER; ?></td>
-    						<td><?php echo $i->jenjang_ID_JENJANG ?></td>
-    						<td><?php echo $i->NO_TELP ?></td>
+    						<td><?php echo $i->NAMA_JENJANG; ?></td>
+    						<!-- <td><?php echo $i->NO_TELP ?></td> -->
     						<td style="text-align: center;">
     							<a href="#" class="btn btn-info " onclick="updatejs('<?php echo $i->ID_USER; ?>')">Update</a>
     							<!-- <a class="btn btn-danger " onclick="deleted('<?php echo $i->ID_ADMIN; ?>')">Delete</a> -->

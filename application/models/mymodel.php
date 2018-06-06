@@ -80,7 +80,14 @@ class Mymodel extends CI_Model {
         return $this->db->get("siswa");
     }
 
-    function verifikasi($id){
+    function verifikasi(){
+        // $this->db->join('user', '')
+        // $this->db->select('user.NAMA_USER', 'jenjang.NAMA_JENJANG');
+        // $this->db->from('user');
+        $this->db->join('jenjang', 'jenjang.ID_JENJANG = user.jenjang_ID_JENJANG', 'left');
+        // $this->db->where()
+        $data = $this->db->get('user');
+        return $data->result();
 
     }
 }
