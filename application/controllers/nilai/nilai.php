@@ -43,7 +43,7 @@ class Nilai extends CI_Controller {
 	$data['content']='tampil/nilai/nilaiupdate';
 			// 'content'=>'tampil/nilai/nilaiupdate',
 	$this->load->view('tampil/utama/main',$data);
-	'nilai'=>$this->mymodel->selectsiswafornilai());
+	$data['nilai'] = $this->mymodel->selectsiswafornilai();
 	$this->load->view('tampil/utama/main',$data);
 	}
 
@@ -68,7 +68,7 @@ class Nilai extends CI_Controller {
 		$data['RATA_RATA_NILAI_TEST']=$this->input->post('pass');
 		$this->mymodel->update('admin',$data,$where);
 		header('location:'.base_url().'petugas/petugasdata');
-	echo json_encode($data);	
+	echo json_encode($data);
 	}
 
 	public function tambahdatanilai(){
@@ -76,4 +76,17 @@ class Nilai extends CI_Controller {
 		$data['content']='tampil/nilai/tambahnilai';
 		$this->load->view('tampil/utama/main',$data);
 	}
+
+	public function update_nilai(){
+	$id=$this->uri->segment(4);
+	$data['dataupdate']= $this->db->query("SELECT * FROM siswa WHERE ID_SISWA='$id'");
+	$data['side']= 'tampil/side/side';
+			// 'side'=>'tampil/side/side',
+	$data['content']='tampil/nilai/nilaiupdate';
+			// 'content'=>'tampil/nilai/nilaiupdate',
+	$this->load->view('tampil/utama/main',$data);
+	$data['nilai'] = $this->mymodel->selectsiswafornilai();
+	$this->load->view('tampil/utama/main',$data);
+	}
+
 }
