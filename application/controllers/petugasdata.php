@@ -10,6 +10,7 @@ class petugasdata extends CI_Controller {
 		$this->load->view('tampil/main',$data);
 	}
 
+
 	public function tambahData(){
 		$data['side']= 'tampil/side'; 
 		$data['content']='tampil/t-datapetugas';
