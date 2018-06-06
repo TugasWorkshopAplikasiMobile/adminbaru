@@ -17,22 +17,21 @@ public function ceklogin(){
     $level = $data_login->level;
     $data = array('level' => $level);
     $this->session->set_userdata($data);
-
     if($level == 'sekretaris1') {
       redirect('dashboard/dashboard');
-  }elseif ($level == 'admintk') {
+  	}elseif ($level == 'admintk') {
     	redirect('admin/admintk');
-  }elseif ($level == 'adminsd') {
-    redirect('admin/adminsd');
-  }elseif ($level == 'adminsmp') {
-    redirect('admin/adminsmp');
-  }elseif ($level == 'admindirektur') {
-    redirect('admin/admindirektur');
+  	}elseif ($level == 'adminsd') {
+    	redirect('admin/adminsd');
+  	}elseif ($level == 'adminsmp') {
+    	redirect('admin/adminsmp');
+  	}elseif ($level == 'admindirektur') {
+    	redirect('admin/admindirektur');
+  	}
   }else{
-		echo "Gagal Login";
+		redirect('login');
 	}
-    }
-  }
+}
 
  function logout(){
     $this->session->sess_destroy();
