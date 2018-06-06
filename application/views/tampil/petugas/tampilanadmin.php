@@ -3,8 +3,8 @@
     <div class="box">
       <div class="box-header">
         <h3 class="box-title">Data Petugas</h3><br><br>
-        <a href="<?php echo base_url('index.php/petugasdata/tambahData')?>" class="btn btn-primary pull-left" style="width: 30%;">Tambah Data Petugas</a>
-        
+        <a href="<?php echo base_url('petugas/petugasdata/tambahData')?>" class="btn btn-primary pull-left" style="width: 30%;">Tambah Data Petugas</a>
+
       </div>
       <!-- /.box-header -->
       <div class="box-body">

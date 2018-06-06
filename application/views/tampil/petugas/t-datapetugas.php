@@ -6,7 +6,7 @@
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-          <form method="post" action="<?php echo base_url('index.php/petugasdata/fungsitambahdata') ?>">
+          <form method="post" action="<?php echo base_url('petugas/petugasdata/fungsitambahdata') ?>">
               <div class="box-body">
                 <div class="form-group">
                   <label for="exampleInputEmail1">Nama Admin</label>
