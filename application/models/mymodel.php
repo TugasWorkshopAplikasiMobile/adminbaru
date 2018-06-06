@@ -59,7 +59,7 @@ class Mymodel extends CI_Model {
     }
 
     function detailsiswa($id){
-    	$this->db->join('kesehatan_anak', 'siswa.kesehatan_anak_ID_KESEHATAN_ANAK = kesehatan_anak.ID_KESEHATAN_ANAK', 'left');
+    	  $this->db->join('kesehatan_anak', 'siswa.kesehatan_anak_ID_KESEHATAN_ANAK = kesehatan_anak.ID_KESEHATAN_ANAK', 'left');
         $this->db->join('saudara_kandung_anak', 'siswa.saudara_kandung_anak_ID_SAUDARA_KANDUNG = saudara_kandung_anak.ID_SAUDARA_KANDUNG', 'left');
         $this->db->join('riwayat_sekolah', 'siswa.riwayat_sekolah_ID_RIWAYATSEKOLAH = riwayat_sekolah.ID_RIWAYATSEKOLAH', 'left');
         $this->db->join('keluarga', 'siswa.keluarga_ID_KELUARGA = keluarga.ID_KELUARGA', 'left');
@@ -80,12 +80,8 @@ class Mymodel extends CI_Model {
         return $this->db->get("siswa");
     }
 
-    function verifikasi(){
-        // $this->db->join('user', '')
-        // $this->db->select('user.NAMA_USER', 'jenjang.NAMA_JENJANG');
-        // $this->db->from('user');
-        $this->db->join('jenjang', 'jenjang.ID_JENJANG = user.jenjang_ID_JENJANG', 'left');
-        // $this->db->where()
+    function verifikasi_semua_jenjang(){
+        $this->db->join('jenjang', 'jenjang.ID_JENJANG = user.jenjang_ID_JENJANG', 'left
         $data = $this->db->get('user');
         return $data->result();
 
