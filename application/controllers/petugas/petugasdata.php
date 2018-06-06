@@ -47,6 +47,7 @@ class Petugasdata extends CI_Controller {
 		$data['content']='tampil/petugas/e-datapetugas';
 		$this->load->view('tampil/utama/main',$data);
 	}
+
 	public function fungsieditdata(){
 		$id=$this->input->post('id');
 		// $where= array('no'=>$id);
@@ -59,5 +60,6 @@ class Petugasdata extends CI_Controller {
 		$data['PASSWORD_ADMIN']=$this->input->post('pass');
 		$this->mymodel->update('admin',$data,$where);
 		header('location:'.base_url().'petugas/petugasdata');
+		
 	}
 }

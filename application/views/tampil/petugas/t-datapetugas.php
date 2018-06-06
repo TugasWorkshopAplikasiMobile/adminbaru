@@ -47,7 +47,8 @@
               <!-- /.box-body -->
 
               <div class="box-footer">
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-primary">Simpan</button>
+                <a href="http://localhost/kuliah/jann/petugas/petugasdata" type="button" class="btn btn-primary">Kembali</a>
               </div>
             </form>
           </div>
