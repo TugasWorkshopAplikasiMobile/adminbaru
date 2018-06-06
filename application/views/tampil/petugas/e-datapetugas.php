@@ -12,7 +12,7 @@
                 
                 <div class="form-group">
                   <label for="exampleInputEmail1">ID Admin</label>
-                  <!-- <input type="text" class="form-control" id="id" value="<?php echo $key->ID_ADMIN;?>" name="id" readonly> -->
+                  <input type="text" class="form-control" id="id" value="<?php echo $key->ID_ADMIN;?>" name="id" readonly>
                 </div>
                 <div class="form-group">
                   <label for="exampleInputEmail1">Nama Admin</label>
@@ -68,10 +68,6 @@
                   <label for="exampleInputPassword1">Password</label>
                   <input type="text" class="form-control" id="idpass" name="pass" value="<?php echo $key->PASSWORD_ADMIN;?>">
                 </div>
-              </div>
-            </form>
-          </div>
-        </div>
 <?php } ?>
               <!-- /.box-body -->
 

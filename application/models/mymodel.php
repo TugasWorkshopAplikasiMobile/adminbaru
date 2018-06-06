@@ -81,7 +81,7 @@ class Mymodel extends CI_Model {
     }
 
     function verifikasi_semua_jenjang(){
-        $this->db->join('jenjang', 'jenjang.ID_JENJANG = user.jenjang_ID_JENJANG', 'left
+        $this->db->join('jenjang', 'jenjang.ID_JENJANG = user.jenjang_ID_JENJANG', 'left');
         $data = $this->db->get('user');
         return $data->result();
 
