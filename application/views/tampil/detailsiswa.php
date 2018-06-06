@@ -94,9 +94,9 @@
                       <!-- <label class="col-sm-2 control-label"><?php echo $siswa->ANAK_KE; ?></label> -->
                     </div>
                  
-                  <br>
-                  <!-- <button type="" class="btn btn-danger pull-right" onclick="javascript:history.go(-1);">Kembali</button> -->
+                 
                   </div>
+                  <a href="http://localhost/kuliah/jann/siswa/siswa" type="button" class="btn btn-primary pull-center">Kembali</a>
                 </form>
                 <!-- Post -->
               
