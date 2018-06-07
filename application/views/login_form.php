@@ -11,8 +11,8 @@
 </head>
 <body style="background-image: url(<?php echo base_url();?>gambar/mie.jpg); ">
 <!-- <div class="signupform"> -->
-<h1> AL BAITUL AMIEN</h1>
-  <div class="container">
+<!-- <h1> AL BAITUL AMIEN</h1> -->
+  <div style="margin-top: 90px;" class="container">
     
     <div class="agile_info">
       <div class="w3l_form">
