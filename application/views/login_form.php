@@ -18,8 +18,8 @@
       <div class="w3l_form">
         <div class="left_grid_info">
           <h3>Selamat datang !</h3>
-          <h4>Lorem ipsum dolor sit amet, nulla consectetur adipiscing elit Sed.</h4>
-          <p> Nam eleifend velit eget dolor vestibulum ornare. Vestibulum est nulla, fermentum eget euismod et, tincidunt at dui. Nulla tellus nisl, semper id justo vel, rutrum finibus risus. Cras vel auctor odio.</p>
+          <h4>Ini adalah Halaman login WEB Admin PPDB AL Baitul Amien Jember</h4>
+          <p> </p>
           <ul class="social_section_1info">
             <li><a href="#" class="w3_facebook"><i class="fa fa-facebook"></i></a></li>
             <li><a href="#" class="w3_twitter"><i class="fa fa-twitter"></i></a></li>
@@ -52,7 +52,7 @@
     </div>
     <div class="footer">
 
- <p>&copy; Interior Register form 2018. All Rights Reserved | Design by <a href="https://w3layouts.com/" target="blank">W3layouts</a></p>
+ <p>&copy;  Register form 2018. All Rights Reserved | Design by Jemberkita.online</a></p>
  </div>
   <!-- </div> -->
   </body>
