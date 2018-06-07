@@ -11,7 +11,7 @@ class Adminsd extends CI_Controller {
       $data= array(
   			'side'=>'tampil/side/sidesd',
   			'content'=>'tampil/siswa/siswa_v',
-  			'siswa'=>$this->mymodel->selectjoin());
+  			'siswa'=>$this->mymodel->selectjoin('jenjang.NAMA_JENJANG' ,"SD"));
   		$this->load->view('tampil/utama/main',$data);
   	}
   }

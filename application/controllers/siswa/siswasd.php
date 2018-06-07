@@ -11,10 +11,12 @@ class Siswasd extends CI_Controller {
 
 		// $data['side']='tampil/side';
 		// $data['content']='tampil/siswa_v';
+		$where  = array('jenjang.NAMA_JENJANG' =>  "SD");
 		$data= array(
 			'side'=>'tampil/side/sidesd',
 			'content'=>'tampil/siswa/siswa_v',
-			'siswa'=>$this->mymodel->selectjoin());
+			'siswa'=>$this->mymodel->selectjoin($where));
 		$this->load->view('tampil/utama/main',$data);
+		// $this->load->view('tampil/utama/main',$data);
 	}
 }

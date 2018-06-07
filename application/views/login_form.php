@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <title>AL AMIN | Login</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta charset="utf-8">
@@ -26,7 +27,7 @@
             <li><a href="#" class="w3_instagram"><i class="fa fa-instagram"></i></a></li>
             <li><a href="#" class="w3_google"><i class="fa fa-google-plus"></i></a></li>
             <li><a href="#" class="w3_pinterest"><i class="fa fa-pinterest"></i></a></li>
-            <li><a href="#" class="w3_vimeo"><i class="fa fa-vimeo"></i></a></li>
+            <li><a href="#" class="w3_youtube"><i class="fa fa-vimeo"></i></a></li>
           </ul>
         </div>
       </div>

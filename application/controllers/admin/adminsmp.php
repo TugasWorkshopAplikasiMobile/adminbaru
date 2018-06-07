@@ -11,7 +11,7 @@ class Adminsmp extends CI_Controller {
       $data= array(
   			'side'=>'tampil/side/sidesmp',
   			'content'=>'tampil/siswa/siswa_v',
-  			'siswa'=>$this->mymodel->selectjoin());
+  			'siswa'=>$this->mymodel->selectjoin('jenjang.NAMA_JENJANG' ,"SMP"));
   		$this->load->view('tampil/utama/main',$data);
   	}
   }
