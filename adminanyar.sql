@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 13, 2018 at 10:04 AM
+-- Generation Time: Jun 13, 2018 at 10:31 AM
 -- Server version: 10.1.30-MariaDB
 -- PHP Version: 5.6.33
 
@@ -99,9 +99,17 @@ CREATE TABLE `hasil` (
 
 CREATE TABLE `jenjang` (
   `id_jenjang` int(9) NOT NULL,
-  `nama_jenjang` varchar(50) NOT NULL,
-  `id_user` int(9) NOT NULL
+  `nama_jenjang` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `jenjang`
+--
+
+INSERT INTO `jenjang` (`id_jenjang`, `nama_jenjang`) VALUES
+(1, 'TK'),
+(2, 'SD'),
+(3, 'SMP');
 
 -- --------------------------------------------------------
 
@@ -350,16 +358,17 @@ CREATE TABLE `user` (
   `id_user` int(9) NOT NULL,
   `nama_user` varchar(50) NOT NULL,
   `email_user` varchar(50) NOT NULL,
-  `password_user` varchar(50) NOT NULL
+  `password_user` varchar(50) NOT NULL,
+  `id_jenjang` int(9) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`id_user`, `nama_user`, `email_user`, `password_user`) VALUES
-(3, 'Bahrul', 'bahrul@gmail.com', 'bahrul'),
-(4, 'Anas', 'anas@gmail.com', 'anas');
+INSERT INTO `user` (`id_user`, `nama_user`, `email_user`, `password_user`, `id_jenjang`) VALUES
+(5, 'Bahrul', 'bahrul@gmail.com', 'bahrul', 3),
+(6, 'Anas', 'anas@gmail.com', 'anas', 2);
 
 --
 -- Indexes for dumped tables
@@ -401,8 +410,7 @@ ALTER TABLE `hasil`
 -- Indexes for table `jenjang`
 --
 ALTER TABLE `jenjang`
-  ADD PRIMARY KEY (`id_jenjang`),
-  ADD KEY `id_user_jenjang` (`id_user`);
+  ADD PRIMARY KEY (`id_jenjang`);
 
 --
 -- Indexes for table `kelahiran_anak`
@@ -502,7 +510,8 @@ ALTER TABLE `siswa`
 -- Indexes for table `user`
 --
 ALTER TABLE `user`
-  ADD PRIMARY KEY (`id_user`);
+  ADD PRIMARY KEY (`id_user`),
+  ADD KEY `id_jenjang_user` (`id_jenjang`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -536,7 +545,7 @@ ALTER TABLE `hasil`
 -- AUTO_INCREMENT for table `jenjang`
 --
 ALTER TABLE `jenjang`
-  MODIFY `id_jenjang` int(9) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_jenjang` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `kelahiran_anak`
@@ -614,7 +623,7 @@ ALTER TABLE `siswa`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_user` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- Constraints for dumped tables
@@ -631,12 +640,6 @@ ALTER TABLE `admin`
 --
 ALTER TABLE `gambar`
   ADD CONSTRAINT `gambar_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Constraints for table `jenjang`
---
-ALTER TABLE `jenjang`
-  ADD CONSTRAINT `jenjang_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `notifikasi`
@@ -663,6 +666,12 @@ ALTER TABLE `siswa`
   ADD CONSTRAINT `siswa_ibfk_7` FOREIGN KEY (`id_kemampuan_anak`) REFERENCES `kemampuan_anak` (`id_kemampuan_anak`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `siswa_ibfk_8` FOREIGN KEY (`id_kesehatan_anak`) REFERENCES `kesehatan_anak` (`id_kesehatan_anak`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `siswa_ibfk_9` FOREIGN KEY (`id_kondisi_keluarga`) REFERENCES `kondisi_keluarga` (`id_kondisi_keluarga`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `user`
+--
+ALTER TABLE `user`
+  ADD CONSTRAINT `user_ibfk_1` FOREIGN KEY (`id_jenjang`) REFERENCES `jenjang` (`id_jenjang`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
