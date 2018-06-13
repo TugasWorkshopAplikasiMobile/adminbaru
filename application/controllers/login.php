@@ -8,24 +8,24 @@ class Login extends CI_Controller {
 	}
 
 public function ceklogin(){
-  $email = $this->input->post('username', true);
+  $username = $this->input->post('username', true);
   $password = $this->input->post('password', true);
   $cek = $this->mymodel->ceklogin($email, $password);
   $tes = count($cek);
   if($tes>0){
-    $data_login = $this->mymodel->ceklogin($email, $password);
+    $data_login = $this->mymodel->ceklogin($username, $password);
     $level = $data_login->level;
     $data = array('level' => $level);
     $this->session->set_userdata($data);
-    if($level == 'sekretaris1') {
-      redirect('dashboard/dashboard');
-  	}elseif ($level == 'admintk') {
+    if($level == '4') {
+      redirect('admin/adminsekretaris');
+  	}elseif ($level == '1') {
     	redirect('admin/admintk');
-  	}elseif ($level == 'adminsd') {
+  	}elseif ($level == '2') {
     	redirect('admin/adminsd');
-  	}elseif ($level == 'adminsmp') {
+  	}elseif ($level == '3') {
     	redirect('admin/adminsmp');
-  	}elseif ($level == 'admindirektur') {
+  	}elseif ($level == '5') {
     	redirect('admin/admindirektur');
   	}
   }else{

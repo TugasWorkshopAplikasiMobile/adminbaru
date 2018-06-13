@@ -36,6 +36,7 @@ class Mymodel extends CI_Model {
     }
 
   function ceklogin($username, $password){
+      $this->db->join('jenis_kelamin', 'admin.id_jenis_kelamin = jenis_kelamin.id_jenis_kelamin', 'left');
       $this->db->where('username_admin', $username);
       $this->db->where('password_admin', $password);
       return $this->db->get('admin')->row();
