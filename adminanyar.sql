@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 12, 2018 at 06:55 PM
+-- Generation Time: Jun 13, 2018 at 09:05 AM
 -- Server version: 10.1.30-MariaDB
 -- PHP Version: 5.6.33
 
@@ -323,7 +323,6 @@ CREATE TABLE `siswa` (
   `id_data_tempat_tinggal` int(9) NOT NULL,
   `id_ciri_khas_anak` int(9) NOT NULL,
   `id_hasil` int(9) NOT NULL,
-  `id_jenjang` int(9) NOT NULL,
   `id_kelahiran_anak` int(9) NOT NULL,
   `id_keluarga` int(9) NOT NULL,
   `id_kemampuan_anak` int(9) NOT NULL,
@@ -350,7 +349,8 @@ CREATE TABLE `user` (
   `password_user` varchar(50) NOT NULL,
   `id_siswa` int(9) NOT NULL,
   `id_notifikasi` int(9) NOT NULL,
-  `id_gambar` int(11) NOT NULL
+  `id_gambar` int(11) NOT NULL,
+  `id_jenjang` int(9) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -474,7 +474,6 @@ ALTER TABLE `siswa`
   ADD KEY `id_data_tempat_tinggal` (`id_data_tempat_tinggal`),
   ADD KEY `id_ciri_khas_anak` (`id_ciri_khas_anak`),
   ADD KEY `id_hasil` (`id_hasil`),
-  ADD KEY `id_jenjang` (`id_jenjang`),
   ADD KEY `id_kelahiran_anak` (`id_kelahiran_anak`),
   ADD KEY `id_keluarga` (`id_keluarga`),
   ADD KEY `id_kemampuan_anak` (`id_kemampuan_anak`),
@@ -494,7 +493,8 @@ ALTER TABLE `user`
   ADD PRIMARY KEY (`id_user`),
   ADD KEY `id_siswa` (`id_siswa`),
   ADD KEY `id_notifikasi_user` (`id_notifikasi`),
-  ADD KEY `id_gambar_user` (`id_gambar`);
+  ADD KEY `id_gambar_user` (`id_gambar`),
+  ADD KEY `id_jenjang` (`id_jenjang`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -631,7 +631,6 @@ ALTER TABLE `siswa`
   ADD CONSTRAINT `siswa_ibfk_15` FOREIGN KEY (`id_saudara_kandung`) REFERENCES `saudara_kandung_anak` (`id_saudara_kandung`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `siswa_ibfk_2` FOREIGN KEY (`id_ciri_khas_anak`) REFERENCES `ciri_khas_anak` (`id_ciri_khas_anak`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `siswa_ibfk_3` FOREIGN KEY (`id_hasil`) REFERENCES `hasil` (`id_hasil`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `siswa_ibfk_4` FOREIGN KEY (`id_jenjang`) REFERENCES `jenjang` (`id_jenjang`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `siswa_ibfk_5` FOREIGN KEY (`id_kelahiran_anak`) REFERENCES `kelahiran_anak` (`id_kelahiran_anak`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `siswa_ibfk_6` FOREIGN KEY (`id_keluarga`) REFERENCES `keluarga` (`id_keluarga`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `siswa_ibfk_7` FOREIGN KEY (`id_kemampuan_anak`) REFERENCES `kemampuan_anak` (`id_kemampuan_anak`) ON DELETE CASCADE ON UPDATE CASCADE,
@@ -644,7 +643,8 @@ ALTER TABLE `siswa`
 ALTER TABLE `user`
   ADD CONSTRAINT `user_ibfk_1` FOREIGN KEY (`id_siswa`) REFERENCES `siswa` (`id_siswa`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `user_ibfk_2` FOREIGN KEY (`id_notifikasi`) REFERENCES `notifikasi` (`id_notifikasi`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `user_ibfk_3` FOREIGN KEY (`id_gambar`) REFERENCES `gambar` (`id_gambar`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `user_ibfk_3` FOREIGN KEY (`id_gambar`) REFERENCES `gambar` (`id_gambar`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `user_ibfk_4` FOREIGN KEY (`id_jenjang`) REFERENCES `jenjang` (`id_jenjang`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
