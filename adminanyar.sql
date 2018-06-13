@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 13, 2018 at 10:31 AM
+-- Generation Time: Jun 13, 2018 at 07:23 PM
 -- Server version: 10.1.30-MariaDB
 -- PHP Version: 5.6.33
 
@@ -31,13 +31,42 @@ SET time_zone = "+00:00";
 CREATE TABLE `admin` (
   `id_admin` int(9) NOT NULL,
   `nama_admin` varchar(50) NOT NULL,
-  `jenis_kelamin_admin` varchar(50) NOT NULL,
-  `no_telp_admin` int(13) NOT NULL,
-  `level` varchar(50) NOT NULL,
+  `no_telp_admin` float NOT NULL,
   `username_admin` varchar(50) NOT NULL,
   `password_admin` varchar(50) NOT NULL,
-  `id_gambar` int(9) NOT NULL
+  `id_level` int(9) NOT NULL,
+  `id_jenis_kelamin` int(9) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `admin`
+--
+
+INSERT INTO `admin` (`id_admin`, `nama_admin`, `no_telp_admin`, `username_admin`, `password_admin`, `id_level`, `id_jenis_kelamin`) VALUES
+(1, 'Jon', 81235300000, 'jon', 'jon', 4, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `admin_level`
+--
+
+CREATE TABLE `admin_level` (
+  `id_level` int(9) NOT NULL,
+  `level` int(11) NOT NULL,
+  `nama_level` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `admin_level`
+--
+
+INSERT INTO `admin_level` (`id_level`, `level`, `nama_level`) VALUES
+(1, 1, 'Admin TK'),
+(2, 2, 'Admin SD'),
+(3, 3, 'Admin SMP'),
+(4, 4, 'Admin Sekretaris'),
+(5, 5, 'Admin Direktur');
 
 -- --------------------------------------------------------
 
@@ -76,7 +105,8 @@ CREATE TABLE `data_tempat_tinggal` (
 CREATE TABLE `gambar` (
   `id_gambar` int(9) NOT NULL,
   `nama_gambar` varchar(255) NOT NULL,
-  `id_user` int(9) NOT NULL
+  `id_user` int(9) NOT NULL,
+  `id_admin_gambar` int(9) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -90,6 +120,25 @@ CREATE TABLE `hasil` (
   `status_terima` varchar(50) NOT NULL,
   `total_nilai` int(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `jenis_kelamin`
+--
+
+CREATE TABLE `jenis_kelamin` (
+  `id_jenis_kelamin` int(9) NOT NULL,
+  `jenis_kelamin` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `jenis_kelamin`
+--
+
+INSERT INTO `jenis_kelamin` (`id_jenis_kelamin`, `jenis_kelamin`) VALUES
+(1, 'LAKI - LAKI'),
+(2, 'PEREMPUAN');
 
 -- --------------------------------------------------------
 
@@ -331,20 +380,6 @@ CREATE TABLE `siswa` (
   `kewarganegaraan_siswa` varchar(50) NOT NULL,
   `tinggal_bersama_siswa` varchar(50) NOT NULL,
   `anak_ke_siswa` int(3) NOT NULL,
-  `id_data_tempat_tinggal` int(9) NOT NULL,
-  `id_ciri_khas_anak` int(9) NOT NULL,
-  `id_hasil` int(9) NOT NULL,
-  `id_kelahiran_anak` int(9) NOT NULL,
-  `id_keluarga` int(9) NOT NULL,
-  `id_kemampuan_anak` int(9) NOT NULL,
-  `id_kesehatan_anak` int(9) NOT NULL,
-  `id_kondisi_keluarga` int(9) NOT NULL,
-  `id_kuisioner` int(9) NOT NULL,
-  `id_nilai_psikotes` int(9) NOT NULL,
-  `id_nilai_tes` int(9) NOT NULL,
-  `id_pembayaran` int(9) NOT NULL,
-  `id_riwayat_sekolah` int(9) NOT NULL,
-  `id_saudara_kandung` int(9) NOT NULL,
   `id_user` int(9) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -379,7 +414,14 @@ INSERT INTO `user` (`id_user`, `nama_user`, `email_user`, `password_user`, `id_j
 --
 ALTER TABLE `admin`
   ADD PRIMARY KEY (`id_admin`),
-  ADD KEY `id_gambar_admin` (`id_gambar`) USING BTREE;
+  ADD KEY `id_level_admin` (`id_level`),
+  ADD KEY `id_jenis_kelamin_admin` (`id_jenis_kelamin`);
+
+--
+-- Indexes for table `admin_level`
+--
+ALTER TABLE `admin_level`
+  ADD PRIMARY KEY (`id_level`);
 
 --
 -- Indexes for table `ciri_khas_anak`
@@ -398,13 +440,20 @@ ALTER TABLE `data_tempat_tinggal`
 --
 ALTER TABLE `gambar`
   ADD PRIMARY KEY (`id_gambar`),
-  ADD KEY `id_user_gambar` (`id_user`);
+  ADD KEY `id_user_gambar` (`id_user`),
+  ADD KEY `id_admin_gambar` (`id_admin_gambar`);
 
 --
 -- Indexes for table `hasil`
 --
 ALTER TABLE `hasil`
   ADD PRIMARY KEY (`id_hasil`);
+
+--
+-- Indexes for table `jenis_kelamin`
+--
+ALTER TABLE `jenis_kelamin`
+  ADD PRIMARY KEY (`id_jenis_kelamin`);
 
 --
 -- Indexes for table `jenjang`
@@ -490,20 +539,6 @@ ALTER TABLE `saudara_kandung_anak`
 --
 ALTER TABLE `siswa`
   ADD PRIMARY KEY (`id_siswa`),
-  ADD KEY `id_data_tempat_tinggal` (`id_data_tempat_tinggal`),
-  ADD KEY `id_ciri_khas_anak` (`id_ciri_khas_anak`),
-  ADD KEY `id_hasil` (`id_hasil`),
-  ADD KEY `id_kelahiran_anak` (`id_kelahiran_anak`),
-  ADD KEY `id_keluarga` (`id_keluarga`),
-  ADD KEY `id_kemampuan_anak` (`id_kemampuan_anak`),
-  ADD KEY `id_kesehatan_anak` (`id_kesehatan_anak`),
-  ADD KEY `id_kondisi_keluarga` (`id_kondisi_keluarga`),
-  ADD KEY `id_kuisioner` (`id_kuisioner`),
-  ADD KEY `id_nilai_psikotes` (`id_nilai_psikotes`),
-  ADD KEY `id_nilai_tes` (`id_nilai_tes`),
-  ADD KEY `id_pembayaran` (`id_pembayaran`),
-  ADD KEY `id_riwayat_sekolah` (`id_riwayat_sekolah`),
-  ADD KEY `id_saudara_kandung` (`id_saudara_kandung`),
   ADD KEY `id_user` (`id_user`);
 
 --
@@ -521,7 +556,13 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `id_admin` int(9) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_admin` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `admin_level`
+--
+ALTER TABLE `admin_level`
+  MODIFY `id_level` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `ciri_khas_anak`
@@ -540,6 +581,12 @@ ALTER TABLE `gambar`
 --
 ALTER TABLE `hasil`
   MODIFY `id_hasil` int(9) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `jenis_kelamin`
+--
+ALTER TABLE `jenis_kelamin`
+  MODIFY `id_jenis_kelamin` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `jenjang`
@@ -633,39 +680,21 @@ ALTER TABLE `user`
 -- Constraints for table `admin`
 --
 ALTER TABLE `admin`
-  ADD CONSTRAINT `admin_ibfk_1` FOREIGN KEY (`id_gambar`) REFERENCES `gambar` (`id_gambar`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `admin_ibfk_1` FOREIGN KEY (`id_level`) REFERENCES `admin_level` (`id_level`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `admin_ibfk_2` FOREIGN KEY (`id_jenis_kelamin`) REFERENCES `jenis_kelamin` (`id_jenis_kelamin`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `gambar`
 --
 ALTER TABLE `gambar`
-  ADD CONSTRAINT `gambar_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `gambar_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `gambar_ibfk_2` FOREIGN KEY (`id_admin_gambar`) REFERENCES `admin` (`id_admin`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `notifikasi`
 --
 ALTER TABLE `notifikasi`
   ADD CONSTRAINT `notifikasi_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Constraints for table `siswa`
---
-ALTER TABLE `siswa`
-  ADD CONSTRAINT `siswa_ibfk_1` FOREIGN KEY (`id_data_tempat_tinggal`) REFERENCES `data_tempat_tinggal` (`id_data_tempat_tinggal`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `siswa_ibfk_10` FOREIGN KEY (`id_kuisioner`) REFERENCES `kuisioner` (`id_kuisioner`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `siswa_ibfk_11` FOREIGN KEY (`id_nilai_psikotes`) REFERENCES `nilai_psikotes` (`id_nilai_psikotes`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `siswa_ibfk_12` FOREIGN KEY (`id_nilai_tes`) REFERENCES `nilai_tes` (`id_nilai_tes`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `siswa_ibfk_13` FOREIGN KEY (`id_pembayaran`) REFERENCES `pembayaran` (`id_pembayaran`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `siswa_ibfk_14` FOREIGN KEY (`id_riwayat_sekolah`) REFERENCES `riwayat_sekolah` (`id_riwayat_sekolah`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `siswa_ibfk_15` FOREIGN KEY (`id_saudara_kandung`) REFERENCES `saudara_kandung_anak` (`id_saudara_kandung`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `siswa_ibfk_16` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `siswa_ibfk_2` FOREIGN KEY (`id_ciri_khas_anak`) REFERENCES `ciri_khas_anak` (`id_ciri_khas_anak`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `siswa_ibfk_3` FOREIGN KEY (`id_hasil`) REFERENCES `hasil` (`id_hasil`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `siswa_ibfk_5` FOREIGN KEY (`id_kelahiran_anak`) REFERENCES `kelahiran_anak` (`id_kelahiran_anak`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `siswa_ibfk_6` FOREIGN KEY (`id_keluarga`) REFERENCES `keluarga` (`id_keluarga`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `siswa_ibfk_7` FOREIGN KEY (`id_kemampuan_anak`) REFERENCES `kemampuan_anak` (`id_kemampuan_anak`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `siswa_ibfk_8` FOREIGN KEY (`id_kesehatan_anak`) REFERENCES `kesehatan_anak` (`id_kesehatan_anak`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `siswa_ibfk_9` FOREIGN KEY (`id_kondisi_keluarga`) REFERENCES `kondisi_keluarga` (`id_kondisi_keluarga`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `user`
