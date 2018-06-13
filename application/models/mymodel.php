@@ -36,10 +36,15 @@ class Mymodel extends CI_Model {
     }
 
   function ceklogin($username, $password){
-      $this->db->join('jenis_kelamin', 'admin.id_jenis_kelamin = jenis_kelamin.id_jenis_kelamin', 'left');
+      // $this->db->select('admin.*');
       $this->db->where('username_admin', $username);
       $this->db->where('password_admin', $password);
+      // $this->db->join('jenis_kelamin', 'admin.id_jenis_kelamin = jenis_kelamin.id_jenis_kelamin', 'left');
+      // $this->db->join('admin_level', 'admin.id_level = admin_level.id_level', 'left');
+      // $this->db->from('admin');
       return $this->db->get('admin')->row();
+      // return $level->row();
+      // return $this->db->get()->result();
     }
 
   function selectsiswafornilai(){
@@ -93,6 +98,11 @@ class Mymodel extends CI_Model {
           // $this->db->join('pembayaran', 'pembayaran.ID_PEMBAYARAN = user.') belum kelarrrrrr
           $return = $this->db->get_where($table, $no_id);
           return $return->result();
+      }
+
+      function njajal(){
+        $this->db->join('admin_level', 'admin.id_admin = admin_level.id_admin_level', 'left');
+        return $this->db->select('admin');
       }
 
 }
