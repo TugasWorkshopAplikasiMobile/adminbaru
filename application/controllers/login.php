@@ -36,7 +36,8 @@ public function ceklogin(){
 	$password = $this->input->post('password', true);
 	$cek = $this->mymodel->ceklogin($username, $password);
 	  $level = $cek->id_level;
-	  // $data = array('id_level' => $level);
+		$data['level'] = $level;
+	  $this->session->set_userdata($data);
 	  if($level == '4') {
 	    redirect('admin/adminsekretaris');
 		}elseif ($level == '1') {
