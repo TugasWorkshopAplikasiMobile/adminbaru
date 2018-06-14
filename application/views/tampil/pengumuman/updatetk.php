@@ -68,6 +68,7 @@
     if(proc){
       document.location='<?php echo base_url(); ?>petugas/petugasdata/deletedata/'+param;
     }
+    
   }
   function back(param){
       document.location='<?php echo base_url(); ?>pengumuman/pengumuman/pgtk/'+param;
