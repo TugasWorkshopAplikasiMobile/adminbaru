@@ -15,7 +15,7 @@
       <ul class="sidebar-menu">
         <li class="header">Menu</li>
         <li class="treeview">
-          <a href="<?php echo base_url('dashboard/dashboard')?>">
+          <a href="<?php echo base_url('admin/adminsekretaris')?>">
             <i class="fa fa-home"></i> <span>Dashboard</span>
 
             <span class="pull-right-container">
@@ -75,8 +75,8 @@
       </ul>
 
        <!-- <ul class="sidebar-menu"> -->
-       <!--  <li class="header">MAIN NAVIGATION</li> -->
-   <!--      <li class="treeview">
+       <!-- <li class="header">MAIN NAVIGATION</li> -->
+       <!-- <li class="treeview">
           <a href="<?php echo base_url('pengumuman/pengumuman')?>">
             <i class="fa fa-newspaper-o"></i> <span>Pengumuman</span>
 
@@ -96,9 +96,9 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="<?php echo base_url('pengumuman/pengumuman')?>"><i class="fa fa-circle-o"></i>TK</a></li>
-            <li><a href="<?php echo base_url('pengumuman/pengumuman')?>"><i class="fa fa-circle-o"></i> SD</a></li>
-            <li><a href="<?php echo base_url('pengumuman/pengumuman')?>"><i class="fa fa-circle-o"></i> SMP</a></li>
+            <li><a href="<?php echo base_url('pengumuman/pengumuman/pgtk')?>"><i class="fa fa-circle-o"></i>TK</a></li>
+            <li><a href="<?php echo base_url('pengumuman/pengumuman/pgsd')?>"><i class="fa fa-circle-o"></i> SD</a></li>
+            <li><a href="<?php echo base_url('pengumuman/pengumuman/pgsmp')?>"><i class="fa fa-circle-o"></i> SMP</a></li>
           </ul>
         </li>
       </ul>
