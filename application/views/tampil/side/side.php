@@ -74,15 +74,32 @@
         </li>
       </ul>
 
-       <ul class="sidebar-menu">
+       <!-- <ul class="sidebar-menu"> -->
        <!--  <li class="header">MAIN NAVIGATION</li> -->
-        <li class="treeview">
+   <!--      <li class="treeview">
           <a href="<?php echo base_url('pengumuman/pengumuman')?>">
             <i class="fa fa-newspaper-o"></i> <span>Pengumuman</span>
 
             <span class="pull-right-container">
             </span>
           </a>
+        </li>
+      </ul> -->
+
+       <ul class="sidebar-menu">
+       <!--  <li class="header">MAIN NAVIGATION</li> -->
+        <li class="treeview">
+          <a href="<?php echo base_url('pengumuman/pengumuman')?>">
+            <i class="fa fa-newspaper-o"></i> <span>Verifikasi Pendaftaran User</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i> 
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="<?php echo base_url('pengumuman/pengumuman')?>"><i class="fa fa-circle-o"></i>TK</a></li>
+            <li><a href="<?php echo base_url('pengumuman/pengumuman')?>"><i class="fa fa-circle-o"></i> SD</a></li>
+            <li><a href="<?php echo base_url('pengumuman/pengumuman')?>"><i class="fa fa-circle-o"></i> SMP</a></li>
+          </ul>
         </li>
       </ul>
 
