@@ -13,7 +13,7 @@ class Pengumuman extends CI_Controller {
 	 	$data['side']='tampil/side/side';
 	 	$data['content']='tampil/pengumuman/usertk';
 	 	$this->load->view('tampil/utama/main',$data);
-	 }
+	}
 	 public function pgsd(){
 	 	$data['side']='tampil/side/side';
 	 	$data['content']='tampil/pengumuman/usersd';
@@ -23,5 +23,16 @@ class Pengumuman extends CI_Controller {
 	 	$data['side']='tampil/side/side';
 	 	$data['content']='tampil/pengumuman/usersmp';
 	 	$this->load->view('tampil/utama/main',$data);
+
 	 }
+
+	 // Update Verivikasi Function
+
+	 public function dttk(){
+	 	$data['side']='tampil/side/side';
+	 	$data['content']='tampil/pengumuman/updatetk';
+	 	$this->load->view('tampil/utama/main',$data);
+
+	 }
+
 }
