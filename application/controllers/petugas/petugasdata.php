@@ -22,12 +22,12 @@ class Petugasdata extends CI_Controller {
 	}
 	public function fungsitambahdata(){
 		$data['nama_admin']=$this->input->post('nama');
-		$data['jenis_kelamin']=$this->input->post('jk');
+		$data['id_jenis_kelamin']=$this->input->post('jk');
 		$data['no_telp_admin']=$this->input->post('tlp');
-		$data['nama_level']=$this->input->post('sts');
+		$data['id_level']=$this->input->post('sts');
 		$data['username_admin']=$this->input->post('username');
-		$data['']=$this->input->post('password_admin');
-		$this->mymodel->insert('admin, admin_level, jenis_kelamin',$data);
+		$data['password_admin']=$this->input->post('pass');
+		$this->mymodel->insert('admin',$data);
 		header('location:'.base_url().'petugas/petugasdata');
 	}
 
@@ -35,7 +35,7 @@ class Petugasdata extends CI_Controller {
 	public function deletedata()
 	{
 		$id=$this->uri->segment(4);
-		$delete=array('ID_ADMIN'=>$id);
+		$delete=array('id_admin'=>$id);
 		$this->mymodel->delete('admin',$delete);
 		header('location:'.base_url().'petugas/petugasdata');
 	}

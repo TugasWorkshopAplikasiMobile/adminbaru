@@ -16,8 +16,8 @@
                 <label>Jenis Kelamin</label>
                 <select class="form-control select2" id="idjk" name="jk" style="width: 100%;">
                   <option selected="selected">-Pilih Jenis Kelamin-</option>
-                  <option>Laki-Laki</option>
-                  <option>Perempuan</option>
+                  <option value="1">LAKI - LAKI</option>
+                  <option value="2">PEREMPUAN</option>
                 </select>
               </div>
                 <div class="form-group">
@@ -28,11 +28,11 @@
                 <label>Status</label>
                 <select class="form-control select2" name="sts" id="idstatus" style="width: 100%;">
                   <option selected="selected">-Pilih Status-</option>
-                  <option>Sekretaris 1</option>
-                  <option>Admin TK</option>
-                  <option>Admin SD</option>
-                  <option>Admin SMP</option>
-                  <option>Direktur</option>
+                  <option value="1">Admin TK</option>
+                  <option value="2">Admin SD</option>
+                  <option value="3">Admin SMP</option>
+                  <option value="4">Admin Sekretaris</option>
+                  <option value="5">Admin Direktur</option>
                 </select>
               </div>
                 <div class="form-group">
@@ -48,7 +48,7 @@
 
               <div class="box-footer">
                 <button type="submit" class="btn btn-primary">Simpan</button>
-                <a href="http://localhost/kuliah/jann/petugas/petugasdata" type="button" class="btn btn-primary">Kembali</a>
+                <a href="<?php echo base_url('petugas/petugasdata'); ?>" type="button" class="btn btn-primary">Kembali</a>
               </div>
             </form>
           </div>
