@@ -58,6 +58,6 @@
     }
   }
   function updatejs(param){
-      document.location='<?php echo base_url(); ?>pengumuman/pengumuman/dttk/'+param;
+      document.location='<?php echo base_url(); ?>pengumuman/pengumuman/dtsmp/'+param;
   }
 </script>

@@ -31,14 +31,14 @@
                     <input type="text" class="form-control" id="password" placeholder="Password" readonly="">
                   </div>
                 </div>
-                <div class="form-group">
+                  <div class="form-group">
                   <label for="notlp" class="col-sm-2 control-label">Nomor Telephone</label>
                   <!--  -->
                   <div class="col-sm-10">
                     <input type="text" class="form-control" id="notlp" placeholder="Nomro Telephone" readonly="">
                   </div>
                 </div>
-                 <div class="form-group">
+                <div class="form-group">
                   <label for="gender"  class="col-sm-2 control-label">Jenis Kelamin</label>
                   <!--  -->
                   <div class="col-sm-10">
@@ -87,6 +87,6 @@
     }
   }
   function back(param){
-      document.location='<?php echo base_url(); ?>pengumuman/pengumuman/pgtk/'+param;
+      document.location='<?php echo base_url(); ?>pengumuman/pengumuman/pgsmp/'+param;
   }
 </script>

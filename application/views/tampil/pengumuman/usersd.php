@@ -58,6 +58,6 @@
     }
   }
   function updatejs(param){
-      document.location='<?php echo base_url(); ?>petugas/petugasdata/editData/'+param;
+      document.location='<?php echo base_url(); ?>pengumuman/pengumuman/dtsd/'+param;
   }
 </script>
