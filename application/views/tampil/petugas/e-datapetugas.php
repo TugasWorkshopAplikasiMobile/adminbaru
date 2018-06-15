@@ -38,23 +38,23 @@
                 </div>
                 <div class="form-group">
                 <label>Status</label>
-                <select class="form-control select2" name="sts" id="idstatus" style="width: 100%;" value="<?php echo $key->nama_level;?>">
+                <select class="form-control select2" name="sts" id="idstatus" style="width: 100%;" value="<?php echo $key->id_level;?>">
                   <option selected="selected">-Pilih Status-</option>
                   <option <?php if ($key->id_level=="1"): ?>
                     SELECTED
-                  <?php endif ?>>Admin TK</option>
+                  <?php endif ?>value="1">Admin TK</option>
                   <option <?php if ($key->id_level=="2"): ?>
                     SELECTED
-                  <?php endif ?>>Admin SD</option>
+                  <?php endif ?>value="2">Admin SD</option>
                   <option <?php if ($key->id_level=="3"): ?>
                     SELECTED
-                  <?php endif ?>>Admin SMP</option>
+                  <?php endif ?>value="3">Admin SMP</option>
                   <option <?php if ($key->id_level=="4"): ?>
                     SELECTED
-                  <?php endif ?>>Admin Sekretaris</option>
+                  <?php endif ?>value="4">Admin Sekretaris</option>
                   <option <?php if ($key->id_level=="5"): ?>
                     SELECTED
-                  <?php endif ?>>Admin Direktur</option>
+                  <?php endif ?>value="5">Admin Direktur</option>
                 </select>
               </div>
                 <div class="form-group">
