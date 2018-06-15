@@ -13,7 +13,6 @@
             <th>Nama Siswa</th>
             <th>TTL</th>
             <th>Jenis Kelamin</th>
-            <th>Nama Sekolah</th>
             <th>Status Di terima</th>
             <th>Aksi</th>
           </tr>
@@ -25,15 +24,12 @@
                ?>
               <tr>
                 <td><?php echo $n; ?></td>
-                <td><?php echo $i->NAMA_SISWA; ?></td>
-                <td><?php echo $i->TTL_SISWA ?></td>
-                <td><?php echo $i->JK_SISWA ?></td>
-                <td><?php echo $i->NAMA_SEKOLAH ?></td>
-                <td><?php echo $i->STATUS_TERIMA ?></td>
+                <td><?php echo $i->nama_siswa; ?></td>
+                <td><?php echo $i->tanggal_lahir_siswa ?></td>
+                <td><?php echo $i->jenis_kelamin ?></td>
+                <td><?php echo $i->status_diterima?></td>
                 <td style="text-align: center;">
-                  <!-- <?php echo $i->no?> -->
-                  <a href="<?php echo base_url('siswa/siswa/detailsiswa/'.$i->ID_SISWA)?>"" class="btn btn-warning btn-xs" >Detail</a>
-                 
+                  <a href="<?php echo base_url('siswa/siswa/detailsiswa/'.$i->id_siswa)?>" class="btn btn-warning btn-xs">Detail</a>
                   <a class="btn btn-danger btn-xs" onclick="">Delete</a>
                 </td>
               </tr>
@@ -55,7 +51,7 @@
   function deleted(param){
     var proc = window.confirm('Are you sure delete this data?');
     if(proc){
-      document.location='<?php echo base_url(); ?>index.php/petugasdata/deletedata/'+param;
+      document.location='<?php echo base_url(); ?>petugasdata/deletedata/'+param;
     }
   }
   // function updatejs(param){

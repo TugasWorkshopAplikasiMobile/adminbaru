@@ -50,7 +50,7 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="<?php echo base_url('siswa/siswa')?>"><i class="fa fa-circle-o"></i>TK</a></li>
+            <li><a href="<?php echo base_url('siswa/siswasekretaris')?>" onclick="kirimsegment('1')"><i class="fa fa-circle-o"></i>TK</a></li>
             <li><a href="<?php echo base_url('siswa/siswa')?>"><i class="fa fa-circle-o"></i> SD</a></li>
             <li><a href="<?php echo base_url('siswa/siswa')?>"><i class="fa fa-circle-o"></i> SMP</a></li>
           </ul>
@@ -92,7 +92,7 @@
           <a href="<?php echo base_url('pengumuman/pengumuman')?>">
             <i class="fa fa-newspaper-o"></i> <span>Verifikasi Pendaftaran User</span>
             <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i> 
+              <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
@@ -122,3 +122,9 @@
     </section>
     <!-- /.sidebar -->
   </aside>
+
+  <script type="text/javascript">
+  function kirimsegment(param){
+      document.location='<?php echo base_url(); ?>siswa/siswasekretaris'+param;
+  }
+  </script>

@@ -1,22 +1,20 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class siswa extends CI_Controller {
+class Siswasekretaris extends CI_Controller {
 	public function __construct(){
-		parent::__construct();	
+		parent::__construct();
 		$this->load->model('mymodel');
 	}
 	public function index()
-	{	
-
-		// $data['side']='tampil/side';
-		// $data['content']='tampil/siswa_v';
+	{
 		//header('Content-Type: application/json');
-		$where  = array('jenjang.NAMA_JENJANG' =>  "TK");
+		// $id=$this->uri->segment(4);
+		// $where  = array('user.id_jenjang' => $id);
 		$data= array(
-			'side'=>'tampil/side/side',
+			'side'=>'tampil/side/sidesekretaris',
 			'content'=>'tampil/siswa/siswa_v',
-			'siswa'=>$this->mymodel->selectjoin($where));
+			'siswa'=>$this->mymodel->siswatk1());
 		$this->load->view('tampil/utama/main',$data);
 		//echo json_encode($data);
 	}

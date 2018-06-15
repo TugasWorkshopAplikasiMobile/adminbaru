@@ -31,8 +31,8 @@ class Mymodel extends CI_Model {
         //  $this->db->join('hasil', 'siswa.hasil_ID_HASIL = hasil.ID_HASIL', 'left');
         //  $this->db->join('user', 'user.siswa_ID_SISWA = siswa.ID_SISWA', 'left');
         //  $this->db->join('jenjang', 'jenjang.ID_JENJANG = user.jenjang_ID_JENJANG', 'left');
-        // $this->db->where($clause);
-        // return $this->db->get("siswa");
+        $this->db->where($clause);
+        return $this->db->get("siswa");
     }
 
     // cek login di login form
@@ -107,5 +107,19 @@ class Mymodel extends CI_Model {
         return $data;
       }
 // end of tampilan petugas admin sekretaris
+
+// tampilan data siswa tk admin sekretaris
+      function siswatk1(){
+        $id_tk = '1';
+        $this->db->select('siswa.*, user.*, jenis_kelamin.*, jenjang.*');
+        $this->db->join('user', 'siswa.id_user = user.id_user');
+        $this->db->join('jenis_kelamin', 'siswa.id_jenis_kelamin = jenis_kelamin.id_jenis_kelamin');
+        $this->db->join('jenjang', 'user.id_jenjang = jenjang.id_jenjang');
+        $this->db->from('siswa');
+        $this->db->where('siswa.id_user', $id_tk);
+        $data=$this->db->get();
+        return $data;
+      }
+// end of tampilan data siswa tk admin sekretaris
 
 }
