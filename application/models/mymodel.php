@@ -92,6 +92,7 @@ class Mymodel extends CI_Model {
 
       function edit_verifikasi_semua_jenjang($no_id, $table){
           // $this->db->join('pembayaran', 'pembayaran.ID_PEMBAYARAN = user.') belum kelarrrrrr
+        //gw ga tau kudu gmn juga yg ini om btw view apa aja yak ?? yg blm yg verivikasi udh blm ?
           $return = $this->db->get_where($table, $no_id);
           return $return->result();
       }
