@@ -9,25 +9,25 @@ class Petugasdata extends CI_Controller {
     }
 	public function index()
 	{
-		$data['show']=$this->mymodel->select('admin');
-		$data['side']='tampil/side/side';
+		$data['show']=$this->mymodel->petugas1();
+		$data['side']='tampil/side/sidesekretaris';
 		$data['content']='tampil/petugas/tampilanadmin';
 		$this->load->view('tampil/utama/main',$data);
 	}
 
 	public function tambahData(){
-		$data['side']= 'tampil/side/side';
+		$data['side']= 'tampil/side/sidesekretaris';
 		$data['content']='tampil/petugas/t-datapetugas';
 		$this->load->view('tampil/utama/main',$data);
 	}
 	public function fungsitambahdata(){
-		$data['NAMA_ADMIN']=$this->input->post('nama');
-		$data['JENIS_KELAMIN']=$this->input->post('jk');
-		$data['NO_TELP']=$this->input->post('tlp');
-		$data['STATUS']=$this->input->post('sts');
-		$data['USERNAME_ADMIN']=$this->input->post('username');
-		$data['PASSWORD_ADMIN']=$this->input->post('pass');
-		$this->mymodel->insert('admin',$data);
+		$data['nama_admin']=$this->input->post('nama');
+		$data['jenis_kelamin']=$this->input->post('jk');
+		$data['no_telp_admin']=$this->input->post('tlp');
+		$data['nama_level']=$this->input->post('sts');
+		$data['username_admin']=$this->input->post('username');
+		$data['']=$this->input->post('password_admin');
+		$this->mymodel->insert('admin, admin_level, jenis_kelamin',$data);
 		header('location:'.base_url().'petugas/petugasdata');
 	}
 
@@ -43,28 +43,28 @@ class Petugasdata extends CI_Controller {
 	public function editData(){
 		// header('Content-Type: application/json');
 		$id=$this->uri->segment(4);
-		$data['dataupdate']= $this->db->query("SELECT * FROM admin WHERE ID_ADMIN='$id'");
-		$data['side']= 'tampil/side/side';
+		$data['dataupdate']= $this->db->query("SELECT * FROM admin WHERE id_admin='$id'");
+		$data['side']= 'tampil/side/sidesekretaris';
 		$data['content']='tampil/petugas/e-datapetugas';
 		$this->load->view('tampil/utama/main',$data);
 		// echo json_encode($data['dataupdate']->row());
 	}
 
-	
+
 	public function fungsieditdata(){
-		header('Content-Type: application/json');
+		// header('Content-Type: application/json');
 		$id=$this->input->post('id');
 		// $where= array('no'=>$id);
-		$where= array('ID_ADMIN'=>$id);
-		$data['NAMA_ADMIN']=$this->input->post('nama');
-		$data['JENIS_KELAMIN']=$this->input->post('jk');
-		$data['NO_TELP']=$this->input->post('tlp');
-		$data['STATUS']=$this->input->post('sts');
-		$data['USERNAME_ADMIN']=$this->input->post('username');
-		$data['PASSWORD_ADMIN']=$this->input->post('pass');
+		$where= array('id_admin'=>$id);
+		$data['nama_admin']=$this->input->post('nama');
+		$data['id_jenis_kelamin']=$this->input->post('jk');
+		$data['no_telp_admin']=$this->input->post('tlp');
+		$data['id_level']=$this->input->post('sts');
+		$data['username_admin']=$this->input->post('username');
+		$data['password_admin']=$this->input->post('pass');
 		$this->mymodel->update('admin',$data,$where);
 		header('location:'.base_url().'petugas/petugasdata');
-	echo json_encode($data);	
+	// echo json_encode($data);
 	}
 
 }

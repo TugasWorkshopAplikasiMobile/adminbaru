@@ -18,8 +18,8 @@ class Mymodel extends CI_Model {
 		$this->db->delete($table, $data);
 	}
 
-	function update($table,$data,$key){
-		$this->db->update($table,$data,$key);
+	function update($table,$data,$where){
+		$this->db->update($table,$data,$where);
 	}
 
 	function insert($table,$data){
@@ -27,25 +27,21 @@ class Mymodel extends CI_Model {
 	}
 
   function selectjoin($clause){
-        $this->db->join('riwayat_sekolah', 'siswa.riwayat_sekolah_ID_RIWAYATSEKOLAH = riwayat_sekolah.ID_RIWAYATSEKOLAH', 'left');
-         $this->db->join('hasil', 'siswa.hasil_ID_HASIL = hasil.ID_HASIL', 'left');
-         $this->db->join('user', 'user.siswa_ID_SISWA = siswa.ID_SISWA', 'left');
-         $this->db->join('jenjang', 'jenjang.ID_JENJANG = user.jenjang_ID_JENJANG', 'left');
-        $this->db->where($clause);
-        return $this->db->get("siswa");
+        // $this->db->join('riwayat_sekolah', 'siswa.riwayat_sekolah_ID_RIWAYATSEKOLAH = riwayat_sekolah.ID_RIWAYATSEKOLAH', 'left');
+        //  $this->db->join('hasil', 'siswa.hasil_ID_HASIL = hasil.ID_HASIL', 'left');
+        //  $this->db->join('user', 'user.siswa_ID_SISWA = siswa.ID_SISWA', 'left');
+        //  $this->db->join('jenjang', 'jenjang.ID_JENJANG = user.jenjang_ID_JENJANG', 'left');
+        // $this->db->where($clause);
+        // return $this->db->get("siswa");
     }
 
+    // cek login di login form
   function ceklogin($username, $password){
-      // $this->db->select('admin.*');
       $this->db->where('username_admin', $username);
       $this->db->where('password_admin', $password);
-      // $this->db->join('jenis_kelamin', 'admin.id_jenis_kelamin = jenis_kelamin.id_jenis_kelamin', 'left');
-      // $this->db->join('admin_level', 'admin.id_level = admin_level.id_level', 'left');
-      // $this->db->from('admin');
       return $this->db->get('admin')->row();
-      // return $level->row();
-      // return $this->db->get()->result();
     }
+    // end of cek login di login form
 
   function selectsiswafornilai(){
         $this->db->join('nilai_test', 'nilai_test.ID_NILAI_TEST = siswa.nilai_test_ID_NILAI_TEST', 'left');
@@ -100,9 +96,15 @@ class Mymodel extends CI_Model {
           return $return->result();
       }
 
-      function njajal(){
-        $this->db->join('admin_level', 'admin.id_admin = admin_level.id_admin_level', 'left');
-        return $this->db->select('admin');
+// tampilan petugas admin sekretaris
+      function petugas1(){
+        $this->db->select('admin.*, admin_level.*, jenis_kelamin.*');
+        $this->db->join('admin_level', 'admin.id_level = admin_level.id_level');
+        $this->db->join('jenis_kelamin', 'admin.id_jenis_kelamin = jenis_kelamin.id_jenis_kelamin');
+        $this->db->from('admin');
+        $data = $this->db->get();
+        return $data;
       }
+// end of tampilan petugas admin sekretaris
 
 }

@@ -8,14 +8,14 @@
         <p style="color: #ffffff;">Sekretaris Pusat</p>
         </div>
         <div class="pull-left info">
-          
+
         </div>
       </div>
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu">
         <li class="header">Menu</li>
         <li class="treeview">
-          <a href="<?php echo base_url('dashboard/dashboard')?>">
+          <a href="<?php echo base_url('admin/adminsekretaris')?>">
             <i class="fa fa-home"></i> <span>Dashboard</span>
 
             <span class="pull-right-container">
@@ -37,7 +37,7 @@
       <ul class="sidebar-menu">
       <ul class="sidebar-menu">
         <li class="header">Siswa</li>
-        
+
 
       <ul class="sidebar-menu">
        <!--  <li class="header">MAIN NAVIGATION</li> -->
@@ -46,7 +46,7 @@
             <i class="fa fa-graduation-cap"></i> <span>Siswa</span>
 
             <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i> 
+              <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
@@ -63,7 +63,7 @@
             <i class="fa fa-pencil"></i> <span>Nilai</span>
 
             <span class="pull-right-container">
-               <i class="fa fa-angle-left pull-right"></i> 
+               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
@@ -92,7 +92,7 @@
           <a href="<?php echo base_url('verifikasi/verifikasi')?>">
             <i class="fa fa-tags"></i> <span>Verifikasi Daftar Ulang</span>
             <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i> 
+              <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">

@@ -28,15 +28,15 @@
     					 ?>
     					<tr>
     						<td><?php echo $n; ?></td>
-    						<td><?php echo $i->NAMA_ADMIN; ?></td>
-    						<td><?php echo $i->JENIS_KELAMIN ?></td>
-    						<td><?php echo $i->NO_TELP ?></td>
-    						<td><?php echo $i->STATUS ?></td>
-    						<td><?php echo $i->USERNAME_ADMIN ?></td>
-    						<td><?php echo $i->PASSWORD_ADMIN ?></td>
+    						<td><?php echo $i->nama_admin; ?></td>
+    						<td><?php echo $i->jenis_kelamin ?></td>
+    						<td><?php echo $i->no_telp_admin ?></td>
+    						<td><?php echo $i->nama_level ?></td>
+    						<td><?php echo $i->username_admin ?></td>
+    						<td><?php echo $i->password_admin ?></td>
     						<td style="text-align: center;">
-    							<a href="#" class="btn btn-info " onclick="updatejs('<?php echo $i->ID_ADMIN; ?>')">Update</a>
-    							<a class="btn btn-danger " onclick="deleted('<?php echo $i->ID_ADMIN; ?>')">Delete</a>
+    							<a href="#" class="btn btn-info " onclick="updatejs('<?php echo $i->id_admin; ?>')">Update</a>
+    							<a class="btn btn-danger " onclick="deleted('<?php echo $i->id_admin; ?>')">Delete</a>
     						</td>
     					</tr>
     					<?php $n++; } ?>

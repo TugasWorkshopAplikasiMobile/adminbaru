@@ -7,15 +7,15 @@ class Adminsekretaris extends CI_Controller {
 if(!$this->session->userdata('level') == '4'){
 	redirect('login');
 }else{
-	$data['side']='tampil/side/side';
-	$data['content']='tampil/utama/dashboard_v';
+	$data['side']='tampil/side/sidesekretaris';
+	$data['content']='tampil/utama/v_dashboard';
 	$this->load->view('tampil/utama/main',$data);
 }
 }
 
-public function njajal(){
-	$data['show'] = $this->mymodel->njajal();
-	$this->load->view('cek', $data);
-}
+// public function njajal(){
+// 	$data['show'] = $this->mymodel->njajal();
+// 	$this->load->view('cek', $data);
+// }
 
 }
