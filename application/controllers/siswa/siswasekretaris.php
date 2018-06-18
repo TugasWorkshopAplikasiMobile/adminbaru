@@ -9,7 +9,7 @@ class Siswasekretaris extends CI_Controller {
 
 
 	//iki view tok lee ora ono query ne wes tak pateni error solae. tolong @toper SUB BAGIAN QUERY
-	//BTW aku garap view iki sek minggu ngarep tak lanjut neh 
+	//BTW aku garap view iki sek minggu ngarep tak lanjut neh
 	public function index(){
 		//header('Content-Type: application/json');
 		// $id=$this->uri->segment(4);
@@ -59,8 +59,8 @@ class Siswasekretaris extends CI_Controller {
 
 
 
-	// Iki ndisor asline query detail siswa cman error dadi tak gaekno view ne mari ki lee sek aku absen 3 dino sek soale aku rioyoan keliling mayan akeh :v
-
+	// Yo rul.. benakne.. Culll
+	
 	public function detailsiswa($id)
 	{
 		//header('Content-Type: application/json');
@@ -75,5 +75,5 @@ class Siswasekretaris extends CI_Controller {
 	      //echo json_encode($data);
 	  	}
 	}
-	
+
 }
