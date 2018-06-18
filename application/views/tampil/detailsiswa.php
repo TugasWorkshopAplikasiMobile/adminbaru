@@ -6,13 +6,16 @@
               <li><a href="#timeline" data-toggle="tab">Riwayat Kesehatan</a></li>
             </ul>
             <div class="tab-content">
+
+              <?php foreach ($show->result() as $s) { ?>
+
             <div class="active tab-pane" id="activity">
                 <form class="form-horizontal">
                    <div class="form-group">
                     <label for="inputid" class="col-sm-2 control-label">ID Pendaftaran</label>
 
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" id="id" value="<?php echo $siswa->ID_SISWA;?>" name="id" readonly>
+                      <input type="text" class="form-control" id="id" value="<?php echo $siswa->id_siswa;?>" name="id" readonly>
                       <!-- <label for="inputid" class="col-sm-2 control-label"><?php echo $siswa->ID_SISWA; ?></label> -->
                     </div>
                   </div>
@@ -58,7 +61,7 @@
                       <!-- <label class="col-sm-2 control-label"><?php echo $siswa->JK_SISWA; ?></label> -->
                     </div>
                   </div>
-                 
+
                   <div class="form-group">
                     <label for="Asaslsekolah" class="col-sm-2 control-label">Agama</label>
 
@@ -93,19 +96,21 @@
                       <input type="text" class="form-control" id="id" value="<?php echo $siswa->ANAK_KE;?>" name="id" readonly>
                       <!-- <label class="col-sm-2 control-label"><?php echo $siswa->ANAK_KE; ?></label> -->
                     </div>
-                 
-                 
+
+
                   </div>
                   <a href="http://localhost/kuliah/jann/siswa/siswa" type="button" class="btn btn-primary pull-center">Kembali</a>
                 </form>
                 <!-- Post -->
-              
+
+              <?php } ?>
+
               </div>
 
 
               <div class="tab-pane" id="settings">
                 <form class="form-horizontal">
-            
+
                   <div class="form-group">
                   <label for="inputAyahname" class="col-sm-2 control-label">Nama Ayah</label>
                   <div class="col-sm-10">
@@ -129,7 +134,7 @@
                       <!-- <label class="col-sm-2 control-label"><?php echo $siswa->JK_SISWA; ?></label> -->
                     </div>
                   </div>
-                 
+
                   <div class="form-group">
                     <label for="Asaslsekolah" class="col-sm-2 control-label">Agama Ibu</label>
 
@@ -159,14 +164,14 @@
                   <label for="TinggalBersama" class="col-sm-2 control-label">Kewarga Negaraan Ayah</label>
                   <div class="col-sm-10">
                   <input type="text" class="form-control" id="id" value="<?php echo $siswa->KEWARGANEGARAAN_AYAH;?>" name="id" readonly>
-                  </div> 
+                  </div>
                   </div>
 
                   <div class="form-group">
                   <label for="TinggalBersama" class="col-sm-2 control-label">Kewarga Negaraan Ibu</label>
                   <div class="col-sm-10">
                   <input type="text" class="form-control" id="id" value="<?php echo $siswa->KEWARGANEGARAAN_IBU;?>" name="id" readonly>
-                  </div> 
+                  </div>
                   </div>
 
                   <div class="form-group">
@@ -181,7 +186,7 @@
                   <div class="col-sm-10">
                   <input type="text" class="form-control" id="id" value="<?php echo $siswa->PEND_AKHIR_IBU;?>" name="id" readonly>
                   </div>
-                  </div>              
+                  </div>
 
                   <div class="form-group">
                   <label for="TinggalBersama" class="col-sm-2 control-label">Jurusan Yang Diambil Ayah</label>
@@ -231,28 +236,28 @@
                   <input type="text" class="form-control" id="id" value="<?php echo $siswa->PANGKAT_GOL_IBU;?>" name="id" readonly>
                   </div>
                   </div>
-                  
+
                   <div class="form-group">
                   <label for="TinggalBersama" class="col-sm-2 control-label">Lama Kerja Ayah</label>
                   <div class="col-sm-10">
                   <input type="text" class="form-control" id="id" value="<?php echo $siswa->LAMA_KERJA_AYAH_PERHARI;?>" name="id" readonly>
                   </div>
                   </div>
-                  
+
                   <div class="form-group">
                   <label for="TinggalBersama" class="col-sm-2 control-label">Lama Kerja Ibu</label>
                   <div class="col-sm-10">
                   <input type="text" class="form-control" id="id" value="<?php echo $siswa->LAMA_KERJA_IBU_PERHARI;?>" name="id" readonly>
                   </div>
                   </div>
-                  
+
                   <div class="form-group">
                   <label for="TinggalBersama" class="col-sm-2 control-label">Penghasilan Ayah</label>
                   <div class="col-sm-10">
                   <input type="text" class="form-control" id="id" value="<?php echo $siswa->PENGHASILAN_PERBULAN_AYAH;?>" name="id" readonly>
                   </div>
                   </div>
-                  
+
                   <div class="form-group">
                   <label for="TinggalBersama" class="col-sm-2 control-label">Penghasilan Ibu</label>
                   <div class="col-sm-10">
@@ -266,7 +271,7 @@
                   <input type="text" class="form-control" id="id" value="<?php echo $siswa->JUMLAH_TANGGUNGAN_AYAH;?>" name="id" readonly>
                   </div>
                   </div>
-                  
+
                   <div class="form-group">
                   <label for="TinggalBersama" class="col-sm-2 control-label">Jumlah Tanggungan Ibu</label>
                   <div class="col-sm-10">
@@ -287,7 +292,7 @@
                   <input type="text" class="form-control" id="id" value="<?php echo $siswa->ALAMAT_RMH_IBU;?>" name="id" readonly>
                   </div>
                   </div>
-                  
+
                    <div class="form-group">
                   <label for="TinggalBersama" class="col-sm-2 control-label">Alamat Kantor Ayah</label>
                   <div class="col-sm-10">
@@ -301,7 +306,7 @@
                   <input type="text" class="form-control" id="id" value="<?php echo $siswa->ALAMAT_KANTOR_IBU;?>" name="id" readonly>
                   </div>
                   </div>
-                  
+
                   <div class="form-group">
                   <label for="TinggalBersama" class="col-sm-2 control-label">Telephone Rumah Ayah</label>
                   <div class="col-sm-10">
@@ -315,14 +320,14 @@
                   <input type="text" class="form-control" id="id" value="<?php echo $siswa->TLP_RMH_HP_IBU;?>" name="id" readonly>
                   </div>
                   </div>
-                  
+
                   <div class="form-group">
                   <label for="TinggalBersama" class="col-sm-2 control-label">Telephone Kantor Ayah</label>
                   <div class="col-sm-10">
                   <input type="text" class="form-control" id="id" value="<?php echo $siswa->TLP_KANTOR_AYAH;?>" name="id" readonly>
                   </div>
                   </div>
-                    
+
                   <div class="form-group">
                   <label for="TinggalBersama" class="col-sm-2 control-label">Telephone Kantor Ibu</label>
                   <div class="col-sm-10">
@@ -336,7 +341,7 @@
                   <input type="text" class="form-control" id="id" value="<?php echo $siswa->KESEMPATAN_BERKOMUNIKASI_DG_AYAH;?>" name="id" readonly>
                   </div>
                   </div>
-                  
+
                   <div class="form-group">
                   <label for="TinggalBersama" class="col-sm-2 control-label">Lama Komunikasi Dengan Ibu</label>
                   <div class="col-sm-10">
@@ -354,28 +359,28 @@
                 <label for="inputUsername" class="col-sm-2 control-label">Berat Badan</label>
                 <div class="col-sm-10">
                 <input type="text" class="form-control" id="id" value="<?php echo $siswa->BB_TB;?>" name="id" readonly>
-                </div> 
+                </div>
                 </div>
 
                 <div class="form-group">
                 <label for="inputUsername" class="col-sm-2 control-label">Golongan Darah</label>
                 <div class="col-sm-10">
                 <input type="text" class="form-control" id="id" value="<?php echo $siswa->GOLDAR;?>" name="id" readonly>
-                </div> 
+                </div>
                 </div>
 
                 <div class="form-group">
                 <label for="inputUsername" class="col-sm-2 control-label">Lama Masa Meminum Asi</label>
                 <div class="col-sm-10">
                 <input type="text" class="form-control" id="id" value="<?php echo $siswa->MINUM_ASI_SELAMA;?>" name="id" readonly>
-                </div> 
+                </div>
                 </div>
 
                 <div class="form-group">
                 <label for="inputUsername" class="col-sm-2 control-label">Perkembangan Dalam 2 Bulan</label>
                 <div class="col-sm-10">
                 <input type="text" class="form-control" id="id" value="<?php echo $siswa->PERKEMBANGAN_DLM_2BLN;?>" name="id" readonly>
-                </div> 
+                </div>
                 </div>
 
                 <div class="form-group">
@@ -383,53 +388,53 @@
                 <div class="col-sm-10">
                 <input type="text" class="form-control" id="id" value="<?php echo $siswa->KELAINAN_DLM_TUBUH;?>" name="id" readonly>
                 </div>
-                </div> 
+                </div>
 
                 <div class="form-group">
                 <label for="inputUsername" class="col-sm-2 control-label">Makan Tambahan < 4 Bulan</label>
                 <div class="col-sm-10">
                 <input type="text" class="form-control" id="id" value="<?php echo $siswa->MAKANAN_TAMBAHAN_KURANG_DARI_4BLN;?>" name="id" readonly>
                 </div>
-                </div> 
+                </div>
 
                 <div class="form-group">
                 <label for="inputUsername" class="col-sm-2 control-label">Imunisasi yang Pernah Diberikan</label>
                 <div class="col-sm-10">
                 <input type="text" class="form-control" id="id" value="<?php echo $siswa->IMUNISASI_YG_DIBERIKAN;?>" name="id" readonly>
-                </div> 
+                </div>
                 </div>
 
                 <div class="form-group">
                 <label for="inputUsername" class="col-sm-2 control-label">Alergi yang Dimiliki</label>
                 <div class="col-sm-10">
                 <input type="text" class="form-control" id="id" value="<?php echo $siswa->ALERGI_MAKANAN_DAN_OBAT;?>" name="id" readonly>
-                </div> 
+                </div>
                 </div>
 
                 <div class="form-group">
                 <label for="inputUsername" class="col-sm-2 control-label">Pengelihatan</label>
                 <div class="col-sm-10">
                 <input type="text" class="form-control" id="id" value="<?php echo $siswa->PENGLIHATAN;?>" name="id" readonly>
-                </div> 
+                </div>
                 </div>
 
                 <div class="form-group">
                 <label for="inputUsername" class="col-sm-2 control-label">Pendegaran</label>
                 <div class="col-sm-10">
                 <input type="text" class="form-control" id="id" value="<?php echo $siswa->PENDENGARAN;?>" name="id" readonly>
-                </div> 
+                </div>
                 </div>
 
                 <div class="form-group">
                 <label for="inputUsername" class="col-sm-2 control-label">Penampilan</label>
                 <div class="col-sm-10">
                 <input type="text" class="form-control" id="id" value="<?php echo $siswa->PENAMPILAN;?>" name="id" readonly>
-                </div> 
-            
+                </div>
+
                 </form>
               </div>
               <!-- /.tab-pane -->
-            
+
 
 
 
@@ -449,4 +454,5 @@
   </div>
   <!-- /.content-wrapper -->
 </body>
-</html>        
+
+</html>

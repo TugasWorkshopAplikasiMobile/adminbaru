@@ -73,7 +73,8 @@ class Mymodel extends CI_Model {
         $this->db->join('kondisi_keluarga', 'siswa.kondisi_keluarga_ID_KONDISI_KELUARGA = kondisi_keluarga.ID_KONDISI_KELUARGA', 'left');
         $this->db->join('ciri_khas_anak', 'siswa.ciri_khas_anak_ID_CIRIKHAS_ANAK = ciri_khas_anak.ID_CIRIKHAS_ANAK', 'left');
         $this->db->where("siswa.ID_SISWA",$id);
-        return $this->db->get("siswa");
+        $this->db->from('siswa');
+        return $this->db->get();
     }
 
   function detailnilai($id){
@@ -110,16 +111,18 @@ class Mymodel extends CI_Model {
 
 // tampilan data siswa tk admin sekretaris
       function siswatk1(){
-        // $id_tk = '1';
-        $this->db->select('siswa.*, user.*, jenis_kelamin.*, jenjang.*');
-        // $this->db->join('user', 'siswa.id_user = user.id_user');
-        // $this->db->join('jenis_kelamin', 'siswa.id_jenis_kelamin = jenis_kelamin.id_jenis_kelamin');
-        // $this->db->join('jenjang', 'user.id_jenjang = jenjang.id_jenjang');
+        $this->db->select('siswa.*, user.*, jenis_kelamin.*, agama.*, kewarganegaraan.*, status_diterima.*');
+        $this->db->join('user', 'siswa.id_user = user.id_user');
+        $this->db->join('jenis_kelamin', 'siswa.id_jenis_kelamin = jenis_kelamin.id_jenis_kelamin');
+        $this->db->join('agama', 'siswa.id_agama = agama.id_agama');
+        $this->db->join('kewarganegaraan', 'siswa.id_warganegara = kewarganegaraan.id_kewarganegaraan');
+        $this->db->join('status_diterima', 'siswa.id_status_diterima = status_diterima.id_status_diterima');
         $this->db->from('siswa');
-        // $this->db->where('user.id_jenjang', $id_tk);
+        $this->db->where("user.id_jenjang",'1');
         $data=$this->db->get();
         return $data;
       }
 // end of tampilan data siswa tk admin sekretaris
+
 
 }

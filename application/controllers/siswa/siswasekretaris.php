@@ -17,10 +17,18 @@ class Siswasekretaris extends CI_Controller {
 		// $data= array(
 		$data['side']='tampil/side/sidesekretaris';
 		$data['content']='tampil/siswa/siswa_v';
-		// 'siswa'=>$this->mymodel->siswatk1());
+		$data['siswa']=$this->mymodel->siswatk1();
 		$this->load->view('tampil/utama/main',$data);
 		//echo json_encode($data);
 	}
+
+//jogo2
+	public function sistk(){
+		$data['side']='tampil/side/sidesekretaris';
+		$data['content']='tampil/siswa/siswasd';
+		$this->load->view('tampil/utama/main',$data);
+	}
+
 	public function sissd(){
 		$data['side']='tampil/side/sidesekretaris';
 		$data['content']='tampil/siswa/siswasd';
@@ -33,10 +41,11 @@ class Siswasekretaris extends CI_Controller {
 	}
 
 
-
 	//View Detail Siswa
 	public function detsiswatk()
 	{
+		$id=$this->uri->segment(4);
+		$data['dataupdate']= $this->db->query("SELECT * FROM siswa WHERE id_siswa='$id'");
 		$data['side']='tampil/side/sidesekretaris';
 		$data['content']='tampil/siswa/detailsiswatk';
 		$this->load->view('tampil/utama/main',$data);
@@ -54,13 +63,20 @@ class Siswasekretaris extends CI_Controller {
 		$this->load->view('tampil/utama/main',$data);
 	}
 
+	public function deletesiswatk(){
+		//zonk
+	}
 
+	public function deletesiswasd(){
+		//zonk
+	}
 
-
-
+	public function deletesiswasmp(){
+		//zonk
+	}
 
 	// Yo rul.. benakne.. Culll
-	
+
 	public function detailsiswa($id)
 	{
 		//header('Content-Type: application/json');

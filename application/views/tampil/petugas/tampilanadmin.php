@@ -35,7 +35,7 @@
     						<td><?php echo $i->username_admin ?></td>
     						<td><?php echo $i->password_admin ?></td>
     						<td style="text-align: center;">
-    							<a href="#" class="btn btn-info " onclick="updatejs('<?php echo $i->id_admin; ?>')">Update</a>
+    							<a class="btn btn-info " onclick="updatejs('<?php echo $i->id_admin; ?>')">Update</a>
     							<a class="btn btn-danger " onclick="deleted('<?php echo $i->id_admin; ?>')">Delete</a>
     						</td>
     					</tr>
@@ -55,7 +55,7 @@
 <!-- /.row -->
 <script type="text/javascript">
   function deleted(param){
-    var proc = window.confirm('Are you sure delete this data?');
+    var proc = window.confirm('Apakah Anda yakin akan menghapus data?');
     if(proc){
       document.location='<?php echo base_url(); ?>petugas/petugasdata/deletedata/'+param;
     }
