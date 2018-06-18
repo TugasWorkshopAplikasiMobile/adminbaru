@@ -110,13 +110,13 @@ class Mymodel extends CI_Model {
 
 // tampilan data siswa tk admin sekretaris
       function siswatk1(){
-        $id_tk = '1';
+        // $id_tk = '1';
         $this->db->select('siswa.*, user.*, jenis_kelamin.*, jenjang.*');
-        $this->db->join('user', 'siswa.id_user = user.id_user');
-        $this->db->join('jenis_kelamin', 'siswa.id_jenis_kelamin = jenis_kelamin.id_jenis_kelamin');
-        $this->db->join('jenjang', 'user.id_jenjang = jenjang.id_jenjang');
+        // $this->db->join('user', 'siswa.id_user = user.id_user');
+        // $this->db->join('jenis_kelamin', 'siswa.id_jenis_kelamin = jenis_kelamin.id_jenis_kelamin');
+        // $this->db->join('jenjang', 'user.id_jenjang = jenjang.id_jenjang');
         $this->db->from('siswa');
-        $this->db->where('siswa.id_user', $id_tk);
+        // $this->db->where('user.id_jenjang', $id_tk);
         $data=$this->db->get();
         return $data;
       }
