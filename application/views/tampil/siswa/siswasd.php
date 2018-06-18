@@ -27,7 +27,7 @@
                 <td>status_diterima</td>
 
                 <td style="text-align: center;">
-                  <a href="<?php echo base_url('siswa/siswasekretaris/detsiswatk')?>" class="btn btn-warning btn-xs">Detail</a>
+                  <a href="<?php echo base_url('siswa/siswasekretaris/detsiswasd')?>" class="btn btn-warning btn-xs">Detail</a>
                   <a class="btn btn-danger btn-xs" onclick="">Delete</a>
                 </td>
               </tr>
