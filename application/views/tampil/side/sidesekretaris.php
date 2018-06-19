@@ -68,8 +68,8 @@
           </a>
           <ul class="treeview-menu">
             <li><a href="<?php echo base_url('nilai/nilai')?>"><i class="fa fa-circle-o"></i>TK</a></li>
-            <li><a href="<?php echo base_url('nilai/nilai')?>"><i class="fa fa-circle-o"></i> SD</a></li>
-            <li><a href="<?php echo base_url('nilai/nilai')?>"><i class="fa fa-circle-o"></i> SMP</a></li>
+            <li><a href="<?php echo base_url('nilai/nilai/nisd')?>"><i class="fa fa-circle-o"></i> SD</a></li>
+            <li><a href="<?php echo base_url('nilai/nilai/nismp')?>"><i class="fa fa-circle-o"></i> SMP</a></li>
           </ul>
         </li>
       </ul>

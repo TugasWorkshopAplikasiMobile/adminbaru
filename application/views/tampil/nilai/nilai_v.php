@@ -54,13 +54,13 @@
 </div>
 <!-- /.row -->
 <script type="text/javascript">
-  function deleted(param){
-    var proc = window.confirm('Are you sure delete this data?');
-    if(proc){
-      document.location='<?php echo base_url(); ?>petugas/petugasdata/deletedata/'+param;
-    }
-  }
+//  function deleted(param){
+  //  var proc = window.confirm('Are you sure delete this data?');
+//    if(proc){
+      //document.location='<?php echo base_url(); ?>petugas/petugasdata/deletedata/'+param;
+    //}
+  //}
   function updatejs(param){
-      document.location='<?php echo base_url(); ?>pengumuman/pengumuman/dtsd/'+param;
+      document.location='<?php echo base_url(); ?>nilai/nilai/detnilaitk/'+param;
   }
 </script>
