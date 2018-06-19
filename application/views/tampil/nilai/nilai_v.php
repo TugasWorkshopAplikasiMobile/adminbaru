@@ -2,16 +2,17 @@
   <div class="col-xs-12">
     <div class="box">
       <div class="box-header">
-        <h3 class="box-title">Data Nilai Siswa</h3><br><br>
-        <a href="<?php echo base_url('nilai/nilai/tambahdatanilai')?>" class="btn btn-primary pull-left" style="width: 30%;">Tambah Data Siswa</a>
+        <h3 class="box-title">Masaukan Nilai Siswa TK</h3><br><br>
+        <!-- <a href="<?php echo base_url('petugas/petugasdata/tambahData')?>" class="btn btn-primary pull-left" style="width: 30%;">Tambah Data Petugas</a> -->
+
       </div>
       <!-- /.box-header -->
       <div class="box-body">
         <table id="example1" class="table table-bordered table-hover">
           <thead>
           <tr>
-            <th>No</th>
-            <th>Nama Siswa</th>
+           <th>No</th>
+            <th>Nama</th>
             <th>MTK</th>
             <th>BIG</th>
             <th>BIN</th>
@@ -22,29 +23,23 @@
             <th>Aksi</th>
           </tr>
           </thead>
-          <tbody>
-            <?php
-              $n=1;
-                foreach ($nilai->result() as $i) {
-               ?>
+          <tbody> 
               <tr>
-                <td><?php echo $n; ?></td>
-                <td><?php echo $i->NAMA_SISWA ?></td>
-                <td><?php echo $i->matematika ?></td>
-                <td><?php echo $i->bahasa_inggris ?></td>
-                <td><?php echo $i->IPA ?></td>
-                <td><?php echo $i->Bahasa_Indonesia ?></td>
-                <td><?php echo $i->Psikologi ?></td>
-                <td><?php echo $i->JUMLAH_NILAI_TEST ?></td>
-                <td><?php echo $i->RATA_RATA_NILAI_TEST ?></td>
-                <td style="text-align: center;">
-                  <!-- <?php echo $i->no?> -->
-                  <!-- <a href="<?php echo base_url('nilai/nilai/detailnilai/'.$i->ID_SISWA)?>" class="btn btn-warning btn-xs" >Detail</a> -->
-                  <a href="<?php echo base_url('nilai/nilai/update/'.$i->ID_SISWA)?>" class="btn btn-info btn-xs" >Update</a>
-                  <a class="btn btn-danger btn-xs" onclick="">Delete</a>
+               <td>1</td>
+                <td>NAMA</td>
+                <td>matematika</td>
+                <td>BIG</td>
+                <td>IPA</td>
+                <td>BINDO</td>
+                <td>Psikologi</td>
+                <td>JUMLAH_NILAI_TEST</td>
+                <td>RATA_RATA_NILAI_TEST</td>
+
+                <td style="text-align:center;">
+                  <a href="#" class="btn btn-info " onclick="updatejs('')">Update</a>
+                  <a class="btn btn-danger " onclick="deleted('')">Delete</a>
                 </td>
               </tr>
-              <?php $n++; } ?>
             </tbody>
             </table>
       </div>
@@ -59,13 +54,13 @@
 </div>
 <!-- /.row -->
 <script type="text/javascript">
-  // function deleted(param){
-  //   var proc = window.confirm('Are you sure delete this data?');
-  //   if(proc){
-  //     document.location='<?php echo base_url(); ?>index.php/petugasdata/deletedata/'+param;
-  //   }
-  // }
-  // function updatejs(param){
-  //     document.location='<?php echo base_url(); ?>index.php/petugasdata/editData/'+param;
-  // }
+//  function deleted(param){
+  //  var proc = window.confirm('Are you sure delete this data?');
+//    if(proc){
+      //document.location='<?php echo base_url(); ?>petugas/petugasdata/deletedata/'+param;
+    //}
+  //}
+  function updatejs(param){
+      document.location='<?php echo base_url(); ?>nilai/nilai/detnilaitk/'+param;
+  }
 </script>

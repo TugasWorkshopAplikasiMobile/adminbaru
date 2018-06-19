@@ -6,11 +6,15 @@ class Siswasekretaris extends CI_Controller {
 		parent::__construct();
 		$this->load->model('mymodel');
 	}
+<<<<<<< HEAD
 
 
 	//iki view tok lee ora ono query ne wes tak pateni error solae. tolong @toper SUB BAGIAN QUERY
 	//BTW aku garap view iki sek minggu ngarep tak lanjut neh
 	public function sistk(){
+=======
+	public function index(){
+>>>>>>> 69317dacb262b1866297ed315a210c4f4f223ed0
 		//header('Content-Type: application/json');
 		// $id=$this->uri->segment(4);
 		// $where  = array('user.id_jenjang' => $id);
