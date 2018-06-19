@@ -50,7 +50,7 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="<?php echo base_url('siswa/siswasekretaris')?>" onclick="kirimsegment('1')"><i class="fa fa-circle-o"></i>TK</a></li>
+            <li><a href="<?php echo base_url('siswa/siswasekretaris/sistk')?>" onclick="kirimsegment('1')"><i class="fa fa-circle-o"></i>TK</a></li>
             <li><a href="<?php echo base_url('siswa/siswasekretaris/sissd')?>"><i class="fa fa-circle-o"></i> SD</a></li>
             <li><a href="<?php echo base_url('siswa/siswasekretaris/sissmp')?>"><i class="fa fa-circle-o"></i> SMP</a></li>
           </ul>

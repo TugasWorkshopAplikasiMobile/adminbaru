@@ -10,7 +10,7 @@ class Siswasekretaris extends CI_Controller {
 
 	//iki view tok lee ora ono query ne wes tak pateni error solae. tolong @toper SUB BAGIAN QUERY
 	//BTW aku garap view iki sek minggu ngarep tak lanjut neh
-	public function index(){
+	public function sistk(){
 		//header('Content-Type: application/json');
 		// $id=$this->uri->segment(4);
 		// $where  = array('user.id_jenjang' => $id);
@@ -20,13 +20,6 @@ class Siswasekretaris extends CI_Controller {
 		$data['siswa']=$this->mymodel->siswatk1();
 		$this->load->view('tampil/utama/main',$data);
 		//echo json_encode($data);
-	}
-
-//jogo2
-	public function sistk(){
-		$data['side']='tampil/side/sidesekretaris';
-		$data['content']='tampil/siswa/siswasd';
-		$this->load->view('tampil/utama/main',$data);
 	}
 
 	public function sissd(){
@@ -45,7 +38,7 @@ class Siswasekretaris extends CI_Controller {
 	public function detsiswatk()
 	{
 		$id=$this->uri->segment(4);
-		$data['dataupdate']= $this->db->query("SELECT * FROM siswa WHERE id_siswa='$id'");
+		$data['detail']= $this->db->query("SELECT * FROM siswa WHERE id_siswa='$id'");
 		$data['side']='tampil/side/sidesekretaris';
 		$data['content']='tampil/siswa/detailsiswatk';
 		$this->load->view('tampil/utama/main',$data);
