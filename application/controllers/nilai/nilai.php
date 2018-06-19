@@ -6,13 +6,23 @@ class Nilai extends CI_Controller {
 		parent::__construct();
 		$this->load->model('mymodel');
 	}
-	public function index(){
-		$data= array(
-			'side'=>'tampil/side/side',
-			'content'=>'tampil/nilai/nilai_v',
-			'nilai'=>$this->mymodel->selectsiswafornilai());
-		$this->load->view('tampil/utama/main',$data);
+
+
+	//test
+	 public function index(){
+	 	$data['side']='tampil/side/sidesekretaris';
+	 	$data['content']='tampil/nilai/nilai_v';
+	 	$this->load->view('tampil/utama/main',$data);
 	}
+	
+//jgn di buang
+	// /public function index(){
+	//	$data= array(
+	//		'side'=>'tampil/side/side',
+	//		'content'=>'tampil/nilai/nilai_v',
+	//		'nilai'=>$this->mymodel->selectsiswafornilai());
+	//	$this->load->view('tampil/utama/main',$data);
+//	}
 
 	public function nilaisd(){
 		$data= array(
