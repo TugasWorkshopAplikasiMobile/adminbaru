@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 13, 2018 at 07:23 PM
+-- Generation Time: Jun 20, 2018 at 01:17 AM
 -- Server version: 10.1.30-MariaDB
 -- PHP Version: 5.6.33
 
@@ -31,7 +31,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `admin` (
   `id_admin` int(9) NOT NULL,
   `nama_admin` varchar(50) NOT NULL,
-  `no_telp_admin` float NOT NULL,
+  `no_telp_admin` text NOT NULL,
   `username_admin` varchar(50) NOT NULL,
   `password_admin` varchar(50) NOT NULL,
   `id_level` int(9) NOT NULL,
@@ -43,7 +43,9 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`id_admin`, `nama_admin`, `no_telp_admin`, `username_admin`, `password_admin`, `id_level`, `id_jenis_kelamin`) VALUES
-(1, 'Jon', 81235300000, 'jon', 'jon', 4, 1);
+(1, 'Jon', '081235295632', 'jon', 'jon', 4, 1),
+(2, 'Bahrul', '081235235235', 'bahrul', 'bahrul', 5, 1),
+(3, 'Tita', '081081081081', 'tita', 'tita', 1, 2);
 
 -- --------------------------------------------------------
 
@@ -71,6 +73,29 @@ INSERT INTO `admin_level` (`id_level`, `level`, `nama_level`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `agama`
+--
+
+CREATE TABLE `agama` (
+  `id_agama` int(9) NOT NULL,
+  `nama_agama` varchar(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `agama`
+--
+
+INSERT INTO `agama` (`id_agama`, `nama_agama`) VALUES
+(1, 'Islam'),
+(2, 'Kristen'),
+(3, 'Katolik'),
+(4, 'Hindu'),
+(5, 'Budha'),
+(6, 'Kong Hu Cu');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `ciri_khas_anak`
 --
 
@@ -79,7 +104,8 @@ CREATE TABLE `ciri_khas_anak` (
   `ciri_fisik_yang_menonjol` varchar(50) NOT NULL,
   `ciri_kepribadian_yang_menonjol` varchar(50) NOT NULL,
   `bakat_khusus_yang_menonjol` varchar(50) NOT NULL,
-  `prestasi_yang_pernah_diraih` varchar(50) NOT NULL
+  `prestasi_yang_pernah_diraih` varchar(50) NOT NULL,
+  `id_siswa` int(9) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -112,12 +138,32 @@ CREATE TABLE `gambar` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `golongan_darah`
+--
+
+CREATE TABLE `golongan_darah` (
+  `id_golongan_darah` int(9) NOT NULL,
+  `golongan_darah` varchar(2) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `golongan_darah`
+--
+
+INSERT INTO `golongan_darah` (`id_golongan_darah`, `golongan_darah`) VALUES
+(1, 'A'),
+(2, 'B'),
+(3, 'AB'),
+(4, 'O');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `hasil`
 --
 
 CREATE TABLE `hasil` (
   `id_hasil` int(9) NOT NULL,
-  `status_terima` varchar(50) NOT NULL,
   `total_nilai` int(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -139,6 +185,25 @@ CREATE TABLE `jenis_kelamin` (
 INSERT INTO `jenis_kelamin` (`id_jenis_kelamin`, `jenis_kelamin`) VALUES
 (1, 'LAKI - LAKI'),
 (2, 'PEREMPUAN');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `jenis_notifikasi`
+--
+
+CREATE TABLE `jenis_notifikasi` (
+  `id_jenis_notifikasi` int(9) NOT NULL,
+  `jenis_notifikasi` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `jenis_notifikasi`
+--
+
+INSERT INTO `jenis_notifikasi` (`id_jenis_notifikasi`, `jenis_notifikasi`) VALUES
+(1, 'Jenis 1'),
+(2, 'Jenis 2');
 
 -- --------------------------------------------------------
 
@@ -216,7 +281,8 @@ CREATE TABLE `keluarga` (
   `telp_kantor_ayah` int(13) NOT NULL,
   `telp_kantor_ibu` int(13) NOT NULL,
   `kesempatan_berkomunikasi_dg_ayah` varchar(100) NOT NULL,
-  `kesempatan_berkomunikasi_dg_ibu` varchar(100) NOT NULL
+  `kesempatan_berkomunikasi_dg_ibu` varchar(100) NOT NULL,
+  `id_siswa` int(9) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -241,7 +307,6 @@ CREATE TABLE `kesehatan_anak` (
   `id_kesehatan_anak` int(9) NOT NULL,
   `berat_badan` int(9) NOT NULL,
   `tinggi_badan` varchar(10) NOT NULL,
-  `gol_darah` varchar(3) NOT NULL,
   `minum_asi_selama` int(3) NOT NULL,
   `perkembangan_dalam_2bulan` varchar(100) NOT NULL,
   `kelainan_dalam_tubuh` varchar(100) NOT NULL,
@@ -250,8 +315,29 @@ CREATE TABLE `kesehatan_anak` (
   `alergi_makanan_dan_obat` varchar(100) NOT NULL,
   `penglihatan` varchar(100) NOT NULL,
   `pendengaran` varchar(100) NOT NULL,
-  `penampilan` varchar(100) NOT NULL
+  `penampilan` varchar(100) NOT NULL,
+  `id_golongan_darah` int(9) NOT NULL,
+  `id_siswa` int(9) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `kewarganegaraan`
+--
+
+CREATE TABLE `kewarganegaraan` (
+  `id_kewarganegaraan` int(9) NOT NULL,
+  `status_warganegara` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `kewarganegaraan`
+--
+
+INSERT INTO `kewarganegaraan` (`id_kewarganegaraan`, `status_warganegara`) VALUES
+(1, 'Warga Negara Indonesia'),
+(2, 'Warga Negara Asing');
 
 -- --------------------------------------------------------
 
@@ -313,11 +399,12 @@ CREATE TABLE `nilai_tes` (
 
 CREATE TABLE `notifikasi` (
   `id_notifikasi` int(9) NOT NULL,
-  `jenis_notifikasi` varchar(50) NOT NULL,
   `judul_notifikasi` varchar(50) NOT NULL,
   `isi_notifikasi` varchar(50) NOT NULL,
   `status_notifikasi` varchar(50) NOT NULL,
-  `id_user` int(9) NOT NULL
+  `id_user` int(9) NOT NULL,
+  `id_jenis_notifikasi` int(9) NOT NULL,
+  `id_admin` int(9) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -330,6 +417,14 @@ CREATE TABLE `pembayaran` (
   `id_pembayaran` int(9) NOT NULL,
   `status_pembayaran` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `pembayaran`
+--
+
+INSERT INTO `pembayaran` (`id_pembayaran`, `status_pembayaran`) VALUES
+(1, 'LUNAS'),
+(2, 'BELUM LUNAS');
 
 -- --------------------------------------------------------
 
@@ -344,7 +439,8 @@ CREATE TABLE `riwayat_sekolah` (
   `tahun_lulus` int(4) NOT NULL,
   `alamat_sekolah` varchar(50) NOT NULL,
   `kesulitan_saat_sekolah` varchar(100) NOT NULL,
-  `aktifitas_yang_disukai` varchar(100) NOT NULL
+  `aktifitas_yang_disukai` varchar(100) NOT NULL,
+  `id_siswa` int(9) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -356,10 +452,11 @@ CREATE TABLE `riwayat_sekolah` (
 CREATE TABLE `saudara_kandung_anak` (
   `id_saudara_kandung` int(9) NOT NULL,
   `nama_saudara_kandung` varchar(50) NOT NULL,
-  `jenis_kelamin_saudara_kandung` varchar(50) NOT NULL,
   `pendidikan_saudara_kandung` varchar(50) NOT NULL,
   `kelas_saudara_kandung` varchar(50) NOT NULL,
-  `no_induk_saudara_kandung` int(50) NOT NULL
+  `no_induk_saudara_kandung` int(50) NOT NULL,
+  `id_jenis_kelamin` int(9) NOT NULL,
+  `id_siswa` int(9) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -375,13 +472,42 @@ CREATE TABLE `siswa` (
   `tempat_lahir_siswa` varchar(50) NOT NULL,
   `tanggal_lahir_siswa` date NOT NULL,
   `usia_siswa` int(3) NOT NULL,
-  `jenis_kelamin_siswa` varchar(50) NOT NULL,
-  `agama_siswa` varchar(50) NOT NULL,
-  `kewarganegaraan_siswa` varchar(50) NOT NULL,
   `tinggal_bersama_siswa` varchar(50) NOT NULL,
   `anak_ke_siswa` int(3) NOT NULL,
-  `id_user` int(9) NOT NULL
+  `id_user` int(9) NOT NULL,
+  `id_jenis_kelamin` int(9) NOT NULL,
+  `id_agama` int(9) NOT NULL,
+  `id_warganegara` int(9) NOT NULL,
+  `id_status_diterima` int(9) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `siswa`
+--
+
+INSERT INTO `siswa` (`id_siswa`, `nama_siswa`, `nama_panggilan`, `tempat_lahir_siswa`, `tanggal_lahir_siswa`, `usia_siswa`, `tinggal_bersama_siswa`, `anak_ke_siswa`, `id_user`, `id_jenis_kelamin`, `id_agama`, `id_warganegara`, `id_status_diterima`) VALUES
+(1, 'M. bahrul Arif', 'Bahrul', 'Mojokerto', '1997-02-02', 21, 'Kos', 1, 5, 1, 1, 1, 3),
+(2, 'Monkey D Luffy', 'luffy', 'East Blue', '1997-06-12', 20, 'Sunny Go', 1, 7, 1, 2, 1, 3);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `status_diterima`
+--
+
+CREATE TABLE `status_diterima` (
+  `id_status_diterima` int(9) NOT NULL,
+  `status_diterima` varchar(15) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `status_diterima`
+--
+
+INSERT INTO `status_diterima` (`id_status_diterima`, `status_diterima`) VALUES
+(1, 'LULUS'),
+(2, 'TIDAK LULUS'),
+(3, 'BELUM LULUS');
 
 -- --------------------------------------------------------
 
@@ -403,7 +529,8 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`id_user`, `nama_user`, `email_user`, `password_user`, `id_jenjang`) VALUES
 (5, 'Bahrul', 'bahrul@gmail.com', 'bahrul', 3),
-(6, 'Anas', 'anas@gmail.com', 'anas', 2);
+(6, 'Anas', 'anas@gmail.com', 'anas', 2),
+(7, 'luffy', 'luffy@onepiece.com', 'luffy', 1);
 
 --
 -- Indexes for dumped tables
@@ -424,10 +551,17 @@ ALTER TABLE `admin_level`
   ADD PRIMARY KEY (`id_level`);
 
 --
+-- Indexes for table `agama`
+--
+ALTER TABLE `agama`
+  ADD PRIMARY KEY (`id_agama`);
+
+--
 -- Indexes for table `ciri_khas_anak`
 --
 ALTER TABLE `ciri_khas_anak`
-  ADD PRIMARY KEY (`id_ciri_khas_anak`);
+  ADD PRIMARY KEY (`id_ciri_khas_anak`),
+  ADD KEY `id_siswa_ciri_khas_anak` (`id_siswa`);
 
 --
 -- Indexes for table `data_tempat_tinggal`
@@ -444,6 +578,12 @@ ALTER TABLE `gambar`
   ADD KEY `id_admin_gambar` (`id_admin_gambar`);
 
 --
+-- Indexes for table `golongan_darah`
+--
+ALTER TABLE `golongan_darah`
+  ADD PRIMARY KEY (`id_golongan_darah`);
+
+--
 -- Indexes for table `hasil`
 --
 ALTER TABLE `hasil`
@@ -454,6 +594,12 @@ ALTER TABLE `hasil`
 --
 ALTER TABLE `jenis_kelamin`
   ADD PRIMARY KEY (`id_jenis_kelamin`);
+
+--
+-- Indexes for table `jenis_notifikasi`
+--
+ALTER TABLE `jenis_notifikasi`
+  ADD PRIMARY KEY (`id_jenis_notifikasi`);
 
 --
 -- Indexes for table `jenjang`
@@ -471,7 +617,8 @@ ALTER TABLE `kelahiran_anak`
 -- Indexes for table `keluarga`
 --
 ALTER TABLE `keluarga`
-  ADD PRIMARY KEY (`id_keluarga`);
+  ADD PRIMARY KEY (`id_keluarga`),
+  ADD KEY `id_siswa_keluarga` (`id_siswa`);
 
 --
 -- Indexes for table `kemampuan_anak`
@@ -483,7 +630,15 @@ ALTER TABLE `kemampuan_anak`
 -- Indexes for table `kesehatan_anak`
 --
 ALTER TABLE `kesehatan_anak`
-  ADD PRIMARY KEY (`id_kesehatan_anak`);
+  ADD PRIMARY KEY (`id_kesehatan_anak`),
+  ADD KEY `id_golongan_darah_siswa` (`id_golongan_darah`),
+  ADD KEY `id_siswa_kesehatan_anak` (`id_siswa`);
+
+--
+-- Indexes for table `kewarganegaraan`
+--
+ALTER TABLE `kewarganegaraan`
+  ADD PRIMARY KEY (`id_kewarganegaraan`);
 
 --
 -- Indexes for table `kondisi_keluarga`
@@ -514,7 +669,9 @@ ALTER TABLE `nilai_tes`
 --
 ALTER TABLE `notifikasi`
   ADD PRIMARY KEY (`id_notifikasi`),
-  ADD KEY `id_user_notifikasi` (`id_user`);
+  ADD KEY `id_user_notifikasi` (`id_user`),
+  ADD KEY `id_jenis_notifikasi` (`id_jenis_notifikasi`),
+  ADD KEY `id_notifikasi_admin` (`id_admin`);
 
 --
 -- Indexes for table `pembayaran`
@@ -526,20 +683,33 @@ ALTER TABLE `pembayaran`
 -- Indexes for table `riwayat_sekolah`
 --
 ALTER TABLE `riwayat_sekolah`
-  ADD PRIMARY KEY (`id_riwayat_sekolah`);
+  ADD PRIMARY KEY (`id_riwayat_sekolah`),
+  ADD KEY `id_siswa_riwayat_sekolah` (`id_siswa`);
 
 --
 -- Indexes for table `saudara_kandung_anak`
 --
 ALTER TABLE `saudara_kandung_anak`
-  ADD PRIMARY KEY (`id_saudara_kandung`);
+  ADD PRIMARY KEY (`id_saudara_kandung`),
+  ADD KEY `id_jenis_kelamin_saudara_kandung` (`id_jenis_kelamin`),
+  ADD KEY `id_siswa_saudara_kandung_anak` (`id_siswa`);
 
 --
 -- Indexes for table `siswa`
 --
 ALTER TABLE `siswa`
   ADD PRIMARY KEY (`id_siswa`),
-  ADD KEY `id_user` (`id_user`);
+  ADD KEY `id_user` (`id_user`),
+  ADD KEY `id_jenis_kelamin_siswa` (`id_jenis_kelamin`),
+  ADD KEY `id_agama_siswa` (`id_agama`),
+  ADD KEY `id_warganegara_siswa` (`id_warganegara`),
+  ADD KEY `id_status_diterima_siswa` (`id_status_diterima`);
+
+--
+-- Indexes for table `status_diterima`
+--
+ALTER TABLE `status_diterima`
+  ADD PRIMARY KEY (`id_status_diterima`);
 
 --
 -- Indexes for table `user`
@@ -556,13 +726,19 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `id_admin` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_admin` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `admin_level`
 --
 ALTER TABLE `admin_level`
   MODIFY `id_level` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `agama`
+--
+ALTER TABLE `agama`
+  MODIFY `id_agama` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `ciri_khas_anak`
@@ -577,6 +753,12 @@ ALTER TABLE `gambar`
   MODIFY `id_gambar` int(9) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `golongan_darah`
+--
+ALTER TABLE `golongan_darah`
+  MODIFY `id_golongan_darah` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
 -- AUTO_INCREMENT for table `hasil`
 --
 ALTER TABLE `hasil`
@@ -589,10 +771,16 @@ ALTER TABLE `jenis_kelamin`
   MODIFY `id_jenis_kelamin` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
+-- AUTO_INCREMENT for table `jenis_notifikasi`
+--
+ALTER TABLE `jenis_notifikasi`
+  MODIFY `id_jenis_notifikasi` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT for table `jenjang`
 --
 ALTER TABLE `jenjang`
-  MODIFY `id_jenjang` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_jenjang` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `kelahiran_anak`
@@ -611,6 +799,12 @@ ALTER TABLE `keluarga`
 --
 ALTER TABLE `kemampuan_anak`
   MODIFY `id_kemampuan_anak` int(9) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `kewarganegaraan`
+--
+ALTER TABLE `kewarganegaraan`
+  MODIFY `id_kewarganegaraan` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `kondisi_keluarga`
@@ -646,7 +840,7 @@ ALTER TABLE `notifikasi`
 -- AUTO_INCREMENT for table `pembayaran`
 --
 ALTER TABLE `pembayaran`
-  MODIFY `id_pembayaran` int(9) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_pembayaran` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `riwayat_sekolah`
@@ -664,13 +858,19 @@ ALTER TABLE `saudara_kandung_anak`
 -- AUTO_INCREMENT for table `siswa`
 --
 ALTER TABLE `siswa`
-  MODIFY `id_siswa` int(9) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_siswa` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `status_diterima`
+--
+ALTER TABLE `status_diterima`
+  MODIFY `id_status_diterima` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_user` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- Constraints for dumped tables
@@ -691,10 +891,48 @@ ALTER TABLE `gambar`
   ADD CONSTRAINT `gambar_ibfk_2` FOREIGN KEY (`id_admin_gambar`) REFERENCES `admin` (`id_admin`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
+-- Constraints for table `keluarga`
+--
+ALTER TABLE `keluarga`
+  ADD CONSTRAINT `keluarga_ibfk_1` FOREIGN KEY (`id_siswa`) REFERENCES `siswa` (`id_siswa`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `kesehatan_anak`
+--
+ALTER TABLE `kesehatan_anak`
+  ADD CONSTRAINT `kesehatan_anak_ibfk_1` FOREIGN KEY (`id_golongan_darah`) REFERENCES `golongan_darah` (`id_golongan_darah`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `kesehatan_anak_ibfk_2` FOREIGN KEY (`id_siswa`) REFERENCES `siswa` (`id_siswa`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
 -- Constraints for table `notifikasi`
 --
 ALTER TABLE `notifikasi`
-  ADD CONSTRAINT `notifikasi_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `notifikasi_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `notifikasi_ibfk_2` FOREIGN KEY (`id_admin`) REFERENCES `admin` (`id_admin`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `notifikasi_ibfk_3` FOREIGN KEY (`id_jenis_notifikasi`) REFERENCES `jenis_notifikasi` (`id_jenis_notifikasi`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `riwayat_sekolah`
+--
+ALTER TABLE `riwayat_sekolah`
+  ADD CONSTRAINT `riwayat_sekolah_ibfk_1` FOREIGN KEY (`id_siswa`) REFERENCES `siswa` (`id_siswa`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `saudara_kandung_anak`
+--
+ALTER TABLE `saudara_kandung_anak`
+  ADD CONSTRAINT `saudara_kandung_anak_ibfk_1` FOREIGN KEY (`id_siswa`) REFERENCES `siswa` (`id_siswa`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `saudara_kandung_anak_ibfk_2` FOREIGN KEY (`id_jenis_kelamin`) REFERENCES `jenis_kelamin` (`id_jenis_kelamin`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `siswa`
+--
+ALTER TABLE `siswa`
+  ADD CONSTRAINT `siswa_ibfk_1` FOREIGN KEY (`id_jenis_kelamin`) REFERENCES `jenis_kelamin` (`id_jenis_kelamin`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `siswa_ibfk_2` FOREIGN KEY (`id_warganegara`) REFERENCES `kewarganegaraan` (`id_kewarganegaraan`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `siswa_ibfk_3` FOREIGN KEY (`id_agama`) REFERENCES `agama` (`id_agama`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `siswa_ibfk_4` FOREIGN KEY (`id_status_diterima`) REFERENCES `status_diterima` (`id_status_diterima`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `siswa_ibfk_5` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `user`
