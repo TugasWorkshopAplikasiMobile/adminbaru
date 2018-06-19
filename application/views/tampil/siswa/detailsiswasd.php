@@ -58,7 +58,7 @@
                       <!-- <label class="col-sm-2 control-label"> JK_SISWA; ?></label> -->
                     </div>
                   </div>
-                 
+
                   <div class="form-group">
                     <label for="Asaslsekolah" class="col-sm-2 control-label">Agama</label>
 
@@ -93,19 +93,19 @@
                       <input type="text" class="form-control" id="id" value=" ANAK_KE" name="id" readonly>
                       <!-- <label class="col-sm-2 control-label"> ANAK_KE; ?></label> -->
                     </div>
-                 
-                 
+
+
                   </div>
                   <a href="http://localhost/kuliah/jann/siswa/siswasekretaris/sissd" type="button" class="btn btn-primary pull-center">Kembali</a>
                 </form>
                 <!-- Post -->
-              
+
               </div>
 
 
               <div class="tab-pane" id="settings">
                 <form class="form-horizontal">
-            
+
                   <div class="form-group">
                   <label for="inputAyahname" class="col-sm-2 control-label">Nama Ayah</label>
                   <div class="col-sm-10">
@@ -129,7 +129,7 @@
                       <!-- <label class="col-sm-2 control-label"> JK_SISWA; ?></label> -->
                     </div>
                   </div>
-                 
+
                   <div class="form-group">
                     <label for="Asaslsekolah" class="col-sm-2 control-label">Agama Ibu</label>
 
@@ -159,14 +159,14 @@
                   <label for="TinggalBersama" class="col-sm-2 control-label">Kewarga Negaraan Ayah</label>
                   <div class="col-sm-10">
                   <input type="text" class="form-control" id="id" value=" KEWARGANEGARAAN_AYAH" name="id" readonly>
-                  </div> 
+                  </div>
                   </div>
 
                   <div class="form-group">
                   <label for="TinggalBersama" class="col-sm-2 control-label">Kewarga Negaraan Ibu</label>
                   <div class="col-sm-10">
                   <input type="text" class="form-control" id="id" value=" KEWARGANEGARAAN_IBU" name="id" readonly>
-                  </div> 
+                  </div>
                   </div>
 
                   <div class="form-group">
@@ -181,7 +181,7 @@
                   <div class="col-sm-10">
                   <input type="text" class="form-control" id="id" value=" PEND_AKHIR_IBU" name="id" readonly>
                   </div>
-                  </div>              
+                  </div>
 
                   <div class="form-group">
                   <label for="TinggalBersama" class="col-sm-2 control-label">Jurusan Yang Diambil Ayah</label>
@@ -231,28 +231,28 @@
                   <input type="text" class="form-control" id="id" value=" PANGKAT_GOL_IBU" name="id" readonly>
                   </div>
                   </div>
-                  
+
                   <div class="form-group">
                   <label for="TinggalBersama" class="col-sm-2 control-label">Lama Kerja Ayah</label>
                   <div class="col-sm-10">
                   <input type="text" class="form-control" id="id" value=" LAMA_KERJA_AYAH_PERHARI" name="id" readonly>
                   </div>
                   </div>
-                  
+
                   <div class="form-group">
                   <label for="TinggalBersama" class="col-sm-2 control-label">Lama Kerja Ibu</label>
                   <div class="col-sm-10">
                   <input type="text" class="form-control" id="id" value=" LAMA_KERJA_IBU_PERHARI" name="id" readonly>
                   </div>
                   </div>
-                  
+
                   <div class="form-group">
                   <label for="TinggalBersama" class="col-sm-2 control-label">Penghasilan Ayah</label>
                   <div class="col-sm-10">
                   <input type="text" class="form-control" id="id" value=" PENGHASILAN_PERBULAN_AYAH" name="id" readonly>
                   </div>
                   </div>
-                  
+
                   <div class="form-group">
                   <label for="TinggalBersama" class="col-sm-2 control-label">Penghasilan Ibu</label>
                   <div class="col-sm-10">
@@ -266,7 +266,7 @@
                   <input type="text" class="form-control" id="id" value=" JUMLAH_TANGGUNGAN_AYAH" name="id" readonly>
                   </div>
                   </div>
-                  
+
                   <div class="form-group">
                   <label for="TinggalBersama" class="col-sm-2 control-label">Jumlah Tanggungan Ibu</label>
                   <div class="col-sm-10">
@@ -287,7 +287,7 @@
                   <input type="text" class="form-control" id="id" value=" ALAMAT_RMH_IBU" name="id" readonly>
                   </div>
                   </div>
-                  
+
                    <div class="form-group">
                   <label for="TinggalBersama" class="col-sm-2 control-label">Alamat Kantor Ayah</label>
                   <div class="col-sm-10">
@@ -301,7 +301,7 @@
                   <input type="text" class="form-control" id="id" value=" ALAMAT_KANTOR_IBU" name="id" readonly>
                   </div>
                   </div>
-                  
+
                   <div class="form-group">
                   <label for="TinggalBersama" class="col-sm-2 control-label">Telephone Rumah Ayah</label>
                   <div class="col-sm-10">
@@ -315,14 +315,14 @@
                   <input type="text" class="form-control" id="id" value=" TLP_RMH_HP_IBU" name="id" readonly>
                   </div>
                   </div>
-                  
+
                   <div class="form-group">
                   <label for="TinggalBersama" class="col-sm-2 control-label">Telephone Kantor Ayah</label>
                   <div class="col-sm-10">
                   <input type="text" class="form-control" id="id" value=" TLP_KANTOR_AYAH" name="id" readonly>
                   </div>
                   </div>
-                    
+
                   <div class="form-group">
                   <label for="TinggalBersama" class="col-sm-2 control-label">Telephone Kantor Ibu</label>
                   <div class="col-sm-10">
@@ -336,7 +336,7 @@
                   <input type="text" class="form-control" id="id" value=" KESEMPATAN_BERKOMUNIKASI_DG_AYAH" name="id" readonly>
                   </div>
                   </div>
-                  
+
                   <div class="form-group">
                   <label for="TinggalBersama" class="col-sm-2 control-label">Lama Komunikasi Dengan Ibu</label>
                   <div class="col-sm-10">
@@ -354,28 +354,28 @@
                 <label for="inputUsername" class="col-sm-2 control-label">Berat Badan</label>
                 <div class="col-sm-10">
                 <input type="text" class="form-control" id="id" value=" BB_TB" name="id" readonly>
-                </div> 
+                </div>
                 </div>
 
                 <div class="form-group">
                 <label for="inputUsername" class="col-sm-2 control-label">Golongan Darah</label>
                 <div class="col-sm-10">
                 <input type="text" class="form-control" id="id" value=" GOLDAR" name="id" readonly>
-                </div> 
+                </div>
                 </div>
 
                 <div class="form-group">
                 <label for="inputUsername" class="col-sm-2 control-label">Lama Masa Meminum Asi</label>
                 <div class="col-sm-10">
                 <input type="text" class="form-control" id="id" value=" MINUM_ASI_SELAMA" name="id" readonly>
-                </div> 
+                </div>
                 </div>
 
                 <div class="form-group">
                 <label for="inputUsername" class="col-sm-2 control-label">Perkembangan Dalam 2 Bulan</label>
                 <div class="col-sm-10">
                 <input type="text" class="form-control" id="id" value=" PERKEMBANGAN_DLM_2BLN" name="id" readonly>
-                </div> 
+                </div>
                 </div>
 
                 <div class="form-group">
@@ -383,55 +383,55 @@
                 <div class="col-sm-10">
                 <input type="text" class="form-control" id="id" value=" KELAINAN_DLM_TUBUH" name="id" readonly>
                 </div>
-                </div> 
+                </div>
 
                 <div class="form-group">
                 <label for="inputUsername" class="col-sm-2 control-label">Makan Tambahan < 4 Bulan</label>
                 <div class="col-sm-10">
                 <input type="text" class="form-control" id="id" value=" MAKANAN_TAMBAHAN_KURANG_DARI_4BLN" name="id" readonly>
                 </div>
-                </div> 
+                </div>
 
                 <div class="form-group">
                 <label for="inputUsername" class="col-sm-2 control-label">Imunisasi yang Pernah Diberikan</label>
                 <div class="col-sm-10">
                 <input type="text" class="form-control" id="id" value=" IMUNISASI_YG_DIBERIKAN" name="id" readonly>
-                </div> 
+                </div>
                 </div>
 
                 <div class="form-group">
                 <label for="inputUsername" class="col-sm-2 control-label">Alergi yang Dimiliki</label>
                 <div class="col-sm-10">
                 <input type="text" class="form-control" id="id" value=" ALERGI_MAKANAN_DAN_OBAT" name="id" readonly>
-                </div> 
+                </div>
                 </div>
 
                 <div class="form-group">
                 <label for="inputUsername" class="col-sm-2 control-label">Pengelihatan</label>
                 <div class="col-sm-10">
                 <input type="text" class="form-control" id="id" value=" PENGLIHATAN" name="id" readonly>
-                </div> 
+                </div>
                 </div>
 
                 <div class="form-group">
                 <label for="inputUsername" class="col-sm-2 control-label">Pendegaran</label>
                 <div class="col-sm-10">
                 <input type="text" class="form-control" id="id" value=" PENDENGARAN" name="id" readonly>
-                </div> 
+                </div>
                 </div>
 
                 <div class="form-group">
                 <label for="inputUsername" class="col-sm-2 control-label">Penampilan</label>
                 <div class="col-sm-10">
                 <input type="text" class="form-control" id="id" value=" PENAMPILAN" name="id" readonly>
-                </div> 
-            
+                </div>
+
                 </form>
               </div>
               <!-- /.tab-pane -->
-            
 
 
+<!-- //////////////////////////// NANTI DITAMBAHI DETAIL RIWAYAT SEKOLAH KARENA MELALUI JENJANG TK /////////////////////////////////// -->
 
 
 
@@ -449,4 +449,4 @@
   </div>
   <!-- /.content-wrapper -->
 </body>
-</html>        
+</html>

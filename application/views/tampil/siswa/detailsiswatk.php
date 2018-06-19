@@ -372,6 +372,34 @@
                                         <input type="text" class="form-control" id="id" value=" KESEMPATAN_BERKOMUNIKASI_DG_IBU" name="id" readonly>
                                       </div>
                                   </div>
+
+                                  <div class="form-group">
+                                    <label for="TinggalBersama" class="col-sm-2 control-label">Nama Saudara Kandung</label>
+                                      <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="id" value="NAMA_SAUDARA_KANDUNG" name="id" readonly>
+                                      </div>
+                                  </div>
+
+                                  <div class="form-group">
+                                    <label for="TinggalBersama" class="col-sm-2 control-label">Pendidikan Saudara Kandung</label>
+                                      <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="id" value="PENDIDIKAN_SAUDARA_KANDUNG" name="id" readonly>
+                                      </div>
+                                  </div>
+
+                                  <div class="form-group">
+                                    <label for="TinggalBersama" class="col-sm-2 control-label">Kelas Saudara Kandung</label>
+                                      <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="id" value="KELAS_SAUDARA_KANDUNG" name="id" readonly>
+                                      </div>
+                                  </div>
+
+                                  <div class="form-group">
+                                    <label for="TinggalBersama" class="col-sm-2 control-label">No Induk Saudara Kandung</label>
+                                      <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="id" value="NO_INDUK_SAUDARA_KANDUNG" name="id" readonly>
+                                      </div>
+                                  </div>
                               </form>
                             <?php } ?>
                           </div>
@@ -456,6 +484,34 @@
                                     <label for="inputUsername" class="col-sm-2 control-label">Penampilan</label>
                                       <div class="col-sm-10">
                                         <input type="text" class="form-control" id="id" value=" PENAMPILAN" name="id" readonly>
+                                      </div>
+                                  </div>
+
+                                  <div class="form-group">
+                                    <label for="inputUsername" class="col-sm-2 control-label">Ciri Fisik yang Menonjol</label>
+                                      <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="id" value="CIRI_FISIK_YANG_MENONJOL" name="id" readonly>
+                                      </div>
+                                  </div>
+
+                                  <div class="form-group">
+                                    <label for="inputUsername" class="col-sm-2 control-label">Ciri Kepribadian yang Menonjol</label>
+                                      <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="id" value="CIRI_KEPRIBADIAN_YANG_MENONJOL" name="id" readonly>
+                                      </div>
+                                  </div>
+
+                                  <div class="form-group">
+                                    <label for="inputUsername" class="col-sm-2 control-label">Bakat Khusus yang Menonjol</label>
+                                      <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="id" value="BAKAT_KHUSUS_YANG_MENONJOL" name="id" readonly>
+                                      </div>
+                                  </div>
+
+                                  <div class="form-group">
+                                    <label for="inputUsername" class="col-sm-2 control-label">Prestasi yang Pernah Diraih</label>
+                                      <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="id" value="PRESTASI_YANG_PERNAH_DIRAIH" name="id" readonly>
                                       </div>
                                   </div>
 
