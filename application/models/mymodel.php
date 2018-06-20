@@ -65,6 +65,26 @@ class Mymodel extends CI_Model {
       return $data;
     }
 
+    function selectsiswafornilaisd(){
+        $this->db->select('nilai_tes.*, siswa.*, user.*');
+        $this->db->join('nilai_tes', 'siswa.id_siswa = nilai_tes.id_siswa');
+        $this->db->join('user', 'siswa.id_user = user.id_user');
+        $this->db->from('siswa');
+        $this->db->where('user.id_jenjang', '2');
+        $data=$this->db->get();
+        return $data;
+      }
+
+      function selectsiswafornilaismp(){
+          $this->db->select('nilai_tes.*, siswa.*, user.*');
+          $this->db->join('nilai_tes', 'siswa.id_siswa = nilai_tes.id_siswa');
+          $this->db->join('user', 'siswa.id_user = user.id_user');
+          $this->db->from('siswa');
+          $this->db->where('user.id_jenjang', '3');
+          $data=$this->db->get();
+          return $data;
+        }
+
   function detailnilai($id){
         $this->db->join('siswa', 'nilai_test.siswa_ID_SISWA = siswa.ID_SISWA', 'left');
         $this->db->join('hasil', 'siswa.hasil_ID_HASIL = hasil.ID_HASIL', 'left');

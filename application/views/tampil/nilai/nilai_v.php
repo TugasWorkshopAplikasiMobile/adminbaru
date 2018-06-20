@@ -13,10 +13,10 @@
           <tr>
            <th>No</th>
             <th>Nama</th>
-            <th>MTK</th>
-            <th>BIG</th>
-            <th>BIN</th>
+            <th>Matematika</th>
             <th>IPA</th>
+            <th>Bahasa Indonesia</th>
+            <th>Bahasa Inggris</th>
             <th>Psikologi</th>
             <th>Jumlah</th>
             <th>Rata-rata</th>
@@ -29,23 +29,23 @@
             foreach ($nilai->result() as $n){
             ?>
               <tr>
-                <td><?php echo $no?></td>
+                <td><?php echo $no++?></td>
                 <td><?php echo $n->nama_siswa; ?></td>
-                <td>matematika</td>
-                <td>BIG</td>
-                <td>IPA</td>
-                <td>BINDO</td>
-                <td>Psikologi</td>
-                <td>JUMLAH_NILAI_TEST</td>
-                <td>RATA_RATA_NILAI_TEST</td>
+                <td><?php echo $n->matematika; ?></td>
+                <td><?php echo $n->ipa; ?></td>
+                <td><?php echo $n->bahasa_indonesia; ?></td>
+                <td><?php echo $n->bahasa_inggris; ?></td>
+                <td><?php echo $n->psikologi; ?></td>
+                <td><?php echo $n->jumlah_nilai_tes; ?></td>
+                <td><?php echo $n->rata_rata_nilai_tes; ?></td>
                 <td style="text-align:center;">
-                  <a href="#" class="btn btn-info " onclick="updatejs('')">Update</a>
-                  <a class="btn btn-danger " onclick="deleted('')">Delete</a>
+                  <a href="#" class="btn btn-info " onclick="updatejs('<?php echo $n->id_siswa; ?>')">Edit</a>
+                  <a class="btn btn-danger " onclick="deleted('<?php echo $n->id_siswa; ?>')">Delete</a>
                 </td>
               </tr>
             <?php
             }
-            $n++;
+            // $n++;
             ?>
           </tbody>
         </table>
@@ -61,12 +61,12 @@
 </div>
 <!-- /.row -->
 <script type="text/javascript">
-//  function deleted(param){
-  //  var proc = window.confirm('Are you sure delete this data?');
-//    if(proc){
-      //document.location='<?php echo base_url(); ?>petugas/petugasdata/deletedata/'+param;
-    //}
-  //}
+ function deleted(param){
+   var proc = window.confirm('Are you sure delete this data?');
+   if(proc){
+      document.location='<?php echo base_url(); ?>nilai/nilai/delete_nilai/'+param;
+    }
+  }
   function updatejs(param){
       document.location='<?php echo base_url(); ?>nilai/nilai/detnilaitk/'+param;
   }
