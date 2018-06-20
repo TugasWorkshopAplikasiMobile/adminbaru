@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 20, 2018 at 01:17 AM
+-- Generation Time: Jun 20, 2018 at 10:33 AM
 -- Server version: 10.1.30-MariaDB
 -- PHP Version: 5.6.33
 
@@ -107,6 +107,13 @@ CREATE TABLE `ciri_khas_anak` (
   `prestasi_yang_pernah_diraih` varchar(50) NOT NULL,
   `id_siswa` int(9) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `ciri_khas_anak`
+--
+
+INSERT INTO `ciri_khas_anak` (`id_ciri_khas_anak`, `ciri_fisik_yang_menonjol`, `ciri_kepribadian_yang_menonjol`, `bakat_khusus_yang_menonjol`, `prestasi_yang_pernah_diraih`, `id_siswa`) VALUES
+(1, 'Tangan bisa melar (Gomu Gomu No)', 'Tidak bisa diatur', 'Gear 4th', '1.5 Milyar Berry', 2);
 
 -- --------------------------------------------------------
 
@@ -252,12 +259,8 @@ CREATE TABLE `keluarga` (
   `id_keluarga` int(9) NOT NULL,
   `nama_ayah` varchar(50) NOT NULL,
   `nama_ibu` varchar(50) NOT NULL,
-  `agama_ayah` varchar(50) NOT NULL,
-  `agama_ibu` varchar(50) NOT NULL,
   `tanggal_lahir_ayah` date NOT NULL,
   `tanggal_lahir_ibu` date NOT NULL,
-  `kewarganegaraan_ayah` varchar(50) NOT NULL,
-  `kewarganegaraan_ibu` varchar(50) NOT NULL,
   `pendidikan_terakhir_ayah` varchar(50) NOT NULL,
   `pendidikan_terakhir_ibu` varchar(50) NOT NULL,
   `jurusan_yang_diambil_ayah` varchar(50) NOT NULL,
@@ -282,8 +285,19 @@ CREATE TABLE `keluarga` (
   `telp_kantor_ibu` int(13) NOT NULL,
   `kesempatan_berkomunikasi_dg_ayah` varchar(100) NOT NULL,
   `kesempatan_berkomunikasi_dg_ibu` varchar(100) NOT NULL,
-  `id_siswa` int(9) NOT NULL
+  `id_siswa` int(9) NOT NULL,
+  `id_agama_ayah` int(9) NOT NULL,
+  `id_agama_ibu` int(9) NOT NULL,
+  `id_kewarganegaraan_ayah` int(9) NOT NULL,
+  `id_kewarganegaraan_ibu` int(9) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `keluarga`
+--
+
+INSERT INTO `keluarga` (`id_keluarga`, `nama_ayah`, `nama_ibu`, `tanggal_lahir_ayah`, `tanggal_lahir_ibu`, `pendidikan_terakhir_ayah`, `pendidikan_terakhir_ibu`, `jurusan_yang_diambil_ayah`, `jurusan_yang_diambil_ibu`, `nama_instansi_ayah_bekerja`, `nama_instansi_ibu_bekerja`, `pangkat_golongan_ayah`, `pangkat_golongan_ibu`, `lama_kerja_ayah_perhari`, `lama_kerja_ibu_perhari`, `penghasilan_perbulan_ayah`, `penghasilan_perbulan_ibu`, `jumlah_tanggungan_ayah`, `jumlah_tanggungan_ibu`, `alamat_rumah_ayah`, `alamat_rumah_ibu`, `alamat_kantor_ayah`, `alamat_kantor_ibu`, `telp_rumah_hp_ayah`, `telp_rumah_hp_ibu`, `telp_kantor_ayah`, `telp_kantor_ibu`, `kesempatan_berkomunikasi_dg_ayah`, `kesempatan_berkomunikasi_dg_ibu`, `id_siswa`, `id_agama_ayah`, `id_agama_ibu`, `id_kewarganegaraan_ayah`, `id_kewarganegaraan_ibu`) VALUES
+(1, 'Monkey D Dragon', 'Nyonya Dragon', '1945-06-20', '1945-06-20', 'Pemimpin Pasukan Revolusioner', 'Pemimpin Pasukan Revolusioner', 'Bajak Laut', 'Bajak Laut', 'Pasukan Revolusioner', 'Pasukan Revolusioner', 'A', 'A', '24 Jam', '24 Jam', 1000000000, 1000000000, 500000, 500000, 'Baltigo', 'Baltigo', 'Baltigo', 'Baltigo', 81081081, 81081082, 81081083, 81081084, 'Tidak pernah', 'Tidak pernah', 2, 2, 3, 2, 1);
 
 -- --------------------------------------------------------
 
@@ -319,6 +333,13 @@ CREATE TABLE `kesehatan_anak` (
   `id_golongan_darah` int(9) NOT NULL,
   `id_siswa` int(9) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `kesehatan_anak`
+--
+
+INSERT INTO `kesehatan_anak` (`id_kesehatan_anak`, `berat_badan`, `tinggi_badan`, `minum_asi_selama`, `perkembangan_dalam_2bulan`, `kelainan_dalam_tubuh`, `makanan_tambahan_kurang_dari_2bulan`, `imunisasi_yang_diberikan`, `alergi_makanan_dan_obat`, `penglihatan`, `pendengaran`, `penampilan`, `id_golongan_darah`, `id_siswa`) VALUES
+(1, 50, '170', 1, 'Baik', 'Tidak ada', 'Tidak ada', 'Imunisasi biasa', 'Alergi Laut', 'Terlalu tajam', 'Baik', 'Standart', 1, 2);
 
 -- --------------------------------------------------------
 
@@ -459,6 +480,14 @@ CREATE TABLE `saudara_kandung_anak` (
   `id_siswa` int(9) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `saudara_kandung_anak`
+--
+
+INSERT INTO `saudara_kandung_anak` (`id_saudara_kandung`, `nama_saudara_kandung`, `pendidikan_saudara_kandung`, `kelas_saudara_kandung`, `no_induk_saudara_kandung`, `id_jenis_kelamin`, `id_siswa`) VALUES
+(1, 'Portgas D Ace', 'Bajak Laut', 'Divisi Kedua Bajak Laut Shirohige', 123456, 1, 2),
+(2, 'Rangga Akhir Aprian', 'Mahasiswa', 'TIF A', 654123, 1, 1);
+
 -- --------------------------------------------------------
 
 --
@@ -487,7 +516,8 @@ CREATE TABLE `siswa` (
 
 INSERT INTO `siswa` (`id_siswa`, `nama_siswa`, `nama_panggilan`, `tempat_lahir_siswa`, `tanggal_lahir_siswa`, `usia_siswa`, `tinggal_bersama_siswa`, `anak_ke_siswa`, `id_user`, `id_jenis_kelamin`, `id_agama`, `id_warganegara`, `id_status_diterima`) VALUES
 (1, 'M. bahrul Arif', 'Bahrul', 'Mojokerto', '1997-02-02', 21, 'Kos', 1, 5, 1, 1, 1, 3),
-(2, 'Monkey D Luffy', 'luffy', 'East Blue', '1997-06-12', 20, 'Sunny Go', 1, 7, 1, 2, 1, 3);
+(2, 'Monkey D Luffy', 'luffy', 'East Blue', '1997-06-12', 20, 'Sunny Go', 1, 7, 1, 2, 1, 3),
+(3, 'Anas Abiem Bahar', 'Anas', 'Tanggul', '1997-06-12', 20, 'Ortu', 1, 6, 1, 1, 1, 3);
 
 -- --------------------------------------------------------
 
@@ -618,7 +648,11 @@ ALTER TABLE `kelahiran_anak`
 --
 ALTER TABLE `keluarga`
   ADD PRIMARY KEY (`id_keluarga`),
-  ADD KEY `id_siswa_keluarga` (`id_siswa`);
+  ADD KEY `id_siswa_keluarga` (`id_siswa`),
+  ADD KEY `id_agama_ayah` (`id_agama_ayah`),
+  ADD KEY `id_agama_ibu` (`id_agama_ibu`),
+  ADD KEY `id_kewarganegaraan_ayah` (`id_kewarganegaraan_ayah`),
+  ADD KEY `id_kewarganegaraan_ibu` (`id_kewarganegaraan_ibu`);
 
 --
 -- Indexes for table `kemampuan_anak`
@@ -744,7 +778,7 @@ ALTER TABLE `agama`
 -- AUTO_INCREMENT for table `ciri_khas_anak`
 --
 ALTER TABLE `ciri_khas_anak`
-  MODIFY `id_ciri_khas_anak` int(9) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_ciri_khas_anak` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `gambar`
@@ -792,13 +826,19 @@ ALTER TABLE `kelahiran_anak`
 -- AUTO_INCREMENT for table `keluarga`
 --
 ALTER TABLE `keluarga`
-  MODIFY `id_keluarga` int(9) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_keluarga` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `kemampuan_anak`
 --
 ALTER TABLE `kemampuan_anak`
   MODIFY `id_kemampuan_anak` int(9) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `kesehatan_anak`
+--
+ALTER TABLE `kesehatan_anak`
+  MODIFY `id_kesehatan_anak` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `kewarganegaraan`
@@ -852,13 +892,13 @@ ALTER TABLE `riwayat_sekolah`
 -- AUTO_INCREMENT for table `saudara_kandung_anak`
 --
 ALTER TABLE `saudara_kandung_anak`
-  MODIFY `id_saudara_kandung` int(9) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_saudara_kandung` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `siswa`
 --
 ALTER TABLE `siswa`
-  MODIFY `id_siswa` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_siswa` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `status_diterima`
@@ -884,6 +924,12 @@ ALTER TABLE `admin`
   ADD CONSTRAINT `admin_ibfk_2` FOREIGN KEY (`id_jenis_kelamin`) REFERENCES `jenis_kelamin` (`id_jenis_kelamin`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
+-- Constraints for table `ciri_khas_anak`
+--
+ALTER TABLE `ciri_khas_anak`
+  ADD CONSTRAINT `ciri_khas_anak_ibfk_1` FOREIGN KEY (`id_siswa`) REFERENCES `siswa` (`id_siswa`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
 -- Constraints for table `gambar`
 --
 ALTER TABLE `gambar`
@@ -894,7 +940,11 @@ ALTER TABLE `gambar`
 -- Constraints for table `keluarga`
 --
 ALTER TABLE `keluarga`
-  ADD CONSTRAINT `keluarga_ibfk_1` FOREIGN KEY (`id_siswa`) REFERENCES `siswa` (`id_siswa`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `keluarga_ibfk_1` FOREIGN KEY (`id_siswa`) REFERENCES `siswa` (`id_siswa`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `keluarga_ibfk_2` FOREIGN KEY (`id_agama_ayah`) REFERENCES `agama` (`id_agama`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `keluarga_ibfk_3` FOREIGN KEY (`id_agama_ibu`) REFERENCES `agama` (`id_agama`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `keluarga_ibfk_4` FOREIGN KEY (`id_kewarganegaraan_ayah`) REFERENCES `kewarganegaraan` (`id_kewarganegaraan`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `keluarga_ibfk_5` FOREIGN KEY (`id_kewarganegaraan_ibu`) REFERENCES `kewarganegaraan` (`id_kewarganegaraan`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `kesehatan_anak`
