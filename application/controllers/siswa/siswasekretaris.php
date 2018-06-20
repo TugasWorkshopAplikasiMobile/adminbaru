@@ -10,6 +10,7 @@ class Siswasekretaris extends CI_Controller {
 
 	//iki view tok lee ora ono query ne wes tak pateni error solae. tolong @toper SUB BAGIAN QUERY
 	//BTW aku garap view iki sek minggu ngarep tak lanjut neh
+	//query mu error lho per oii.
 	public function sistk(){
 		$data['side']='tampil/side/sidesekretaris';
 		$data['content']='tampil/siswa/siswa_v';

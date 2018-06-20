@@ -2,8 +2,8 @@
   <div class="col-xs-12">
     <div class="box">
       <div class="box-header">
-        <h3 class="box-title">Verifikasi Berkas</h3><br><br>
-        <!-- <a href="<?php echo base_url('#')?>" class="btn btn-primary pull-left" style="width: 30%;">Tambah Data Petugas</a> -->
+        <h3 class="box-title">Verifikasi Bukti Daftar Ulang TK</h3><br><br>
+        <!-- <a href="base_url('#')?>" class="btn btn-primary pull-left" style="width: 30%;">Tambah Data Petugas</a> -->
 
       </div>
       <!-- /.box-header -->
@@ -19,21 +19,18 @@
           </tr>
           </thead>
           <tbody>
-              <?php
-    					$n=1;
-    						foreach ($show as $i) {
-    					 ?>
+             
     					<tr>
-    						<td><?php echo $n; ?></td>
-    						<td><?php echo $i->NAMA_USER; ?></td>
-    						<td><?php echo $i->NAMA_JENJANG; ?></td>
-    						<!-- <td><?php echo $i->NO_TELP ?></td> -->
+    						<td>1</td>
+    						<td>NAMA_USER</td>
+    						<td>NAMA_JENJANG</td>
+    						<!-- <td>$i->NO_TELP ?></td> -->
     						<td style="text-align: center;">
-    							<a class="btn btn-info " onclick="validasijs('<?php echo $i->ID_USER; ?>')">Validasi</a>
-    							<!-- <a class="btn btn-danger " onclick="deleted('<?php echo $i->ID_ADMIN; ?>')">Delete</a> -->
+    							<a class="btn btn-info " onclick="validasijs('')">Validasi</a>
+    							<!-- <a class="btn btn-danger " onclick="deleted('$i->ID_ADMIN; ?>')">Delete</a> -->
     						</td>
     					</tr>
-    					<?php $n++; } ?>
+    					
             </tbody>
             </table>
       </div>
@@ -51,12 +48,12 @@
   function deleted(param){
     var proc = window.confirm('Are you sure delete this data?');
     if(proc){
-      document.location='<?php echo base_url(); ?>index.php/petugasdata/deletedata'+param;
+      document.location='base_url(); ?>index.php/petugasdata/deletedata'+param;
     }
   }
   // function validasijs(param){
-  //     document.location='<?php echo base_url(); ?>verifikasi/verifikasi_semua_jenjang_update'+param;
+  //     document.location='base_url(); ?>verifikasi/verifikasi_semua_jenjang_update'+param;
   function validasijs(){
-      document.location='<?php echo base_url(); ?>verifikasi/verifikasi_semua_jenjang_update/editData';
+      document.location='base_url(); ?>verifikasi/verifikasi_semua_jenjang_update/editData';
   }
 </script>
