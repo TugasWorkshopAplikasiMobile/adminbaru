@@ -9,7 +9,8 @@ class Nilai extends CI_Controller {
 
 	//Nek kok pecah dewe2 yo gpp per sembarang aku tak kumpulno kene
 
-	//View ne tak pecah pecah gae nilai cmn dadi siji iki kontoler e
+	//View ne tak pecah pecah gae nilai cmn dadi siji iki kontroler e
+
 
 	public function index()
 	{
