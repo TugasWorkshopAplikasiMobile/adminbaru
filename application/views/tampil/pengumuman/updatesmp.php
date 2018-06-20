@@ -30,7 +30,7 @@
               <label for="statusverivikasi"  class="col-sm-2 control-label">Status</label>
                 <div class="col-sm-10">
                     <select class="form-control" id="status" placeholder="">
-                        <option>--*:Pilih aja boy:*--</option>
+                        <option>-Status Terverifikasi-</option>
                         <option>Belum Terverifikasi</option>
                         <option>Terverifikasi</option>
                     </select>
