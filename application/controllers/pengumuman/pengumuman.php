@@ -2,13 +2,6 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Pengumuman extends CI_Controller {
-	public function index()
-	{
-// $data['show']=$this->mymodel->select('admin');
-		$data['side']='tampil/side/sidesekretaris';
-		$data['content']='tampil/pengumuman/pengumuman_v';
-		$this->load->view('tampil/utama/main',$data);
-	}
 
 	//view tampilan form data awal verivikasi user baru
 
@@ -29,10 +22,11 @@ class Pengumuman extends CI_Controller {
 
 	 }
 
-	 // Update Verivikasi Function
 
+	 // Update Verivikasi Function
 	 public function dttk(){
 	 	//update data tk (view)
+		
 	 	$data['side']='tampil/side/sidesekretaris';
 	 	$data['content']='tampil/pengumuman/updatetk';
 	 	$this->load->view('tampil/utama/main',$data);

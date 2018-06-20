@@ -2,9 +2,7 @@
   <div class="col-xs-12">
     <div class="box">
       <div class="box-header">
-        <h3 class="box-title">Verivikasi Data User TK</h3><br><br>
-        <!-- <a href="<?php echo base_url('petugas/petugasdata/tambahData')?>" class="btn btn-primary pull-left" style="width: 30%;">Tambah Data Petugas</a> -->
-
+        <h3 class="box-title">Verifikasi Data User TK</h3><br><br>
       </div>
       <!-- /.box-header -->
       <div class="box-body">
@@ -13,27 +11,21 @@
           <tr>
             <th>No</th>
             <th>Nama</th>
-            <th>Jenis Kelamin</th>
+            <th>Tanggal Transaksi</th>
             <th>No Telp</th>
-            <th>Verivikasi</th>
-            <th>Username</th>
-            <th>Password</th>
+            <th>Verifikasi</th>
             <th>Aksi</th>
           </tr>
           </thead>
           <tbody>
-              
-    				
     					<tr>
     						<td>1</td>
     						<td>NAMA_USER</td>
-    						<td>JENIS_KELAMIN</td>
+    						<td>TGL_TRANSAKSI</td>
     						<td>NO_TELP</td>
     						<td>STATUS</td>
-    						<td>USERNAME</td>
-    						<td>PASSWORD</td>
     						<td style="text-align: center;">
-    							<a href="#" class="btn btn-info " onclick="updatejs('')">Update</a>
+    							<a href="#" class="btn btn-info " onclick="updatejs('')">Validate</a>
     							<a class="btn btn-danger " onclick="deleted('')">Delete</a>
     						</td>
     					</tr>
