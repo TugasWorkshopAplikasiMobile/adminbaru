@@ -11,27 +11,31 @@
           <tr>
             <th>No</th>
             <th>Nama Siswa</th>
-            <th>TTL</th>
+            <th>Tempat Lahir</th>
             <th>Jenis Kelamin</th>
             <th>Status Di terima</th>
             <th>Aksi</th>
           </tr>
           </thead>
           <tbody>
-        
-              <tr>
-                <td>1</td>
-                <td>nama_siswa</td>
-                <td>tanggal_lahir_siswa</td>
-                <td>jenis_kelamin</td>
-                <td>status_diterima</td>
+        <?php
+        $n = 1;
+        foreach ($siswa->result() as $s) { ?>
 
+              <tr>
+                <td><?php echo $n; ?></td>
+                <td><?php echo $s->nama_siswa; ?></td>
+                <td><?php echo $s->tempat_lahir_siswa; ?></td>
+                <td><?php echo $s->jenis_kelamin; ?></td>
+                <td><?php echo $s->status_diterima; ?></td>
                 <td style="text-align: center;">
-                  <a href="<?php echo base_url('siswa/siswasekretaris/detsiswasd')?>" class="btn btn-warning btn-xs">Detail</a>
-                  <a class="btn btn-danger btn-xs" onclick="">Delete</a>
+                  <a class="btn btn-info " onclick="detailsiswa('<?php echo $s->id_siswa; ?>')">Detail</a>
+                  <a class="btn btn-danger " onclick="deleted('<?php echo $s->id_siswa; ?>')">Delete</a>
                 </td>
               </tr>
-              
+      <?php
+      $n++;
+      } ?>
             </tbody>
             </table>
       </div>
@@ -49,10 +53,10 @@
   function deleted(param){
     var proc = window.confirm('Are you sure delete this data?');
     if(proc){
-      document.location='<?php echo base_url(); ?>petugasdata/deletedata/'+param;
+      document.location='<?php echo base_url(); ?>siswa/siswa/sekretaris/'+param;
     }
   }
-  // function updatejs(param){
-  //     document.location='<?php echo base_url(); ?>index.php/petugasdata/editData/'+param;
-  // }
+  function detailsiswa(param){
+      document.location='<?php echo base_url(); ?>siswa/siswasekretaris/detsiswasd/'+param;
+  }
 </script>

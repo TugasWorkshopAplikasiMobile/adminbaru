@@ -35,8 +35,8 @@ class Petugasdata extends CI_Controller {
 	public function deletedata()
 	{
 		$id=$this->uri->segment(4);
-		$delete=array('id_admin'=>$id);
-		$this->mymodel->delete('admin',$delete);
+		$deletebyid=array('id_admin'=>$id);
+		$this->mymodel->delete('admin',$deletebyid);
 		header('location:'.base_url().'petugas/petugasdata');
 	}
 
