@@ -15,6 +15,7 @@ class Nilai extends CI_Controller {
 	{
 	 	$data['side']='tampil/side/sidesekretaris';
 	 	$data['content']='tampil/nilai/nilai_v';
+		$data['nilai']=$this->mymodel->selectsiswafornilaitk();
 	 	$this->load->view('tampil/utama/main',$data);
 	}
 	public function nisd()
@@ -30,7 +31,7 @@ class Nilai extends CI_Controller {
 	 	$this->load->view('tampil/utama/main',$data);
 	}
 
-	// View Detail 
+	// View Detail
 	public function detnilaitk()
 	{
 		$data['side']='tampil/side/sidesekretaris';

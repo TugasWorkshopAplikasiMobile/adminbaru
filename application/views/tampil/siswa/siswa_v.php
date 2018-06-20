@@ -53,7 +53,7 @@
   function deleted(param){
     var proc = window.confirm('Are you sure delete this data?');
     if(proc){
-      document.location='<?php echo base_url(); ?>siswa/siswa/sekretaris/'+param;
+      document.location='<?php echo base_url(); ?>siswa/siswasekretaris/deletesiswatk/'+param;
     }
   }
   function detailsiswa(param){

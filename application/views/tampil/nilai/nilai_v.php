@@ -23,10 +23,14 @@
             <th>Aksi</th>
           </tr>
           </thead>
-          <tbody> 
+          <tbody>
+            <?php
+            $no = 1;
+            foreach ($nilai->result() as $n){
+            ?>
               <tr>
-               <td>1</td>
-                <td>NAMA</td>
+                <td><?php echo $no?></td>
+                <td><?php echo $n->nama_siswa; ?></td>
                 <td>matematika</td>
                 <td>BIG</td>
                 <td>IPA</td>
@@ -34,14 +38,17 @@
                 <td>Psikologi</td>
                 <td>JUMLAH_NILAI_TEST</td>
                 <td>RATA_RATA_NILAI_TEST</td>
-
                 <td style="text-align:center;">
                   <a href="#" class="btn btn-info " onclick="updatejs('')">Update</a>
                   <a class="btn btn-danger " onclick="deleted('')">Delete</a>
                 </td>
               </tr>
-            </tbody>
-            </table>
+            <?php
+            }
+            $n++;
+            ?>
+          </tbody>
+        </table>
       </div>
       <!-- /.box-body -->
     </div>

@@ -26,6 +26,7 @@ class Siswasekretaris extends CI_Controller {
 	public function sissmp(){
 		$data['side']='tampil/side/sidesekretaris';
 		$data['content']='tampil/siswa/siswasmp';
+		$data['siswa']=$this->mymodel->siswasmp1();
 		$this->load->view('tampil/utama/main',$data);
 	}
 
@@ -69,15 +70,27 @@ class Siswasekretaris extends CI_Controller {
 	}
 
 	public function deletesiswatk(){
-		//zonk
+		$id=$this->uri->segment(4);
+		// $data['detail1']= $this->db->query("SELECT * FROM siswa WHERE id_siswa='$id'");
+		$deletebyid=array('id_siswa'=>$id);
+		$this->mymodel->delete('siswa',$deletebyid);
+		header('location:'.base_url().'siswa/siswasekretaris/sistk');
 	}
 
 	public function deletesiswasd(){
-		//zonk
+		$id=$this->uri->segment(4);
+		// $data['detail1']= $this->db->query("SELECT * FROM siswa WHERE id_siswa='$id'");
+		$deletebyid=array('id_siswa'=>$id);
+		$this->mymodel->delete('siswa',$deletebyid);
+		header('location:'.base_url().'siswa/siswasekretaris/sissd');
 	}
 
 	public function deletesiswasmp(){
-		//zonk
+		$id=$this->uri->segment(4);
+		// $data['detail1']= $this->db->query("SELECT * FROM siswa WHERE id_siswa='$id'");
+		$deletebyid=array('id_siswa'=>$id);
+		$this->mymodel->delete('siswa',$deletebyid);
+		header('location:'.base_url().'siswa/siswasekretaris/sissmp');
 	}
 
 	// Yo rul.. benakne.. Culll
