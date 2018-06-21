@@ -12,6 +12,8 @@ class Siswasekretaris extends CI_Controller {
 	//BTW aku garap view iki sek minggu ngarep tak lanjut neh
 	//query mu error lho per oii.
 	//Iki loo tak push meneh nyohhhh puassss??
+	//puassss seklai ohhhh yeah
+	//btw upload terakhir command ngene iki hapus ae yo wkkw :v
 	public function sistk(){
 		$data['side']='tampil/side/sidesekretaris';
 		$data['content']='tampil/siswa/siswa_v';
