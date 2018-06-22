@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 20, 2018 at 10:33 AM
+-- Generation Time: Jun 22, 2018 at 08:33 PM
 -- Server version: 10.1.30-MariaDB
 -- PHP Version: 5.6.33
 
@@ -44,8 +44,7 @@ CREATE TABLE `admin` (
 
 INSERT INTO `admin` (`id_admin`, `nama_admin`, `no_telp_admin`, `username_admin`, `password_admin`, `id_level`, `id_jenis_kelamin`) VALUES
 (1, 'Jon', '081235295632', 'jon', 'jon', 4, 1),
-(2, 'Bahrul', '081235235235', 'bahrul', 'bahrul', 5, 1),
-(3, 'Tita', '081081081081', 'tita', 'tita', 1, 2);
+(2, 'Bahrul', '081235235235', 'bahrul', 'bahrul', 5, 1);
 
 -- --------------------------------------------------------
 
@@ -96,6 +95,46 @@ INSERT INTO `agama` (`id_agama`, `nama_agama`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `bukti_transaksi`
+--
+
+CREATE TABLE `bukti_transaksi` (
+  `id_bukti_transaksi` int(9) NOT NULL,
+  `nama_bukti_gambar` varchar(255) NOT NULL,
+  `id_user` int(9) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `bukti_transaksi`
+--
+
+INSERT INTO `bukti_transaksi` (`id_bukti_transaksi`, `nama_bukti_gambar`, `id_user`) VALUES
+(1, 'luffy.jpg', 7),
+(2, 'IMG_0145.JPG', 8);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `bukti_transaksi_daftar_ulang`
+--
+
+CREATE TABLE `bukti_transaksi_daftar_ulang` (
+  `id_bukti_transaksi_daftar_ulang` int(9) NOT NULL,
+  `nama_gambar` varchar(255) NOT NULL,
+  `id_user` int(9) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `bukti_transaksi_daftar_ulang`
+--
+
+INSERT INTO `bukti_transaksi_daftar_ulang` (`id_bukti_transaksi_daftar_ulang`, `nama_gambar`, `id_user`) VALUES
+(1, 'luffy_daftar_ulang.jpg', 7),
+(2, 'purtahu.JPG', 8);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `ciri_khas_anak`
 --
 
@@ -113,7 +152,8 @@ CREATE TABLE `ciri_khas_anak` (
 --
 
 INSERT INTO `ciri_khas_anak` (`id_ciri_khas_anak`, `ciri_fisik_yang_menonjol`, `ciri_kepribadian_yang_menonjol`, `bakat_khusus_yang_menonjol`, `prestasi_yang_pernah_diraih`, `id_siswa`) VALUES
-(1, 'Tangan bisa melar (Gomu Gomu No)', 'Tidak bisa diatur', 'Gear 4th', '1.5 Milyar Berry', 2);
+(1, 'Tangan bisa melar (Gomu Gomu No)', 'Tidak bisa diatur', 'Gear 4th', '1.5 Milyar Berry', 2),
+(2, 'Jari', 'Suka Ngoding', 'Android Dev', 'Juara 1 Nasional Ngoding tercepat', 3);
 
 -- --------------------------------------------------------
 
@@ -297,7 +337,8 @@ CREATE TABLE `keluarga` (
 --
 
 INSERT INTO `keluarga` (`id_keluarga`, `nama_ayah`, `nama_ibu`, `tanggal_lahir_ayah`, `tanggal_lahir_ibu`, `pendidikan_terakhir_ayah`, `pendidikan_terakhir_ibu`, `jurusan_yang_diambil_ayah`, `jurusan_yang_diambil_ibu`, `nama_instansi_ayah_bekerja`, `nama_instansi_ibu_bekerja`, `pangkat_golongan_ayah`, `pangkat_golongan_ibu`, `lama_kerja_ayah_perhari`, `lama_kerja_ibu_perhari`, `penghasilan_perbulan_ayah`, `penghasilan_perbulan_ibu`, `jumlah_tanggungan_ayah`, `jumlah_tanggungan_ibu`, `alamat_rumah_ayah`, `alamat_rumah_ibu`, `alamat_kantor_ayah`, `alamat_kantor_ibu`, `telp_rumah_hp_ayah`, `telp_rumah_hp_ibu`, `telp_kantor_ayah`, `telp_kantor_ibu`, `kesempatan_berkomunikasi_dg_ayah`, `kesempatan_berkomunikasi_dg_ibu`, `id_siswa`, `id_agama_ayah`, `id_agama_ibu`, `id_kewarganegaraan_ayah`, `id_kewarganegaraan_ibu`) VALUES
-(1, 'Monkey D Dragon', 'Nyonya Dragon', '1945-06-20', '1945-06-20', 'Pemimpin Pasukan Revolusioner', 'Pemimpin Pasukan Revolusioner', 'Bajak Laut', 'Bajak Laut', 'Pasukan Revolusioner', 'Pasukan Revolusioner', 'A', 'A', '24 Jam', '24 Jam', 1000000000, 1000000000, 500000, 500000, 'Baltigo', 'Baltigo', 'Baltigo', 'Baltigo', 81081081, 81081082, 81081083, 81081084, 'Tidak pernah', 'Tidak pernah', 2, 2, 3, 2, 1);
+(1, 'Monkey D Dragon', 'Nyonya Dragon', '1945-06-20', '1945-06-20', 'Pemimpin Pasukan Revolusioner', 'Pemimpin Pasukan Revolusioner', 'Bajak Laut', 'Bajak Laut', 'Pasukan Revolusioner', 'Pasukan Revolusioner', 'A', 'A', '24 Jam', '24 Jam', 1000000000, 1000000000, 500000, 500000, 'Baltigo', 'Baltigo', 'Baltigo', 'Baltigo', 81081081, 81081082, 81081083, 81081084, 'Tidak pernah', 'Tidak pernah', 2, 2, 3, 2, 1),
+(2, 'Ayah Anas', 'Ibu Anas', '1945-06-03', '1945-06-26', 'S3', 'S3', 'Hukum', 'Ekonomi', 'Pengadilan', 'Bank', 'A', 'B', '8', '7', 10000000, 8000000, 2000000, 1000000, 'Jember', 'Bondowoso', 'Jakarta', 'Tangerang', 812365478, 823216469, 123456, 123457, 'Setiap bulan', 'Setiap Minggu', 3, 1, 1, 2, 1);
 
 -- --------------------------------------------------------
 
@@ -409,8 +450,19 @@ CREATE TABLE `nilai_tes` (
   `bahasa_inggris` int(9) NOT NULL,
   `psikologi` int(9) NOT NULL,
   `jumlah_nilai_tes` int(9) NOT NULL,
-  `rata_rata_nilai_tes` int(9) NOT NULL
+  `rata_rata_nilai_tes` int(9) NOT NULL,
+  `id_siswa` int(9) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `nilai_tes`
+--
+
+INSERT INTO `nilai_tes` (`id_nilai_tes`, `matematika`, `ipa`, `bahasa_indonesia`, `bahasa_inggris`, `psikologi`, `jumlah_nilai_tes`, `rata_rata_nilai_tes`, `id_siswa`) VALUES
+(1, 100, 0, 100, 100, 100, 500, 100, 2),
+(4, 100, 100, 100, 100, 100, 500, 100, 3),
+(6, 40, 40, 40, 40, 40, 200, 40, 8),
+(7, 80, 80, 80, 80, 80, 450, 80, 9);
 
 -- --------------------------------------------------------
 
@@ -450,6 +502,46 @@ INSERT INTO `pembayaran` (`id_pembayaran`, `status_pembayaran`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `pendaftaran_baru`
+--
+
+CREATE TABLE `pendaftaran_baru` (
+  `id_pendaftaran_baru` int(9) NOT NULL,
+  `id_user` int(9) NOT NULL,
+  `id_pembayaran` int(9) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `pendaftaran_baru`
+--
+
+INSERT INTO `pendaftaran_baru` (`id_pendaftaran_baru`, `id_user`, `id_pembayaran`) VALUES
+(1, 7, 1),
+(2, 8, 2);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pendaftaran_ulang`
+--
+
+CREATE TABLE `pendaftaran_ulang` (
+  `id_pendaftaran_ulang` int(9) NOT NULL,
+  `id_user` int(9) NOT NULL,
+  `id_pembayaran` int(9) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `pendaftaran_ulang`
+--
+
+INSERT INTO `pendaftaran_ulang` (`id_pendaftaran_ulang`, `id_user`, `id_pembayaran`) VALUES
+(1, 7, 2),
+(3, 8, 1);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `riwayat_sekolah`
 --
 
@@ -485,8 +577,7 @@ CREATE TABLE `saudara_kandung_anak` (
 --
 
 INSERT INTO `saudara_kandung_anak` (`id_saudara_kandung`, `nama_saudara_kandung`, `pendidikan_saudara_kandung`, `kelas_saudara_kandung`, `no_induk_saudara_kandung`, `id_jenis_kelamin`, `id_siswa`) VALUES
-(1, 'Portgas D Ace', 'Bajak Laut', 'Divisi Kedua Bajak Laut Shirohige', 123456, 1, 2),
-(2, 'Rangga Akhir Aprian', 'Mahasiswa', 'TIF A', 654123, 1, 1);
+(1, 'Portgas D Ace', 'Bajak Laut', 'Divisi Kedua Bajak Laut Shirohige', 123456, 1, 2);
 
 -- --------------------------------------------------------
 
@@ -507,17 +598,19 @@ CREATE TABLE `siswa` (
   `id_jenis_kelamin` int(9) NOT NULL,
   `id_agama` int(9) NOT NULL,
   `id_warganegara` int(9) NOT NULL,
-  `id_status_diterima` int(9) NOT NULL
+  `id_status_diterima` int(9) NOT NULL,
+  `no_telp_siswa` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `siswa`
 --
 
-INSERT INTO `siswa` (`id_siswa`, `nama_siswa`, `nama_panggilan`, `tempat_lahir_siswa`, `tanggal_lahir_siswa`, `usia_siswa`, `tinggal_bersama_siswa`, `anak_ke_siswa`, `id_user`, `id_jenis_kelamin`, `id_agama`, `id_warganegara`, `id_status_diterima`) VALUES
-(1, 'M. bahrul Arif', 'Bahrul', 'Mojokerto', '1997-02-02', 21, 'Kos', 1, 5, 1, 1, 1, 3),
-(2, 'Monkey D Luffy', 'luffy', 'East Blue', '1997-06-12', 20, 'Sunny Go', 1, 7, 1, 2, 1, 3),
-(3, 'Anas Abiem Bahar', 'Anas', 'Tanggul', '1997-06-12', 20, 'Ortu', 1, 6, 1, 1, 1, 3);
+INSERT INTO `siswa` (`id_siswa`, `nama_siswa`, `nama_panggilan`, `tempat_lahir_siswa`, `tanggal_lahir_siswa`, `usia_siswa`, `tinggal_bersama_siswa`, `anak_ke_siswa`, `id_user`, `id_jenis_kelamin`, `id_agama`, `id_warganegara`, `id_status_diterima`, `no_telp_siswa`) VALUES
+(2, 'Monkey D Luffy', 'luffy', 'East Blue', '1997-06-12', 20, 'Sunny Go', 1, 7, 1, 2, 1, 3, '081235234568'),
+(3, 'Anas Abiem Bahar', 'Anas', 'Tanggul', '1997-06-12', 20, 'Ortu', 1, 6, 1, 1, 1, 3, '0814563216'),
+(8, 'M. bahrul Arif', 'Bahrul', 'Mojokerto', '1997-02-02', 20, 'Ortu', 1, 5, 1, 2, 1, 3, '654789'),
+(9, 'Adi Nugraha', 'Purtahu', 'Tuban', '1997-06-12', 20, 'Ortu', 1, 8, 1, 5, 1, 3, '4567831');
 
 -- --------------------------------------------------------
 
@@ -560,7 +653,8 @@ CREATE TABLE `user` (
 INSERT INTO `user` (`id_user`, `nama_user`, `email_user`, `password_user`, `id_jenjang`) VALUES
 (5, 'Bahrul', 'bahrul@gmail.com', 'bahrul', 3),
 (6, 'Anas', 'anas@gmail.com', 'anas', 2),
-(7, 'luffy', 'luffy@onepiece.com', 'luffy', 1);
+(7, 'luffy', 'luffy@onepiece.com', 'luffy', 1),
+(8, 'Adi', 'adi@gmail.com', 'adi', 1);
 
 --
 -- Indexes for dumped tables
@@ -585,6 +679,20 @@ ALTER TABLE `admin_level`
 --
 ALTER TABLE `agama`
   ADD PRIMARY KEY (`id_agama`);
+
+--
+-- Indexes for table `bukti_transaksi`
+--
+ALTER TABLE `bukti_transaksi`
+  ADD PRIMARY KEY (`id_bukti_transaksi`),
+  ADD KEY `id_user_bukti_transaksi` (`id_user`);
+
+--
+-- Indexes for table `bukti_transaksi_daftar_ulang`
+--
+ALTER TABLE `bukti_transaksi_daftar_ulang`
+  ADD PRIMARY KEY (`id_bukti_transaksi_daftar_ulang`),
+  ADD KEY `id_bukti_transaksi_daftar_ulang_user` (`id_user`);
 
 --
 -- Indexes for table `ciri_khas_anak`
@@ -696,7 +804,8 @@ ALTER TABLE `nilai_psikotes`
 -- Indexes for table `nilai_tes`
 --
 ALTER TABLE `nilai_tes`
-  ADD PRIMARY KEY (`id_nilai_tes`);
+  ADD PRIMARY KEY (`id_nilai_tes`),
+  ADD KEY `id_nilai_siswa` (`id_siswa`);
 
 --
 -- Indexes for table `notifikasi`
@@ -712,6 +821,22 @@ ALTER TABLE `notifikasi`
 --
 ALTER TABLE `pembayaran`
   ADD PRIMARY KEY (`id_pembayaran`);
+
+--
+-- Indexes for table `pendaftaran_baru`
+--
+ALTER TABLE `pendaftaran_baru`
+  ADD PRIMARY KEY (`id_pendaftaran_baru`),
+  ADD KEY `id_user_pendaftaran_baru` (`id_user`),
+  ADD KEY `id_pembayaran_pendaftaran_baru` (`id_pembayaran`);
+
+--
+-- Indexes for table `pendaftaran_ulang`
+--
+ALTER TABLE `pendaftaran_ulang`
+  ADD PRIMARY KEY (`id_pendaftaran_ulang`),
+  ADD KEY `id_pendaftaran_ulang_user` (`id_user`),
+  ADD KEY `id_pendaftaran_ulang_pembayaran` (`id_pembayaran`);
 
 --
 -- Indexes for table `riwayat_sekolah`
@@ -775,10 +900,22 @@ ALTER TABLE `agama`
   MODIFY `id_agama` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
+-- AUTO_INCREMENT for table `bukti_transaksi`
+--
+ALTER TABLE `bukti_transaksi`
+  MODIFY `id_bukti_transaksi` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `bukti_transaksi_daftar_ulang`
+--
+ALTER TABLE `bukti_transaksi_daftar_ulang`
+  MODIFY `id_bukti_transaksi_daftar_ulang` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT for table `ciri_khas_anak`
 --
 ALTER TABLE `ciri_khas_anak`
-  MODIFY `id_ciri_khas_anak` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_ciri_khas_anak` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `gambar`
@@ -826,7 +963,7 @@ ALTER TABLE `kelahiran_anak`
 -- AUTO_INCREMENT for table `keluarga`
 --
 ALTER TABLE `keluarga`
-  MODIFY `id_keluarga` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_keluarga` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `kemampuan_anak`
@@ -868,7 +1005,7 @@ ALTER TABLE `nilai_psikotes`
 -- AUTO_INCREMENT for table `nilai_tes`
 --
 ALTER TABLE `nilai_tes`
-  MODIFY `id_nilai_tes` int(9) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_nilai_tes` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `notifikasi`
@@ -883,6 +1020,18 @@ ALTER TABLE `pembayaran`
   MODIFY `id_pembayaran` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
+-- AUTO_INCREMENT for table `pendaftaran_baru`
+--
+ALTER TABLE `pendaftaran_baru`
+  MODIFY `id_pendaftaran_baru` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `pendaftaran_ulang`
+--
+ALTER TABLE `pendaftaran_ulang`
+  MODIFY `id_pendaftaran_ulang` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT for table `riwayat_sekolah`
 --
 ALTER TABLE `riwayat_sekolah`
@@ -892,13 +1041,13 @@ ALTER TABLE `riwayat_sekolah`
 -- AUTO_INCREMENT for table `saudara_kandung_anak`
 --
 ALTER TABLE `saudara_kandung_anak`
-  MODIFY `id_saudara_kandung` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_saudara_kandung` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `siswa`
 --
 ALTER TABLE `siswa`
-  MODIFY `id_siswa` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_siswa` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `status_diterima`
@@ -910,7 +1059,7 @@ ALTER TABLE `status_diterima`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_user` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- Constraints for dumped tables
@@ -922,6 +1071,18 @@ ALTER TABLE `user`
 ALTER TABLE `admin`
   ADD CONSTRAINT `admin_ibfk_1` FOREIGN KEY (`id_level`) REFERENCES `admin_level` (`id_level`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `admin_ibfk_2` FOREIGN KEY (`id_jenis_kelamin`) REFERENCES `jenis_kelamin` (`id_jenis_kelamin`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `bukti_transaksi`
+--
+ALTER TABLE `bukti_transaksi`
+  ADD CONSTRAINT `bukti_transaksi_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `bukti_transaksi_daftar_ulang`
+--
+ALTER TABLE `bukti_transaksi_daftar_ulang`
+  ADD CONSTRAINT `bukti_transaksi_daftar_ulang_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `ciri_khas_anak`
@@ -954,12 +1115,32 @@ ALTER TABLE `kesehatan_anak`
   ADD CONSTRAINT `kesehatan_anak_ibfk_2` FOREIGN KEY (`id_siswa`) REFERENCES `siswa` (`id_siswa`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
+-- Constraints for table `nilai_tes`
+--
+ALTER TABLE `nilai_tes`
+  ADD CONSTRAINT `nilai_tes_ibfk_1` FOREIGN KEY (`id_siswa`) REFERENCES `siswa` (`id_siswa`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
 -- Constraints for table `notifikasi`
 --
 ALTER TABLE `notifikasi`
   ADD CONSTRAINT `notifikasi_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `notifikasi_ibfk_2` FOREIGN KEY (`id_admin`) REFERENCES `admin` (`id_admin`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `notifikasi_ibfk_3` FOREIGN KEY (`id_jenis_notifikasi`) REFERENCES `jenis_notifikasi` (`id_jenis_notifikasi`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `pendaftaran_baru`
+--
+ALTER TABLE `pendaftaran_baru`
+  ADD CONSTRAINT `pendaftaran_baru_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `pendaftaran_baru_ibfk_2` FOREIGN KEY (`id_pembayaran`) REFERENCES `pembayaran` (`id_pembayaran`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `pendaftaran_ulang`
+--
+ALTER TABLE `pendaftaran_ulang`
+  ADD CONSTRAINT `pendaftaran_ulang_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `pendaftaran_ulang_ibfk_2` FOREIGN KEY (`id_pembayaran`) REFERENCES `pembayaran` (`id_pembayaran`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `riwayat_sekolah`
