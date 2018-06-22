@@ -32,7 +32,7 @@
             <div class="form-group">
               <label for="statusverivikasi"  class="col-sm-2 control-label">Status</label>
                 <div class="col-sm-10">
-                    <select class="form-control" name="status" value="<?php echo $p->id_pembayaran; ?>">
+                    <select class="form-control" name="status">
                         <option selected="selected">-Pilih-</option>
                         <option <?php if ($p->id_pembayaran=="1"): ?>
                           SELECTED
