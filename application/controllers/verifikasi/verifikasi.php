@@ -23,12 +23,29 @@ class Verifikasi extends CI_Controller {
 	public function versmp()
 	{
 		$data['side']='tampil/side/sidesekretaris';
-		$data['content']='tampil/verifikasi/verivikasismp';
+		$data['content']='tampil/verifikasi/verifikasismp';
 		$this->load->view('tampil/utama/main',$data);
 	}
 
 	
-//	
-
+//	tampilan layout detail
+	public function updatetk()
+	{
+		$data['side']='tampil/side/sidesekretaris';
+		$data['content']='tampil/verifikasi/detailtk';
+		$this->load->view('tampil/utama/main',$data);
+	}
+	public function updatesd()
+	{
+		$data['side']='tampil/side/sidesekretaris';
+		$data['content']='tampil/verifikasi/detailsd';
+		$this->load->view('tampil/utama/main',$data);
+	}
+	public function updatesmp()
+	{
+		$data['side']='tampil/side/sidesekretaris';
+		$data['content']='tampil/verifikasi/detailsmp';
+		$this->load->view('tampil/utama/main',$data);
+	}
 
 }

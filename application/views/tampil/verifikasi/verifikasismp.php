@@ -2,7 +2,7 @@
   <div class="col-xs-12">
     <div class="box">
       <div class="box-header">
-        <h3 class="box-title">Verifikasi Bukti Daftar Ulang TK</h3><br><br>
+        <h3 class="box-title">Verifikasi Bukti Daftar Ulang SMP</h3><br><br>
         <!-- <a href="base_url('#')?>" class="btn btn-primary pull-left" style="width: 30%;">Tambah Data Petugas</a> -->
 
       </div>
@@ -54,6 +54,6 @@
     }
   }
   function validasijs(param){
-      document.location='<?php echo base_url(); ?>verifikasi/verifikasi/updatetk'+param;
+      document.location='<?php echo base_url(); ?>verifikasi/verifikasi/updatesmp'+param;
   }
 </script>

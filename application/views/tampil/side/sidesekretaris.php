@@ -115,7 +115,7 @@
           <ul class="treeview-menu">
             <li><a href="<?php echo base_url('verifikasi/verifikasi')?>"><i class="fa fa-circle-o"></i>TK</a></li>
             <li><a href="<?php echo base_url('verifikasi/verifikasi/versd')?>"><i class="fa fa-circle-o"></i> SD</a></li>
-            <li><a href="<?php echo base_url('verifikasi/verifikasi/versmp/')?>"><i class="fa fa-circle-o"></i> SMP</a></li>
+            <li><a href="<?php echo base_url('verifikasi/verifikasi/versmp')?>"><i class="fa fa-circle-o"></i> SMP</a></li>
           </ul>
         </li>
       </ul>
