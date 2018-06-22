@@ -6,6 +6,7 @@
         <!-- <a href="<?php echo base_url('petugas/petugasdata/tambahData')?>" class="btn btn-primary pull-left" style="width: 30%;">Tambah Data Petugas</a> -->
 
       </div>
+      
       <!-- /.box-header -->
       <div class="box-body">
         <table id="example1" class="table table-bordered table-hover">
