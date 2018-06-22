@@ -8,9 +8,7 @@ class Pengumuman extends CI_Controller {
 	 public function pgtk(){
 		// $data['pengumuman']=$this->db->query('SELECT * FROM siswa WHERE id_siswa == 1');
 		$id['id_jenjang']='1';
-		$data['pengumuman']=$this->mymodel->selectwhere('user', $id);
-		$data['pengumuman1']=$this->mymodel->select('pendaftaran_baru');
-		$data['pengumuman2']=$this->mymodel->select('siswa');
+		$data['pengumuman']=$this->mymodel->pengumumantk();
 	 	$data['side']='tampil/side/sidesekretaris';
 	 	$data['content']='tampil/pengumuman/usertk';
 	 	$this->load->view('tampil/utama/main',$data);
