@@ -29,8 +29,7 @@ class Pengumuman extends CI_Controller {
 	 public function dttk(){
 	 	//update data tk (view)
 		$id=$this->uri->segment(4);
-		$data['pengumuman']=$this->db->query("SELECT * FROM siswa WHERE id_user='$id'");
-		$data['pengumuman1']=$this->db->query("SELECT * FROM pendaftaran_baru WHERE id_user='$id'");
+		$data['pengumuman']=$this->mymodel->pengumumantk();
 	 	$data['side']='tampil/side/sidesekretaris';
 	 	$data['content']='tampil/pengumuman/updatetk';
 	 	$this->load->view('tampil/utama/main',$data);
@@ -46,6 +45,14 @@ class Pengumuman extends CI_Controller {
 	 	$data['side']='tampil/side/sidesekretaris';
 	 	$data['content']='tampil/pengumuman/updatesmp';
 	 	$this->load->view('tampil/utama/main',$data);
+	 }
+
+	 public function proses_update_tk(){
+		 //proses update verifikasi pertama atau pendaftaran baru
+		$id=$this->uri->segment(4);
+ 		$data['id_pembayaran']=$this->input->post('status');
+ 		$this->mymodel->update('pendaftaran_baru',$data, $id);
+ 		header('location:'.base_url().'pengumuman/pengumuman/pgtk');
 	 }
 
 }

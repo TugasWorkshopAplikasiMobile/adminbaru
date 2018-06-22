@@ -5,12 +5,12 @@
     </div>
 
     <?php foreach ($pengumuman->result() as $p) { ?>
-    <form class="form-horizontal">
+    <form method="post" action="<?php echo base_url('pengumuman/pengumuman/proses_update_tk') ?>" class="form-horizontal">
         <div class="box-body">
             <div class="form-group">
                 <label for="inputnama" class="col-sm-2 control-label">Bukti Transaksi</label>
                 <div class="col-sm-10">
-                    <a data-toggle="modal" data-target="#gambarModal"><img class="img-fluid" src="" alt="BUKTI TRANSAKSI" width="304" height="236"></a>
+                    <a data-toggle="modal" data-target="#gambarModal"><img class="img-fluid" src="<?php echo base_url('/gambar/user.jpg'); ?>" alt="BUKTI TRANSAKSI" width="304" height="236"></a>
                 </div>
             </div>
 
@@ -31,17 +31,14 @@
             <div class="form-group">
               <label for="statusverivikasi"  class="col-sm-2 control-label">Status</label>
                 <div class="col-sm-10">
-                    <select class="form-control" id="status">
-                      <?php foreach ($pengumuman1->result() as $p1) { ?>
-                        <option value="">-Pilih-</option>
-                        <option
-                        <?php  if ($p1->id_pembayaran=="2"): ?>
+                    <select class="form-control" name="status" value="<?php echo $p->id_pembayaran; ?>">
+                        <option selected="selected">-Pilih-</option>
+                        <option <?php if ($p->id_pembayaran=="1"): ?>
                           SELECTED
-                        <?php endif ?> value="2">BELUM TERVERIFIKASI</option>
-                        <option <?php if ($p1->id_pembayaran=="1"): ?>
+                        <?php endif ?>value="1">TERVERIFIKASI</option>
+                        <option <?php if ($p->id_pembayaran=="2"): ?>
                           SELECTED
-                        <?php endif ?> value="1">TERVERIFIKASI</option>
-                      <?php } ?>
+                        <?php endif ?>value="2">BELUM TERVERIFIKASI</option>
                     </select>
                 </div>
             </div>
@@ -82,7 +79,7 @@
 function deleted(param){
 var proc = window.confirm('Are you sure delete this data?');
 if(proc){
-document.location='<?php echo base_url(); ?>petugas/petugasdata/deletedata/'+param;
+document.location='<?php echo base_url(); ?>pengumuman/pengumuman/pgtk/'+param;
 }
 }
 function back(param){
