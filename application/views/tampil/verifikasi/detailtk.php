@@ -4,6 +4,7 @@
       <h3 class="box-title">Form Validasi TK</h3>
     </div>
 
+
      <img src="" class="img-rounded center-block" alt="Scan Pembayaran" width="304" height="236">
 
   </div>

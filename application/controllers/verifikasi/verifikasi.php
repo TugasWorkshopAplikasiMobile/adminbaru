@@ -14,6 +14,7 @@ class Verifikasi extends CI_Controller {
 		$this->load->view('tampil/utama/main',$data);
 	}
 
+
 	public function versd()
 	{
 		$data['side']='tampil/side/sidesekretaris';
