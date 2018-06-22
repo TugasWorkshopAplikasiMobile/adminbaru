@@ -5,10 +5,10 @@
       <!-- Sidebar user panel -->
       <div class="user-panel">
         <div class="pull-left image">
-        <p style="color: #ffffff;">Sekretaris Pusat</p>
-        </div>
+        <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+      </div>
         <div class="pull-left info">
-
+          <p style="color: #ffffff;">Sekretaris Pusat</p>
         </div>
       </div>
       <!-- sidebar menu: : style can be found in sidebar.less -->
@@ -16,9 +16,9 @@
         <li class="header">Menu</li>
         <li class="treeview">
           <a href="<?php echo base_url('admin/adminsekretaris')?>">
-            <i class="fa fa-home"></i> <span>Dashboard</span>
-
-            <span class="pull-right-container">
+            <i class="fa fa-home"></i>
+              <span>Dashboard</span>
+              <span class="pull-right-container">
             </span>
           </a>
         </li>
@@ -60,8 +60,8 @@
        <!--  <li class="header">MAIN NAVIGATION</li> -->
         <li class="treeview">
           <a href="<?php echo base_url('nilai/nilai')?>">
-            <i class="fa fa-pencil"></i> <span>Nilai</span>
-
+            <i class="fa fa-pencil"></i>
+            <span>Nilai</span>
             <span class="pull-right-container">
                <i class="fa fa-angle-left pull-right"></i>
             </span>

@@ -7,6 +7,8 @@ class Adminsekretaris extends CI_Controller {
 if(!$this->session->userdata('level') == '4'){
 	redirect('login');
 }else{
+	$jumlah=$this->mymodel->dashboard();
+	$data['row']=$jumlah;
 	$data['side']='tampil/side/sidesekretaris';
 	$data['content']='tampil/utama/v_dashboard';
 	$this->load->view('tampil/utama/main',$data);

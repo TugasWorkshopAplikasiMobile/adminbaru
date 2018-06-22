@@ -14,6 +14,12 @@
                 </div>
             </div>
 
+            <div class="form-group">
+                <label for="inputnama" class="col-sm-2 control-label">ID User</label>
+                <div class="col-sm-10">
+              <input type="text" class="form-control" id="id" value="<?php echo $p->id_user;?>" name="id_user" readonly>
+              </div>
+            </div>
 
             <div class="form-group">
                 <label for="inputnama" class="col-sm-2 control-label">Nama User</label>

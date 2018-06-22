@@ -54,15 +54,15 @@ class Pengumuman extends CI_Controller {
 
 	 public function proses_update_tk(){
 		 //proses update verifikasi pertama atau pendaftaran baru
-		$id=$this->uri->segment(4);
- 		$data['id_pembayaran']=$this->input->post('status');
- 		$this->mymodel->update('pendaftaran_baru',$data, $id);
+		$where['id_user']=$this->input->post('id_user');
+ 		$data['id_pembayaran']=$this->input->post('statusss');
+ 		$this->mymodel->update('pendaftaran_baru',$data, $where);
  		header('location:'.base_url().'pengumuman/pengumuman/pgtk');
 	 }
 
 	 public function proses_update_sd(){
 		 //proses update verifikasi pertama atau pendaftaran baru
-		$id=$this->uri->segment(4);
+		$where['id_user']=$this->input->post('id_user');
  		$data['id_pembayaran']=$this->input->post('status');
  		$this->mymodel->update('pendaftaran_baru',$data, $id);
  		header('location:'.base_url().'pengumuman/pengumuman/pgsd');
@@ -70,7 +70,7 @@ class Pengumuman extends CI_Controller {
 
 	 public function proses_update_smp(){
 		 //proses update verifikasi pertama atau pendaftaran baru
-		$id=$this->uri->segment(4);
+		$where['id_user']=$this->input->post('id_user');
  		$data['id_pembayaran']=$this->input->post('status');
  		$this->mymodel->update('pendaftaran_baru',$data, $id);
  		header('location:'.base_url().'pengumuman/pengumuman/pgsmp');

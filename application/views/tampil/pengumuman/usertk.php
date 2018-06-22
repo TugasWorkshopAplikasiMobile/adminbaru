@@ -16,7 +16,7 @@
             <th>Aksi</th>
           </tr>
           </thead>
-          
+
           <tbody>
             <?php
               $n = 1; foreach ($pengumuman->result() as $p){
@@ -34,7 +34,7 @@
                         <?php endif; ?>
                         </td>
     						<td style="text-align: center;">
-    							<a href="#" class="btn btn-info"  onclick="updatejs('<?php echo $p->id_user; ?>')">Validate</a>
+    							<a class="btn btn-info"  onclick="updatejs('<?php echo $p->id_user; ?>')">Validate</a>
                   <a class="btn btn-danger " onclick="deleted('<?php echo $p->id_user; ?>')">Delete</a>
                 </td>
     					</tr>

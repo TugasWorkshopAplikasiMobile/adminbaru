@@ -154,10 +154,10 @@ class Mymodel extends CI_Model {
 
 //tampilan pengumuman
       function pengumumantk(){
-        $this->db->select('siswa.*, user.*, pendaftaran_baru.*');
-        $this->db->join('user', 'siswa.id_user = user.id_user');
+        $this->db->select('user.*, siswa.*, pendaftaran_baru.*');
+        $this->db->join('siswa', 'user.id_user = siswa.id_user');
         $this->db->join('pendaftaran_baru', 'user.id_user = pendaftaran_baru.id_user ');
-        $this->db->from('siswa');
+        $this->db->from('user');
         $this->db->where('user.id_jenjang', '1');
         $data=$this->db->get();
         return $data;
@@ -218,11 +218,11 @@ class Mymodel extends CI_Model {
 //tampilan verifikasi
 
       function verifikasi_awal($id){
-        $this->db->select('siswa.*, user.*, pendaftaran_ulang.*, bukti_transaksi.*');
-        $this->db->join('user', 'siswa.id_user = user.id_user');
-        $this->db->join('pendaftaran_ulang', 'user.id_user = pendaftaran_ulang.id_user ');
+        $this->db->select('pendaftaran_baru.*, user.*, siswa.*, bukti_transaksi.*');
+        $this->db->join('siswa', 'user.id_user = siswa.id_user');
+        $this->db->join('pendaftaran_baru', 'user.id_user = pendaftaran_baru.id_user ');
         $this->db->join('bukti_transaksi', 'user.id_user = bukti_transaksi.id_user');
-        $this->db->from('siswa');
+        $this->db->from('user');
         $this->db->where('user.id_user', $id);
         $data=$this->db->get();
         return $data;
@@ -230,13 +230,17 @@ class Mymodel extends CI_Model {
 
       function verifikasi_ulang($id){
         $this->db->select('siswa.*, user.*, pendaftaran_ulang.*, bukti_transaksi_daftar_ulang.*');
-        $this->db->join('user', 'siswa.id_user = user.id_user');
+        $this->db->join('siswa', 'user.id_user = siswa.id_user');
         $this->db->join('pendaftaran_ulang', 'user.id_user = pendaftaran_ulang.id_user ');
         $this->db->join('bukti_transaksi_daftar_ulang', 'user.id_user = bukti_transaksi_daftar_ulang.id_user');
-        $this->db->from('siswa');
+        $this->db->from('user');
         $this->db->where('user.id_user', $id);
         $data=$this->db->get();
         return $data;
+      }
+
+      function dashboard(){
+        // return $this->db->select('pendaftaran_baru.*')->row();
       }
 
 }

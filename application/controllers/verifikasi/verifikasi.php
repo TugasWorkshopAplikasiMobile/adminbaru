@@ -55,15 +55,15 @@ class Verifikasi extends CI_Controller {
 
 	 public function proses_update_tk(){
 		 //proses update verifikasi pertama atau pendaftaran baru
-		$id=$this->uri->segment(4);
+		$where['id_user']=$this->input->post('id_user');
  		$data['id_pembayaran']=$this->input->post('status');
- 		$this->mymodel->update('pendaftaran_ulang',$data, $id);
+ 		$this->mymodel->update('pendaftaran_ulang', $data, $where);
  		header('location:'.base_url().'verifikasi/verifikasi/pgtk');
 	 }
 
 	 public function proses_update_sd(){
 		 //proses update verifikasi pertama atau pendaftaran baru
-		$id=$this->uri->segment(4);
+		$where['id_user']=$this->input->post('id_user');
  		$data['id_pembayaran']=$this->input->post('status');
  		$this->mymodel->update('pendaftaran_ulang',$data, $id);
  		header('location:'.base_url().'verifikasi/verifikasi/pgsd');
@@ -71,7 +71,7 @@ class Verifikasi extends CI_Controller {
 
 	 public function proses_update_smp(){
 		 //proses update verifikasi pertama atau pendaftaran baru
-		$id=$this->uri->segment(4);
+		$where['id_user']=$this->input->post('id_user');
  		$data['id_pembayaran']=$this->input->post('status');
  		$this->mymodel->update('pendaftaran_ulang',$data, $id);
  		header('location:'.base_url().'verifikasi/verifikasi/pgsmp');
