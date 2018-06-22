@@ -14,6 +14,7 @@ class Siswasekretaris extends CI_Controller {
 	//Iki loo tak push meneh nyohhhh puassss??
 	//puassss seklai ohhhh yeah
 	//btw upload terakhir command ngene iki hapus ae yo wkkw :v
+	//iyooo santai bos
 	public function sistk(){
 		$data['side']='tampil/side/sidesekretaris';
 		$data['content']='tampil/siswa/siswa_v';
