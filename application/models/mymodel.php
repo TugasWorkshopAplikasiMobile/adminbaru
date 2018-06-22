@@ -27,10 +27,6 @@ class Mymodel extends CI_Model {
 	}
 
   function selectjoin($clause){
-        // $this->db->join('riwayat_sekolah', 'siswa.riwayat_sekolah_ID_RIWAYATSEKOLAH = riwayat_sekolah.ID_RIWAYATSEKOLAH', 'left');
-        //  $this->db->join('hasil', 'siswa.hasil_ID_HASIL = hasil.ID_HASIL', 'left');
-        //  $this->db->join('user', 'user.siswa_ID_SISWA = siswa.ID_SISWA', 'left');
-        //  $this->db->join('jenjang', 'jenjang.ID_JENJANG = user.jenjang_ID_JENJANG', 'left');
         $this->db->where($clause);
         return $this->db->get("siswa");
     }
@@ -166,5 +162,81 @@ class Mymodel extends CI_Model {
         $data=$this->db->get();
         return $data;
       }
+
+      function pengumumansd(){
+        $this->db->select('siswa.*, user.*, pendaftaran_baru.*');
+        $this->db->join('user', 'siswa.id_user = user.id_user');
+        $this->db->join('pendaftaran_baru', 'user.id_user = pendaftaran_baru.id_user ');
+        $this->db->from('siswa');
+        $this->db->where('user.id_jenjang', '2');
+        $data=$this->db->get();
+        return $data;
+      }
+
+      function pengumumansmp(){
+        $this->db->select('siswa.*, user.*, pendaftaran_baru.*');
+        $this->db->join('user', 'siswa.id_user = user.id_user');
+        $this->db->join('pendaftaran_baru', 'user.id_user = pendaftaran_baru.id_user ');
+        $this->db->from('siswa');
+        $this->db->where('user.id_jenjang', '3');
+        $data=$this->db->get();
+        return $data;
+      }
 //tampilan pengumuman
+
+//tampilan verifikasi
+      function tampilverifikasitk(){
+        $this->db->select('siswa.*, user.*, pendaftaran_ulang.*');
+        $this->db->join('user', 'siswa.id_user = user.id_user');
+        $this->db->join('pendaftaran_ulang', 'user.id_user = pendaftaran_ulang.id_user ');
+        $this->db->from('siswa');
+        $this->db->where('user.id_jenjang', '1');
+        $data=$this->db->get();
+        return $data;
+      }
+
+      function tampilverifikasisd(){
+        $this->db->select('siswa.*, user.*, pendaftaran_ulang.*');
+        $this->db->join('user', 'siswa.id_user = user.id_user');
+        $this->db->join('pendaftaran_ulang', 'user.id_user = pendaftaran_ulang.id_user ');
+        $this->db->from('siswa');
+        $this->db->where('user.id_jenjang', '2');
+        $data=$this->db->get();
+        return $data;
+      }
+
+      function tampilverifikasismp(){
+        $this->db->select('siswa.*, user.*, pendaftaran_ulang.*');
+        $this->db->join('user', 'siswa.id_user = user.id_user');
+        $this->db->join('pendaftaran_ulang', 'user.id_user = pendaftaran_ulang.id_user ');
+        $this->db->from('siswa');
+        $this->db->where('user.id_jenjang', '3');
+        $data=$this->db->get();
+        return $data;
+      }
+
+//tampilan verifikasi
+
+      function verifikasi_awal($id){
+        $this->db->select('siswa.*, user.*, pendaftaran_ulang.*, bukti_transaksi.*');
+        $this->db->join('user', 'siswa.id_user = user.id_user');
+        $this->db->join('pendaftaran_ulang', 'user.id_user = pendaftaran_ulang.id_user ');
+        $this->db->join('bukti_transaksi', 'user.id_user = bukti_transaksi.id_user');
+        $this->db->from('siswa');
+        $this->db->where('user.id_user', $id);
+        $data=$this->db->get();
+        return $data;
+      }
+
+      function verifikasi_ulang($id){
+        $this->db->select('siswa.*, user.*, pendaftaran_ulang.*, bukti_transaksi_daftar_ulang.*');
+        $this->db->join('user', 'siswa.id_user = user.id_user');
+        $this->db->join('pendaftaran_ulang', 'user.id_user = pendaftaran_ulang.id_user ');
+        $this->db->join('bukti_transaksi_daftar_ulang', 'user.id_user = bukti_transaksi_daftar_ulang.id_user');
+        $this->db->from('siswa');
+        $this->db->where('user.id_user', $id);
+        $data=$this->db->get();
+        return $data;
+      }
+
 }

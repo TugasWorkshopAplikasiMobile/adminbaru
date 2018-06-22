@@ -2,9 +2,7 @@
   <div class="col-xs-12">
     <div class="box">
       <div class="box-header">
-        <h3 class="box-title">Verivikasi Data User SD</h3><br><br>
-        <!-- <a href="<?php echo base_url('petugas/petugasdata/tambahData')?>" class="btn btn-primary pull-left" style="width: 30%;">Tambah Data Petugas</a> -->
-
+        <h3 class="box-title">Verifikasi Data User SD</h3><br><br>
       </div>
       <!-- /.box-header -->
       <div class="box-body">
@@ -13,30 +11,33 @@
           <tr>
             <th>No</th>
             <th>Nama</th>
-            <th>Jenis Kelamin</th>
             <th>No Telp</th>
-            <th>Verivikasi</th>
-            <th>Username</th>
-            <th>Password</th>
+            <th>Verifikasi</th>
             <th>Aksi</th>
           </tr>
           </thead>
           <tbody>
-              
-    				
+            <?php
+              $n = 1; foreach ($pengumuman->result() as $p){
+            ?>
     					<tr>
-    						<td>1</td>
-    						<td>NAMA_USER</td>
-    						<td>JENIS_KELAMIN</td>
-    						<td>NO_TELP</td>
-    						<td>STATUS</td>
-    						<td>USERNAME</td>
-    						<td>PASSWORD</td>
+    						<td><?php echo $n++;?></td>
+    						<td><?php echo $p->nama_siswa;?></td>
+    						<td><?php echo $p->no_telp_siswa;?></td>
+    						        <td>
+                        <?php if ($p->id_pembayaran == 2): ?>
+                          BELUM TERVERIFIKASI
+                        <?php endif; ?>
+                        <?php if ($p->id_pembayaran == 1): ?>
+                          TERVERIFIKASI
+                        <?php endif; ?>
+                        </td>
     						<td style="text-align: center;">
-    							<a href="#" class="btn btn-info " onclick="updatejs('')">Update</a>
-    							<a class="btn btn-danger " onclick="deleted('')">Delete</a>
-    						</td>
+    							<a href="#" class="btn btn-info"  onclick="updatejs('<?php echo $p->id_user; ?>')">Validate</a>
+                  <a class="btn btn-danger " onclick="deleted('<?php echo $p->id_user; ?>')">Delete</a>
+                </td>
     					</tr>
+            <?php } ?>
             </tbody>
             </table>
       </div>
@@ -54,7 +55,7 @@
   function deleted(param){
     var proc = window.confirm('Are you sure delete this data?');
     if(proc){
-      document.location='<?php echo base_url(); ?>petugas/petugasdata/deletedata/'+param;
+      document.location='<?php echo base_url(); ?>pengumuman/pengumuman/deletedatasd/'+param;
     }
   }
   function updatejs(param){

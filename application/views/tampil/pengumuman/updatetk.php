@@ -10,7 +10,7 @@
             <div class="form-group">
                 <label for="inputnama" class="col-sm-2 control-label">Bukti Transaksi</label>
                 <div class="col-sm-10">
-                    <a data-toggle="modal" data-target="#gambarModal"><img class="img-fluid" src="<?php echo base_url('/gambar/user.jpg'); ?>" alt="BUKTI TRANSAKSI" width="304" height="236"></a>
+                    <a data-toggle="modal" data-target="#gambarModal"><img class="img-fluid" src="<?php echo base_url('/gambar/daftar_baru/').$p->nama_bukti_gambar;?>" alt="BUKTI TRANSAKSI" width="304" height="236"></a>
                 </div>
             </div>
 
@@ -56,8 +56,8 @@
 
 
 <!-- Modal -->
-<div class="modal fade" id="gambarModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
+<div class="modal fade bd-example-modal-lg" id="gambarModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">View Image</h5>
@@ -66,7 +66,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <img src="<?php echo base_url('/gambar/user.jpg'); ?>" alt="BUKTI TRANSAKSI">
+        <img src="<?php echo base_url('/gambar/daftar_baru/').$p->nama_bukti_gambar;?>" alt="BUKTI TRANSAKSI" width="870" height="600">
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -76,12 +76,12 @@
 </div>
 
 <script type="text/javascript">
-function deleted(param){
-var proc = window.confirm('Are you sure delete this data?');
-if(proc){
-document.location='<?php echo base_url(); ?>pengumuman/pengumuman/pgtk/'+param;
-}
-}
+// function deleted(param){
+// var proc = window.confirm('Are you sure delete this data?');
+// if(proc){
+// document.location='<?php echo base_url(); ?>pengumuman/pengumuman/pgtk/'+param;
+// }
+// }
 function back(param){
 document.location='<?php echo base_url(); ?>pengumuman/pengumuman/pgtk/'+param;
 }

@@ -55,7 +55,7 @@
   function deleted(param){
     var proc = window.confirm('Are you sure delete this data?');
     if(proc){
-      document.location='<?php echo base_url(); ?>pengumuman/pengumuman/'+param;
+      document.location='<?php echo base_url(); ?>pengumuman/pengumuman/deletedatatk/'+param;
     }
   }
   function updatejs(param){
