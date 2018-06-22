@@ -18,32 +18,26 @@
           </thead>
           <tbody>
             <?php
-              $n = 1;
-              foreach ($pengumuman2->result() as $p2) {
+              $n = 1; foreach ($pengumuman->result() as $p){
             ?>
     					<tr>
     						<td><?php echo $n++;?></td>
-    						<td><?php foreach ($pengumuman->result() as $p) { echo $p->nama_siswa; } ?></td>
-    						<td><?php echo $p2->no_telp_siswa; ?></td>
-                <?php foreach ($pengumuman1->result() as $p1) { ?>
+    						<td><?php echo $p->nama_siswa;?></td>
+    						<td><?php echo $p->no_telp_siswa;?></td>
     						        <td>
-                          <?php if($p1->id_pembayaran == 2){ ?>
-                            BELUM TERVERIFIKASI
-                          <?php } ?>
-                          <?php if($p1->id_pembayaran == 1){ ?>
-                            TERVERIFIKASI
-                          <?php } ?>
+                        <?php if ($p->id_pembayaran == 2): ?>
+                          BELUM TERVERIFIKASI
+                        <?php endif; ?>
+                        <?php if ($p->id_pembayaran == 1): ?>
+                          TERVERIFIKASI
+                        <?php endif; ?>
                         </td>
-                <?php } ?>
     						<td style="text-align: center;">
-    							<a href="#" class="btn btn-info" <?php foreach ($pengumuman->result() as $p) {?> onclick="updatejs('<?php echo $p->id_user; ?>')" <?php } ?>>Validate</a>
-                  <a class="btn btn-danger " <?php foreach ($pengumuman->result() as $p) {?> onclick="deleted('<?php echo $p->id_user; ?>')"<?php } ?>>Delete</a>
-
+    							<a href="#" class="btn btn-info"  onclick="updatejs('<?php echo $p->id_user; ?>')">Validate</a>
+                  <a class="btn btn-danger " onclick="deleted('<?php echo $p->id_user; ?>')">Delete</a>
                 </td>
     					</tr>
-              <?php
-              }
-              ?>
+            <?php } ?>
             </tbody>
             </table>
       </div>

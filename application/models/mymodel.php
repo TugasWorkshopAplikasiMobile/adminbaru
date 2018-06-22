@@ -156,4 +156,15 @@ class Mymodel extends CI_Model {
       }
 // end of tampilan data siswa sd admin sekretaris
 
+//tampilan pengumuman
+      function pengumumantk(){
+        $this->db->select('siswa.*, user.*, pendaftaran_baru.*');
+        $this->db->join('user', 'siswa.id_user = user.id_user');
+        $this->db->join('pendaftaran_baru', 'user.id_user = pendaftaran_baru.id_user ');
+        $this->db->from('siswa');
+        $this->db->where('user.id_jenjang', '1');
+        $data=$this->db->get();
+        return $data;
+      }
+//tampilan pengumuman
 }
