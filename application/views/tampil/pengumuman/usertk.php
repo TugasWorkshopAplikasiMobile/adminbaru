@@ -16,6 +16,7 @@
             <th>Aksi</th>
           </tr>
           </thead>
+          
           <tbody>
             <?php
               $n = 1; foreach ($pengumuman->result() as $p){
