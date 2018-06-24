@@ -239,8 +239,24 @@ class Mymodel extends CI_Model {
         return $data;
       }
 
-      function dashboard(){
-        // return $this->db->select('pendaftaran_baru.*')->row();
+      function dashboard_daftar_baru(){
+        // get total rows
+      	$this->db->from('pendaftaran_baru');
+          return $this->db->count_all_results();
       }
+
+      function dashboard_daftar_ulang(){
+        // get total rows
+      	$this->db->from('pendaftaran_ulang');
+          return $this->db->count_all_results();
+      }
+
+      function dashboard_daftar_kelulusan($where){
+        //get where
+      return $this->db->query('select * from siswa '.$where);
+      }
+
+
+
 
 }
