@@ -35,20 +35,51 @@ class Siswatk extends CI_Controller {
 		$this->load->view('tampil/utama/main',$data);
 	}
 
-	public function updatesiswatk(){
+	public function updatedatasiswa(){
 		// header('Content-Type: application/json');
 		$id=$this->input->post('id');
-		// $where= array('no'=>$id);
-		$where= array('id_admin'=>$id);
-		$data['nama_admin']=$this->input->post('nama');
-		$data['id_jenis_kelamin']=$this->input->post('jk');
-		$data['no_telp_admin']=$this->input->post('tlp');
-		$data['id_level']=$this->input->post('sts');
-		$data['username_admin']=$this->input->post('username');
-		$data['password_admin']=$this->input->post('pass');
-		$this->mymodel->update('admin',$data,$where);
-		header('location:'.base_url().'petugas/petugasdata');
+		$where= array('id_siswa'=>$id);
+		$data['nama_siswa']=$this->input->post('nama_siswa');
+		$data['nama_panggilan']=$this->input->post('nama_panggilan');
+		$data['tanggal_lahir_siswa']=$this->input->post('tanggal_lahir_siswa');
+		$data['usia_siswa']=$this->input->post('usia_siswa');
+		$data['id_jenis_kelamin']=$this->input->post('id_jenis_kelamin');
+		$data['id_agama']=$this->input->post('id_agama');
+		$data['id_warganegara']=$this->input->post('id_warganegara');
+		$data['tinggal_bersama_siswa']=$this->input->post('tinggal_bersama_siswa');
+		$data['anak_ke_siswa']=$this->input->post('anak_ke_siswa');
+		$this->mymodel->update('siswa',$data,$where);
+		header('location:'.base_url().'siswa/siswatk');
 	// echo json_encode($data);
 	}
 
+	public function pgtk(){
+	 $data['pengumuman']=$this->mymodel->pengumumantk();
+	 $data['side']='tampil/side/sidetk';
+	 $data['content']='tampil/menu_admin_tk/usertk';
+	 $this->load->view('tampil/utama/main',$data);
+	}
+	// Update Verifikasi Function
+	public function dttk(){
+	 //update data tk (view)
+	 $id=$this->uri->segment(4);
+	 $data['pengumuman']=$this->mymodel->verifikasi_awal($id);
+	 $data['side']='tampil/side/sidetk';
+	 $data['content']='tampil/menu_admin_tk/updatetk';
+	 $this->load->view('tampil/utama/main',$data);
+	}
+	public function proses_update_tk(){
+		//proses update verifikasi pertama atau pendaftaran baru
+	 $where['id_user']=$this->input->post('id_user');
+	 $data['id_pembayaran']=$this->input->post('statusss');
+	 $this->mymodel->update('pendaftaran_baru',$data, $where);
+	 header('location:'.base_url().'siswa/siswatk/pgtk');
+	}
+	public function deletedatatk()
+	{
+	 $id=$this->uri->segment(4);
+	 $deletebyid=array('id_user'=>$id);
+	 $this->mymodel->delete('pendaftaran_baru',$deletebyid);
+	 header('location:'.base_url().'siswa/siswatk/pgtk');
+	}
 }

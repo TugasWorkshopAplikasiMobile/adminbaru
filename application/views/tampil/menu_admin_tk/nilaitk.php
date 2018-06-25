@@ -40,7 +40,7 @@
                 <td><?php echo $n->rata_rata_nilai_tes; ?></td>
                 <td style="text-align:center;">
                   <a href="#" class="btn btn-info " onclick="updatejs('<?php echo $n->id_siswa; ?>')">Edit</a>
-                  <a class="btn btn-danger " onclick="deleted('<?php echo $n->id_siswa; ?>')">Delete</a>
+                  <!-- <a class="btn btn-danger " onclick="deleted('<?php echo $n->id_siswa; ?>')">Delete</a> -->
                 </td>
               </tr>
             <?php
@@ -61,12 +61,12 @@
 </div>
 <!-- /.row -->
 <script type="text/javascript">
- function deleted(param){
-   var proc = window.confirm('Are you sure delete this data?');
-   if(proc){
-      document.location='<?php echo base_url(); ?>nilai/nilaitk/delete_nilai/'+param;
-    }
-  }
+ // function deleted(param){
+ //   var proc = window.confirm('Are you sure delete this data?');
+ //   if(proc){
+ //      document.location='<?php echo base_url(); ?>nilai/nilaitk/delete_nilai/'+param;
+ //    }
+ //  }
   function updatejs(param){
       document.location='<?php echo base_url(); ?>nilai/nilaitk/detnilaitk/'+param;
   }

@@ -5,10 +5,10 @@
       <!-- Sidebar user panel -->
       <div class="user-panel">
         <div class="pull-left image">
-        <p style="color: #ffffff;">Admin TK</p>
-        </div>
+        <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+      </div>
         <div class="pull-left info">
-
+          <p style="color: #ffffff;">Admin TK</p>
         </div>
       </div>
       <!-- sidebar menu: : style can be found in sidebar.less -->
@@ -39,8 +39,8 @@
        <ul class="sidebar-menu">
        <!--  <li class="header">MAIN NAVIGATION</li> -->
         <li class="treeview">
-          <a href="<?php echo base_url('pengumuman/pengumumantk')?>">
-            <i class="fa fa-newspaper-o"></i> <span>Pengumuman</span>
+          <a href="<?php echo base_url('siswa/siswatk/pgtk')?>">
+            <i class="fa fa-newspaper-o"></i> <span>Verifikasi</span>
 
             <span class="pull-right-container">
             </span>

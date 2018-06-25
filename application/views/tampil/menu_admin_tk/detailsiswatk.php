@@ -13,7 +13,7 @@
                       <div class="tab-content">
                           <div class="active tab-pane" id="data_siswa">
                             <?php foreach ($detail1->result() as $d) { ?>
-                              <form method="post" action="<?php echo base_url('siswa/siswatk/updatesiswatk') ?>" class="form-horizontal">
+                              <form method="post" action="<?php echo base_url('siswa/siswatk/updatedatasiswa') ?>" class="form-horizontal">
                                   <div class="form-group">
                                     <label for="inputid" class="col-sm-2 control-label">ID Pendaftaran</label>
                                       <div class="col-sm-10">
@@ -137,7 +137,7 @@
 
                           <div class="tab-pane" id="data_keluarga">
                             <?php foreach ($detail2->result() as $dd) { ?>
-                              <form class="form-horizontal">
+                              <form method="post" action="<?php echo base_url('siswa/siswatk/updatedatakeluarga') ?>" class="form-horizontal">
                                   <div class="form-group">
                                     <label for="inputAyahname" class="col-sm-2 control-label">Nama Ayah</label>
                                       <div class="col-sm-10">
@@ -427,7 +427,7 @@
                       <!-- /.tab-pane -->
                       <div class="tab-pane" id="kandung">
                         <?php foreach ($detail3->result() as $ddd) { ?>
-                          <form class="form-horizontal">
+                          <form method="post" action="<?php echo base_url('siswa/siswatk/updatekandung') ?>" class="form-horizontal">
                               <div class="form-group">
                                 <label for="TinggalBersama" class="col-sm-2 control-label">Nama Saudara Kandung</label>
                                   <div class="col-sm-10">
@@ -481,7 +481,7 @@
 
                           <div class="tab-pane" id="riwayat_kesehatan">
                             <?php foreach ($detail4->result() as $dddd){?>
-                              <form class="form-horizontal">
+                              <form method="post" action="<?php echo base_url('siswa/siswatk/updateriwayatkesehatan') ?>" class="form-horizontal">
                                   <div class="form-group">
                                     <label for="inputUsername" class="col-sm-2 control-label">Berat Badan</label>
                                       <div class="col-sm-10">
