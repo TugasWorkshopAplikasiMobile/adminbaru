@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 22, 2018 at 08:33 PM
+-- Generation Time: Jun 25, 2018 at 05:59 AM
 -- Server version: 10.1.30-MariaDB
 -- PHP Version: 5.6.33
 
@@ -44,7 +44,10 @@ CREATE TABLE `admin` (
 
 INSERT INTO `admin` (`id_admin`, `nama_admin`, `no_telp_admin`, `username_admin`, `password_admin`, `id_level`, `id_jenis_kelamin`) VALUES
 (1, 'Jon', '081235295632', 'jon', 'jon', 4, 1),
-(2, 'Bahrul', '081235235235', 'bahrul', 'bahrul', 5, 1);
+(2, 'Bahrul', '081235235235', 'bahrul', 'bahrul', 5, 1),
+(3, 'admintk', '025895', 'admintk', 'admintk', 1, 1),
+(4, 'adminsd', '02369999', 'adminsd', 'adminsd', 2, 1),
+(7, 'adminsmp', '081235295632', 'adminsmp', 'adminsmp', 3, 1);
 
 -- --------------------------------------------------------
 
@@ -201,7 +204,8 @@ INSERT INTO `golongan_darah` (`id_golongan_darah`, `golongan_darah`) VALUES
 (1, 'A'),
 (2, 'B'),
 (3, 'AB'),
-(4, 'O');
+(4, 'O'),
+(5, '-');
 
 -- --------------------------------------------------------
 
@@ -459,10 +463,10 @@ CREATE TABLE `nilai_tes` (
 --
 
 INSERT INTO `nilai_tes` (`id_nilai_tes`, `matematika`, `ipa`, `bahasa_indonesia`, `bahasa_inggris`, `psikologi`, `jumlah_nilai_tes`, `rata_rata_nilai_tes`, `id_siswa`) VALUES
-(1, 100, 0, 100, 100, 100, 500, 100, 2),
-(4, 100, 100, 100, 100, 100, 500, 100, 3),
+(1, 100, 100, 100, 100, 100, 500, 100, 2),
+(4, 100, 30, 100, 100, 100, 500, 100, 3),
 (6, 40, 40, 40, 40, 40, 200, 40, 8),
-(7, 80, 80, 80, 80, 80, 450, 80, 9);
+(10, 50, 50, 50, 50, 50, 250, 50, 10);
 
 -- --------------------------------------------------------
 
@@ -536,8 +540,8 @@ CREATE TABLE `pendaftaran_ulang` (
 --
 
 INSERT INTO `pendaftaran_ulang` (`id_pendaftaran_ulang`, `id_user`, `id_pembayaran`) VALUES
-(1, 7, 2),
-(3, 8, 1);
+(1, 7, 1),
+(3, 8, 2);
 
 -- --------------------------------------------------------
 
@@ -610,7 +614,7 @@ INSERT INTO `siswa` (`id_siswa`, `nama_siswa`, `nama_panggilan`, `tempat_lahir_s
 (2, 'Monkey D Luffy', 'luffy', 'East Blue', '1997-06-12', 20, 'Sunny Go', 1, 7, 1, 2, 1, 3, '081235234568'),
 (3, 'Anas Abiem Bahar', 'Anas', 'Tanggul', '1997-06-12', 20, 'Ortu', 1, 6, 1, 1, 1, 3, '0814563216'),
 (8, 'M. bahrul Arif', 'Bahrul', 'Mojokerto', '1997-02-02', 20, 'Ortu', 1, 5, 1, 2, 1, 3, '654789'),
-(9, 'Adi Nugraha', 'Purtahu', 'Tuban', '1997-06-12', 20, 'Ortu', 1, 8, 1, 5, 1, 3, '4567831');
+(10, 'Adi Nugraha', 'Purtahu', 'Tuban', '1997-06-12', 20, 'Ortu', 1, 8, 1, 4, 2, 2, '');
 
 -- --------------------------------------------------------
 
@@ -885,7 +889,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `id_admin` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_admin` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `admin_level`
@@ -927,7 +931,7 @@ ALTER TABLE `gambar`
 -- AUTO_INCREMENT for table `golongan_darah`
 --
 ALTER TABLE `golongan_darah`
-  MODIFY `id_golongan_darah` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_golongan_darah` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `hasil`
@@ -1005,7 +1009,7 @@ ALTER TABLE `nilai_psikotes`
 -- AUTO_INCREMENT for table `nilai_tes`
 --
 ALTER TABLE `nilai_tes`
-  MODIFY `id_nilai_tes` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_nilai_tes` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `notifikasi`
@@ -1047,7 +1051,7 @@ ALTER TABLE `saudara_kandung_anak`
 -- AUTO_INCREMENT for table `siswa`
 --
 ALTER TABLE `siswa`
-  MODIFY `id_siswa` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id_siswa` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `status_diterima`
