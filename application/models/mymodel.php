@@ -18,8 +18,8 @@ class Mymodel extends CI_Model {
 		$this->db->delete($table, $data);
 	}
 
-	function update($table,$data,$key){
-		$this->db->update($table,$data,$key);
+	function update($table,$data,$where){
+		$this->db->update($table,$data,$where);
 	}
 
 	function insert($table,$data){
@@ -27,19 +27,17 @@ class Mymodel extends CI_Model {
 	}
 
   function selectjoin($clause){
-        $this->db->join('riwayat_sekolah', 'siswa.riwayat_sekolah_ID_RIWAYATSEKOLAH = riwayat_sekolah.ID_RIWAYATSEKOLAH', 'left');
-         $this->db->join('hasil', 'siswa.hasil_ID_HASIL = hasil.ID_HASIL', 'left');
-         $this->db->join('user', 'user.siswa_ID_SISWA = siswa.ID_SISWA', 'left');
-         $this->db->join('jenjang', 'jenjang.ID_JENJANG = user.jenjang_ID_JENJANG', 'left');
         $this->db->where($clause);
         return $this->db->get("siswa");
     }
 
+    // cek login di login form
   function ceklogin($username, $password){
       $this->db->where('username_admin', $username);
       $this->db->where('password_admin', $password);
       return $this->db->get('admin')->row();
     }
+    // end of cek login di login form
 
   function selectsiswafornilai(){
         $this->db->join('nilai_test', 'nilai_test.ID_NILAI_TEST = siswa.nilai_test_ID_NILAI_TEST', 'left');
@@ -54,25 +52,34 @@ class Mymodel extends CI_Model {
       }
 
   function selectsiswafornilaitk(){
-        $this->db->join('siswa', 'nilai_psikotest.ID_NILAI_PSIKOTEST = siswa.nilai_psikotest_ID_NILAI_PSIKOTEST', 'left');
-        // $this->db->where($this->id, $id);
-        return $this->db->get("nilai_psikotest");
+      $this->db->select('nilai_tes.*, siswa.*, user.*');
+      $this->db->join('nilai_tes', 'siswa.id_siswa = nilai_tes.id_siswa');
+      $this->db->join('user', 'siswa.id_user = user.id_user');
+      $this->db->from('siswa');
+      $this->db->where('user.id_jenjang', '1');
+      $data=$this->db->get();
+      return $data;
     }
 
-  function detailsiswa($id){
-    	  $this->db->join('kesehatan_anak', 'siswa.kesehatan_anak_ID_KESEHATAN_ANAK = kesehatan_anak.ID_KESEHATAN_ANAK', 'left');
-        $this->db->join('saudara_kandung_anak', 'siswa.saudara_kandung_anak_ID_SAUDARA_KANDUNG = saudara_kandung_anak.ID_SAUDARA_KANDUNG', 'left');
-        $this->db->join('riwayat_sekolah', 'siswa.riwayat_sekolah_ID_RIWAYATSEKOLAH = riwayat_sekolah.ID_RIWAYATSEKOLAH', 'left');
-        $this->db->join('keluarga', 'siswa.keluarga_ID_KELUARGA = keluarga.ID_KELUARGA', 'left');
-        $this->db->join('Kelahiran_anak', 'siswa.Kelahiran_anak_ID_KELAHIRAN_ANAK = Kelahiran_anak.ID_KELAHIRAN_ANAK', 'left');
-        $this->db->join('kemampuan_anak', 'siswa.kemampuan_anak_ID_KEMAMPUAN_ANAK = kemampuan_anak.ID_KEMAMPUAN_ANAK', 'left');
-        $this->db->join('hasil', 'siswa.hasil_ID_HASIL = hasil.ID_HASIL', 'left');
-        $this->db->join('data_tempat_tinggal', 'siswa.data_tempat_tinggal_ID_DATA_TEMPAT_TINGGAL = data_tempat_tinggal.ID_DATA_TEMPAT_TINGGAL', 'left');
-        $this->db->join('kondisi_keluarga', 'siswa.kondisi_keluarga_ID_KONDISI_KELUARGA = kondisi_keluarga.ID_KONDISI_KELUARGA', 'left');
-        $this->db->join('ciri_khas_anak', 'siswa.ciri_khas_anak_ID_CIRIKHAS_ANAK = ciri_khas_anak.ID_CIRIKHAS_ANAK', 'left');
-        $this->db->where("siswa.ID_SISWA",$id);
-        return $this->db->get("siswa");
-    }
+    function selectsiswafornilaisd(){
+        $this->db->select('nilai_tes.*, siswa.*, user.*');
+        $this->db->join('nilai_tes', 'siswa.id_siswa = nilai_tes.id_siswa');
+        $this->db->join('user', 'siswa.id_user = user.id_user');
+        $this->db->from('siswa');
+        $this->db->where('user.id_jenjang', '2');
+        $data=$this->db->get();
+        return $data;
+      }
+
+      function selectsiswafornilaismp(){
+          $this->db->select('nilai_tes.*, siswa.*, user.*');
+          $this->db->join('nilai_tes', 'siswa.id_siswa = nilai_tes.id_siswa');
+          $this->db->join('user', 'siswa.id_user = user.id_user');
+          $this->db->from('siswa');
+          $this->db->where('user.id_jenjang', '3');
+          $data=$this->db->get();
+          return $data;
+        }
 
   function detailnilai($id){
         $this->db->join('siswa', 'nilai_test.siswa_ID_SISWA = siswa.ID_SISWA', 'left');
@@ -90,8 +97,166 @@ class Mymodel extends CI_Model {
 
       function edit_verifikasi_semua_jenjang($no_id, $table){
           // $this->db->join('pembayaran', 'pembayaran.ID_PEMBAYARAN = user.') belum kelarrrrrr
+        //gw ga tau kudu gmn juga yg ini om btw view apa aja yak ?? yg blm yg verivikasi udh blm ?
           $return = $this->db->get_where($table, $no_id);
           return $return->result();
       }
+
+// tampilan petugas admin sekretaris
+      function petugas1(){
+        $this->db->select('admin.*, admin_level.*, jenis_kelamin.*');
+        $this->db->join('admin_level', 'admin.id_level = admin_level.id_level');
+        $this->db->join('jenis_kelamin', 'admin.id_jenis_kelamin = jenis_kelamin.id_jenis_kelamin');
+        $this->db->from('admin');
+        $data = $this->db->get();
+        return $data;
+      }
+// end of tampilan petugas admin sekretaris
+
+// tampilan data siswa tk admin sekretaris
+      function siswatk1(){
+        $this->db->select('siswa.*, user.*, jenis_kelamin.*, status_diterima.*');
+        $this->db->join('user', 'siswa.id_user = user.id_user');
+        $this->db->join('jenis_kelamin', 'siswa.id_jenis_kelamin = jenis_kelamin.id_jenis_kelamin');
+        $this->db->join('status_diterima', 'siswa.id_status_diterima = status_diterima.id_status_diterima');
+        $this->db->from('siswa');
+        $this->db->where('user.id_jenjang', '1');
+        $data=$this->db->get();
+        return $data;
+      }
+// end of tampilan data siswa tk admin sekretaris
+
+// tampilan data siswa sd admin sekretaris
+      function siswasd1(){
+        $this->db->select('siswa.*, user.*, jenis_kelamin.*, status_diterima.*');
+        $this->db->join('user', 'siswa.id_user = user.id_user');
+        $this->db->join('jenis_kelamin', 'siswa.id_jenis_kelamin = jenis_kelamin.id_jenis_kelamin');
+        $this->db->join('status_diterima', 'siswa.id_status_diterima = status_diterima.id_status_diterima');
+        $this->db->from('siswa');
+        $this->db->where('user.id_jenjang', '2');
+        $data=$this->db->get();
+        return $data;
+      }
+// end of tampilan data siswa sd admin sekretaris
+
+// tampilan data siswa sd admin sekretaris
+      function siswasmp1(){
+        $this->db->select('siswa.*, user.*, jenis_kelamin.*, status_diterima.*');
+        $this->db->join('user', 'siswa.id_user = user.id_user');
+        $this->db->join('jenis_kelamin', 'siswa.id_jenis_kelamin = jenis_kelamin.id_jenis_kelamin');
+        $this->db->join('status_diterima', 'siswa.id_status_diterima = status_diterima.id_status_diterima');
+        $this->db->from('siswa');
+        $this->db->where('user.id_jenjang', '3');
+        $data=$this->db->get();
+        return $data;
+      }
+// end of tampilan data siswa sd admin sekretaris
+
+//tampilan pengumuman
+      function pengumumantk(){
+        $this->db->select('user.*, siswa.*, pendaftaran_baru.*');
+        $this->db->join('siswa', 'user.id_user = siswa.id_user');
+        $this->db->join('pendaftaran_baru', 'user.id_user = pendaftaran_baru.id_user ');
+        $this->db->from('user');
+        $this->db->where('user.id_jenjang', '1');
+        $data=$this->db->get();
+        return $data;
+      }
+
+      function pengumumansd(){
+        $this->db->select('siswa.*, user.*, pendaftaran_baru.*');
+        $this->db->join('user', 'siswa.id_user = user.id_user');
+        $this->db->join('pendaftaran_baru', 'user.id_user = pendaftaran_baru.id_user ');
+        $this->db->from('siswa');
+        $this->db->where('user.id_jenjang', '2');
+        $data=$this->db->get();
+        return $data;
+      }
+
+      function pengumumansmp(){
+        $this->db->select('siswa.*, user.*, pendaftaran_baru.*');
+        $this->db->join('user', 'siswa.id_user = user.id_user');
+        $this->db->join('pendaftaran_baru', 'user.id_user = pendaftaran_baru.id_user ');
+        $this->db->from('siswa');
+        $this->db->where('user.id_jenjang', '3');
+        $data=$this->db->get();
+        return $data;
+      }
+//tampilan pengumuman
+
+//tampilan verifikasi
+      function tampilverifikasitk(){
+        $this->db->select('siswa.*, user.*, pendaftaran_ulang.*');
+        $this->db->join('user', 'siswa.id_user = user.id_user');
+        $this->db->join('pendaftaran_ulang', 'user.id_user = pendaftaran_ulang.id_user ');
+        $this->db->from('siswa');
+        $this->db->where('user.id_jenjang', '1');
+        $data=$this->db->get();
+        return $data;
+      }
+
+      function tampilverifikasisd(){
+        $this->db->select('siswa.*, user.*, pendaftaran_ulang.*');
+        $this->db->join('user', 'siswa.id_user = user.id_user');
+        $this->db->join('pendaftaran_ulang', 'user.id_user = pendaftaran_ulang.id_user ');
+        $this->db->from('siswa');
+        $this->db->where('user.id_jenjang', '2');
+        $data=$this->db->get();
+        return $data;
+      }
+
+      function tampilverifikasismp(){
+        $this->db->select('siswa.*, user.*, pendaftaran_ulang.*');
+        $this->db->join('user', 'siswa.id_user = user.id_user');
+        $this->db->join('pendaftaran_ulang', 'user.id_user = pendaftaran_ulang.id_user ');
+        $this->db->from('siswa');
+        $this->db->where('user.id_jenjang', '3');
+        $data=$this->db->get();
+        return $data;
+      }
+
+//tampilan verifikasi
+
+      function verifikasi_awal($id){
+        $this->db->select('pendaftaran_baru.*, user.*, siswa.*, bukti_transaksi.*');
+        $this->db->join('siswa', 'user.id_user = siswa.id_user');
+        $this->db->join('pendaftaran_baru', 'user.id_user = pendaftaran_baru.id_user ');
+        $this->db->join('bukti_transaksi', 'user.id_user = bukti_transaksi.id_user');
+        $this->db->from('user');
+        $this->db->where('user.id_user', $id);
+        $data=$this->db->get();
+        return $data;
+      }
+
+      function verifikasi_ulang($id){
+        $this->db->select('siswa.*, user.*, pendaftaran_ulang.*, bukti_transaksi_daftar_ulang.*');
+        $this->db->join('siswa', 'user.id_user = siswa.id_user');
+        $this->db->join('pendaftaran_ulang', 'user.id_user = pendaftaran_ulang.id_user ');
+        $this->db->join('bukti_transaksi_daftar_ulang', 'user.id_user = bukti_transaksi_daftar_ulang.id_user');
+        $this->db->from('user');
+        $this->db->where('user.id_user', $id);
+        $data=$this->db->get();
+        return $data;
+      }
+
+      function dashboard_daftar_baru(){
+        // get total rows
+      	$this->db->from('pendaftaran_baru');
+          return $this->db->count_all_results();
+      }
+
+      function dashboard_daftar_ulang(){
+        // get total rows
+      	$this->db->from('pendaftaran_ulang');
+          return $this->db->count_all_results();
+      }
+
+      function dashboard_daftar_kelulusan($where){
+        //get where
+      return $this->db->query('select * from siswa '.$where);
+      }
+
+
+
 
 }

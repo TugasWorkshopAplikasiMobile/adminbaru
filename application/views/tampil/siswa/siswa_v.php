@@ -11,33 +11,31 @@
           <tr>
             <th>No</th>
             <th>Nama Siswa</th>
-            <th>TTL</th>
+            <th>Tempat Lahir</th>
             <th>Jenis Kelamin</th>
-            <th>Nama Sekolah</th>
             <th>Status Di terima</th>
             <th>Aksi</th>
           </tr>
           </thead>
           <tbody>
-            <?php
-              $n=1;
-                foreach ($siswa->result() as $i) {
-               ?>
+        <?php
+        $n = 1;
+        foreach ($siswa->result() as $s) { ?>
+
               <tr>
                 <td><?php echo $n; ?></td>
-                <td><?php echo $i->NAMA_SISWA; ?></td>
-                <td><?php echo $i->TTL_SISWA ?></td>
-                <td><?php echo $i->JK_SISWA ?></td>
-                <td><?php echo $i->NAMA_SEKOLAH ?></td>
-                <td><?php echo $i->STATUS_TERIMA ?></td>
+                <td><?php echo $s->nama_siswa; ?></td>
+                <td><?php echo $s->tempat_lahir_siswa; ?></td>
+                <td><?php echo $s->jenis_kelamin; ?></td>
+                <td><?php echo $s->status_diterima; ?></td>
                 <td style="text-align: center;">
-                  <!-- <?php echo $i->no?> -->
-                  <a href="<?php echo base_url('siswa/siswa/detailsiswa/'.$i->ID_SISWA)?>"" class="btn btn-warning btn-xs" >Detail</a>
-                 
-                  <a class="btn btn-danger btn-xs" onclick="">Delete</a>
+                  <a class="btn btn-info " onclick="detailsiswa('<?php echo $s->id_siswa; ?>')">Detail</a>
+                  <a class="btn btn-danger " onclick="deleted('<?php echo $s->id_siswa; ?>')">Delete</a>
                 </td>
               </tr>
-              <?php $n++; } ?>
+      <?php
+      $n++;
+      } ?>
             </tbody>
             </table>
       </div>
@@ -55,10 +53,10 @@
   function deleted(param){
     var proc = window.confirm('Are you sure delete this data?');
     if(proc){
-      document.location='<?php echo base_url(); ?>index.php/petugasdata/deletedata/'+param;
+      document.location='<?php echo base_url(); ?>siswa/siswasekretaris/deletesiswatk/'+param;
     }
   }
-  // function updatejs(param){
-  //     document.location='<?php echo base_url(); ?>index.php/petugasdata/editData/'+param;
-  // }
+  function detailsiswa(param){
+      document.location='<?php echo base_url(); ?>siswa/siswasekretaris/detsiswatk/'+param;
+  }
 </script>

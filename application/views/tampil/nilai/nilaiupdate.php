@@ -1,40 +1,51 @@
 <div class="col-mx-12">
 <div class="box box-primary">
-          <form action="<?php echo base_url('nilai/nilai/fungsiedit'); ?>" method="post" action="">
-            <?php foreach ($nilai->result() as $u){ ?>
-            <form class="form-horizontal">
+          <form method="post" action="<?php echo base_url('nilai/nilai/prosesupdatetk') ?>">
+            <!-- /.box-header -->
+            <!-- form start -->
+            <?php foreach ($dataupdate1->result() as $d) { ?>
+            <!-- <form class="form-horizontal"> -->
               <div class="box-body">
                 <div class="form-group">
                   <label for="idsiswa" class="col-sm-2 control-label">ID Siswa</label>
                   <div class="col-sm-10">
-                  <input value="<?php echo $u->ID_SISWA ?>" type="text" class="form-control" name="id_siswa" placeholder="" readonly="">
+                  <input type="text" class="form-control" id="inputEmail3" name="id_siswa" value="<?php echo $d->id_siswa ?>" readonly>
                   </div>
                 </div>
               </div>
 
+            <!-- </form> -->
+            <?php } ?>
+            <?php foreach ($dataupdate1->result() as $d) { ?>
+            <!-- <form class="form-horizontal"> -->
               <div class="box-body">
                 <div class="form-group">
                   <label for="nama" class="col-sm-2 control-label">Nama Siswa</label>
                   <div class="col-sm-10">
-                  <input value="<?php echo $u->NAMA_SISWA ?>" type="text" class="form-control" id="inputEmail3" placeholder="" readonly="">
+                  <input type="text" class="form-control" id="inputEmail3" name="nama_siswa" value="<?php echo $d->nama_siswa; ?>">
                   </div>
                 </div>
               </div>
-
+            <!-- </form> -->
+            <?php } ?>
+            <?php foreach ($dataupdate2->result() as $dd) {?>
+            <!-- <form class="form-horizontal"> -->
               <div class="box-body">
                 <div class="form-group">
                   <label for="matematik" class="col-sm-2 control-label">Matematika</label>
                   <div class="col-sm-10">
-                  <input value="<?php echo $u->matematika ?>" type="text" class="form-control" placeholder="Masukan Nilai Matematika" name="matematika">
+                  <input type="text" class="form-control" id="inputPassword3" name="matematika" value="<?php echo $dd->matematika; ?>">
                   </div>
                 </div>
               </div>
-
+            <!-- </form> -->
+            <?php } ?>
+            <?php foreach ($dataupdate2->result() as $dd) {?>
               <div class="box-body">
                 <div class="form-group">
                   <label for="big" class="col-sm-2 control-label">Bahasa Inggris</label>
                   <div class="col-sm-10">
-                  <input value="<?php echo $u->bahasa_inggris ?>" type="text" class="form-control" placeholder="Masukan Nilai Bahasa Inggris" name="bahasa_inggris">
+                  <input type="text" class="form-control" id="inputPassword3" name="bahasa_inggris" value="<?php echo $dd->bahasa_inggris ?>">
                   </div>
                 </div>
               </div>
@@ -43,7 +54,7 @@
                 <div class="form-group">
                   <label for="matematik" class="col-sm-2 control-label">Bahasa Indonesia</label>
                   <div class="col-sm-10">
-                  <input value="<?php echo $u->Bahasa_Indonesia ?>" type="text" class="form-control" placeholder="Masukan Nilai Bahasa Indonesia" name="Bahasa_Indonesia">
+                  <input type="text" class="form-control" id="inputPassword3" name="bahasa_indonesia" value="<?php echo $dd->bahasa_indonesia ?>">
                   </div>
                 </div>
               </div>
@@ -52,16 +63,7 @@
                 <div class="form-group">
                   <label for="matematik" class="col-sm-2 control-label">Psikologi</label>
                   <div class="col-sm-10">
-                  <input value="<?php echo $u->Psikologi ?>" type="text" class="form-control" name="Psikologi" placeholder="Masukan Nilai Psikologi">
-                  </div>
-                </div>
-              </div>
-
-              <div class="box-body">
-                <div class="form-group">
-                  <label for="matematik" class="col-sm-2 control-label">IPA</label>
-                  <div class="col-sm-10">
-                  <input value="<?php echo $u->IPA ?>" type="text" class="form-control" name="IPA" placeholder="Masukan Nilai Psikologi">
+                  <input type="text" class="form-control" id="inputPassword3" name="psikologi" value="<?php echo $dd->psikologi ?>">
                   </div>
                 </div>
               </div>
@@ -70,7 +72,7 @@
                 <div class="form-group">
                   <label for="matematik" class="col-sm-2 control-label">Jumlah Nilai</label>
                   <div class="col-sm-10">
-                  <input value="<?php echo $u->JUMLAH_NILAI_TEST ?>" type="text" class="form-control" name="JUMLAH_NILAI_TEST" placeholder="Masukan Jumalah Nilai">
+                  <input type="text" class="form-control" id="inputPassword3" name="jumlah_nilai_tes" value="<?php echo $dd->jumlah_nilai_tes ?>">
                   </div>
                 </div>
               </div>
@@ -79,28 +81,22 @@
                 <div class="form-group">
                   <label for="matematik" class="col-sm-2 control-label">Rata - Rata Nilai</label>
                   <div class="col-sm-10">
-                  <input value="<?php echo $u->RATA_RATA_NILAI_TEST ?>" type="text" class="form-control" name="RATA_RATA_NILAI_TEST" placeholder="Masukan Rata - Rata Nilai">
+                  <input type="text" class="form-control" id="inputPassword3" name="rata_rata_nilai_tes" value="<?php echo $dd->rata_rata_nilai_tes ?>">
                   </div>
                 </div>
               </div>
               <!-- /.box-body -->
               <!-- /.box-footer -->
+              <?php } ?>
+
 
           <!-- /.box -->
 
               <div class="box-footer">
                 <button type="submit" class="btn btn-primary">Submit</button>
-                <a href="<?php echo base_url('nilai/nilai') ?>" type="button" class="btn btn-primary">Batal</a>
+                <a href="<?php echo base_url('nilai/nilai'); ?>" type="button" class="btn btn-primary">Batal</a>
                <!--  <button type="" class="btn btn-primary" onclick="javascript:history.go(-1);">Batal</button> -->
               </div>
-            </div>
-            </form>
-            <?php } ?>
-              <div class="box-body">
-              </div>
-
-            <!-- /.box-header -->
-            <!-- form start -->
-
-            </form>
-          </div>
+              </form>
+</div>
+</div>

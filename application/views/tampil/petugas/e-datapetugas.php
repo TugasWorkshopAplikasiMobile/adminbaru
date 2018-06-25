@@ -11,12 +11,12 @@
 
                 <div class="form-group">
                   <label for="exampleInputEmail1">ID Admin</label>
-                  <input type="text" class="form-control" id="id" value="<?php echo $key->ID_ADMIN;?>" name="id" readonly>
+                  <input type="text" class="form-control" id="id" value="<?php echo $key->id_admin;?>" name="id" readonly>
                 </div>
 
                 <div class="form-group">
                   <label for="exampleInputEmail1">Nama Admin</label>
-                  <input type="text" class="form-control" id="idnama" name="nama" value="<?php echo $key->NAMA_ADMIN;?>">
+                  <input type="text" class="form-control" id="idnama" name="nama" value="<?php echo $key->nama_admin;?>">
                 </div>
 
                 <div class="form-group">
@@ -24,50 +24,46 @@
                 <select class="form-control select2" id="idjk" required name="jk" style="width: 100%;">
                   <option value="">-Pilih Jenis Kelamin-</option>
                   <option
-                  <?php  if ($key->JENIS_KELAMIN=="Laki - Laki"): ?>
+                  <?php  if ($key->id_jenis_kelamin=="1"): ?>
                     SELECTED
-                  <?php endif ?> value="Laki - Laki">Laki-Laki</option>
-                  <option <?php if ($key->JENIS_KELAMIN=="Perempuan"): ?>
+                  <?php endif ?> value="1">LAKI-LAKI</option>
+                  <option <?php if ($key->id_jenis_kelamin=="2"): ?>
                     SELECTED
-                  <?php endif ?> value="Perempuan">Perempuan</option>
+                  <?php endif ?> value="2">PEREMPUAN</option>
                 </select>
               </div>
                 <div class="form-group">
                   <label for="exampleInputEmail1">No Telephone</label>
-                  <input type="text" class="form-control" id="idtelp" name="tlp" placeholder="Enter No Telephone" value="<?php echo $key->NO_TELP;?>">
+                  <input type="text" class="form-control" id="idtelp" name="tlp" placeholder="Enter No Telephone" value="<?php echo $key->no_telp_admin;?>">
                 </div>
                 <div class="form-group">
                 <label>Status</label>
-                <select class="form-control select2" name="sts" id="idstatus" style="width: 100%;" value="<?php echo $key->STATUS;?>">
+                <select class="form-control select2" name="sts" id="idstatus" style="width: 100%;" value="<?php echo $key->id_level;?>">
                   <option selected="selected">-Pilih Status-</option>
-                  <option <?php if ($key->STATUS=="Sekretaris1"): ?>
+                  <option <?php if ($key->id_level=="1"): ?>
                     SELECTED
-                  <?php endif ?>>Sekretaris 1</option>
-                  <option selected="selected">-Pilih Status-</option>
-                  <option <?php if ($key->STATUS=="AdminTK"): ?>
+                  <?php endif ?>value="1">Admin TK</option>
+                  <option <?php if ($key->id_level=="2"): ?>
                     SELECTED
-                  <?php endif ?>>Admin TK</option>
-                  <option selected="selected">-Pilih Status-</option>
-                  <option <?php if ($key->STATUS=="AdminSD"): ?>
+                  <?php endif ?>value="2">Admin SD</option>
+                  <option <?php if ($key->id_level=="3"): ?>
                     SELECTED
-                  <?php endif ?>>Admin SD</option>
-                  <option selected="selected">-Pilih Status-</option>
-                  <option <?php if ($key->STATUS=="AdminSMP"): ?>
+                  <?php endif ?>value="3">Admin SMP</option>
+                  <option <?php if ($key->id_level=="4"): ?>
                     SELECTED
-                  <?php endif ?>>Admin SMP</option>
-                  <option selected="selected">-Pilih Status-</option>
-                  <option <?php if ($key->STATUS=="Direktur"): ?>
+                  <?php endif ?>value="4">Admin Sekretaris</option>
+                  <option <?php if ($key->id_level=="5"): ?>
                     SELECTED
-                  <?php endif ?>>Direktur</option>
+                  <?php endif ?>value="5">Admin Direktur</option>
                 </select>
               </div>
                 <div class="form-group">
                   <label for="exampleInputEmail1">Username</label>
-                  <input type="text" class="form-control" id="idusername" name="username" value="<?php echo $key->USERNAME_ADMIN;?>">
+                  <input type="text" class="form-control" id="idusername" name="username" value="<?php echo $key->username_admin;?>">
                 </div>
                 <div class="form-group">
                   <label for="exampleInputPassword1">Password</label>
-                  <input type="text" class="form-control" id="idpass" name="pass" value="<?php echo $key->PASSWORD_ADMIN;?>">
+                  <input type="text" class="form-control" id="idpass" name="pass" value="<?php echo $key->password_admin;?>">
                 </div>
 
 
