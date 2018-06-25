@@ -7,14 +7,6 @@ class Siswasekretaris extends CI_Controller {
 		$this->load->model('mymodel');
 	}
 
-
-	//iki view tok lee ora ono query ne wes tak pateni error solae. tolong @toper SUB BAGIAN QUERY
-	//BTW aku garap view iki sek minggu ngarep tak lanjut neh
-	//query mu error lho per oii.
-	//Iki loo tak push meneh nyohhhh puassss??
-	//puassss seklai ohhhh yeah
-	//btw upload terakhir command ngene iki hapus ae yo wkkw :v
-	//iyooo santai bos
 	public function sistk(){
 		$data['side']='tampil/side/sidesekretaris';
 		$data['content']='tampil/siswa/siswa_v';
@@ -99,21 +91,19 @@ class Siswasekretaris extends CI_Controller {
 		header('location:'.base_url().'siswa/siswasekretaris/sissmp');
 	}
 
-	// Yo rul.. benakne.. Culll
-
-	public function detailsiswa($id)
-	{
-		//header('Content-Type: application/json');
-		if(!$this->session->userdata('level') == 'sekretaris1'){
-	    	redirect('login');
-	    }else{
-	      $data= array(
-	  			'side'=>'tampil/side/sekretaris',
-	  			'content'=>'tampil/detailsiswa',
-	  			'siswa'=>$this->mymodel->detailsiswa($id)->row());
- 		$this->load->view('tampil/utama/main',$data);
-	      //echo json_encode($data);
-	  	}
-	}
+	// public function detailsiswa($id)
+	// {
+	// 	//header('Content-Type: application/json');
+	// 	if(!$this->session->userdata('level') == 'sekretaris1'){
+	//     	redirect('login');
+	//     }else{
+	//       $data= array(
+	//   			'side'=>'tampil/side/sekretaris',
+	//   			'content'=>'tampil/detailsiswa',
+	//   			'siswa'=>$this->mymodel->detailsiswa($id)->row());
+ 	// 	$this->load->view('tampil/utama/main',$data);
+	//       //echo json_encode($data);
+	//   	}
+	// }
 
 }

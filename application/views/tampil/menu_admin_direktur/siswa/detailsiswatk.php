@@ -127,7 +127,7 @@
                                       </div>
                                   </div>
 
-                                <a href="<?php echo base_url('siswa/siswasekretaris/sistk'); ?>" type="button" class="btn btn-primary pull-center">Kembali</a>
+                                <a href="<?php echo base_url('siswa/siswadirektur/sistk'); ?>" type="button" class="btn btn-primary pull-center">Kembali</a>
                               </form>
                             <?php } ?>
                           <!-- Post -->

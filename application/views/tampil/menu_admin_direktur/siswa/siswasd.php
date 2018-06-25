@@ -2,7 +2,7 @@
   <div class="col-xs-12">
     <div class="box">
       <div class="box-header">
-        <h3 class="box-title">Data Siswa</h3><br><br>
+        <h3 class="box-title">Data Siswa SD</h3><br><br>
       </div>
       <!-- /.box-header -->
       <div class="box-body">
@@ -30,7 +30,6 @@
                 <td><?php echo $s->status_diterima; ?></td>
                 <td style="text-align: center;">
                   <a class="btn btn-info " onclick="detailsiswa('<?php echo $s->id_siswa; ?>')">Detail</a>
-                  <a class="btn btn-danger " onclick="deleted('<?php echo $s->id_siswa; ?>')">Delete</a>
                 </td>
               </tr>
       <?php
@@ -50,13 +49,7 @@
 </div>
 <!-- /.row -->
 <script type="text/javascript">
-  function deleted(param){
-    var proc = window.confirm('Are you sure delete this data?');
-    if(proc){
-      document.location='<?php echo base_url(); ?>siswa/siswasekretaris/deletesiswasd/'+param;
-    }
-  }
   function detailsiswa(param){
-      document.location='<?php echo base_url(); ?>siswa/siswasekretaris/detsiswasd/'+param;
+      document.location='<?php echo base_url(); ?>siswa/siswadirektur/detsiswasd/'+param;
   }
 </script>

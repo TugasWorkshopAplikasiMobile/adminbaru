@@ -13,7 +13,6 @@
             <th>Nama</th>
             <th>No Telp</th>
             <th>Verifikasi</th>
-            <th>Aksi</th>
           </tr>
           </thead>
 
@@ -33,10 +32,6 @@
                           TERVERIFIKASI
                         <?php endif; ?>
                         </td>
-    						<td style="text-align: center;">
-    							<a class="btn btn-info"  onclick="updatejs('<?php echo $p->id_user; ?>')">Validate</a>
-                  <a class="btn btn-danger " onclick="deleted('<?php echo $p->id_user; ?>')">Delete</a>
-                </td>
     					</tr>
             <?php } ?>
             </tbody>
@@ -52,14 +47,3 @@
   <!-- /.col -->
 </div>
 <!-- /.row -->
-<script type="text/javascript">
-  function deleted(param){
-    var proc = window.confirm('Are you sure delete this data?');
-    if(proc){
-      document.location='<?php echo base_url(); ?>pengumuman/pengumuman/deletedatatk/'+param;
-    }
-  }
-  function updatejs(param){
-      document.location='<?php echo base_url(); ?>pengumuman/pengumuman/dttk/'+param;
-  }
-</script>
