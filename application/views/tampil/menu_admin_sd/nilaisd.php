@@ -68,6 +68,6 @@
  //    }
  //  }
   function updatejs(param){
-      document.location='<?php echo base_url(); ?>nilai/nilaitk/detnilaitk/'+param;
+      document.location='<?php echo base_url(); ?>nilai/nilaisd/detnilaisd/'+param;
   }
 </script>

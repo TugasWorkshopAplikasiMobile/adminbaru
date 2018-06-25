@@ -1,6 +1,6 @@
 <div class="col-mx-12">
 <div class="box box-primary">
-          <form method="post" action="<?php echo base_url('nilai/nilaitk/proses_insert_nilai') ?>">
+          <form method="post" action="<?php echo base_url('nilai/nilaisd/proses_insert_nilai') ?>">
               <div class="box-body">
                 <div class="form-group">
                   <label for="nama" class="col-sm-2 control-label">ID Siswa</label>
@@ -74,7 +74,7 @@
 
               <div class="box-footer">
                 <button type="submit" class="btn btn-primary">Submit</button>
-                <a href="<?php echo base_url('nilai/nilaitk'); ?>" type="button" class="btn btn-primary">Batal</a>
+                <a href="<?php echo base_url('nilai/nilaisd'); ?>" type="button" class="btn btn-primary">Batal</a>
               </div>
               </form>
 </div>

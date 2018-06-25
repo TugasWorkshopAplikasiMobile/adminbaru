@@ -2,7 +2,7 @@
   <div class="col-xs-12">
     <div class="box">
       <div class="box-header">
-        <h3 class="box-title">Verifikasi Data User TK</h3><br><br>
+        <h3 class="box-title">Verifikasi Data User SD</h3><br><br>
       </div>
       <!-- /.box-header -->
       <div class="box-body">
@@ -56,10 +56,10 @@
   function deleted(param){
     var proc = window.confirm('Are you sure delete this data?');
     if(proc){
-      document.location='<?php echo base_url(); ?>siswa/siswatk/deletedatatk/'+param;
+      document.location='<?php echo base_url(); ?>siswa/siswasd/deletedatasd/'+param;
     }
   }
   function updatejs(param){
-      document.location='<?php echo base_url(); ?>siswa/siswatk/dttk/'+param;
+      document.location='<?php echo base_url(); ?>siswa/siswasd/dtsd/'+param;
   }
 </script>

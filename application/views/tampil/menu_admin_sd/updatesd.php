@@ -4,7 +4,7 @@
         <h3 class="box-title">Verifikasi Data User TK</h3>
     </div>
 
-    <form method="post" action="<?php echo base_url('siswa/siswatk/proses_update_tk') ?>" class="form-horizontal">
+    <form method="post" action="<?php echo base_url('siswa/siswasd/proses_update_sd') ?>" class="form-horizontal">
       <?php foreach ($pengumuman->result() as $p) { ?>
         <div class="box-body">
             <div class="form-group">
@@ -90,6 +90,6 @@
 // }
 // }
 function back(param){
-document.location='<?php echo base_url(); ?>siswa/siswatk/pgtk/'+param;
+document.location='<?php echo base_url(); ?>siswa/siswasd/pgsd/'+param;
 }
 </script>

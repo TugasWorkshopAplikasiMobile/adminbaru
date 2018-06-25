@@ -14,7 +14,7 @@
                       <div class="tab-content">
                           <div class="active tab-pane" id="data_siswa">
                             <?php foreach ($detail1->result() as $d) { ?>
-                              <form method="post" action="<?php echo base_url('siswa/siswatk/updatedatasiswa') ?>" class="form-horizontal">
+                              <form method="post" action="<?php echo base_url('siswa/siswasd/updatedatasiswa') ?>" class="form-horizontal">
                                   <div class="form-group">
                                     <label for="inputid" class="col-sm-2 control-label">ID Pendaftaran</label>
                                       <div class="col-sm-10">
@@ -127,7 +127,7 @@
                                       </div>
                                   </div>
                                   <button type="submit" class="btn btn-primary">Submit</button>
-                                <a href="<?php echo base_url('siswa/siswatk'); ?>" type="button" class="btn btn-primary pull-center">Kembali</a>
+                                <a href="<?php echo base_url('siswa/siswasd'); ?>" type="button" class="btn btn-primary pull-center">Kembali</a>
                               </form>
                             <?php } ?>
                           <!-- Post -->
@@ -138,7 +138,7 @@
 
                           <div class="tab-pane" id="data_keluarga">
                             <?php foreach ($detail2->result() as $dd) { ?>
-                              <form method="post" action="<?php echo base_url('siswa/siswatk/updatedatakeluarga') ?>" class="form-horizontal">
+                              <form method="post" action="<?php echo base_url('siswa/siswasd/updatedatakeluarga') ?>" class="form-horizontal">
                                 <div class="form-group">
                                   <label for="inputid" class="col-sm-2 control-label">ID Pendaftaran</label>
                                     <div class="col-sm-10">
@@ -424,7 +424,7 @@
                                       </div>
                                   </div>
                                   <button type="submit" class="btn btn-primary">Submit</button>
-                                <a href="<?php echo base_url('siswa/siswatk'); ?>" type="button" class="btn btn-primary pull-center">Kembali</a>
+                                <a href="<?php echo base_url('siswa/siswasd'); ?>" type="button" class="btn btn-primary pull-center">Kembali</a>
                               </form>
                             <?php } ?>
 
@@ -435,7 +435,7 @@
                       <!-- /.tab-pane -->
                       <div class="tab-pane" id="kandung">
                         <?php foreach ($detail3->result() as $ddd) { ?>
-                          <form method="post" action="<?php echo base_url('siswa/siswatk/updatedatakandung') ?>" class="form-horizontal">
+                          <form method="post" action="<?php echo base_url('siswa/siswasd/updatedatakandung') ?>" class="form-horizontal">
                             <div class="form-group">
                               <label for="inputid" class="col-sm-2 control-label">ID Pendaftaran</label>
                                 <div class="col-sm-10">
@@ -487,7 +487,7 @@
                                   </div>
                               </div>
                               <button type="submit" class="btn btn-primary">Submit</button>
-                            <a href="<?php echo base_url('siswa/siswatk'); ?>" type="button" class="btn btn-primary pull-center">Kembali</a>
+                            <a href="<?php echo base_url('siswa/siswasd'); ?>" type="button" class="btn btn-primary pull-center">Kembali</a>
                           </form>
                         <?php } ?>
                       </div>
@@ -496,7 +496,7 @@
 
                           <div class="tab-pane" id="riwayat_kesehatan">
                             <?php foreach ($detail4->result() as $dddd){?>
-                              <form method="post" action="<?php echo base_url('siswa/siswatk/updatedatariwayatkesehatan') ?>" class="form-horizontal">
+                              <form method="post" action="<?php echo base_url('siswa/siswasd/updatedatariwayatkesehatan') ?>" class="form-horizontal">
                                 <div class="form-group">
                                   <label for="inputid" class="col-sm-2 control-label">ID Pendaftaran</label>
                                     <div class="col-sm-10">
@@ -597,7 +597,7 @@
                                       </div>
                                   </div>
                                   <button type="submit" class="btn btn-primary">Submit</button>
-                                <a href="<?php echo base_url('siswa/siswatk'); ?>" type="button" class="btn btn-primary pull-center">Kembali</a>
+                                <a href="<?php echo base_url('siswa/siswasd'); ?>" type="button" class="btn btn-primary pull-center">Kembali</a>
                               </form>
                             <?php } ?>
                           </div>
@@ -605,7 +605,7 @@
 <!-- //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
                           <div class="tab-pane" id="ciri_khas_anak">
                             <?php foreach ($detail5->result() as $s){ ?>
-                              <form method="post" action="<?php echo base_url('siswa/siswatk/updatedatacirikhasanak') ?>" class="form-horizontal">
+                              <form method="post" action="<?php echo base_url('siswa/siswasd/updatedatacirikhasanak') ?>" class="form-horizontal">
                                 <div class="form-group">
                                   <label for="inputid" class="col-sm-2 control-label">ID Pendaftaran</label>
                                     <div class="col-sm-10">
@@ -641,7 +641,7 @@
                                       </div>
                                   </div>
                                   <button type="submit" class="btn btn-primary">Submit</button>
-                                <a href="<?php echo base_url('siswa/siswatk'); ?>" type="button" class="btn btn-primary pull-center">Kembali</a>
+                                <a href="<?php echo base_url('siswa/siswasd'); ?>" type="button" class="btn btn-primary pull-center">Kembali</a>
                               </form>
                             <?php } ?>
                           </div>
