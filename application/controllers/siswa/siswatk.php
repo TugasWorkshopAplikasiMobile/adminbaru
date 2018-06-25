@@ -53,6 +53,94 @@ class Siswatk extends CI_Controller {
 	// echo json_encode($data);
 	}
 
+	public function updatedatakeluarga(){
+		// header('Content-Type: application/json');
+		$id=$this->input->post('id');
+		$where= array('id_siswa'=>$id);
+		$data['nama_ayah']=$this->input->post('nama_ayah');
+		$data['nama_ibu']=$this->input->post('nama_ibu');
+		$data['id_agama_ayah']=$this->input->post('id_agama_ayah');
+		$data['id_agama_ibu']=$this->input->post('id_agama_ibu');
+		$data['tanggal_lahir_ayah']=$this->input->post('tanggal_lahir_ayah');
+		$data['tanggal_lahir_ibu']=$this->input->post('tanggal_lahir_ibu');
+		$data['id_kewarganegaraan_ayah']=$this->input->post('id_kewarganegaraan_ayah');
+		$data['id_kewarganegaraan_ibu']=$this->input->post('id_kewarganegaraan_ibu');
+		$data['pendidikan_terakhir_ayah']=$this->input->post('pendidikan_terakhir_ayah');
+		$data['jurusan_yang_diambil_ayah']=$this->input->post('jurusan_yang_diambil_ayah');
+		$data['jurusan_yang_diambil_ibu']=$this->input->post('jurusan_yang_diambil_ibu');
+		$data['nama_instansi_ayah_bekerja']=$this->input->post('nama_instansi_ayah_bekerja');
+		$data['nama_instansi_ibu_bekerja']=$this->input->post('nama_instansi_ibu_bekerja');
+		$data['pangkat_golongan_ayah']=$this->input->post('pangkat_golongan_ayah');
+		$data['pangkat_golongan_ibu']=$this->input->post('pangkat_golongan_ibu');
+		$data['lama_kerja_ayah_perhari']=$this->input->post('lama_kerja_ayah_perhari');
+		$data['lama_kerja_ibu_perhari']=$this->input->post('lama_kerja_ibu_perhari');
+		$data['penghasilan_perbulan_ayah']=$this->input->post('penghasilan_perbulan_ayah');
+		$data['penghasilan_perbulan_ibu']=$this->input->post('penghasilan_perbulan_ibu');
+		$data['jumlah_tanggungan_ayah']=$this->input->post('jumlah_tanggungan_ayah');
+		$data['jumlah_tanggungan_ibu']=$this->input->post('jumlah_tanggungan_ibu');
+		$data['alamat_rumah_ayah']=$this->input->post('alamat_rumah_ayah');
+		$data['alamat_rumah_ibu']=$this->input->post('alamat_rumah_ibu');
+		$data['alamat_kantor_ayah']=$this->input->post('alamat_kantor_ayah');
+		$data['alamat_kantor_ibu']=$this->input->post('alamat_kantor_ibu');
+		$data['telp_rumah_hp_ayah']=$this->input->post('telp_rumah_hp_ayah');
+		$data['telp_rumah_hp_ibu']=$this->input->post('telp_rumah_hp_ibu');
+		$data['telp_kantor_ayah']=$this->input->post('telp_kantor_ayah');
+		$data['telp_kantor_ibu']=$this->input->post('telp_kantor_ibu');
+		$data['kesempatan_berkomunikasi_dg_ayah']=$this->input->post('kesempatan_berkomunikasi_dg_ayah');
+		$data['kesempatan_berkomunikasi_dg_ibu']=$this->input->post('kesempatan_berkomunikasi_dg_ibu');
+		//-------------------------------------------------------------------------------------------------------
+		$this->mymodel->update('keluarga',$data,$where);
+		header('location:'.base_url().'siswa/siswatk');
+	// echo json_encode($data);
+	}
+
+	public function updatedatakandung(){
+		$id=$this->input->post('id');
+		$where= array('id_siswa'=>$id);
+		//-------------------------------------------------------------------------------------------------------
+		$data['nama_saudara_kandung']=$this->input->post('nama_saudara_kandung');
+		$data['id_jenis_kelamin']=$this->input->post('id_jenis_kelamin_saudara_kandung');
+		$data['pendidikan_saudara_kandung']=$this->input->post('pendidikan_saudara_kandung');
+		$data['kelas_saudara_kandung']=$this->input->post('kelas_saudara_kandung');
+		$data['no_induk_saudara_kandung']=$this->input->post('no_induk_saudara_kandung');
+		//-------------------------------------------------------------------------------------------------------
+		$this->mymodel->update('saudara_kandung_anak',$data,$where);
+		header('location:'.base_url().'siswa/siswatk');
+	}
+
+	public function updatedatariwayatkesehatan(){
+		$id=$this->input->post('id');
+		$where= array('id_siswa'=>$id);
+		//-------------------------------------------------------------------------------------------------------
+		$data['berat_badan']=$this->input->post('berat_badan');
+		$data['id_golongan_darah']=$this->input->post('id_golongan_darah');
+		$data['minum_asi_selama']=$this->input->post('minum_asi_selama');
+		$data['perkembangan_dalam_2bulan']=$this->input->post('perkembangan_dalam_2bulan');
+		$data['kelainan_dalam_tubuh']=$this->input->post('kelainan_dalam_tubuh');
+		$data['makanan_tambahan_kurang_dari_2bulan']=$this->input->post('makanan_tambahan_kurang_dari_2bulan');
+		$data['imunisasi_yang_diberikan']=$this->input->post('imunisasi_yang_diberikan');
+		$data['alergi_makanan_dan_obat']=$this->input->post('alergi_makanan_dan_obat');
+		$data['penglihatan']=$this->input->post('penglihatan');
+		$data['pendengaran']=$this->input->post('pendengaran');
+		$data['penampilan']=$this->input->post('penampilan');
+		//-------------------------------------------------------------------------------------------------------
+		$this->mymodel->update('kesehatan_anak',$data,$where);
+		header('location:'.base_url().'siswa/siswatk');
+	}
+
+	public function updatedatacirikhasanak(){
+		$id=$this->input->post('id');
+		$where= array('id_siswa'=>$id);
+		//------------------------------------------------------------------------------------------------------
+		$data['ciri_fisik_yang_menonjol']=$this->input->post('ciri_fisik_yang_menonjol');
+		$data['ciri_kepribadian_yang_menonjol']=$this->input->post('ciri_kepribadian_yang_menonjol');
+		$data['bakat_khusus_yang_menonjol']=$this->input->post('bakat_khusus_yang_menonjol');
+		$data['prestasi_yang_pernah_diraih']=$this->input->post('prestasi_yang_pernah_diraih');
+		//--------------------------------------------------------------------------------------
+		$this->mymodel->update('ciri_khas_anak',$data,$where);
+		header('location:'.base_url().'siswa/siswatk');
+	}
+
 	public function pgtk(){
 	 $data['pengumuman']=$this->mymodel->pengumumantk();
 	 $data['side']='tampil/side/sidetk';

@@ -8,6 +8,7 @@
                       <li ><a href="#data_keluarga" data-toggle="tab">Data Keluarga</a></li>
                       <li ><a href="#kandung" data-toggle="tab">Data Saudara Kandung</a></li>
                       <li><a href="#riwayat_kesehatan" data-toggle="tab">Riwayat Kesehatan</a></li>
+                      <li><a href="#ciri_khas_anak" data-toggle="tab">Ciri Khas Anak</a></li>
                     </ul>
 <!-- /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
                       <div class="tab-content">
@@ -125,7 +126,7 @@
                                         <!-- <label class="col-sm-2 control-label"> ANAK_KE; ?></label> -->
                                       </div>
                                   </div>
-                                  <a type="submit" class="btn btn-primary pull-center">Submit</a>
+                                  <button type="submit" class="btn btn-primary">Submit</button>
                                 <a href="<?php echo base_url('siswa/siswatk'); ?>" type="button" class="btn btn-primary pull-center">Kembali</a>
                               </form>
                             <?php } ?>
@@ -138,6 +139,13 @@
                           <div class="tab-pane" id="data_keluarga">
                             <?php foreach ($detail2->result() as $dd) { ?>
                               <form method="post" action="<?php echo base_url('siswa/siswatk/updatedatakeluarga') ?>" class="form-horizontal">
+                                <div class="form-group">
+                                  <label for="inputid" class="col-sm-2 control-label">ID Pendaftaran</label>
+                                    <div class="col-sm-10">
+                                      <input type="text" class="form-control" id="id" value="<?php echo $d->id_siswa; ?>" name="id" readonly>
+                                    </div>
+                                </div>
+
                                   <div class="form-group">
                                     <label for="inputAyahname" class="col-sm-2 control-label">Nama Ayah</label>
                                       <div class="col-sm-10">
@@ -208,7 +216,7 @@
                                   <div class="form-group">
                                     <label for="AnakKe" class="col-sm-2 control-label">Tanggal Lahir Ayah</label>
                                       <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="id" value="<?php echo $dd->tanggal_lahir_ayah; ?>" name="id"  >
+                                        <input type="text" class="form-control" id="id" value="<?php echo $dd->tanggal_lahir_ayah; ?>" name="tanggal_lahir_ayah"  >
                                         <!-- <label class="col-sm-2 control-label"> KEWARGANEGARAAN; ?></label> -->
                                       </div>
                                   </div>
@@ -216,7 +224,7 @@
                                   <div class="form-group">
                                     <label for="TinggalBersama" class="col-sm-2 control-label">Tanggal Lahir Ibu</label>
                                       <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="id" value="<?php echo $dd->tanggal_lahir_ibu; ?>" name="id"  >
+                                        <input type="text" class="form-control" id="id" value="<?php echo $dd->tanggal_lahir_ibu; ?>" name="tanggal_lahir_ibu"  >
                                       </div>
                                   </div>
 
@@ -272,7 +280,7 @@
                                   <div class="form-group">
                                     <label for="TinggalBersama" class="col-sm-2 control-label">Jurusan Yang Diambil Ibu</label>
                                       <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="id" value="<?php echo $dd->pendidikan_terakhir_ibu; ?>" name="pendidikan_terakhir_ibu"  >
+                                        <input type="text" class="form-control" id="id" value="<?php echo $dd->jurusan_yang_diambil_ibu; ?>" name="jurusan_yang_diambil_ibu"  >
                                       </div>
                                   </div>
 
@@ -415,19 +423,26 @@
                                         <input type="text" class="form-control" id="id" value="<?php echo $dd->kesempatan_berkomunikasi_dg_ibu; ?>" name="kesempatan_berkomunikasi_dg_ibu"  >
                                       </div>
                                   </div>
-                                  <a href="<?php echo base_url('siswa/siswatk'); ?>" type="submit" class="btn btn-primary pull-center">Submit</a>
+                                  <button type="submit" class="btn btn-primary">Submit</button>
                                 <a href="<?php echo base_url('siswa/siswatk'); ?>" type="button" class="btn btn-primary pull-center">Kembali</a>
                               </form>
                             <?php } ?>
 
-
+<!-- //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
 
 
                           </div>
                       <!-- /.tab-pane -->
                       <div class="tab-pane" id="kandung">
                         <?php foreach ($detail3->result() as $ddd) { ?>
-                          <form method="post" action="<?php echo base_url('siswa/siswatk/updatekandung') ?>" class="form-horizontal">
+                          <form method="post" action="<?php echo base_url('siswa/siswatk/updatedatakandung') ?>" class="form-horizontal">
+                            <div class="form-group">
+                              <label for="inputid" class="col-sm-2 control-label">ID Pendaftaran</label>
+                                <div class="col-sm-10">
+                                  <input type="text" class="form-control" id="id" value="<?php echo $d->id_siswa; ?>" name="id" readonly>
+                                </div>
+                            </div>
+
                               <div class="form-group">
                                 <label for="TinggalBersama" class="col-sm-2 control-label">Nama Saudara Kandung</label>
                                   <div class="col-sm-10">
@@ -471,7 +486,7 @@
                                     <input type="text" class="form-control" id="id" value="<?php echo $ddd->no_induk_saudara_kandung; ?>" name="no_induk_saudara_kandung"  >
                                   </div>
                               </div>
-                              <a href="<?php echo base_url('siswa/siswatk'); ?>" type="submit" class="btn btn-primary pull-center">Submit</a>
+                              <button type="submit" class="btn btn-primary">Submit</button>
                             <a href="<?php echo base_url('siswa/siswatk'); ?>" type="button" class="btn btn-primary pull-center">Kembali</a>
                           </form>
                         <?php } ?>
@@ -481,7 +496,14 @@
 
                           <div class="tab-pane" id="riwayat_kesehatan">
                             <?php foreach ($detail4->result() as $dddd){?>
-                              <form method="post" action="<?php echo base_url('siswa/siswatk/updateriwayatkesehatan') ?>" class="form-horizontal">
+                              <form method="post" action="<?php echo base_url('siswa/siswatk/updatedatariwayatkesehatan') ?>" class="form-horizontal">
+                                <div class="form-group">
+                                  <label for="inputid" class="col-sm-2 control-label">ID Pendaftaran</label>
+                                    <div class="col-sm-10">
+                                      <input type="text" class="form-control" id="id" value="<?php echo $d->id_siswa; ?>" name="id" readonly>
+                                    </div>
+                                </div>
+
                                   <div class="form-group">
                                     <label for="inputUsername" class="col-sm-2 control-label">Berat Badan</label>
                                       <div class="col-sm-10">
@@ -508,7 +530,7 @@
                                         <?php if($dddd->id_golongan_darah == 5){ ?>
                                           value="-"
                                         <?php } ?>
-                                        name="id"  >
+                                        name="id_golongan_darah"  >
                                       </div>
                                   </div>
 
@@ -574,10 +596,23 @@
                                         <input type="text" class="form-control" id="id" value="<?php echo $dddd->penampilan; ?>" name="penampilan"  >
                                       </div>
                                   </div>
+                                  <button type="submit" class="btn btn-primary">Submit</button>
+                                <a href="<?php echo base_url('siswa/siswatk'); ?>" type="button" class="btn btn-primary pull-center">Kembali</a>
                               </form>
                             <?php } ?>
+                          </div>
+
+<!-- //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+                          <div class="tab-pane" id="ciri_khas_anak">
                             <?php foreach ($detail5->result() as $s){ ?>
-                              <form class="form-horizontal">
+                              <form method="post" action="<?php echo base_url('siswa/siswatk/updatedatacirikhasanak') ?>" class="form-horizontal">
+                                <div class="form-group">
+                                  <label for="inputid" class="col-sm-2 control-label">ID Pendaftaran</label>
+                                    <div class="col-sm-10">
+                                      <input type="text" class="form-control" id="id" value="<?php echo $d->id_siswa; ?>" name="id" readonly>
+                                    </div>
+                                </div>
+
                                   <div class="form-group">
                                     <label for="inputUsername" class="col-sm-2 control-label">Ciri Fisik yang Menonjol</label>
                                       <div class="col-sm-10">
@@ -605,7 +640,7 @@
                                         <input type="text" class="form-control" id="id" value="<?php echo $s->prestasi_yang_pernah_diraih; ?>" name="prestasi_yang_pernah_diraih"  >
                                       </div>
                                   </div>
-                                  <a href="<?php echo base_url('siswa/siswatk'); ?>" type="submit" class="btn btn-primary pull-center">Submit</a>
+                                  <button type="submit" class="btn btn-primary">Submit</button>
                                 <a href="<?php echo base_url('siswa/siswatk'); ?>" type="button" class="btn btn-primary pull-center">Kembali</a>
                               </form>
                             <?php } ?>
