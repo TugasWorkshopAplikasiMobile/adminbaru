@@ -53,10 +53,10 @@
   function deleted(param){
     var proc = window.confirm('Are you sure delete this data?');
     if(proc){
-      document.location='<?php echo base_url(); ?>siswa/siswatk/deletesiswatk/'+param;
+      document.location='<?php echo base_url(); ?>siswa/siswasmp/deletesiswasmp/'+param;
     }
   }
   function detailsiswa(param){
-      document.location='<?php echo base_url(); ?>siswa/siswatk/detsiswatk/'+param;
+      document.location='<?php echo base_url(); ?>siswa/siswasmp/detsiswasmp/'+param;
   }
 </script>

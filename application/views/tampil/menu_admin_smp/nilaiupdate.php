@@ -1,6 +1,6 @@
 <div class="col-mx-12">
 <div class="box box-primary">
-          <form method="post" action="<?php echo base_url('nilai/nilaitk/prosesupdatetk') ?>">
+          <form method="post" action="<?php echo base_url('nilai/nilaismp/prosesupdatesmp') ?>">
             <!-- /.box-header -->
             <!-- form start -->
             <?php foreach ($dataupdate1->result() as $d) { ?>
@@ -22,7 +22,7 @@
                 <div class="form-group">
                   <label for="nama" class="col-sm-2 control-label">Nama Siswa</label>
                   <div class="col-sm-10">
-                  <input type="text" class="form-control" id="inputEmail3" name="nama_siswa" value="<?php echo $d->nama_siswa; ?>">
+                  <input type="text" class="form-control" id="inputEmail3" name="nama_siswa" value="<?php echo $d->nama_siswa; ?>" readonly>
                   </div>
                 </div>
               </div>
@@ -103,7 +103,7 @@
 
               <div class="box-footer">
                 <button type="submit" class="btn btn-primary">Submit</button>
-                <a href="<?php echo base_url('nilai/nilaitk'); ?>" type="button" class="btn btn-primary">Batal</a>
+                <a href="<?php echo base_url('nilai/nilaismp'); ?>" type="button" class="btn btn-primary">Batal</a>
               </div>
               </form>
 </div>

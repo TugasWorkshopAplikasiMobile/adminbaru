@@ -2,8 +2,8 @@
   <div class="col-xs-12">
     <div class="box">
       <div class="box-header">
-        <h3 class="box-title">Nilai Siswa TK</h3><br><br>
-          <a href="<?php echo base_url('nilai/nilaitk/tambahNilai')?>" class="btn btn-primary pull-left" style="width: 30%;">Tambah Nilai Siswa</a>
+        <h3 class="box-title">Nilai Siswa SMP</h3><br><br>
+          <a href="<?php echo base_url('nilai/nilaismp/tambahNilai')?>" class="btn btn-primary pull-left" style="width: 30%;">Tambah Nilai Siswa</a>
       </div>
       <!-- /.box-header -->
       <div class="box-body">
@@ -68,6 +68,6 @@
  //    }
  //  }
   function updatejs(param){
-      document.location='<?php echo base_url(); ?>nilai/nilaitk/detnilaitk/'+param;
+      document.location='<?php echo base_url(); ?>nilai/nilaismp/detnilaismp/'+param;
   }
 </script>

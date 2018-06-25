@@ -1,10 +1,10 @@
 <div class="col-md-12">
     <div class="box box-info">
     <div class="box-header with-border">
-        <h3 class="box-title">Verifikasi Data User TK</h3>
+        <h3 class="box-title">Verifikasi Data User SMP</h3>
     </div>
 
-    <form method="post" action="<?php echo base_url('siswa/siswatk/proses_update_tk') ?>" class="form-horizontal">
+    <form method="post" action="<?php echo base_url('siswa/siswasmp/proses_update_smp') ?>" class="form-horizontal">
       <?php foreach ($pengumuman->result() as $p) { ?>
         <div class="box-body">
             <div class="form-group">
@@ -90,6 +90,6 @@
 // }
 // }
 function back(param){
-document.location='<?php echo base_url(); ?>siswa/siswatk/pgtk/'+param;
+document.location='<?php echo base_url(); ?>siswa/siswasmp/pgsmp/'+param;
 }
 </script>

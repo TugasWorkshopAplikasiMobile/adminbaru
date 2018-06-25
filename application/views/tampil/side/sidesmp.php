@@ -39,8 +39,8 @@
        <ul class="sidebar-menu">
        <!--  <li class="header">MAIN NAVIGATION</li> -->
         <li class="treeview">
-          <a href="<?php echo base_url('pengumuman/pengumumansmp')?>">
-            <i class="fa fa-newspaper-o"></i> <span>Pengumuman</span>
+          <a href="<?php echo base_url('siswa/siswasmp/pgsmp')?>">
+            <i class="fa fa-newspaper-o"></i> <span>Verifikasi</span>
 
             <span class="pull-right-container">
             </span>

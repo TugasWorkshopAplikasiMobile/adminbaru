@@ -12,7 +12,7 @@ class Adminsmp extends CI_Controller {
 				$data['lulus']=$this->mymodel->dashboard_daftar_kelulusan("WHERE id_status_diterima='1'")->num_rows();
 				$data['belumlulus']=$this->mymodel->dashboard_daftar_kelulusan("WHERE id_status_diterima='3'")->num_rows();
 				$data['tidaklulus']=$this->mymodel->dashboard_daftar_kelulusan("WHERE id_status_diterima='2'")->num_rows();
-				$data['side']='tampil/side/sidesekretaris';
+				$data['side']='tampil/side/sidesmp';
 				$data['content']='tampil/utama/v_dashboard';
 				$this->load->view('tampil/utama/main',$data);
 			}
