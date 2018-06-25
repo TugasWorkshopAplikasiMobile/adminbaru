@@ -20,6 +20,7 @@ class Petugasdata extends CI_Controller {
 		$data['content']='tampil/petugas/t-datapetugas';
 		$this->load->view('tampil/utama/main',$data);
 	}
+	
 	public function fungsitambahdata(){
 		$data['nama_admin']=$this->input->post('nama');
 		$data['id_jenis_kelamin']=$this->input->post('jk');

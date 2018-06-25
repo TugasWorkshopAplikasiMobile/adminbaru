@@ -1,6 +1,6 @@
 <div class="col-mx-12">
 <div class="box box-primary">
-          <form method="post" action="<?php echo base_url('nilai/nilai/prosesupdatesmp') ?>">
+          <form method="post" action="<?php echo base_url('nilai/nilaitk/prosesupdatetk') ?>">
             <!-- /.box-header -->
             <!-- form start -->
             <?php foreach ($dataupdate1->result() as $d) { ?>
@@ -29,15 +29,6 @@
             <!-- </form> -->
             <?php } ?>
             <?php foreach ($dataupdate2->result() as $dd) {?>
-              <div class="box-body">
-                <div class="form-group">
-                  <label for="big" class="col-sm-2 control-label">IPA</label>
-                  <div class="col-sm-10">
-                  <input type="text" class="form-control" id="inputPassword3" name="ipa" value="<?php echo $dd->ipa; ?>">
-                  </div>
-                </div>
-              </div>
-
             <!-- <form class="form-horizontal"> -->
               <div class="box-body">
                 <div class="form-group">
@@ -47,18 +38,18 @@
                   </div>
                 </div>
               </div>
-
+            <!-- </form> -->
+            <?php } ?>
+            <?php foreach ($dataupdate2->result() as $dd) {?>
               <div class="box-body">
                 <div class="form-group">
-                  <label for="matematik" class="col-sm-2 control-label">IPA</label>
+                  <label for="big" class="col-sm-2 control-label">IPA</label>
                   <div class="col-sm-10">
                   <input type="text" class="form-control" id="inputPassword3" name="ipa" value="<?php echo $dd->ipa; ?>">
                   </div>
                 </div>
               </div>
-            <!-- </form> -->
-            <?php } ?>
-            <?php foreach ($dataupdate2->result() as $dd) {?>
+
               <div class="box-body">
                 <div class="form-group">
                   <label for="big" class="col-sm-2 control-label">Bahasa Inggris</label>
@@ -112,8 +103,7 @@
 
               <div class="box-footer">
                 <button type="submit" class="btn btn-primary">Submit</button>
-                <a href="<?php echo base_url('nilai/nilai/nismp'); ?>" type="button" class="btn btn-primary">Batal</a>
-               <!--  <button type="" class="btn btn-primary" onclick="javascript:history.go(-1);">Batal</button> -->
+                <a href="<?php echo base_url('nilai/nilaitk'); ?>" type="button" class="btn btn-primary">Batal</a>
               </div>
               </form>
 </div>

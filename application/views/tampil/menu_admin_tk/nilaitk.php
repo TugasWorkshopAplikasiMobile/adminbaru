@@ -2,9 +2,8 @@
   <div class="col-xs-12">
     <div class="box">
       <div class="box-header">
-        <h3 class="box-title">Masukkan Nilai Siswa TK</h3><br><br>
-        <!-- <a href="<?php echo base_url('petugas/petugasdata/tambahData')?>" class="btn btn-primary pull-left" style="width: 30%;">Tambah Data Petugas</a> -->
-
+        <h3 class="box-title">Nilai Siswa TK</h3><br><br>
+          <a href="<?php echo base_url('nilai/nilaitk/tambahNilai')?>" class="btn btn-primary pull-left" style="width: 30%;">Tambah Nilai Siswa</a>
       </div>
       <!-- /.box-header -->
       <div class="box-body">
@@ -65,10 +64,10 @@
  function deleted(param){
    var proc = window.confirm('Are you sure delete this data?');
    if(proc){
-      document.location='<?php echo base_url(); ?>nilai/nilai/delete_nilai/'+param;
+      document.location='<?php echo base_url(); ?>nilai/nilaitk/delete_nilai/'+param;
     }
   }
   function updatejs(param){
-      document.location='<?php echo base_url(); ?>nilai/nilai/detnilaitk/'+param;
+      document.location='<?php echo base_url(); ?>nilai/nilaitk/detnilaitk/'+param;
   }
 </script>

@@ -7,11 +7,6 @@ class Nilai extends CI_Controller {
 		$this->load->model('mymodel');
 	}
 
-	//Nek kok pecah dewe2 yo gpp per sembarang aku tak kumpulno kene
-
-	//View ne tak pecah pecah gae nilai cmn dadi siji iki kontroler e
-
-
 	public function index()
 	{
 	 	$data['side']='tampil/side/sidesekretaris';
@@ -19,6 +14,7 @@ class Nilai extends CI_Controller {
 		$data['nilai']=$this->mymodel->selectsiswafornilaitk();
 	 	$this->load->view('tampil/utama/main',$data);
 	}
+
 	public function nisd()
 	{
 		$data['side']='tampil/side/sidesekretaris';
@@ -26,6 +22,7 @@ class Nilai extends CI_Controller {
 		$data['nilai']=$this->mymodel->selectsiswafornilaisd();
 	 	$this->load->view('tampil/utama/main',$data);
 	}
+	
 	public function nismp()
 	{
 		$data['side']='tampil/side/sidesekretaris';

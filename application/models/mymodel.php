@@ -39,17 +39,6 @@ class Mymodel extends CI_Model {
     }
     // end of cek login di login form
 
-  function selectsiswafornilai(){
-        $this->db->join('nilai_test', 'nilai_test.ID_NILAI_TEST = siswa.nilai_test_ID_NILAI_TEST', 'left');
-        // $this->db->where('ID_SISWA', $id);
-        return $this->db->get("siswa");
-      }
-
-  function selectsiswafornilaiupdate($id){
-        $this->db->join('nilai_test', 'nilai_test.ID_NILAI_TEST = siswa.nilai_test_ID_NILAI_TEST', 'left');
-        $this->db->where('ID_SISWA', $id);
-        return $this->db->get("siswa");
-      }
 
   function selectsiswafornilaitk(){
       $this->db->select('nilai_tes.*, siswa.*, user.*');
@@ -81,23 +70,7 @@ class Mymodel extends CI_Model {
           return $data;
         }
 
-  function detailnilai($id){
-        $this->db->join('siswa', 'nilai_test.siswa_ID_SISWA = siswa.ID_SISWA', 'left');
-        $this->db->join('hasil', 'siswa.hasil_ID_HASIL = hasil.ID_HASIL', 'left');
-        $this->db->join('siswa', 'nilai_psikotest.ID_NILAI_PSIKOTEST = siswa.nilai_psikotest_ID_NILAI_PSIKOTEST', 'left');
-        $this->db->where("siswa.ID_SISWA",$id);
-        return $this->db->get("siswa");
-      }
-
-  function verifikasi_semua_jenjang(){
-        $this->db->join('jenjang', 'jenjang.ID_JENJANG = user.jenjang_ID_JENJANG', 'left');
-        $data = $this->db->get('user');
-        return $data->result();
-      }
-
       function edit_verifikasi_semua_jenjang($no_id, $table){
-          // $this->db->join('pembayaran', 'pembayaran.ID_PEMBAYARAN = user.') belum kelarrrrrr
-        //gw ga tau kudu gmn juga yg ini om btw view apa aja yak ?? yg blm yg verivikasi udh blm ?
           $return = $this->db->get_where($table, $no_id);
           return $return->result();
       }
@@ -239,6 +212,7 @@ class Mymodel extends CI_Model {
         return $data;
       }
 
+//tampilan dashboard
       function dashboard_daftar_baru(){
         // get total rows
       	$this->db->from('pendaftaran_baru');
@@ -255,7 +229,7 @@ class Mymodel extends CI_Model {
         //get where
       return $this->db->query('select * from siswa '.$where);
       }
-
+//end of tampilan dashboard
 
 
 

@@ -43,6 +43,15 @@
             <?php foreach ($dataupdate2->result() as $dd) {?>
               <div class="box-body">
                 <div class="form-group">
+                  <label for="big" class="col-sm-2 control-label">IPA</label>
+                  <div class="col-sm-10">
+                  <input type="text" class="form-control" id="inputPassword3" name="ipa" value="<?php echo $dd->ipa; ?>">
+                  </div>
+                </div>
+              </div>
+
+              <div class="box-body">
+                <div class="form-group">
                   <label for="big" class="col-sm-2 control-label">Bahasa Inggris</label>
                   <div class="col-sm-10">
                   <input type="text" class="form-control" id="inputPassword3" name="bahasa_inggris" value="<?php echo $dd->bahasa_inggris ?>">

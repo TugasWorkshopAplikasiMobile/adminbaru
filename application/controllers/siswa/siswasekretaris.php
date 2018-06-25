@@ -45,10 +45,11 @@ class Siswasekretaris extends CI_Controller {
 		$data['detail3']= $this->db->query("SELECT * FROM saudara_kandung_anak WHERE id_siswa='$id'");
 		$data['detail4']= $this->db->query("SELECT * FROM kesehatan_anak WHERE id_siswa='$id'");
 		$data['detail5']= $this->db->query("SELECT * FROM ciri_khas_anak WHERE id_siswa='$id'");
-		$data['side']='tampil/side/sidesekretaris';
-		$data['content']='tampil/siswa/detailsiswatk';
+		$data['side']='tampil/side/sidetk';
+		$data['content']='tampil/menu_admin_tk/detailsiswatk';
 		$this->load->view('tampil/utama/main',$data);
 	}
+
 	public function detsiswasd()
 	{
 		$id=$this->uri->segment(4);
