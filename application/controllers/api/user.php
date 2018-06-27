@@ -15,15 +15,15 @@ class user extends REST_Controller{
   	if ($api=="login") {
   		$username=$_POST["username"];
   		$password=$_POST["password"];
-  		$where=array('EMAIL_USER'=>$username, 'PASSWORD_USER'=>$password);
+  		$where=array('nama_user'=>$username, 'password_user'=>$password);
   		$cek_fase_1=$this->androidmodel->selectwhere('user',$where)->num_rows();
   		$cek_fase_2=$this->androidmodel->selectwhere('user',$where)->row();
   		if ($cek_fase_1 > 0) {
   			$data_session=array(
-  				'ID_USER'=>$cek_fase_2->ID_USER,
-  				'NAMA_USER'=>$cek_fase_2->NAMA_USER,
-  				'EMAIL_USER'=>$cek_fase_2->EMAIL_USER,
-  				'jenjang'=>$cek_fase_2->jenjang_ID_JENJANG,);
+  				'id_user'=>$cek_fase_2->id_user,
+  				'nama_user'=>$cek_fase_2->nama_user,
+  				'email_user'=>$cek_fase_2->email_user,
+  				'jenjang'=>$cek_fase_2->id_jenjang,);
   			$message=array('succes'=>1, "data_user"=>$data_session);
   			$this->response($message, 200);
   		}
@@ -34,17 +34,17 @@ class user extends REST_Controller{
   	}
   	else if ($api=="register") {
   	$email = $_POST["email"];
-  	$no_telp = $_POST["no_telp"];
+  	// $no_telp = $_POST["no_telp"];
   	$username = $_POST["username"];
   	$password=$_POST["password"];
   	$jenjang=$_POST["jenjang"];
-  	$where = array("NAMA_USER"=>$username);
+  	$where = array("email_user"=>$email);
   	$data = array('ID_USER'=>"",
   		'EMAIL_USER' =>$email ,
-  	'NO_TELP'=>$no_telp,
+  	// 'NO_TELP'=>$no_telp,
   	'NAMA_USER'=>$username,
   	'PASSWORD_USER'=>$password,
-  	'jenjang_ID_JENJANG'=>$jenjang);
+  	'ID_JENJANG'=>$jenjang);
   	$cek_fase_1 = $this->androidmodel->selectwhere('user',$where)->num_rows();
   	if ($cek_fase_1 > 0) {
   		$message=array('succes'=>2);
