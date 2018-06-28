@@ -2,7 +2,7 @@
   <div class="col-xs-12">
     <div class="box">
       <div class="box-header">
-        <h3 class="box-title">Data Siswa</h3><br><br>
+        <h3 class="box-title">Data Siswa TK</h3><br><br>
       </div>
       <!-- /.box-header -->
       <div class="box-body">
@@ -11,7 +11,7 @@
           <tr>
             <th>No</th>
             <th>Nama Siswa</th>
-            <th>Tempat Lahir</th>
+            <th>Tanggal Lahir</th>
             <th>Jenis Kelamin</th>
             <th>Status Di terima</th>
             <th>Aksi</th>
@@ -25,7 +25,7 @@
               <tr>
                 <td><?php echo $n; ?></td>
                 <td><?php echo $s->nama_siswa; ?></td>
-                <td><?php echo $s->tempat_lahir_siswa; ?></td>
+                <td><?php echo $s->tanggal_lahir_siswa; ?></td>
                 <td><?php echo $s->jenis_kelamin; ?></td>
                 <td><?php echo $s->status_diterima; ?></td>
                 <td style="text-align: center;">
