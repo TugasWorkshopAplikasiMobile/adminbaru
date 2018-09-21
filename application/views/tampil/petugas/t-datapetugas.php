@@ -26,7 +26,7 @@
                 </div>
                 <div class="form-group">
                 <label>Status</label>
-                <select class="form-control select2" name="sts" id="idstatus" style="width: 100%;">
+                <select class="" name="sts" id="idstatus"">
                   <option selected="selected">-Pilih Status-</option>
                   <option value="1">Admin TK</option>
                   <option value="2">Admin SD</option>

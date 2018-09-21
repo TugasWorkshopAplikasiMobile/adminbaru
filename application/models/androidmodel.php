@@ -32,5 +32,11 @@ class androidmodel extends CI_Model {
 	{
 		$this->db->insert($table,$data);
 	}
+	function get_by_id_nilai($id)
+	{
+		// $this->db->join('siswa', ' nilai_tes.id_siswa=siswa.id_siswa','left');
+		$this->db->where("id_siswa",$id);
+		return $this->db->get("nilai_tes")->row();
+	}
 }
 ?>

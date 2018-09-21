@@ -25,7 +25,7 @@
                 <td><?php echo $n; ?></td>
                 <td><?php echo $i->NAMA_SISWA ?></td>
                 <td><?php echo $i->NILAI_PSIKOTEST ?></td>
-                <td style="text-align: center;">
+                <td style="text-align: right;">
                   <!-- <?php echo $i->no?> -->
                   <a href="#" class="btn btn-warning btn-xs" >Detail</a>
                   <a href="#" class="btn btn-info btn-xs" >Update</a>
